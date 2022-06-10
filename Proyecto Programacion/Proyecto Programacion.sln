@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vistas", "Vistas\Vistas.csproj", "{670B82EE-26D7-47D6-9055-041DE455BC2A}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{670B82EE-26D7-47D6-9055-041DE455BC2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670B82EE-26D7-47D6-9055-041DE455BC2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670B82EE-26D7-47D6-9055-041DE455BC2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{670B82EE-26D7-47D6-9055-041DE455BC2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
