@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ABMComplejo.aspx" />
     <Content Include="ConfirmarCompra.aspx" />
     <Content Include="MostrarPelicula.aspx" />
     <Content Include="PaginaAdmin.aspx" />
@@ -76,6 +77,13 @@
     <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABMComplejo.aspx.cs">
+      <DependentUpon>ABMComplejo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABMComplejo.aspx.designer.cs">
+      <DependentUpon>ABMComplejo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConfirmarCompra.aspx.cs">
       <DependentUpon>ConfirmarCompra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
