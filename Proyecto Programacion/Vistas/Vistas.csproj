@@ -68,6 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ABMComplejo.aspx" />
+    <Content Include="ABMFunciones.aspx" />
+    <Content Include="ABMPeliculas.aspx" />
+    <Content Include="ABMSalas.aspx" />
     <Content Include="ConfirmarCompra.aspx" />
     <Content Include="MostrarPelicula.aspx" />
     <Content Include="PaginaAdmin.aspx" />
@@ -83,6 +86,27 @@
     </Compile>
     <Compile Include="ABMComplejo.aspx.designer.cs">
       <DependentUpon>ABMComplejo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ABMFunciones.aspx.cs">
+      <DependentUpon>ABMFunciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABMFunciones.aspx.designer.cs">
+      <DependentUpon>ABMFunciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ABMPeliculas.aspx.cs">
+      <DependentUpon>ABMPeliculas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABMPeliculas.aspx.designer.cs">
+      <DependentUpon>ABMPeliculas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ABMSalas.aspx.cs">
+      <DependentUpon>ABMSalas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABMSalas.aspx.designer.cs">
+      <DependentUpon>ABMSalas.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConfirmarCompra.aspx.cs">
       <DependentUpon>ConfirmarCompra.aspx</DependentUpon>
