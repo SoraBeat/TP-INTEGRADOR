@@ -11,7 +11,7 @@ namespace Vistas
 {
 
 
-    public partial class PaginaConfirmarCompra
+    public partial class ConfirmarCompra
     {
 
         /// <summary>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PaginaConfirmarCompra.aspx.cs" Inherits="Vistas.PaginaConfirmarCompra" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PaginaConfirmarCompra.aspx.cs" Inherits="Vistas.ConfirmarCompra" %>
 
 <!DOCTYPE html>
 
