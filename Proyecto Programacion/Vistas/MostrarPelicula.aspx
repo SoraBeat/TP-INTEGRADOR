@@ -59,6 +59,29 @@
             height: 23px;
             width: 260px;
         }
+        .auto-style17 {
+            width: 24px;
+        }
+        .auto-style18 {
+            width: 35px;
+            height: 34px;
+        }
+        .auto-style19 {
+            width: 38px;
+            height: 34px;
+        }
+        .auto-style20 {
+            width: 34px;
+            height: 34px;
+        }
+        .auto-style21 {
+            height: 33px;
+            width: 42px;
+        }
+        .auto-style22 {
+            width: 31px;
+            height: 34px;
+        }
     </style>
 </head>
 <body>
@@ -174,6 +197,34 @@
                 </tr>
             </table>
             <br />
+            <div>
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONTACTANOS<br />
+                <table class="auto-style1">
+                    <tr>
+                        <td class="auto-style17">&nbsp;</td>
+                        <td class="auto-style13">
+                            <img alt="" class="auto-style18" src="" /></td>
+                        <td class="auto-style13">
+                            <img alt="" class="auto-style19" src="" /></td>
+                        <td class="auto-style21">
+                            <img alt="" class="auto-style20" src="" /></td>
+                        <td>
+                            <img alt="" class="auto-style22" src="" /></td>
+                    </tr>
+                </table>
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email: <a href="mailto:GmailEmpresa@gmail.com">GmailEmpresa@gmail.com</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telefono soporte: 11-1232-1234&nbsp;&nbsp;
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:HyperLink ID="HyperLink1" runat="server">Ayuda</asp:HyperLink>
+                <br />
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 NOMBRE DEL CINE<br />
+                </span>
+            </div>
             <br />
             <br />
         </div>

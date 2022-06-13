@@ -32,6 +32,19 @@
             color: #000000;
             background-color: #FFFFFF;
         }
+        .auto-style8 {
+            width: 30px;
+            height: 30px;
+        }
+        .auto-style11 {
+            width: 44px;
+        }
+        .auto-style12 {
+            width: 16px;
+        }
+        .auto-style13 {
+            width: 41px;
+        }
     </style>
 </head>
 <body>
@@ -92,6 +105,35 @@
             </tr>
         </table>
         <br />
-        Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 NOMBRE DEL CINE</span></form>
+        <div>
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONTACTANOS<br />
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style12">&nbsp;</td>
+                    <td class="auto-style13">
+                        <img alt="" class="auto-style8" src="" /></td>
+                    <td class="auto-style13">
+                        <img alt="" class="auto-style8" src="" /></td>
+                    <td class="auto-style11">
+                        <img alt="" class="auto-style8" src="" /></td>
+                    <td>
+                        <img alt="" class="auto-style8" src="" /></td>
+                </tr>
+            </table>
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email: <a href="mailto:GmailEmpresa@gmail.com">GmailEmpresa@gmail.com</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telefono soporte: 11-1232-1234&nbsp;&nbsp;
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink1" runat="server">Ayuda</asp:HyperLink>
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 NOMBRE DEL CINE<br />
+            </span>
+        </div>
+        <br />
+        </form>
 </body>
 </html>
