@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ABMAsientos.aspx.cs" Inherits="Vistas.Asientos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ABMAsientos.aspx.cs" Inherits="Vistas.ABMAsientos" %>
 
 <!DOCTYPE html>
 
