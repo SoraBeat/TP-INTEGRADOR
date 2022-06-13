@@ -1,57 +1,72 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ventas.aspx.cs" Inherits="Vistas.Ventas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ABMComplejo.aspx.cs" Inherits="Vistas.ABMComplejo" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
-
         .auto-style1 {
             width: 100%;
         }
         .auto-style2 {
             width: 752px;
         }
+        .auto-style3 {
+            height: 89px;
+        }
         .auto-style4 {
             margin-left: 40px;
-        }
-        .auto-style16 {
-            text-align: center;
         }
         .auto-style5 {
             width: 171px;
         }
-        .auto-style3 {
-            height: 89px;
-        }
         .auto-style10 {
             width: 26px;
         }
-        .auto-style15 {
-            width: 192px;
-        }
-        .auto-style17 {
-            text-align: center;
-            width: 107px;
-        }
         .auto-style11 {
             width: 26px;
+            height: 23px;
+        }
+        .auto-style12 {
             height: 23px;
         }
         .auto-style14 {
             height: 23px;
             width: 192px;
         }
+        .auto-style15 {
+            width: 192px;
+        }
+        .auto-style16 {
+            text-align: center;
+        }
+        .auto-style17 {
+            text-align: center;
+            width: 101px;
+        }
         .auto-style18 {
             height: 23px;
-            width: 107px;
-        }
-        .auto-style12 {
-            height: 23px;
+            width: 101px;
         }
         .auto-style19 {
-            width: 107px;
+            width: 101px;
+        }
+        .auto-style20 {
+            width: 26px;
+            height: 26px;
+        }
+        .auto-style21 {
+            width: 192px;
+            height: 26px;
+        }
+        .auto-style22 {
+            width: 101px;
+            height: 26px;
+        }
+        .auto-style23 {
+            height: 26px;
         }
     </style>
 </head>
@@ -67,7 +82,7 @@
             </table>
             <p class="auto-style4">
                 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VENTAS</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USUARIOS</p>
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style16">Filtrar busqueda</td>
@@ -100,7 +115,7 @@
 &nbsp;&nbsp;
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style16">Agregar venta</td>
+                    <td class="auto-style16">AGREGAR USUARIO</td>
                 </tr>
             </table>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -122,7 +137,7 @@
                         <asp:LinkButton ID="LinkButton2" runat="server">Complejos</asp:LinkButton>
                     </td>
                     <td class="auto-style18">
-                        ID Venta:&nbsp;&nbsp;&nbsp;&nbsp;
+                        ID:&nbsp;&nbsp;&nbsp;&nbsp;
                     </td>
                     <td class="auto-style12">
                         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
@@ -134,7 +149,7 @@
                         <asp:LinkButton ID="LinkButton3" runat="server">Salas</asp:LinkButton>
                     </td>
                     <td class="auto-style18">
-                        ID Usuario:</td>
+                        Nombre:</td>
                     <td class="auto-style12">
                         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                     </td>
@@ -145,9 +160,9 @@
                         <asp:LinkButton ID="LinkButton5" runat="server">Peliculas</asp:LinkButton>
                     </td>
                     <td class="auto-style18">
-                        Fecha:</td>
+                        Apellido:</td>
                     <td class="auto-style12">
-                        <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -156,21 +171,20 @@
                         <asp:LinkButton ID="LinkButton4" runat="server">Funciones</asp:LinkButton>
                     </td>
                     <td class="auto-style19">
-                        Metodo de pago:</td>
+                        Dni:</td>
                     <td>
-                        <asp:DropDownList ID="DropDownList2" runat="server" Height="16px" Width="118px">
-                        </asp:DropDownList>
+                        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style11"></td>
-                    <td class="auto-style14">
+                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style15">
                         <asp:LinkButton ID="LinkButton6" runat="server">Asientos</asp:LinkButton>
                     </td>
-                    <td class="auto-style18">
-                        Monto final:</td>
-                    <td class="auto-style12">
-                        <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                    <td class="auto-style19">
+                        Telefono</td>
+                    <td>
+                        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -179,19 +193,21 @@
                         <asp:LinkButton ID="LinkButton7" runat="server">Asientos comprados</asp:LinkButton>
                     </td>
                     <td class="auto-style19">
-                        &nbsp;</td>
+                        Email:</td>
                     <td>
-                        &nbsp;</td>
+                        <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style15">
+                    <td class="auto-style20"></td>
+                    <td class="auto-style21">
                         <asp:LinkButton ID="LinkButton8" runat="server">Ventas</asp:LinkButton>
                     </td>
-                    <td class="auto-style19">
-                        &nbsp;</td>
-                    <td>
-                        &nbsp;</td>
+                    <td class="auto-style22">
+                        Contraseña:</td>
+                    <td class="auto-style23">
+                        <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
@@ -199,9 +215,10 @@
                         <asp:LinkButton ID="LinkButton9" runat="server">Detalle de ventas</asp:LinkButton>
                     </td>
                     <td class="auto-style19">
-                        &nbsp;</td>
+                        Super Usuario:</td>
                     <td>
-                        &nbsp;</td>
+                        <asp:CheckBox ID="CheckBox1" runat="server" />
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
@@ -217,8 +234,6 @@
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
-        </div>
-        <div>
         </div>
     </form>
 </body>
