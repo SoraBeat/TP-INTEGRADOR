@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vistas
-{
-
-
-    public partial class ABMFunciones
-    {
-
+namespace Vistas {
+    
+    
+    public partial class ABMFunciones {
+        
         /// <summary>
         /// control form1.
         /// </summary>

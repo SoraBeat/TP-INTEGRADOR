@@ -70,6 +70,7 @@
     <Content Include="ABMAsientosComprados.aspx" />
     <Content Include="ABMComplejo.aspx" />
     <Content Include="ABMAsientos.aspx" />
+    <Content Include="ABMFunciones.aspx" />
     <Content Include="ConfirmarCompra.aspx" />
     <Content Include="MostrarPelicula.aspx" />
     <Content Include="PaginaAdmin.aspx" />
@@ -100,6 +101,13 @@
     </Compile>
     <Compile Include="ABMAsientos.aspx.designer.cs">
       <DependentUpon>ABMAsientos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ABMFunciones.aspx.cs">
+      <DependentUpon>ABMFunciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABMFunciones.aspx.designer.cs">
+      <DependentUpon>ABMFunciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConfirmarCompra.aspx.cs">
       <DependentUpon>ConfirmarCompra.aspx</DependentUpon>
