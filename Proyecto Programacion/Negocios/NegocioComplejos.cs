@@ -32,28 +32,22 @@ namespace Negocios
                 return false;
             }
         }
-    //    public bool AgregarComplejo(string ID_Complejo, string Nombre, string Direccion, string Telefono, string Email)
-    //    {
-    //        int cantFilas = 0;
-    //        DaoComplejos daoCom = new DaoComplejos();
-    //        Complejos com = new Complejos();
-    //        com.ID_Complejo = ID_Complejo;
-    //        com.Nombre = Nombre;
-    //        com.Direccion = Direccion;
-    //        com.Telefono = Telefono;
-    //        com.Email = Email;
-    //        if (daoCom.ExisteComplejo(com) == false)
-    //        {
-    //            cantFilas = daoCom.AgregarComplejo(com);
-    //        }
-    //        if (cantFilas == 1)
-    //        {
-    //            return true;
-    //        }
-    //        else
-    //        {
-    //            return false;
-    //        }
-    //    }
+        public bool AgregarComplejo(Complejos com)
+        {
+            int cantFilas = 0;
+            DAOComplejos daoCom = new DAOComplejos();
+            if (daoCom.ExisteComplejo(com) == false)
+            {
+                cantFilas = daoCom.AgregarComplejo(com);
+            }
+            if (cantFilas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
