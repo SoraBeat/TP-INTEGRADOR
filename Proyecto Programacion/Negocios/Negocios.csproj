@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">
-      <Project>{d73db13a-883e-40e2-8bfe-b1a9806cd510}</Project>
+      <Project>{45af1a92-9b4b-49dd-88d8-ddefa50f5b16}</Project>
       <Name>DAO</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">

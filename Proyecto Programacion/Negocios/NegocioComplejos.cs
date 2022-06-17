@@ -11,44 +11,17 @@ namespace Negocios
 {
     public class NegocioComplejos
     {
-        public DataTable getTabla()
-        {
-            DaoComplejos dao = new DaoComplejos();
-            return dao.getTablaComplejos();
-        }
-        public DataTable getTablaPorID(int id)
-        {
-            DaoComplejos dao = new DaoComplejos();
-            return dao.getTablaComplejosPorID(id);
-        }
         public DataTable getListaComplejos()
         {
-            DaoComplejos dao = new DaoComplejos();
-            return dao.getListaComplejos();
+            DAOComplejos dao = new DAOComplejos();
+            return dao.getTablaComplejo();
         }
 
-        public Complejos get(int id)
+        public bool EliminarComplejo(string id)
         {
-            DaoComplejos dao = new DaoComplejos();
+            DAOComplejos dao = new DAOComplejos();
             Complejos com = new Complejos();
-            com.IdComplejos = id;
-            return dao.getComplejos(com);
-        }
-        public DataTable CrearTablaSession()
-        {
-            DataTable tabla = new DataTable();
-            tabla.Columns.Add("ID_Complejo_Co", typeof(string));
-            tabla.Columns.Add("Nombre_Co", typeof(string));
-            tabla.Columns.Add("Direccion_Co", typeof(string));
-            tabla.Columns.Add("Telefono_Co", typeof(string));
-            tabla.Columns.Add("Email_Co", typeof(string));
-            return tabla;
-        }
-        public bool EliminarPelicula(int id)
-        {
-            DaoComplejo dao = new DaoComplejo();
-            Complejo com = new Complejo();
-            com.IdComplejo = id;
+            com.ID_Complejo = id;
             int op = dao.EliminarComplejo(com);
             if (op == 1)
             {
@@ -59,28 +32,28 @@ namespace Negocios
                 return false;
             }
         }
-        public bool AgregarComplejo(string ID_Complejo_Co, string Nombre_Co, string Direccion_Co, string Telefono_Co, string Email_Co)
-        {
-            int cantFilas = 0;
-            DaoComplejo daoCom = new DaoComplejo();
-            Complejo com = new Complejo();
-            com.ID_Complejo = ID_Complejo_Co;
-            com.Nombre = Nombre_Co;
-            com.Direccion = Direccion_Co;
-            com.Telefono = Telefono_Co;
-            com.Email = Email_Co;
-            if (daoCom.ExisteComplejo(com) == false)
-            {
-                cantFilas = daoCom.AgregarComplejo(com);
-            }
-            if (cantFilas == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+    //    public bool AgregarComplejo(string ID_Complejo, string Nombre, string Direccion, string Telefono, string Email)
+    //    {
+    //        int cantFilas = 0;
+    //        DaoComplejos daoCom = new DaoComplejos();
+    //        Complejos com = new Complejos();
+    //        com.ID_Complejo = ID_Complejo;
+    //        com.Nombre = Nombre;
+    //        com.Direccion = Direccion;
+    //        com.Telefono = Telefono;
+    //        com.Email = Email;
+    //        if (daoCom.ExisteComplejo(com) == false)
+    //        {
+    //            cantFilas = daoCom.AgregarComplejo(com);
+    //        }
+    //        if (cantFilas == 1)
+    //        {
+    //            return true;
+    //        }
+    //        else
+    //        {
+    //            return false;
+    //        }
+    //    }
     }
 }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Dao
+namespace DAO
 {
     public class AccesoDatos
     {
-        String rutaBDSucursales = "Data Source=localhost\\sqlexpress;Initial Catalog=Cine;Integrated Security=True";
+        String rutaBDSucursales = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=DBCine;Integrated Security=True";
 
         public AccesoDatos()
         {
