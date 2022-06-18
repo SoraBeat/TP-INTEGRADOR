@@ -256,14 +256,20 @@
                     </td>
                 </tr>
                 <tr>
+<<<<<<< HEAD
                     <td class="auto-style10">&nbsp;</td>
                     <td>
                         <asp:HyperLink ID="hlDV" runat="server" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>
+=======
+                    <td class="auto-style11"></td>
+                    <td class="auto-style14">
+                        <asp:LinkButton ID="LinkButton9" runat="server">Detalle de ventas</asp:LinkButton>
+>>>>>>> 2093ec690a798533ed0c88a02a301b8d90b75541
                     </td>
-                    <td class="auto-style19">
-                        &nbsp;</td>
-                    <td>
-                        &nbsp;</td>
+                    <td class="auto-style18">
+                        </td>
+                    <td class="auto-style12">
+                        </td>
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
