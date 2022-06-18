@@ -70,7 +70,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style16">
-                        <asp:DropDownList ID="ddlFiltro" runat="server">
+                        <asp:DropDownList ID="ddlFiltro" runat="server" AutoPostBack="True">
                         </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="txtFiltro" runat="server"></asp:TextBox>
