@@ -60,18 +60,16 @@ namespace Vistas
 
         protected void gvUsuarios_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-			String ID = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_ID")).Text;
 			String Nombre = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_NOM")).Text;
 			String Apellido = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_APE")).Text;
 			String Dni = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_DNI")).Text;
-			String Telefono = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDT_TELEFONO")).Text;
+			String Telefono = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_TEL")).Text;
 			String Email = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_EMAIL")).Text;
 			String Contraseña = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_CON")).Text;
-			String Tipo_Usuario = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDT_USU")).Text;
+			Boolean Tipo_Usuario = ((CheckBox)gvUsuarios.Rows[e.RowIndex].FindControl("CHK_EDIT_SuperUsu")).Checked;
 
 
 			Usuarios usu = new Usuarios();
-			usu.IDUsuario = Convert.ToInt32(ID);
 			usu.NombreUsuario = Nombre;
 			usu.ApellidoUsuario = Apellido;
 			usu.DNIUsuario = Dni;
@@ -90,7 +88,6 @@ namespace Vistas
         {
 			if (IsValid)
 			{
-				int ID = Convert.ToInt32(txtID.Text);
 				String Nombre = txtNombre.Text;
 				String Apellido = txtApellido.Text;
 				String Dni = txtDni.Text;
@@ -100,7 +97,6 @@ namespace Vistas
 				bool Tipo_Usuario = chkSuperUsu.Checked;
 
 				Usuarios usu = new Usuarios();
-				usu.IDUsuario = ID;
 				usu.NombreUsuario = Nombre;
 				usu.ApellidoUsuario = Apellido;
 				usu.DNIUsuario = Dni;
