@@ -27,22 +27,22 @@ namespace DAO
         }
         public DataTable getTablaAsientos()
         {
-            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [ID ASIENTO], ID_Sala_A AS [ID SALA], ID_Complejo_A AS [ID COMPLEJO] FROM Asientos ORDER BY ABS(ID_Asiento_A)");
+            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [IDASIENTO], ID_Sala_A AS [IDSALA], ID_Complejo_A AS [IDCOMPLEJO] FROM Asientos ORDER BY ABS(ID_Asiento_A)");
             return tabla;
         }
         public DataTable getTablaAsientosPorID(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [ID ASIENTO], ID_Sala_A AS [ID SALA], ID_Complejo_A AS [ID COMPLEJO] FROM Asientos WHERE ID_Asiento_A LIKE '%" + campo + "%' ORDER BY ABS(ID_Asiento_A)");
+            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [IDASIENTO], ID_Sala_A AS [IDSALA], ID_Complejo_A AS [IDCOMPLEJO] FROM Asientos WHERE ID_Asiento_A LIKE '%" + campo + "%' ORDER BY ABS(ID_Asiento_A)");
             return tabla;
         }
         public DataTable getTablaAsientosPorIDSala(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [ID ASIENTO], ID_Sala_A AS [ID SALA], ID_Complejo_A AS [ID COMPLEJO] FROM Asientos WHERE ID_Sala_A LIKE '%" + campo + "%' ORDER BY ABS(ID_Asiento_A)");
+            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [IDASIENTO], ID_Sala_A AS [IDSALA], ID_Complejo_A AS [IDCOMPLEJO] FROM Asientos WHERE ID_Sala_A LIKE '%" + campo + "%' ORDER BY ABS(ID_Asiento_A)");
             return tabla;
         }
         public DataTable getTablaAsientosPorIDComplejo(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [ID ASIENTO], ID_Sala_A AS [ID SALA], ID_Complejo_A AS [ID COMPLEJO] FROM Asientos WHERE ID_Complejo_A LIKE '%" + campo + "%' ORDER BY ABS(ID_Asiento_A)");
+            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [IDASIENTO], ID_Sala_A AS [IDSALA], ID_Complejo_A AS [IDCOMPLEJO] FROM Asientos WHERE ID_Complejo_A LIKE '%" + campo + "%' ORDER BY ABS(ID_Asiento_A)");
             return tabla;
         }
         public int EliminarAsiento(Asientos asi)
