@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class Peliculas
     {
-        private int idPelicula;
+        private string idPelicula;
         private string tituloPelicula;
         private string descripcionPelicula;
         private string duracionPelicula;
@@ -20,7 +20,7 @@ namespace Entidades
 
         public Peliculas() { }
 
-        public int ID_Pelicula { get => idPelicula; set => idPelicula = value; }
+        public string ID_Pelicula { get => idPelicula; set => idPelicula = value; }
         public string Titulo { get => tituloPelicula; set => tituloPelicula = value; }
         public string Descripcion { get => descripcionPelicula; set => descripcionPelicula = value; }
         public string Duracion { get => duracionPelicula; set => duracionPelicula = value; }

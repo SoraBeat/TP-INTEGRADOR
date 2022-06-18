@@ -21,7 +21,7 @@ namespace DAO
         public Peliculas getPeliculas(Peliculas pel)
         {
             DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT * FROM Peliculas WHERE ID_Pelicula_P =" + pel.ID_Pelicula);
-            pel.ID_Pelicula = (Convert.ToInt32( tabla.Rows[0][0].ToString()));
+            pel.ID_Pelicula = (tabla.Rows[0][0].ToString());
             pel.Titulo = (tabla.Rows[0][1].ToString());
             pel.Descripcion = (tabla.Rows[0][2].ToString());
             pel.Duracion = (tabla.Rows[0][3].ToString());
