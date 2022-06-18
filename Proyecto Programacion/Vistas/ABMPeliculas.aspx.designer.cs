@@ -42,13 +42,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.DropDownList ddlFiltro;
 
         /// <summary>
-        /// Control TextBox6.
+        /// Control tbFiltro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox tbFiltro;
 
         /// <summary>
         /// Control Button1.
@@ -105,13 +105,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control txtID.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtID;
 
         /// <summary>
         /// Control LinkButton3.
@@ -123,13 +123,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
 
         /// <summary>
-        /// Control TextBox10.
+        /// Control txtTitulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.TextBox txtTitulo;
 
         /// <summary>
         /// Control LinkButton5.
@@ -141,13 +141,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.LinkButton LinkButton5;
 
         /// <summary>
-        /// Control TextBox3.
+        /// Control txtDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
 
         /// <summary>
         /// Control LinkButton4.
@@ -159,13 +159,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.LinkButton LinkButton4;
 
         /// <summary>
-        /// Control TextBox11.
+        /// Control txtDuracion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox11;
+        protected global::System.Web.UI.WebControls.TextBox txtDuracion;
 
         /// <summary>
         /// Control LinkButton6.
@@ -177,13 +177,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.LinkButton LinkButton6;
 
         /// <summary>
-        /// Control TextBox12.
+        /// Control txtClasificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox12;
+        protected global::System.Web.UI.WebControls.TextBox txtClasificacion;
 
         /// <summary>
         /// Control LinkButton7.
@@ -195,13 +195,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.LinkButton LinkButton7;
 
         /// <summary>
-        /// Control TextBox13.
+        /// Control txtGenero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox13;
+        protected global::System.Web.UI.WebControls.TextBox txtGenero;
 
         /// <summary>
         /// Control LinkButton8.
@@ -213,13 +213,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.LinkButton LinkButton8;
 
         /// <summary>
-        /// Control TextBox14.
+        /// Control txtFormato.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox14;
+        protected global::System.Web.UI.WebControls.TextBox txtFormato;
 
         /// <summary>
         /// Control LinkButton9.
@@ -231,13 +231,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.LinkButton LinkButton9;
 
         /// <summary>
-        /// Control TextBox15.
+        /// Control txtPortada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox15;
+        protected global::System.Web.UI.WebControls.TextBox txtPortada;
 
         /// <summary>
         /// Control LinkButton10.
@@ -247,5 +247,23 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton10;
+
+        /// <summary>
+        /// Control btnEnviar_Click.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEnviar_Click;
+
+        /// <summary>
+        /// Control lblResultadoGuardar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResultadoGuardar;
     }
 }

@@ -13,6 +13,7 @@ namespace DAO
     public class DAOPeliculas
     {
         AccesoDatos ds = new AccesoDatos();
+
         public Boolean ExistePelicula(Peliculas pel)
         {
             string consulta = "SELECT * FROM Peliculas WHERE ID_Pelicula_P = '" + pel.ID_Pelicula + "'";
@@ -34,9 +35,72 @@ namespace DAO
         }
         public DataTable getTablaPeliculas()
         {
-            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero],Formato_P [Formato],Portada_P [Portada],Estado_P [Estado] FROM Peliculas");
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero],Formato_P [Formato],Portada_P [Portada], Estado_P [Estado] FROM Peliculas");
             return tabla;
         }
+
+        public DataTable getTablaPeliculaPorID(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Formato_P AS [Formato], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas WHERE ID_Pelicula_P LIKE '%" + campo + "%' ORDER BY ABS(ID_Pelicula_P)");
+            return tabla;
+        }
+
+        public DataTable getTablaPeliculaPorTitulo(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Formato_P AS [Formato], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas WHERE Titulo_P LIKE '%" + campo + "%' ORDER BY ABS(ID_Pelicula_P)");
+            return tabla;
+        }
+
+        public DataTable getTablaPeliculaPorDescripcion(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Formato_P AS [Formato], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas WHERE Descripcion_P LIKE '%" + campo + "%' ORDER BY ABS(ID_Pelicula_P)");
+            return tabla;
+        }
+
+        public DataTable getTablaPeliculaPorDuracion(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Formato_P AS [Formato], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas WHERE Duracion_P LIKE '%" + campo + "%' ORDER BY ABS(ID_Pelicula_P)");
+            return tabla;
+        }
+
+        public DataTable getTablaPeliculaPorClasificacion(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Formato_P AS [Formato], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas WHERE Clasificacion_P LIKE '%" + campo + "%' ORDER BY ABS(ID_Pelicula_P)");
+            return tabla;
+        }
+
+        public DataTable getTablaPeliculaPorGenero(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Formato_P AS [Formato], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas WHERE Genero_P LIKE '%" + campo + "%' ORDER BY ABS(ID_Pelicula_P)");
+            return tabla;
+        }
+
+        public DataTable getTablaPeliculaPorFormato(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Formato_P AS [Formato], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas WHERE Formato_P LIKE '%" + campo + "%' ORDER BY ABS(ID_Pelicula_P)");
+            return tabla;
+        }
+
+        public DataTable getTablaPeliculaPorPortada(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Formato_P AS [Formato], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas WHERE Portada_P LIKE '%" + campo + "%' ORDER BY ABS(ID_Pelicula_P)");
+            return tabla;
+        }
+
+        public DataTable getTablaPeliculaPorEstado(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Formato_P AS [Formato], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas WHERE Estado_P LIKE '%" + campo + "%' ORDER BY ABS(ID_Pelicula_P)");
+            return tabla;
+        }
+
+
+        public int ModificarPeliculas(Peliculas com)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosPeliculasAgregar(ref comando, com);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_ModificarPelicula");
+        }
+
         public int EliminarPeliculas(Peliculas pel)
         {
             SqlCommand comando = new SqlCommand();

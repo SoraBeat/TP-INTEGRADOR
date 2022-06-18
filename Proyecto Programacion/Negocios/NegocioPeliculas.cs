@@ -18,6 +18,62 @@ namespace Negocios
             return dao.getTablaPeliculas();
         }
 
+        public DataTable getListaPeliculasPorID(string campo)
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculaPorID(campo);
+        }
+
+        public DataTable getListaPeliculasPorTitulo(string campo)
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculaPorTitulo(campo);
+        }
+
+        public DataTable getListaPeliculasPorDescripcion(string campo)
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculaPorDescripcion(campo);
+        }
+
+        public DataTable getListaPeliculasPorDuracion(string campo)
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculaPorDuracion(campo);
+        }
+
+        public DataTable getListaPeliculasPorClasificacion(string campo)
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculaPorClasificacion(campo);
+        }
+
+        public DataTable getListaPeliculasPorGenero(string campo)
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculaPorGenero(campo);
+        }
+
+        public DataTable getListaPeliculasPorFormato(string campo)
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculaPorFormato(campo);
+        }
+
+        public DataTable getListaPeliculasPorPortada(string campo)
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculaPorPortada(campo);
+        }
+
+        public DataTable getListaPeliculasPorEstado(string campo)
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculaPorEstado(campo);
+        }
+
+
+
 
 
         public DataTable CrearTablaSession()
@@ -48,23 +104,31 @@ namespace Negocios
                 return false;
             }
         }
-        public bool AgregarPelicula(string ID_Pelicula, string Titulo, string Descripcion, string Duracion, string Clasificacion, string Genero, string Formato, int Estado)
+
+        public bool AgregarPelicula(Peliculas Pel)
         {
             int cantFilas = 0;
-            DAOPeliculas daopel = new DAOPeliculas();
-            Peliculas pel = new Peliculas();
-            pel.ID_Pelicula = ID_Pelicula;
-            pel.Titulo = Titulo;
-            pel.Descripcion = Descripcion;
-            pel.Duracion = Duracion;
-            pel.Clasificacion = Clasificacion;
-            pel.Genero = Genero;
-            pel.Formato = Formato;
-            pel.Estado = Estado;
-            if (daopel.ExistePelicula(pel) == false)
+            DAOPeliculas daoPel = new DAOPeliculas();
+
+            cantFilas = daoPel.AgregarPeliculas(Pel);
+
+            if (cantFilas == 1)
             {
-                cantFilas = daopel.AgregarPeliculas(pel);
+                return true;
             }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ModificarPelicula(Peliculas com)
+        {
+            int cantFilas = 0;
+            DAOPeliculas daoCom = new DAOPeliculas();
+
+            cantFilas = daoCom.ModificarPeliculas(com);
+
             if (cantFilas == 1)
             {
                 return true;
