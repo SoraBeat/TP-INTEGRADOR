@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Peliculas
+    public class Peliculas
     {
-        private int idPelicula;
-        private string tituloPelicula;
-        private string descripcionPelicula;
-        private string duracionPelicula;
-        private string clasificacionPelicula;
-        private string generoPelicula;
-        private string formatoPelicula;
-        private string portadaPelicula;
-        private int estadoPelicula;
+        private int ID_Pelicula;
+        private string Titulo;
+        private string Descripcion;
+        private string Duracion;
+        private string Clasificacion;
+        private string Genero;
+        private string Formato;
+        private string Portada;
+        private int Estado;
 
         public Peliculas() { }
 
-        public int IDPelicula { get => idPelicula; set => idPelicula = value; }
-        public string TituloPelicula { get => tituloPelicula; set => tituloPelicula = value; }
-        public string DescripcionPelicula { get => descripcionPelicula; set => descripcionPelicula = value; }
-        public string DuracionPelicula { get => duracionPelicula; set => duracionPelicula = value; }
-        public string ClasificacionPelicula { get => clasificacionPelicula; set => clasificacionPelicula = value; }
-        public string GeneroPelicula { get => generoPelicula; set => generoPelicula = value; }
-        public string FormatoPelicula { get => formatoPelicula; set => formatoPelicula = value; }
-        public string PortadaPelicula { get => portadaPelicula; set => portadaPelicula = value; }
-        public int EstadoPelicula { get => estadoPelicula; set => estadoPelicula = value; }
+        public int IDPelicula { get => ID_Pelicula; set => ID_Pelicula = value; }
+        public string TituloPelicula { get => Titulo; set => Titulo = value; }
+        public string DescripcionPelicula { get => Descripcion; set => Descripcion = value; }
+        public string DuracionPelicula { get => Duracion; set => Duracion = value; }
+        public string ClasificacionPelicula { get => Clasificacion; set => Clasificacion = value; }
+        public string GeneroPelicula { get => Genero; set => Genero = value; }
+        public string FormatoPelicula { get => Formato; set => Formato = value; }
+        public string PortadaPelicula { get => Portada; set => Portada = value; }
+        public int EstadoPelicula { get => Estado; set => Estado = value; }
     }
 }
