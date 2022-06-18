@@ -68,8 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ABMAsientosComprados.aspx" />
-    <Content Include="ABMComplejo.aspx" />
     <Content Include="ABMAsientos.aspx" />
+    <Content Include="ABMComplejo.aspx" />
     <Content Include="ABMDetalleVentas.aspx" />
     <Content Include="ABMFunciones.aspx" />
     <Content Include="ABMPeliculas.aspx" />
@@ -92,19 +92,19 @@
     <Compile Include="ABMAsientosComprados.aspx.designer.cs">
       <DependentUpon>ABMAsientosComprados.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ABMComplejo.aspx.cs">
-      <DependentUpon>ABMComplejo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ABMComplejo.aspx.designer.cs">
-      <DependentUpon>ABMComplejo.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ABMAsientos.aspx.cs">
       <DependentUpon>ABMAsientos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ABMAsientos.aspx.designer.cs">
       <DependentUpon>ABMAsientos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ABMComplejo.aspx.cs">
+      <DependentUpon>ABMComplejo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABMComplejo.aspx.designer.cs">
+      <DependentUpon>ABMComplejo.aspx</DependentUpon>
     </Compile>
     <Compile Include="ABMDetalleVentas.aspx.cs">
       <DependentUpon>ABMDetalleVentas.aspx</DependentUpon>
