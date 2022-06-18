@@ -63,9 +63,9 @@ namespace DAO
             SqlParametros = comando.Parameters.Add("@IDASIENTO", SqlDbType.Char);
             SqlParametros.Value = asi.IDAsiento;
             SqlParametros = comando.Parameters.Add("@IDSALA", SqlDbType.Char);
-            SqlParametros.Value = asi.IDAsiento;
+            SqlParametros.Value = asi.IDSala;
             SqlParametros = comando.Parameters.Add("@IDCOMPLEJO", SqlDbType.Char);
-            SqlParametros.Value = asi.IDAsiento;
+            SqlParametros.Value = asi.IDComplejo;
         }
         private void ArmarParametrosAsientoAgregar(ref SqlCommand comando, Asientos asi)
         {

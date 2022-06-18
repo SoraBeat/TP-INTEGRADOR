@@ -52,11 +52,11 @@ namespace Vistas
         private void CargarGrid()
         {
             ListItem item;
-            item = new ListItem("IDASIENTO");
+            item = new ListItem("ID ASIENTO");
             ddlFiltro.Items.Add(item);
-            item = new ListItem("IDSALA");
+            item = new ListItem("ID SALA");
             ddlFiltro.Items.Add(item);
-            item = new ListItem("IDCOMPLEJO");
+            item = new ListItem("ID COMPLEJO");
             ddlFiltro.Items.Add(item);
             ddlFiltro.DataBind();
         }
@@ -78,7 +78,7 @@ namespace Vistas
                 lblResultado.ForeColor = System.Drawing.Color.Red;
                 lblResultado.Text = "ERROR al borrar";
             }
-            CargarTablaConFiltro();
+            CargarTablaSinFiltro();
         }
 
         protected void btnEnviar_Click(object sender, EventArgs e)

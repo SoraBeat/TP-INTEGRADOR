@@ -50,10 +50,15 @@ namespace DAO
         }
         public int AgregarUsuario(Usuarios usu)
         {
-            usu.IDUsuario = ds.ObtenerMaximo("SELECT MAX(ID_Usuario_U) FROM Usuarios") + 1;
             SqlCommand comando = new SqlCommand();
             ArmarParametrosUsuarioAgregar(ref comando, usu);
             return ds.EjecutarProcedimientoAlmacenado(comando, "sp_AgregarUsuario");
+        }
+        public int ModificarComplejo(Usuarios usu)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosUsuarioAgregar(ref comando, usu);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_ModificarUsuario");
         }
         private void ArmarParametrosUsuarioEliminar(ref SqlCommand comando, Usuarios usu)
         {
@@ -64,8 +69,6 @@ namespace DAO
         private void ArmarParametrosUsuarioAgregar(ref SqlCommand comando, Usuarios usu)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = comando.Parameters.Add("@IDUSUARIO", SqlDbType.Int);
-            SqlParametros.Value = usu.IDUsuario;
             SqlParametros = comando.Parameters.Add("@NOMBREUSUARIO", SqlDbType.VarChar);
             SqlParametros.Value = usu.NombreUsuario;
             SqlParametros = comando.Parameters.Add("@APELLIDOUSUARIO", SqlDbType.VarChar);
