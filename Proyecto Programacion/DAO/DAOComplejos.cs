@@ -14,7 +14,7 @@ namespace DAO
         AccesoDatos ds = new AccesoDatos();
         public Boolean ExisteComplejo(Complejos com)
         {
-            string consulta = "SELECT * FROM Complejos WHERE Nombre_Co = '" + com.Nombre + "'";
+            string consulta = "SELECT * FROM Complejos WHERE ID_Complejo_Co = '" + com.ID_Complejo + "'";
             return ds.Existe(consulta);
         }
         public Complejos getComplejo(Complejos com)
@@ -29,32 +29,31 @@ namespace DAO
         }
         public DataTable getTablaComplejo()
         {
-            DataTable tabla = ds.ObtenerTabla("Complejos", "SELECT * FROM Complejos");
+            DataTable tabla = ds.ObtenerTabla("Complejos", "SELECT ID_Complejo_Co AS [ID], Nombre_Co AS [NOMBRE], Direccion_Co AS [DIRECCION], Telefono_Co AS [TELEFONO], Email_Co AS [EMAIL] FROM Complejos");
             return tabla;
         }
         public int EliminarComplejo(Complejos com)
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosComplejoEliminar(ref comando, com);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarComplejo");
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_EliminarComplejo");
         }
-        //public int AgregarComplejo(Complejos com)
-        //{
-        //    com.ID_Complejo = ds.ObtenerMaximo("SELECT MAX(ID_Complejo) FROM Complejos") + 1;
-        //    SqlCommand comando = new SqlCommand();
-        //    ArmarParametrosComplejoAgregar(ref comando, com);
-        //    return ds.EjecutarProcedimientoAlmacenado(comando, "spAgregarComplejo");
-        //}
+        public int AgregarComplejo(Complejos com)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosComplejoAgregar(ref comando, com);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spAgregarComplejo");
+        }
         private void ArmarParametrosComplejoEliminar(ref SqlCommand comando, Complejos com)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = comando.Parameters.Add("@IDCOMPLEJO", SqlDbType.Int);
+            SqlParametros = comando.Parameters.Add("@IDCOMPLEJO", SqlDbType.Char);
             SqlParametros.Value = com.ID_Complejo;
         }
         private void ArmarParametrosComplejoAgregar(ref SqlCommand comando, Complejos com)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = comando.Parameters.Add("@IDCOMPLEJO", SqlDbType.Int);
+            SqlParametros = comando.Parameters.Add("@IDCOMPLEJO", SqlDbType.VarChar);
             SqlParametros.Value = com.ID_Complejo;
             SqlParametros = comando.Parameters.Add("@NOMBRECOMPLEJO", SqlDbType.VarChar);
             SqlParametros.Value = com.Nombre;
