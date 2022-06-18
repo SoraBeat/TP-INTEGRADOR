@@ -44,6 +44,8 @@ namespace Vistas
 					break;
 				case "EMAIL":tablaComplejo = negcom.getListaComplejosPorEmail(tbFiltro.Text);
 					break;
+				case "ESTADO":tablaComplejo = negcom.getListaComplejosPorEstado(tbFiltro.Text);
+					break;
 			}
 			gvComplejos.DataSource = tablaComplejo;
 			gvComplejos.DataBind();
@@ -62,6 +64,8 @@ namespace Vistas
 			item = new ListItem("TELEFONO");
 			ddlFiltro.Items.Add(item);
 			item = new ListItem("EMAIL");
+			ddlFiltro.Items.Add(item);
+			item = new ListItem("ESTADO");
 			ddlFiltro.Items.Add(item);
 			ddlFiltro.DataBind();
 		}
@@ -98,12 +102,12 @@ namespace Vistas
 
         protected void gvComplejos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-			String ID = ((TextBox)gvComplejos.Rows[e.RowIndex].FindControl("TXT_EDT_ID")).Text;
+			String ID = ((Label)gvComplejos.Rows[e.RowIndex].FindControl("LBL_EDT_ID")).Text;
 			String Nombre = ((TextBox)gvComplejos.Rows[e.RowIndex].FindControl("TXT_EDT_NOMBRE")).Text;
 			String Direccion = ((TextBox)gvComplejos.Rows[e.RowIndex].FindControl("TXT_EDT_DIRECCION")).Text;
 			String Telefono = ((TextBox)gvComplejos.Rows[e.RowIndex].FindControl("TXT_EDT_TELEFONO")).Text;
 			String Email = ((TextBox)gvComplejos.Rows[e.RowIndex].FindControl("TXT_EDT_EMAIL")).Text;
-
+			bool Estado = ((CheckBox)gvComplejos.Rows[e.RowIndex].FindControl("TXT_EDT_ESTADO")).Checked;
 
 			Complejos com = new Complejos();
 			com.ID_Complejo = ID;
@@ -111,6 +115,7 @@ namespace Vistas
 			com.Direccion = Direccion;
 			com.Telefono = Telefono;
 			com.Email = Email;
+			com.Estado_Co1 = Estado;
 
 			negcom.ModificarComplejo(com);
 			gvComplejos.EditIndex = -1;

@@ -141,6 +141,14 @@
                                         <asp:Label ID="LBL_IT_EMAIL" runat="server" Text='<%# Bind("Email") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:TemplateField HeaderText="ESTADO">
+                                    <EditItemTemplate>
+                                        <asp:CheckBox ID="TXT_EDT_ESTADO" runat="server" Checked="True" />
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:Label ID="LBL_IT_ESTADO" runat="server" Text='<%# Bind("Estado") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                             </Columns>
 
                         </asp:GridView>

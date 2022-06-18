@@ -79,9 +79,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="tbFiltro" runat="server"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button1" runat="server" Text="Filtrar" />
+                        <asp:Button ID="Button1" runat="server" Text="Filtrar" OnClick="Button1_Click" />
 &nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button2" runat="server" Text="Quitar filtro" />
+                        <asp:Button ID="Button2" runat="server" Text="Quitar filtro" OnClick="Button2_Click" />
                     </td>
                 </tr>
             </table>
@@ -102,7 +102,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="ID COMPLEJO">
                                     <EditItemTemplate>
-                                        <asp:Label ID="LBL_EDT_COMPLEJO" runat="server" Text='<%# Bind("Asientos") %>'></asp:Label>
+                                        <asp:Label ID="LBL_EDT_COMPLEJO" runat="server" Text='<%# Bind("Complejo") %>'></asp:Label>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_COMPLEJO" runat="server" Text='<%# Bind("Complejo") %>'></asp:Label>
@@ -119,8 +119,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="ESTADO">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="TXT_EDT_ESTADO" runat="server" Text='<%# Bind("Estado") %>'></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RFV_TELEFONO" runat="server" ControlToValidate="TXT_EDT_ESTADO" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
+                                        <asp:CheckBox ID="TXT_EDT_ESTADO" runat="server" Checked="True" />
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_ESTADO" runat="server" Text='<%# Bind("Estado") %>'></asp:Label>

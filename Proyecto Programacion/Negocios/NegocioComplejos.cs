@@ -41,6 +41,11 @@ namespace Negocios
             DAOComplejos dao = new DAOComplejos();
             return dao.getTablaComplejoPorEmail(campo);
         }
+        public DataTable getListaComplejosPorEstado(string campo)
+        {
+            DAOComplejos dao = new DAOComplejos();
+            return dao.getTablaComplejoPorEstado(campo);
+        }
         public bool EliminarComplejo(string id)
         {
             DAOComplejos dao = new DAOComplejos();

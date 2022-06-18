@@ -28,7 +28,7 @@ namespace DAO
         }
         public DataTable getTablaSala()
         {
-            DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas ORDER BY ABS(ID_Complejo_S)");
+            DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas ORDER BY ABS(ID_Sala_S)");
             return tabla;
         }
         public DataTable getTablaSalaPorID(string campo)

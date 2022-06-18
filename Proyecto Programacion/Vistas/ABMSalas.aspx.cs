@@ -39,7 +39,7 @@ namespace Vistas
 					tablaSala = negsa.getTablaPorID(tbFiltro.Text);
 					break;
 				case "ID Complejo":
-					tablaSala = negsa.getTablaPorID(tbFiltro.Text);
+					tablaSala = negsa.getTablaPorComplejo(tbFiltro.Text);
 					break;
 				case "Cantidad Asientos":
 					tablaSala = negsa.getTablaPorAsientos(tbFiltro.Text);
@@ -103,7 +103,7 @@ namespace Vistas
 			string ID = ((Label)gvSalas.Rows[e.RowIndex].FindControl("LBL_EDT_ID")).Text;
 			string ID_Complejo = ((Label)gvSalas.Rows[e.RowIndex].FindControl("LBL_EDT_COMPLEJO")).Text;
 			int Asientos = Convert.ToInt32(((TextBox)gvSalas.Rows[e.RowIndex].FindControl("TXT_EDT_ASIENTOS")).Text);
-			bool Estados = Convert.ToBoolean(((TextBox)gvSalas.Rows[e.RowIndex].FindControl("TXT_EDT_ESTADO")).Text);
+			bool Estados = Convert.ToBoolean(((CheckBox)gvSalas.Rows[e.RowIndex].FindControl("TXT_EDT_ESTADO")).Checked);
 
 
 			Salas sala = new Salas();
@@ -122,7 +122,7 @@ namespace Vistas
 		{
 			if (IsValid)
 			{
-				string ID = txtCantidadAsientos.Text;
+				string ID = txtID.Text;
 				string ID_Complejo = txtIDComplejo.Text;
 				string Asientos = txtCantidadAsientos.Text;
 
@@ -156,19 +156,18 @@ namespace Vistas
 			CargarTablaConFiltro();
 		}
 
-		protected void btnFiltrar_Click(object sender, EventArgs e)
-		{
+        protected void Button1_Click(object sender, EventArgs e)
+        {
 			if (tbFiltro.Text != "".Trim())
 			{
 				CargarTablaConFiltro();
 			}
 		}
 
-		protected void btnFiltrarTodo_Click(object sender, EventArgs e)
-		{
+        protected void Button2_Click(object sender, EventArgs e)
+        {
 			CargarTablaSinFiltro();
 			tbFiltro.Text = "";
 		}
-
     }
 }
