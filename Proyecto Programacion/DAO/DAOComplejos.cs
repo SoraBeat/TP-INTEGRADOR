@@ -29,7 +29,32 @@ namespace DAO
         }
         public DataTable getTablaComplejo()
         {
-            DataTable tabla = ds.ObtenerTabla("Complejos", "SELECT ID_Complejo_Co AS [ID], Nombre_Co AS [NOMBRE], Direccion_Co AS [DIRECCION], Telefono_Co AS [TELEFONO], Email_Co AS [EMAIL] FROM Complejos");
+            DataTable tabla = ds.ObtenerTabla("Complejos", "SELECT ID_Complejo_Co AS [ID], Nombre_Co AS [NOMBRE], Direccion_Co AS [DIRECCION], Telefono_Co AS [TELEFONO], Email_Co AS [EMAIL] FROM Complejos ORDER BY ABS(ID_Complejo_Co)");
+            return tabla;
+        }
+        public DataTable getTablaComplejoPorID(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Complejos", "SELECT ID_Complejo_Co AS [ID], Nombre_Co AS [NOMBRE], Direccion_Co AS [DIRECCION], Telefono_Co AS [TELEFONO], Email_Co AS [EMAIL] FROM Complejos WHERE ID_Complejo_Co LIKE '%" + campo+ "%' ORDER BY ABS(ID_Complejo_Co)");
+            return tabla;
+        }
+        public DataTable getTablaComplejoPorNombre(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Complejos", "SELECT ID_Complejo_Co AS [ID], Nombre_Co AS [NOMBRE], Direccion_Co AS [DIRECCION], Telefono_Co AS [TELEFONO], Email_Co AS [EMAIL] FROM Complejos WHERE Nombre_Co LIKE '%" + campo+ "%' ORDER BY ABS(ID_Complejo_Co)");
+            return tabla;
+        }
+        public DataTable getTablaComplejoPorDireccion(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Complejos", "SELECT ID_Complejo_Co AS [ID], Nombre_Co AS [NOMBRE], Direccion_Co AS [DIRECCION], Telefono_Co AS [TELEFONO], Email_Co AS [EMAIL] FROM Complejos WHERE Direccion_Co LIKE '%" + campo+ "%' ORDER BY ABS(ID_Complejo_Co)");
+            return tabla;
+        }
+        public DataTable getTablaComplejoPorTelefono(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Complejos", "SELECT ID_Complejo_Co AS [ID], Nombre_Co AS [NOMBRE], Direccion_Co AS [DIRECCION], Telefono_Co AS [TELEFONO], Email_Co AS [EMAIL] FROM Complejos WHERE Telefono_Co LIKE '%" + campo + "%' ORDER BY ABS(ID_Complejo_Co)");
+            return tabla;
+        }
+        public DataTable getTablaComplejoPorEmail(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Complejos", "SELECT ID_Complejo_Co AS [ID], Nombre_Co AS [NOMBRE], Direccion_Co AS [DIRECCION], Telefono_Co AS [TELEFONO], Email_Co AS [EMAIL] FROM Complejos WHERE Email_Co LIKE '%" + campo + "%' ORDER BY ABS(ID_Complejo_Co)");
             return tabla;
         }
         public int EliminarComplejo(Complejos com)
@@ -43,6 +68,12 @@ namespace DAO
             SqlCommand comando = new SqlCommand();
             ArmarParametrosComplejoAgregar(ref comando, com);
             return ds.EjecutarProcedimientoAlmacenado(comando, "sp_AgregarComplejo");
+        }
+        public int ModificarComplejo(Complejos com)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosComplejoAgregar(ref comando, com);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_ModificarComplejo");
         }
         private void ArmarParametrosComplejoEliminar(ref SqlCommand comando, Complejos com)
         {

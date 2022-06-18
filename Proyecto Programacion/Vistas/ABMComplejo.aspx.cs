@@ -15,9 +15,10 @@ namespace Vistas
 		NegocioComplejos negcom = new NegocioComplejos();
 		protected void Page_Load(object sender, EventArgs e)
 		{
-            if (!IsPostBack)
-            {
+			if (!IsPostBack)
+			{
 				CargarTablaSinFiltro();
+				CargarGrid();
 			}
 		}
 		private void CargarTablaSinFiltro()
@@ -25,9 +26,47 @@ namespace Vistas
 			DataTable tablaComplejo = negcom.getListaComplejos();
 			gvComplejos.DataSource = tablaComplejo;
 			gvComplejos.DataBind();
+			lblResultado.Text = "";
+			lblResultadoGuardar.Text = "";
+		}
+		private void CargarTablaConFiltro()
+		{
+			DataTable tablaComplejo=new DataTable();
+            switch (ddlFiltro.Text)
+            {
+				case "ID":tablaComplejo = negcom.getListaComplejosPorID(tbFiltro.Text);
+					break;
+				case "NOMBRE":tablaComplejo = negcom.getListaComplejosPorNombre(tbFiltro.Text);
+					break;
+				case "DIRECCION":tablaComplejo = negcom.getListaComplejosPorDireccion(tbFiltro.Text);
+					break;
+				case "TELEFONO":tablaComplejo = negcom.getListaComplejosPorTelefono(tbFiltro.Text);
+					break;
+				case "EMAIL":tablaComplejo = negcom.getListaComplejosPorEmail(tbFiltro.Text);
+					break;
+			}
+			gvComplejos.DataSource = tablaComplejo;
+			gvComplejos.DataBind();
+			lblResultado.Text = "";
+			lblResultadoGuardar.Text = "";
+		}
+		private void CargarGrid()
+        {
+			ListItem item;
+			item = new ListItem("ID");
+			ddlFiltro.Items.Add(item);
+			item = new ListItem("NOMBRE");
+			ddlFiltro.Items.Add(item);
+			item = new ListItem("DIRECCION");
+			ddlFiltro.Items.Add(item);
+			item = new ListItem("TELEFONO");
+			ddlFiltro.Items.Add(item);
+			item = new ListItem("EMAIL");
+			ddlFiltro.Items.Add(item);
+			ddlFiltro.DataBind();
 		}
 
-        protected void gvComplejos_RowDeleting(object sender, GridViewDeleteEventArgs e)
+		protected void gvComplejos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
 			//Busco ID del Complejo
 			String ID_Complejo = ((Label)gvComplejos.Rows[e.RowIndex].FindControl("LBL_IT_ID")).Text;
@@ -42,13 +81,13 @@ namespace Vistas
 				lblResultado.ForeColor = System.Drawing.Color.Red;
 				lblResultado.Text = "ERROR al borrar";
 			}
-			CargarTablaSinFiltro();
+			CargarTablaConFiltro();
         }
 
         protected void gvComplejos_RowEditing(object sender, GridViewEditEventArgs e)
         {
 			gvComplejos.EditIndex = e.NewEditIndex;
-			CargarTablaSinFiltro();
+			CargarTablaConFiltro();
         }
 
         protected void gvComplejos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
@@ -73,9 +112,9 @@ namespace Vistas
 			com.Telefono = Telefono;
 			com.Email = Email;
 
-			negcom.AgregarComplejo(com);
+			negcom.ModificarComplejo(com);
 			gvComplejos.EditIndex = -1;
-			CargarTablaSinFiltro();
+			CargarTablaConFiltro();
 		}
 
         protected void btnEnviar_Click(object sender, EventArgs e)
@@ -108,8 +147,33 @@ namespace Vistas
 					lblResultadoGuardar.Text = "ERROR al guardar";
 				}
 				gvComplejos.EditIndex = -1;
+				txtID.Text = "";
+				txtNombre.Text = "";
+				txtDireccion.Text = "";
+				txtTelefono.Text = "";
+				txtEmail.Text = "";
 				CargarTablaSinFiltro();
 			}
 		}
+
+        protected void gvComplejos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+			gvComplejos.PageIndex = e.NewPageIndex;
+			CargarTablaConFiltro();
+		}
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+			if(tbFiltro.Text!="".Trim())
+            {
+				CargarTablaConFiltro();
+			}
+        }
+
+        protected void btnFiltrarTodo_Click(object sender, EventArgs e)
+        {
+			CargarTablaSinFiltro();
+			tbFiltro.Text = "";
+        }
     }
 }
