@@ -62,7 +62,7 @@ namespace DAO
             SqlParametros.Value = pel.ID_Pelicula;
             SqlParametros = comando.Parameters.Add("@Titulo", SqlDbType.VarChar);
             SqlParametros.Value = pel.Titulo;
-            SqlParametros = comando.Parameters.Add("@Descripcion", SqlDbType.text);
+            SqlParametros = comando.Parameters.Add("@Descripcion", SqlDbType.Text);
             SqlParametros.Value = pel.Descripcion;
             SqlParametros = comando.Parameters.Add("@Duracion", SqlDbType.Char);
             SqlParametros.Value = pel.Duracion;
@@ -74,7 +74,7 @@ namespace DAO
             SqlParametros.Value = pel.Formato;
             SqlParametros = comando.Parameters.Add("@Portada", SqlDbType.VarChar);
             SqlParametros.Value = pel.Portada;
-            SqlParametros = comando.Parameters.Add("@Estado", SqlDbType.bit);
+            SqlParametros = comando.Parameters.Add("@Estado", SqlDbType.Bit);
             SqlParametros.Value = pel.Estado;
         }
 

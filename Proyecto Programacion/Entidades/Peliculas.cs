@@ -8,26 +8,26 @@ namespace Entidades
 {
     public class Peliculas
     {
-        private int ID_Pelicula;
-        private string Titulo;
-        private string Descripcion;
-        private string Duracion;
-        private string Clasificacion;
-        private string Genero;
-        private string Formato;
-        private string Portada;
-        private int Estado;
+        private int idPelicula;
+        private string tituloPelicula;
+        private string descripcionPelicula;
+        private string duracionPelicula;
+        private string clasificacionPelicula;
+        private string generoPelicula;
+        private string formatoPelicula;
+        private string portadaPelicula;
+        private int estadoPelicula;
 
         public Peliculas() { }
 
-        public int IDPelicula { get => ID_Pelicula; set => ID_Pelicula = value; }
-        public string TituloPelicula { get => Titulo; set => Titulo = value; }
-        public string DescripcionPelicula { get => Descripcion; set => Descripcion = value; }
-        public string DuracionPelicula { get => Duracion; set => Duracion = value; }
-        public string ClasificacionPelicula { get => Clasificacion; set => Clasificacion = value; }
-        public string GeneroPelicula { get => Genero; set => Genero = value; }
-        public string FormatoPelicula { get => Formato; set => Formato = value; }
-        public string PortadaPelicula { get => Portada; set => Portada = value; }
-        public int EstadoPelicula { get => Estado; set => Estado = value; }
+        public int ID_Pelicula { get => idPelicula; set => idPelicula = value; }
+        public string Titulo { get => tituloPelicula; set => tituloPelicula = value; }
+        public string Descripcion { get => descripcionPelicula; set => descripcionPelicula = value; }
+        public string Duracion { get => duracionPelicula; set => duracionPelicula = value; }
+        public string Clasificacion { get => clasificacionPelicula; set => clasificacionPelicula = value; }
+        public string Genero { get => generoPelicula; set => generoPelicula = value; }
+        public string Formato { get => formatoPelicula; set => formatoPelicula = value; }
+        public string Portada { get => portadaPelicula; set => portadaPelicula = value; }
+        public int Estado { get => estadoPelicula; set => estadoPelicula = value; }
     }
 }
