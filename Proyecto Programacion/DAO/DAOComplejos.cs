@@ -42,7 +42,7 @@ namespace DAO
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosComplejoAgregar(ref comando, com);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spAgregarComplejo");
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_AgregarComplejo");
         }
         private void ArmarParametrosComplejoEliminar(ref SqlCommand comando, Complejos com)
         {
