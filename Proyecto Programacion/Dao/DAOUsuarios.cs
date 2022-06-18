@@ -30,11 +30,11 @@ namespace DAO
             usu.IDUsuario = (Convert.ToInt32(tabla.Rows[0][0].ToString()));
             usu.NombreUsuario = (tabla.Rows[0][1].ToString());
             usu.ApellidoUsuario = (tabla.Rows[0][2].ToString());
-            usu.DNIUsuario = (Convert.ToInt32(tabla.Rows[0][3].ToString()));
-            usu.TelefonoUsuario = (Convert.ToInt32(tabla.Rows[0][4].ToString()));
+            usu.DNIUsuario = (tabla.Rows[0][3].ToString());
+            usu.TelefonoUsuario = (tabla.Rows[0][4].ToString());
             usu.EmailUsuario = (tabla.Rows[0][5].ToString());
             usu.ContraseñaUsuario = (tabla.Rows[0][6].ToString());
-            usu.TipoUsuario = (Convert.ToInt32(tabla.Rows[0][5].ToString()));
+            usu.TipoUsuario = (Convert.ToBoolean(tabla.Rows[0][5].ToString()));
             return usu;
         }
         public DataTable getTablaUsuarios()
@@ -42,19 +42,19 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT * FROM Usuarios");
             return tabla;
         }
-        //public int EliminarUsuario(Usuarios usu)
-        //{
-        //    SqlCommand comando = new SqlCommand();
-        //    ArmarParametrosUsuarioEliminar(ref comando, usu);
-        //    return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarUsuario");
-        //}
-        //public int AgregarUsuario(Usuarios usu)
-        //{
-        //    usu.IDUsuario = ds.ObtenerMaximo("SELECT MAX(ID_Usuario_U) FROM Usuarios") + 1;
-        //    SqlCommand comando = new SqlCommand();
-        //    ArmarParametrosUsuarioAgregar(ref comando, usu);
-        //    return ds.EjecutarProcedimientoAlmacenado(comando, "spAgregarUsuario");
-        //}
+        public int EliminarUsuario(Usuarios usu)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosUsuarioEliminar(ref comando, usu);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarUsuario");
+        }
+        public int AgregarUsuario(Usuarios usu)
+        {
+            usu.IDUsuario = ds.ObtenerMaximo("SELECT MAX(ID_Usuario_U) FROM Usuarios") + 1;
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosUsuarioAgregar(ref comando, usu);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spAgregarUsuario");
+        }
         private void ArmarParametrosUsuarioEliminar(ref SqlCommand comando, Usuarios usu)
         {
             SqlParameter SqlParametros = new SqlParameter();
