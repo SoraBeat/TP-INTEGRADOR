@@ -11,76 +11,83 @@ namespace Negocios
 {
     public class NegocioSalas
     {
-        //public DataTable getTabla()
-        //{
-        //    DaoSalas dao = new DaoSalas();
-        //    return dao.getTablaSalas();
-        //}
-        //public DataTable getTablaPorID(int id)
-        //{
-        //    DaoSalas dao = new DaoSalas();
-        //    return dao.getTablaSalasPorID(id);
-        //}
-        //public DataTable getListaNegocios()
-        //{
-        //    DaoSalas dao = new DaoSalas();
-        //    return dao.getListaSalas();
-        //}
+        public DataTable getTabla()
+        {
+             DAOSalas dao= new DAOSalas();
+            return dao.getTablaSala();
+        }
+        public DataTable getTablaPorID(string id)
+        {
+            DAOSalas dao = new DAOSalas();
+            return dao.getTablaSalaPorID(id);
+        }
+        public DataTable getTablaPorAsientos(string id)
+        {
+            DAOSalas dao = new DAOSalas();
+            return dao.getTablaSalaPorAsientos(id);
+        }
+        public DataTable getTablaPorEstado(string id)
+        {
+            DAOSalas dao = new DAOSalas();
+            return dao.getTablaSalaPorEstado(id);
+        }
+        public Salas get(string id)
+        {
+            DAOSalas dao = new DAOSalas();
+            Salas Sal = new Salas();
+            Sal.IDSala = id;
+            return dao.getSala(Sal);
+        }
 
-        //public Salas get(int id)
-        //{
-        //    DaoSalas dao = new DaoSalas();
-        //    Salas Sal = new Salas();
-        //    Sal.IdSalas = id;
-        //    return dao.getSalas(Sal);
-        //}
-        //public DataTable CrearTablaSession()
-        //{
-        //    DataTable tabla = new DataTable();
-        //    tabla.Columns.Add("ID_Sala_S", typeof(string));
-        //    tabla.Columns.Add("ID_Complejo_S", typeof(string));
-        //    tabla.Columns.Add("Total_Asientos_S", typeof(int));
-        //    tabla.Columns.Add("Estado_S", typeof(bool));
+        public bool EliminarSala(string id)
+        {
+            DAOSalas dao = new DAOSalas();
+            Salas Sal = new Salas();
+            Sal.IDSala = id;
+            int op = dao.EliminarSala(Sal);
+            if (op == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool AgregarSala(Salas sala)
+        {
+            int cantFilas = 0;
+            DAOSalas daoSal = new DAOSalas();
 
-        //    return tabla;
-        //}
-        //public bool EliminarPelicula(int id)
-        //{
-        //    DaoSalas dao = new DaoSalas();
-        //    Salas Sal = new Salas();
-        //    Sal.IdSala = id;
-        //    int op = dao.EliminarSala(Sal);
-        //    if (op == 1)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
-        //public bool AgregarPelicula(string ID_Sala_S, string ID_Complejo_S, int Total_Asientos_S, bool Estado_S)
-        //{
-        //    int cantFilas = 0;
-        //    DaoSalas daoSal = new DaoSalas();
-        //    Salas Sal = new Salas();
-        //    Sal.ID_Sala = ID_Sala_S;
-        //    Sal.ID_Complejo = ID_Complejo_S;
-        //    Sal.Total_Asientos = Total_Asientos_S;
-        //    Sal.Estado = Estado_S;
 
-        //    if (daoSal.ExisteSala(Sal) == false)
-        //    {
-        //        cantFilas = daoSal.AgregarSala(Sal);
-        //    }
-        //    if (cantFilas == 1)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
+            if (daoSal.ExisteSala(sala) == false)
+            {
+                cantFilas = daoSal.AgregarSala(sala);
+            }
+            if (cantFilas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool ModificarSala(Salas sala)
+        {
+            int cantFilas = 0;
+            DAOSalas daoSal = new DAOSalas();
+
+            cantFilas = daoSal.ModificarSala(sala);
+
+            if (cantFilas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

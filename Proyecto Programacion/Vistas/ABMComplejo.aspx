@@ -256,14 +256,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style15">
+                    <td class="auto-style11"></td>
+                    <td class="auto-style14">
                         <asp:LinkButton ID="LinkButton9" runat="server">Detalle de ventas</asp:LinkButton>
                     </td>
-                    <td class="auto-style19">
-                        &nbsp;</td>
-                    <td>
-                        &nbsp;</td>
+                    <td class="auto-style18">
+                        </td>
+                    <td class="auto-style12">
+                        </td>
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>

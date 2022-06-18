@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ABMComplejo.aspx.cs" Inherits="Vistas.ABMComplejo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ABMFunciones.aspx.cs" Inherits="Vistas.ABMFunciones" %>
 
 <!DOCTYPE html>
 
