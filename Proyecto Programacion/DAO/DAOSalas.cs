@@ -75,6 +75,8 @@ namespace DAO
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = comando.Parameters.Add("@ID", SqlDbType.Char);
             SqlParametros.Value = sala.IDSala;
+            SqlParametros = comando.Parameters.Add("@IDCOMPLEJO", SqlDbType.Char);
+            SqlParametros.Value = sala.IDComplejo;
         }
         private void ArmarParametrosSalaAgregar(ref SqlCommand comando, Salas sala)
         {

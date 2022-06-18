@@ -253,7 +253,6 @@
                     </td>
                 </tr>
                 <tr>
-<<<<<<< HEAD
                     <td class="auto-style10">&nbsp;</td>
                     <td>
                         <asp:HyperLink ID="hlDV" runat="server" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>

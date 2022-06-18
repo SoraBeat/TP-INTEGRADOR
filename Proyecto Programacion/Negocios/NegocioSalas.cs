@@ -39,11 +39,12 @@ namespace Negocios
             return dao.getSala(Sal);
         }
 
-        public bool EliminarSala(string id)
+        public bool EliminarSala(string id,string complejo)
         {
             DAOSalas dao = new DAOSalas();
             Salas Sal = new Salas();
             Sal.IDSala = id;
+            Sal.IDComplejo = complejo;
             int op = dao.EliminarSala(Sal);
             if (op == 1)
             {

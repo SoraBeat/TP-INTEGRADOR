@@ -71,7 +71,8 @@ namespace Vistas
 		{
 			//Busco ID del Complejo
 			string ID_Sala = ((Label)gvSalas.Rows[e.RowIndex].FindControl("LBL_IT_ID")).Text;
-			bool res = negsa.EliminarSala(ID_Sala);
+			string ID_Complejo = ((Label)gvSalas.Rows[e.RowIndex].FindControl("LBL_IT_COMPLEJO")).Text;
+			bool res = negsa.EliminarSala(ID_Sala,ID_Complejo);
 			if (res)
 			{
 				lblResultado.ForeColor = System.Drawing.Color.Green;

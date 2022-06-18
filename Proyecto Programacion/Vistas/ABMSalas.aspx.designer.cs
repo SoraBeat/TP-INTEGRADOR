@@ -87,22 +87,22 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label lblResultado;
 
         /// <summary>
-        /// Control Label5.
+        /// Control Label6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// Control LinkButton2.
+        /// Control hlComplejos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
+        protected global::System.Web.UI.WebControls.HyperLink hlComplejos;
 
         /// <summary>
         /// Control txtID.
@@ -114,13 +114,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtID;
 
         /// <summary>
-        /// Control LinkButton3.
+        /// Control hlSalas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
+        protected global::System.Web.UI.WebControls.HyperLink hlSalas;
 
         /// <summary>
         /// Control txtIDComplejo.
@@ -132,13 +132,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtIDComplejo;
 
         /// <summary>
-        /// Control LinkButton5.
+        /// Control hlPeliculas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton5;
+        protected global::System.Web.UI.WebControls.HyperLink hlPeliculas;
 
         /// <summary>
         /// Control txtCantidadAsientos.
@@ -148,6 +148,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCantidadAsientos;
+
+        /// <summary>
+        /// Control hlFunciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlFunciones;
 
         /// <summary>
         /// Control LinkButton4.
@@ -168,13 +177,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Button btnEnviar;
 
         /// <summary>
-        /// Control LinkButton6.
+        /// Control hlAsientos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton6;
+        protected global::System.Web.UI.WebControls.HyperLink hlAsientos;
 
         /// <summary>
         /// Control lblResultadoGuardar.
@@ -186,6 +195,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label lblResultadoGuardar;
 
         /// <summary>
+        /// Control hlAsientosComprados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlAsientosComprados;
+
+        /// <summary>
         /// Control LinkButton7.
         /// </summary>
         /// <remarks>
@@ -195,30 +213,30 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.LinkButton LinkButton7;
 
         /// <summary>
-        /// Control LinkButton8.
+        /// Control hlVentas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton8;
+        protected global::System.Web.UI.WebControls.HyperLink hlVentas;
 
         /// <summary>
-        /// Control LinkButton9.
+        /// Control hlDV.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton9;
+        protected global::System.Web.UI.WebControls.HyperLink hlDV;
 
         /// <summary>
-        /// Control LinkButton10.
+        /// Control hlUsuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton10;
+        protected global::System.Web.UI.WebControls.HyperLink hlUsuarios;
     }
 }

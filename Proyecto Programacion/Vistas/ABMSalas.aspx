@@ -102,7 +102,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="ID COMPLEJO">
                                     <EditItemTemplate>
-                                        <asp:Label ID="LBL_EDT_ASIENTOS" runat="server" Text='<%# Bind("Asientos") %>'></asp:Label>
+                                        <asp:Label ID="LBL_EDT_COMPLEJO" runat="server" Text='<%# Bind("Asientos") %>'></asp:Label>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_COMPLEJO" runat="server" Text='<%# Bind("Complejo") %>'></asp:Label>
