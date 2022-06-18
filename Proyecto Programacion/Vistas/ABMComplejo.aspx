@@ -36,9 +36,6 @@
             height: 23px;
             width: 192px;
         }
-        .auto-style15 {
-            width: 192px;
-        }
         .auto-style16 {
             text-align: center;
         }
@@ -260,12 +257,9 @@
                     <td class="auto-style10">&nbsp;</td>
                     <td>
                         <asp:HyperLink ID="hlDV" runat="server" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>
-=======
                     <td class="auto-style11"></td>
                     <td class="auto-style14">
-                        <asp:LinkButton ID="LinkButton9" runat="server">Detalle de ventas</asp:LinkButton>
->>>>>>> 2093ec690a798533ed0c88a02a301b8d90b75541
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style18">
                         </td>
                     <td class="auto-style12">

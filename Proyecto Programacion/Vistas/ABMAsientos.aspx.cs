@@ -94,7 +94,7 @@ namespace Vistas
                 asi.IDSala = IDSala;
                 asi.IDComplejo = IDComplejo;
 
-                bool res = negasi.AgregarAsiento(asi);
+                bool res = negasi.AgregarAsiento(asi.IDAsiento,asi.IDSala,asi.IDComplejo);
                 if (res)
                 {
                     lblResultadoGuardar.ForeColor = System.Drawing.Color.Green;
