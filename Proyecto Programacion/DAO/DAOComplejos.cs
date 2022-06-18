@@ -24,7 +24,7 @@ namespace DAO
             com.Nombre = (tabla.Rows[0][1].ToString());
             com.Direccion = (tabla.Rows[0][2].ToString());
             com.Telefono = (tabla.Rows[0][3].ToString());
-            com.Email = (tabla.Rows[0][3].ToString());
+            com.Email = (tabla.Rows[0][4].ToString());
             return com;
         }
         public DataTable getTablaComplejo()
