@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entidades;
 using System.Data;
 using System.Data.SqlClient;
+using Entidades;
 
 
 namespace DAO
@@ -21,7 +21,7 @@ namespace DAO
         public Peliculas getPeliculas(Peliculas pel)
         {
             DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT * FROM Peliculas WHERE ID_Pelicula_P =" + pel.ID_Pelicula);
-            pel.ID_Pelicula = (tabla.Rows[0][0].ToString());
+            pel.ID_Pelicula = (Convert.ToInt32( tabla.Rows[0][0].ToString()));
             pel.Titulo = (tabla.Rows[0][1].ToString());
             pel.Descripcion = (tabla.Rows[0][2].ToString());
             pel.Duracion = (tabla.Rows[0][3].ToString());
@@ -29,7 +29,7 @@ namespace DAO
             pel.Genero = (tabla.Rows[0][5].ToString());
             pel.Formato = (tabla.Rows[0][6].ToString());
             pel.Portada = (tabla.Rows[0][7].ToString());
-            pel.Estado = (tabla.Rows[0][8].ToString());
+            pel.Estado = (Convert.ToInt32( tabla.Rows[0][8].ToString()));
             return pel;
         }
         public DataTable getTablaPeliculas()
