@@ -13,6 +13,7 @@ namespace Vistas
 {
     public partial class ABMUsuario : System.Web.UI.Page
     {
+		
 		NegocioUsuario negUsu = new NegocioUsuario();
 		protected void Page_Load(object sender, EventArgs e)
 		{

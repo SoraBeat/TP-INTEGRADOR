@@ -7,79 +7,86 @@ using System.Data;
 using DAO;
 using Entidades;
 
-    namespace Negocios
+namespace Negocios
 {
     public class NegocioAsientos
     {
-        //public DataTable getTabla()
-        //{
-        //    DaoAsientos dao = new DaoAsientos();
-        //    return dao.getTablaAsientos();
-        //}
-        //public DataTable getTablaPorID(int id)
-        //{
-        //    DaoAsientos dao = new DaoAsientos();
-        //    return dao.getTablaAsientosPorID(id);
-        //}
-        //public DataTable getListaPeliculas()
-        //{
-        //    DaoAsientos dao = new DaoAsientos();
-        //    return dao.getListaAsientos();
-        //}
+        public DataTable getListaAsientos()
+        {
+            DAOAsientos dao = new DAOAsientos();
+            return dao.getTablaAsientos();
+        }
+        public DataTable getListaPorID(string id)
+        {
+            DAOAsientos dao = new DAOAsientos();
+            return dao.getTablaAsientosPorID(id);
+        }
+        public DataTable getListaPorIDSala(string id)
+        {
+            DAOAsientos dao = new DAOAsientos();
+            return dao.getTablaAsientosPorIDSala(id);
+        }
+        public DataTable getListaPorIDComplejo(string id)
+        {
+            DAOAsientos dao = new DAOAsientos();
+            return dao.getTablaAsientosPorIDComplejo(id);
+        }
 
-        //public Asientos get(int id)
-        //{
-        //    DaoAsientos dao = new DaoAsientos();
-        //    Asientos Asi = new Asientos();
-        //    Asi.IdAsiento = id;
-        //    return dao.getAsientos(Asi);
-        //}
-        //public DataTable CrearTablaSession()
-        //{
-        //    DataTable tabla = new DataTable();
-        //    tabla.Columns.Add("ID_Asiento_A", typeof(string));
-        //    tabla.Columns.Add("ID_Sala_A", typeof(string));
-        //    tabla.Columns.Add("ID_Complejo_A", typeof(string));
+        public Asientos get(string id)
+        {
+            DAOAsientos dao = new DAOAsientos();
+            Asientos Asi = new Asientos();
+            Asi.IDAsiento = id;
+            return dao.getAsiento(Asi);
+        }
+        public DataTable CrearTablaSession()
+        {
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add("ID_Asiento_A", typeof(string));
+            tabla.Columns.Add("ID_Sala_A", typeof(string));
+            tabla.Columns.Add("ID_Complejo_A", typeof(string));
 
-        //    return tabla;
-        //}
-        //public bool EliminarPelicula(int id)
-        //{
-        //    DaoAsientos dao = new DaoAsientos();
-        //    Asientos Asi = new Asientos();
-        //    Asi.IdAsientos = id;
-        //    int op = dao.EliminarAsiento(Asi);
-        //    if (op == 1)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
-        //public bool AgregarPelicula(string ID_Asiento_A, string ID_Sala_A, string ID_Complejo_A)
-        //{
-        //    int cantFilas = 0;
-        //    DaoAsientos daoAsi = new DaoAsientos();
-        //    Asientos Asi = new Asientos();
-        //    Asi.ID_Asiento = ID_Asiento_A;
-        //    Asi.ID_Sala = ID_Sala_A;
-        //    Asi.ID_Complejo = ID_Complejo_A;
+            return tabla;
+        }
+        public bool EliminarAsiento(string idAsiento, string idSala, string idComplejo)
+        {
+            DAOAsientos dao = new DAOAsientos();
+            Asientos Asi = new Asientos();
+            Asi.IDAsiento = idAsiento;
+            Asi.IDSala = idSala;
+            Asi.IDComplejo = idComplejo;
+            int op = dao.EliminarAsiento(Asi);
+            if (op == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool AgregarAsiento(string idAsiento, string idSala, string idComplejo)
+        {
+            int cantFilas = 0;
+            DAOAsientos daoAsi = new DAOAsientos();
+            Asientos Asi = new Asientos();
+            Asi.IDAsiento = idAsiento;
+            Asi.IDSala = idSala;
+            Asi.IDComplejo = idComplejo;
 
-        //    if (daoAsi.ExisteAsiento(Asi) == false)
-        //    {
-        //        cantFilas = daoAsi.AgregarAsiento(Asi);
-        //    }
-        //    if (cantFilas == 1)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
+            if (daoAsi.ExisteAsiento(Asi) == false)
+            {
+                cantFilas = daoAsi.AgregarAsiento(Asi);
+            }
+            if (cantFilas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
     }
 }

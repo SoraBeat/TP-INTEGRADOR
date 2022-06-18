@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Asientos
+    public class Asientos
     {
-        private int idAsiento;
-        private int idSala;
-        private int idComplejo;
+        private string idAsiento;
+        private string idSala;
+        private string idComplejo;
 
         public Asientos() { }
 
-        public int IDAsiento { get => idAsiento; set => idAsiento = value; }
-        public int IDSala { get => idSala; set => idSala = value; }
-        public int IDComplejo { get => idComplejo; set => idComplejo = value; }
+        public string IDAsiento { get => idAsiento; set => idAsiento = value; }
+        public string IDSala { get => idSala; set => idSala = value; }
+        public string IDComplejo { get => idComplejo; set => idComplejo = value; }
 
     }
 }

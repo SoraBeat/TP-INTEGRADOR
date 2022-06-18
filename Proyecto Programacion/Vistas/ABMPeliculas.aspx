@@ -185,8 +185,8 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style15">
-                        <asp:Label ID="Label5" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Medium" Text="MODIFICACION"></asp:Label>
+                    <td>
+                        <asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Medium" Text="MODIFICACION"></asp:Label>
                     </td>
                     <td class="auto-style17">
                         &nbsp;</td>
@@ -195,8 +195,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style11"></td>
-                    <td class="auto-style14">
-                        <asp:LinkButton ID="LinkButton2" runat="server">Complejos</asp:LinkButton>
+                    <td>
+                        <asp:HyperLink ID="hlComplejos" runat="server" NavigateUrl="~/ABMComplejo.aspx">Complejos</asp:HyperLink>
                     </td>
                     <td class="auto-style18">
                         ID:&nbsp;&nbsp;&nbsp;&nbsp;
@@ -207,8 +207,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style11"></td>
-                    <td class="auto-style14">
-                        <asp:LinkButton ID="LinkButton3" runat="server">Salas</asp:LinkButton>
+                    <td>
+                        <asp:HyperLink ID="hlSalas" runat="server" NavigateUrl="~/ABMSalas.aspx">Salas</asp:HyperLink>
                     </td>
                     <td class="auto-style18">
                         Titulo:</td>
@@ -218,8 +218,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style11"></td>
-                    <td class="auto-style14">
-                        <asp:LinkButton ID="LinkButton5" runat="server">Peliculas</asp:LinkButton>
+                    <td>
+                        <asp:HyperLink ID="hlPeliculas" runat="server" NavigateUrl="~/ABMPeliculas.aspx">Peliculas</asp:HyperLink>
                     </td>
                     <td class="auto-style18">
                         Descripcion:</td>
@@ -229,8 +229,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style15">
-                        <asp:LinkButton ID="LinkButton4" runat="server">Funciones</asp:LinkButton>
+                    <td>
+                        <asp:HyperLink ID="hlFunciones" runat="server" NavigateUrl="~/ABMFunciones.aspx">Funciones</asp:HyperLink>
                     </td>
                     <td class="auto-style19">
                         Duracion:</td>
@@ -240,8 +240,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style15">
-                        <asp:LinkButton ID="LinkButton6" runat="server">Asientos</asp:LinkButton>
+                    <td>
+                        <asp:HyperLink ID="hlAsientos" runat="server" NavigateUrl="~/ABMAsientos.aspx">Asientos</asp:HyperLink>
                     </td>
                     <td class="auto-style19">
                         Clasificacion:</td>
@@ -251,8 +251,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style11"></td>
-                    <td class="auto-style14">
-                        <asp:LinkButton ID="LinkButton7" runat="server">Asientos comprados</asp:LinkButton>
+                    <td>
+                        <asp:HyperLink ID="hlAsientosComprados" runat="server" NavigateUrl="~/ABMAsientosComprados.aspx">Asientos Comprados</asp:HyperLink>
                     </td>
                     <td class="auto-style18">
                         Genero:</td>
@@ -262,8 +262,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style15">
-                        <asp:LinkButton ID="LinkButton8" runat="server">Ventas</asp:LinkButton>
+                    <td>
+                        <asp:HyperLink ID="hlVentas" runat="server" NavigateUrl="~/Ventas.aspx">Ventas</asp:HyperLink>
                     </td>
                     <td class="auto-style19">
                         Formato:</td>
@@ -273,8 +273,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style15">
-                        <asp:LinkButton ID="LinkButton9" runat="server">Detalle de ventas</asp:LinkButton>
+                    <td>
+                        <asp:HyperLink ID="hlDV" runat="server" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>
                     </td>
                     <td class="auto-style19">
                         Portada():</td>
@@ -284,8 +284,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style15">
-                        <asp:LinkButton ID="LinkButton10" runat="server">Usuarios</asp:LinkButton>
+                    <td>
+                        <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink>
                     </td>
                     <td class="auto-style19">
                         &nbsp;</td>

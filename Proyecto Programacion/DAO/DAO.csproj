@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="DAOAsientos.cs" />
     <Compile Include="DAOComplejos.cs" />
     <Compile Include="DAOPeliculas.cs" />
     <Compile Include="DAOUsuarios.cs" />
@@ -52,6 +53,9 @@
       <Project>{5196061b-6ced-4a63-aa54-b880ae6d8819}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

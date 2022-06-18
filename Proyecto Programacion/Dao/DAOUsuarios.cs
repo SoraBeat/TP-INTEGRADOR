@@ -46,14 +46,14 @@ namespace DAO
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosUsuarioEliminar(ref comando, usu);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarUsuario");
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_EliminarUsuario");
         }
         public int AgregarUsuario(Usuarios usu)
         {
             usu.IDUsuario = ds.ObtenerMaximo("SELECT MAX(ID_Usuario_U) FROM Usuarios") + 1;
             SqlCommand comando = new SqlCommand();
             ArmarParametrosUsuarioAgregar(ref comando, usu);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spAgregarUsuario");
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_AgregarUsuario");
         }
         private void ArmarParametrosUsuarioEliminar(ref SqlCommand comando, Usuarios usu)
         {

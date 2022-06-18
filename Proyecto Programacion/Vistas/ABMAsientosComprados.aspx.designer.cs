@@ -78,22 +78,22 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// Label5 control.
+        /// Label6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// LinkButton2 control.
+        /// hlComplejos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
+        protected global::System.Web.UI.WebControls.HyperLink hlComplejos;
 
         /// <summary>
         /// TextBox1 control.
@@ -105,13 +105,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
         /// <summary>
-        /// LinkButton3 control.
+        /// hlSalas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
+        protected global::System.Web.UI.WebControls.HyperLink hlSalas;
 
         /// <summary>
         /// TextBox2 control.
@@ -123,13 +123,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox TextBox2;
 
         /// <summary>
-        /// LinkButton5 control.
+        /// hlPeliculas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton5;
+        protected global::System.Web.UI.WebControls.HyperLink hlPeliculas;
 
         /// <summary>
         /// TextBox7 control.
@@ -141,57 +141,57 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox TextBox7;
 
         /// <summary>
-        /// LinkButton4 control.
+        /// hlFunciones control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton4;
+        protected global::System.Web.UI.WebControls.HyperLink hlFunciones;
 
         /// <summary>
-        /// LinkButton6 control.
+        /// hlAsientos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton6;
+        protected global::System.Web.UI.WebControls.HyperLink hlAsientos;
 
         /// <summary>
-        /// LinkButton7 control.
+        /// hlAsientosComprados control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton7;
+        protected global::System.Web.UI.WebControls.HyperLink hlAsientosComprados;
 
         /// <summary>
-        /// LinkButton8 control.
+        /// hlVentas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton8;
+        protected global::System.Web.UI.WebControls.HyperLink hlVentas;
 
         /// <summary>
-        /// LinkButton9 control.
+        /// hlDV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton9;
+        protected global::System.Web.UI.WebControls.HyperLink hlDV;
 
         /// <summary>
-        /// LinkButton10 control.
+        /// hlUsuarios control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton10;
+        protected global::System.Web.UI.WebControls.HyperLink hlUsuarios;
     }
 }

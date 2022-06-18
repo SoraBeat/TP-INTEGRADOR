@@ -111,7 +111,7 @@ namespace DAO
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosPeliculasAgregar(ref comando, pel);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spAgregarPeliculas");
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_AgregarPeliculas");
         }
         private void ArmarParametrosPeliculasEliminar(ref SqlCommand comando, Peliculas pel)
         {
