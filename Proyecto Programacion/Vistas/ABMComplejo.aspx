@@ -51,8 +51,10 @@
             width: 101px;
         }
         .auto-style20 {
-            text-align: center;
-            height: 23px;
+            width: 275px;
+        }
+        .auto-style21 {
+            width: 582px;
         }
     </style>
 </head>
@@ -159,7 +161,7 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td>
+                    <td class="auto-style21">
                         <asp:Label ID="Label5" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Medium" Text="MODIFICACION"></asp:Label>
                     </td>
                     <td class="auto-style17">
@@ -169,7 +171,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style11"></td>
-                    <td>
+                    <td class="auto-style21">
                         <asp:HyperLink ID="hlComplejos" runat="server" NavigateUrl="~/ABMComplejo.aspx">Complejos</asp:HyperLink>
                     </td>
                     <td class="auto-style18">
@@ -182,7 +184,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style11"></td>
-                    <td>
+                    <td class="auto-style21">
                         <asp:HyperLink ID="hlSalas" runat="server" NavigateUrl="~/ABMSalas.aspx">Salas</asp:HyperLink>
                     </td>
                     <td class="auto-style18">
@@ -194,7 +196,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style11"></td>
-                    <td>
+                    <td class="auto-style21">
                         <asp:HyperLink ID="hlPeliculas" runat="server" NavigateUrl="~/ABMPeliculas.aspx">Peliculas</asp:HyperLink>
                     </td>
                     <td class="auto-style18">
@@ -206,7 +208,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td>
+                    <td class="auto-style21">
                         <asp:HyperLink ID="hlFunciones" runat="server" NavigateUrl="~/ABMFunciones.aspx">Funciones</asp:HyperLink>
                     </td>
                     <td class="auto-style19">
@@ -219,7 +221,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td>
+                    <td class="auto-style21">
                         <asp:HyperLink ID="hlAsientos" runat="server" NavigateUrl="~/ABMAsientos.aspx">Asientos</asp:HyperLink>
                     </td>
                     <td class="auto-style19">
@@ -232,7 +234,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td>
+                    <td class="auto-style21">
                         <asp:HyperLink ID="hlAsientosComprados" runat="server" NavigateUrl="~/ABMAsientosComprados.aspx">Asientos Comprados</asp:HyperLink>
                     </td>
                     <td class="auto-style19">
@@ -243,7 +245,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td>
+                    <td class="auto-style21">
                         <asp:HyperLink ID="hlVentas" runat="server" NavigateUrl="~/Ventas.aspx">Ventas</asp:HyperLink>
                     </td>
                     <td class="auto-style19">
@@ -254,7 +256,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td>
+                    <td class="auto-style21">
                         <asp:HyperLink ID="hlDV" runat="server" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>
                     <td class="auto-style11"></td>
                     <td class="auto-style14">
@@ -266,7 +268,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
-                    <td>
+                    <td class="auto-style21">
                         <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink>
                     </td>
                     <td class="auto-style19">

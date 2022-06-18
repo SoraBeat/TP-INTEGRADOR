@@ -159,15 +159,6 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.HyperLink hlFunciones;
 
         /// <summary>
-        /// Control LinkButton4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton4;
-
-        /// <summary>
         /// Control btnEnviar.
         /// </summary>
         /// <remarks>
@@ -202,15 +193,6 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hlAsientosComprados;
-
-        /// <summary>
-        /// Control LinkButton7.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton7;
 
         /// <summary>
         /// Control hlVentas.
