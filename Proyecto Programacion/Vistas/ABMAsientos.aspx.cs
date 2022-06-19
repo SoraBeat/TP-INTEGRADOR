@@ -76,12 +76,8 @@ namespace Vistas
 
             CargarTablaConFiltro();
 
-            if (cbEstado.Checked)
-            {
-                lblResultado.ForeColor = System.Drawing.Color.Green;
-                lblResultado.Text = "Se ha borrado correctamente";
-            }
-            
+            lblResultado.ForeColor = System.Drawing.Color.Green;
+            lblResultado.Text = "Se ha borrado correctamente";
 
         }
 
