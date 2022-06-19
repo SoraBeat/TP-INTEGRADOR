@@ -32,13 +32,6 @@
         .auto-style12 {
             height: 23px;
         }
-        .auto-style14 {
-            height: 23px;
-            width: 192px;
-        }
-        .auto-style15 {
-            width: 192px;
-        }
         .auto-style16 {
             text-align: center;
         }
@@ -57,10 +50,6 @@
             width: 26px;
             height: 26px;
         }
-        .auto-style21 {
-            width: 192px;
-            height: 26px;
-        }
         .auto-style22 {
             width: 101px;
             height: 26px;
@@ -76,7 +65,7 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">*Nombre del cine*</td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:LinkButton ID="LinkButton1" runat="server">Cerrar sesion</asp:LinkButton>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:LinkButton ID="lbCerrarSesion" runat="server">Cerrar sesion</asp:LinkButton>
                     </td>
                 </tr>
             </table>
@@ -89,14 +78,14 @@
                 </tr>
                 <tr>
                     <td class="auto-style16">
-                        <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:DropDownList ID="ddlFiltro" runat="server">
                         </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtFiltro" runat="server"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button1" runat="server" Text="Filtrar" />
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
 &nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button2" runat="server" Text="Quitar filtro" />
+                        <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar filtro" OnClick="btnQuitarFiltro_Click" />
                     </td>
                 </tr>
             </table>
@@ -105,7 +94,44 @@
                     <td class="auto-style5">
                         <img alt="" class="auto-style3" src="" />*Perfil admin*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                     <td>
-                        <asp:GridView ID="GridView1" runat="server" Width="734px">
+                        <asp:GridView ID="gvDetalleVentas" runat="server" Width="734px" AllowPaging="True" AutoGenerateColumns="False">
+                            <Columns>
+                                <asp:TemplateField HeaderText=" ID Detalle Venta">
+                                    <ItemTemplate>
+                                        <asp:Label ID="LBL_IT_IDDETALLEVENTA" runat="server" Text='<%# Bind("IDDetalleVenta") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="ID Venta">
+                                    <ItemTemplate>
+                                        <asp:Label ID="Label7" runat="server" Text='<%# Bind("IDVenta") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="ID Funcion">
+                                    <ItemTemplate>
+                                        <asp:Label ID="LBL_IT_IDFUNCION" runat="server" Text='<%# Bind("IDFuncion") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="ID Sala">
+                                    <ItemTemplate>
+                                        <asp:Label ID="LBL_IT_IDSALA" runat="server" Text='<%# Bind("IDSALA") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="ID Complejo">
+                                    <ItemTemplate>
+                                        <asp:Label ID="LBL_IT_IDCOMPLEJO" runat="server" Text='<%# Bind("IDComplejo") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Cantidad">
+                                    <ItemTemplate>
+                                        <asp:Label ID="LBL_IT_CANTIDAD" runat="server" Text='<%# Bind("Cantidad") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Precio">
+                                    <ItemTemplate>
+                                        <asp:Label ID="LBL_IT_PRECIO" runat="server" Text='<%# Bind("Precio") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
 
                         </asp:GridView>
                     </td>
@@ -126,14 +152,14 @@
                 </tr>
                 <tr>
                     <td class="auto-style11"></td>
-                    <td>
+                    <td class="auto-style12">
                         <asp:HyperLink ID="hlComplejos" runat="server" NavigateUrl="~/ABMComplejo.aspx">Complejos</asp:HyperLink>
                     </td>
                     <td class="auto-style18">
                         &nbsp;
                     </td>
                     <td class="auto-style12">
-                        &nbsp;</td>
+                        </td>
                 </tr>
                 <tr>
                     <td class="auto-style11"></td>
