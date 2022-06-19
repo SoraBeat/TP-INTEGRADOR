@@ -73,17 +73,16 @@ namespace Vistas
             String IDSala = ((Label)gvAsientos.Rows[e.RowIndex].FindControl("LBL_IT_IDSALA")).Text;
             String IDComplejo = ((Label)gvAsientos.Rows[e.RowIndex].FindControl("LBL_IT_IDCOMPLEJO")).Text;
             bool res = negasi.EliminarAsiento(IDAsiento,IDSala,IDComplejo);
-            if (res)
+
+            CargarTablaConFiltro();
+
+            if (cbEstado.Checked)
             {
                 lblResultado.ForeColor = System.Drawing.Color.Green;
                 lblResultado.Text = "Se ha borrado correctamente";
             }
-            else
-            {
-                lblResultado.ForeColor = System.Drawing.Color.Red;
-                lblResultado.Text = "ERROR al borrar";
-            }
-            CargarTablaConFiltro();
+            
+
         }
 
         protected void btnEnviar_Click(object sender, EventArgs e)
