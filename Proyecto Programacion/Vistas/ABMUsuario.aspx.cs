@@ -55,6 +55,12 @@ namespace Vistas
 				case "CONTRASEÑA":
 					tablaUsu = negUsu.getListaPorContraseñaUsuario(txtFiltro.Text);
 					break;
+				case "TIPO USUARIO":
+					tablaUsu = negUsu.getListaPorTipoDeUsuario(txtFiltro.Text);
+					break;
+				case "ESTADO":
+					tablaUsu = negUsu.getListaPorEstadoDeUsuario(txtFiltro.Text);
+					break;
 			}
 			gvUsuarios.DataSource = tablaUsu;
 			gvUsuarios.DataBind();
@@ -77,6 +83,10 @@ namespace Vistas
 			item = new ListItem("EMAIL");
 			ddlFiltro.Items.Add(item);
 			item = new ListItem("CONTRASEÑA");
+			ddlFiltro.Items.Add(item);
+			item = new ListItem("TIPO USUARIO");
+			ddlFiltro.Items.Add(item);
+			item = new ListItem("ESTADO");
 			ddlFiltro.Items.Add(item);
 			ddlFiltro.DataBind();
 		}
@@ -108,35 +118,6 @@ namespace Vistas
         {
 			gvUsuarios.EditIndex = -1;
 			CargarTablaSinFiltro();
-		}
-
-        protected void gvUsuarios_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-
-			String ID = ((Label)gvUsuarios.Rows[e.RowIndex].FindControl("LBL_EDIT_ID")).Text;
-			String Nombre = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_NOM")).Text;
-			String Apellido = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_APE")).Text;
-			String Dni = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_DNI")).Text;
-			String Telefono = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_TEL")).Text;
-			String Email = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_EMAIL")).Text;
-			String Contraseña = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_CON")).Text;
-			Boolean Tipo_Usuario = ((CheckBox)gvUsuarios.Rows[e.RowIndex].FindControl("CHK_EDIT_SuperUsu")).Checked;
-
-
-			Usuarios usu = new Usuarios();
-			usu.IDUsuario = Convert.ToInt32(ID);
-			usu.NombreUsuario = Nombre;
-			usu.ApellidoUsuario = Apellido;
-			usu.DNIUsuario = Dni;
-			usu.TelefonoUsuario = Telefono;
-			usu.EmailUsuario = Email;
-			usu.ContraseñaUsuario = Contraseña;
-			usu.TipoUsuario = Convert.ToBoolean(Tipo_Usuario);
-
-			negUsu.ModificarUsuario(usu);
-			gvUsuarios.EditIndex = -1;
-			CargarTablaConFiltro();
-
 		}
 
         protected void btnEnviar_Click(object sender, EventArgs e)
@@ -202,6 +183,34 @@ namespace Vistas
         {
 				CargarTablaSinFiltro();
 			txtFiltro.Text = "";
+		}
+
+        protected void gvUsuarios_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+			int ID = Convert.ToInt32(((Label)gvUsuarios.Rows[e.RowIndex].FindControl("LBL_EDIT_ID")).Text);
+			String Nombre = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_NOMBRE")).Text;
+			String Apellido = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_APELLIDO")).Text;
+			String DNI = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_DNI")).Text;
+			String Telefono = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_TELEFONO")).Text;
+			String Email = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_EMAIL")).Text;
+			String Contraseña = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_CONTRASEÑA")).Text;
+			bool TipoUsuario = ((CheckBox)gvUsuarios.Rows[e.RowIndex].FindControl("CHK_EDIT_TIPOUSUARIO")).Checked;
+			bool Estado = ((CheckBox)gvUsuarios.Rows[e.RowIndex].FindControl("CHK_EDIT_ESTADO")).Checked;
+
+			Usuarios usu = new Usuarios();
+			usu.IDUsuario = ID;
+			usu.NombreUsuario = Nombre;
+			usu.ApellidoUsuario = Apellido;
+			usu.DNIUsuario = DNI;
+			usu.TelefonoUsuario = Telefono;
+			usu.EmailUsuario = Email;
+			usu.ContraseñaUsuario = Contraseña;
+			usu.TipoUsuario = TipoUsuario;
+			usu.Estado= Estado;
+
+			negUsu.ModificarUsuario(usu);
+			gvUsuarios.EditIndex = -1;
+			CargarTablaConFiltro();
 		}
     }
 }
