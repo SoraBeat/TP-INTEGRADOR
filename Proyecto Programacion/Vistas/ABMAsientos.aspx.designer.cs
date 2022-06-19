@@ -186,13 +186,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.HyperLink hlFunciones;
 
         /// <summary>
-        /// Control btnEnviar.
+        /// Control cbEstado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnviar;
+        protected global::System.Web.UI.WebControls.CheckBox cbEstado;
 
         /// <summary>
         /// Control hlAsientos.
@@ -204,13 +204,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.HyperLink hlAsientos;
 
         /// <summary>
-        /// Control lblResultadoGuardar.
+        /// Control btnEnviar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResultadoGuardar;
+        protected global::System.Web.UI.WebControls.Button btnEnviar;
 
         /// <summary>
         /// Control hlAsientosComprados.
@@ -220,6 +220,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hlAsientosComprados;
+
+        /// <summary>
+        /// Control lblResultadoGuardar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResultadoGuardar;
 
         /// <summary>
         /// Control hlVentas.

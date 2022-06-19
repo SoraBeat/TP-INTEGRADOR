@@ -11,12 +11,14 @@ namespace Entidades
         private string idAsiento;
         private string idSala;
         private string idComplejo;
+        private bool estado;
 
         public Asientos() { }
 
         public string IDAsiento { get => idAsiento; set => idAsiento = value; }
         public string IDSala { get => idSala; set => idSala = value; }
         public string IDComplejo { get => idComplejo; set => idComplejo = value; }
+        public bool Estado { get => estado; set => estado = value; }
 
     }
 }

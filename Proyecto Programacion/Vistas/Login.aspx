@@ -54,6 +54,7 @@
                 <td class="auto-style3">Contraseña:</td>
                 <td>
                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:CheckBox ID="cbContraseña" runat="server" AutoPostBack="True" OnCheckedChanged="cbContraseña_CheckedChanged" />
                 </td>
             </tr>
             <tr>
