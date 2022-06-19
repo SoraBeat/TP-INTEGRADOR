@@ -264,6 +264,7 @@
                     <td class="auto-style25">
                         <asp:TextBox ID="txtDni" runat="server" MaxLength="8" TextMode="Number" ValidationGroup="Grupo1"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RfvDNI" runat="server" ControlToValidate="txtDni" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
+                        <asp:RangeValidator ID="rvDNI" runat="server" ControlToValidate="txtDni" MaximumValue="5000000" MinimumValue="3000000">Dni invalido</asp:RangeValidator>
                     </td>
                 </tr>
                 <tr>
