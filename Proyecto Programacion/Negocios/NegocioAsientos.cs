@@ -31,6 +31,11 @@ namespace Negocios
             DAOAsientos dao = new DAOAsientos();
             return dao.getTablaAsientosPorIDComplejo(id);
         }
+        public DataTable getListaAsientosPorEstado(string estado)
+        {
+            DAOAsientos dao = new DAOAsientos();
+            return dao.getTablaAsientosPorEstado(estado);
+        }
 
         public Asientos get(string id)
         {
@@ -87,6 +92,21 @@ namespace Negocios
                 return false;
             }
         }
+        public bool ModificarAsiento(Asientos asi)
+        {
+            int cantFilas = 0;
+            DAOAsientos daoAsi = new DAOAsientos();
 
+            cantFilas = daoAsi.ModificarAsiento(asi);
+
+            if (cantFilas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -186,13 +186,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.HyperLink hlFunciones;
 
         /// <summary>
-        /// btnEnviar control.
+        /// cbEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnviar;
+        protected global::System.Web.UI.WebControls.CheckBox cbEstado;
 
         /// <summary>
         /// hlAsientos control.
@@ -204,13 +204,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.HyperLink hlAsientos;
 
         /// <summary>
-        /// lblResultadoGuardar control.
+        /// btnEnviar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResultadoGuardar;
+        protected global::System.Web.UI.WebControls.Button btnEnviar;
 
         /// <summary>
         /// hlAsientosComprados control.
@@ -220,6 +220,15 @@ namespace Vistas
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hlAsientosComprados;
+
+        /// <summary>
+        /// lblResultadoGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResultadoGuardar;
 
         /// <summary>
         /// hlVentas control.

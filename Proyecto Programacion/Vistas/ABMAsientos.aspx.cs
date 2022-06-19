@@ -43,6 +43,9 @@ namespace Vistas
                 case "ID COMPLEJO":
                     tablaAsientos = negasi.getListaPorIDComplejo(txtFiltro.Text);
                     break;
+                case "ESTADO":
+                    tablaAsientos = negasi.getListaAsientosPorEstado(txtFiltro.Text);
+                    break;
             }
             gvAsientos.DataSource = tablaAsientos;
             gvAsientos.DataBind();
@@ -57,6 +60,8 @@ namespace Vistas
             item = new ListItem("ID SALA");
             ddlFiltro.Items.Add(item);
             item = new ListItem("ID COMPLEJO");
+            ddlFiltro.Items.Add(item);
+            item = new ListItem("ESTADO");
             ddlFiltro.Items.Add(item);
             ddlFiltro.DataBind();
         }
@@ -78,7 +83,7 @@ namespace Vistas
                 lblResultado.ForeColor = System.Drawing.Color.Red;
                 lblResultado.Text = "ERROR al borrar";
             }
-            CargarTablaSinFiltro();
+            CargarTablaConFiltro();
         }
 
         protected void btnEnviar_Click(object sender, EventArgs e)
@@ -88,12 +93,13 @@ namespace Vistas
                 string IDAsiento = txtIDAsiento.Text;
                 string IDSala = txtIDSala.Text;
                 string IDComplejo = txtIDComplejo.Text;
+                bool estado = cbEstado.Checked;
 
                 Asientos asi = new Asientos();
                 asi.IDAsiento = IDAsiento;
                 asi.IDSala = IDSala;
                 asi.IDComplejo = IDComplejo;
-
+                
                 bool res = negasi.AgregarAsiento(asi.IDAsiento,asi.IDSala,asi.IDComplejo);
                 if (res)
                 {
@@ -131,6 +137,36 @@ namespace Vistas
         {
             CargarTablaSinFiltro();
             txtFiltro.Text = "";
+        }
+
+        protected void gvAsientos_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            String IDAsiento = ((Label)gvAsientos.Rows[e.RowIndex].FindControl("LBL_EDT_IDASIENTO")).Text;
+            String IDSala = ((Label)gvAsientos.Rows[e.RowIndex].FindControl("LBL_EDT_IDSALA")).Text;
+            String IDComplejo = ((Label)gvAsientos.Rows[e.RowIndex].FindControl("LBL_EDT_IDCOMPLEJO")).Text;
+            bool Estado = ((CheckBox)gvAsientos.Rows[e.RowIndex].FindControl("TXT_EDT_ESTADO")).Checked;
+
+            Asientos asi = new Asientos();
+            asi.IDAsiento = IDAsiento;
+            asi.IDSala = IDSala;
+            asi.IDComplejo = IDComplejo;
+            asi.Estado = Estado;
+
+            negasi.ModificarAsiento(asi);
+            gvAsientos.EditIndex = -1;
+            CargarTablaConFiltro();
+        }
+
+        protected void gvAsientos_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            gvAsientos.EditIndex = e.NewEditIndex;
+            CargarTablaConFiltro();
+        }
+
+        protected void gvAsientos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            gvAsientos.EditIndex = -1;
+            CargarTablaSinFiltro();
         }
     }
 }
