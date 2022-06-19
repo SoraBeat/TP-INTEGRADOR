@@ -73,17 +73,9 @@ namespace Vistas
 			string ID_Sala = ((Label)gvSalas.Rows[e.RowIndex].FindControl("LBL_IT_ID")).Text;
 			string ID_Complejo = ((Label)gvSalas.Rows[e.RowIndex].FindControl("LBL_IT_COMPLEJO")).Text;
 			bool res = negsa.EliminarSala(ID_Sala,ID_Complejo);
-			if (res)
-			{
-				lblResultado.ForeColor = System.Drawing.Color.Green;
-				lblResultado.Text = "Se ha borrado correctamente";
-			}
-			else
-			{
-				lblResultado.ForeColor = System.Drawing.Color.Red;
-				lblResultado.Text = "ERROR al borrar";
-			}
 			CargarTablaConFiltro();
+			lblResultado.ForeColor = System.Drawing.Color.Green;
+			lblResultado.Text = "Se ha borrado correctamente";
 		}
 
 		protected void gvSalas_RowEditing(object sender, GridViewEditEventArgs e)
@@ -113,9 +105,19 @@ namespace Vistas
 			sala.Estado = Estados;
 
 
-			negsa.ModificarSala(sala);
+			bool res =negsa.ModificarSala(sala);
 			gvSalas.EditIndex = -1;
 			CargarTablaConFiltro();
+			if (res)
+			{
+				lblResultado.ForeColor = System.Drawing.Color.Green;
+				lblResultado.Text = "Se ha editado correctamente";
+			}
+			else
+			{
+				lblResultado.ForeColor = System.Drawing.Color.Red;
+				lblResultado.Text = "ERROR al editar";
+			}
 		}
 
 		protected void btnEnviar_Click(object sender, EventArgs e)
@@ -132,6 +134,11 @@ namespace Vistas
 				sala.TotalAsientos = Convert.ToInt32(Asientos);
 
 				bool res = negsa.AgregarSala(sala);
+				gvSalas.EditIndex = -1;
+				txtID.Text = "";
+				txtIDComplejo.Text = "";
+				txtCantidadAsientos.Text = "";
+				CargarTablaSinFiltro();
 				if (res)
 				{
 					lblResultadoGuardar.ForeColor = System.Drawing.Color.Green;
@@ -142,11 +149,6 @@ namespace Vistas
 					lblResultadoGuardar.ForeColor = System.Drawing.Color.Red;
 					lblResultadoGuardar.Text = "ERROR al guardar";
 				}
-				gvSalas.EditIndex = -1;
-				txtID.Text = "";
-				txtIDComplejo.Text = "";
-				txtCantidadAsientos.Text = "";
-				CargarTablaSinFiltro();
 			}
 		}
 
