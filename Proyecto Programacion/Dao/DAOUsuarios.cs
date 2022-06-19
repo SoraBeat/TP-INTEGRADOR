@@ -20,7 +20,7 @@ namespace DAO
         }
         public DataTable getTablaUsuariosPorIDUsuario(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO] FROM USUARIOS WHERE ID_Usuario_U LIKE '%" + campo + "%' ORDER BY ABS(ID_Usuario_U)");
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO] FROM Usuarios WHERE ID_Usuario_U LIKE '%" + campo + "%' ORDER BY ABS(ID_Usuario_U)");
             return tabla;
         }
         public DataTable getTablaUsuariosPorNombreUsuario(string campo)
@@ -55,7 +55,7 @@ namespace DAO
         }
         public Usuarios getUsuario(Usuarios usu)
         {
-            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT * FROM Usuarios WHERE ID_Usuario_U=" + usu.IDUsuario);
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO] FROM Usuarios WHERE ID_Usuario_U=" + usu.IDUsuario);
             usu.IDUsuario = (Convert.ToInt32(tabla.Rows[0][0].ToString()));
             usu.NombreUsuario = (tabla.Rows[0][1].ToString());
             usu.ApellidoUsuario = (tabla.Rows[0][2].ToString());
@@ -68,7 +68,7 @@ namespace DAO
         }
         public DataTable getTablaUsuarios()
         {
-            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT * FROM Usuarios");
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO] FROM Usuarios");
             return tabla;
         }
         public int EliminarUsuario(Usuarios usu)

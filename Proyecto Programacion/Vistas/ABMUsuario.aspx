@@ -112,42 +112,42 @@
                             <Columns>
                                 <asp:TemplateField HeaderText="IDUSUARIO">
                                     <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_ID" runat="server" Text='<%# Bind("ID_USUARIO_U") %>'></asp:Label>
+                                        <asp:Label ID="LBL_IT_ID" runat="server" Text='<%# Bind("ID") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="NOMBRE">
                                     <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_NOM" runat="server" Text='<%# Bind("Nombre_U") %>'></asp:Label>
+                                        <asp:Label ID="LBL_IT_NOM" runat="server" Text='<%# Bind("NOMBRE") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="APELLIDO">
                                     <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_APE" runat="server" Text='<%# Bind("Apellido_U") %>'></asp:Label>
+                                        <asp:Label ID="LBL_IT_APE" runat="server" Text='<%# Bind("APELLIDO") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="DNI">
                                     <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_DNI" runat="server" Text='<%# Bind("DNI_U") %>'></asp:Label>
+                                        <asp:Label ID="LBL_IT_DNI" runat="server" Text='<%# Bind("DNI") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="TELEFONO">
                                     <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_TEL" runat="server" Text='<%# Bind("Telefono_U") %>'></asp:Label>
+                                        <asp:Label ID="LBL_IT_TEL" runat="server" Text='<%# Bind("TELEFONO") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="EMAIL">
                                     <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_EMAIL" runat="server" Text='<%# Bind("Email_U") %>'></asp:Label>
+                                        <asp:Label ID="LBL_IT_EMAIL" runat="server" Text='<%# Bind("EMAIL") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="CONTRASEÑA">
                                     <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_CON" runat="server" Text='<%# Bind("Contraseña_U") %>'></asp:Label>
+                                        <asp:Label ID="LBL_IT_CON" runat="server" Text='<%# Bind("CONTRASEÑA") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="TIPOUSUARIO">
                                     <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_USU" runat="server" Text='<%# Bind("Tipo_Usuario_U") %>'></asp:Label>
+                                        <asp:Label ID="LBL_IT_USU" runat="server" Text='<%# Bind("SUPERUSUARIO") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
@@ -189,7 +189,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style11"></td>
-                    <td>
+                    <td class="auto-style12">
                         <asp:HyperLink ID="hlSalas" runat="server" NavigateUrl="~/ABMSalas.aspx">Salas</asp:HyperLink>
                     </td>
                     <td class="auto-style18">
