@@ -101,6 +101,12 @@ namespace Vistas
                 asi.IDComplejo = IDComplejo;
                 
                 bool res = negasi.AgregarAsiento(asi.IDAsiento,asi.IDSala,asi.IDComplejo);
+          
+                gvAsientos.EditIndex = -1;
+                txtIDAsiento.Text = "";
+                txtIDSala.Text = "";
+                txtIDComplejo.Text = "";
+                CargarTablaSinFiltro();
                 if (res)
                 {
                     lblResultadoGuardar.ForeColor = System.Drawing.Color.Green;
@@ -111,11 +117,6 @@ namespace Vistas
                     lblResultadoGuardar.ForeColor = System.Drawing.Color.Red;
                     lblResultadoGuardar.Text = "ERROR al guardar";
                 }
-                gvAsientos.EditIndex = -1;
-                txtIDAsiento.Text = "";
-                txtIDSala.Text = "";
-                txtIDComplejo.Text = "";
-                CargarTablaSinFiltro();
             }
         }
 

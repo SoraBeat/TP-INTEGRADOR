@@ -24,5 +24,15 @@ namespace Vistas
         {
             
         }
+
+        protected void cbContraseña_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbContraseña.Checked == true)
+            {
+                txtPassword.TextMode = TextBoxMode.SingleLine;
+            }
+            else
+                txtPassword.TextMode = TextBoxMode.Password;
+        }
     }
 }

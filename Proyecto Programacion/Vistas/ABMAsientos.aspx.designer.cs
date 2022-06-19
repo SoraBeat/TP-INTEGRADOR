@@ -186,11 +186,7 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.HyperLink hlFunciones;
 
         /// <summary>
-<<<<<<< HEAD
-        /// cbEstado control.
-=======
-        /// Control btnEnviar.
->>>>>>> abfa10c54bee7b194fe120d7d02c5dd7ff6e2dda
+        /// Control cbEstado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -208,11 +204,7 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.HyperLink hlAsientos;
 
         /// <summary>
-<<<<<<< HEAD
-        /// btnEnviar control.
-=======
-        /// Control lblResultadoGuardar.
->>>>>>> abfa10c54bee7b194fe120d7d02c5dd7ff6e2dda
+        /// Control btnEnviar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -230,20 +222,16 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.HyperLink hlAsientosComprados;
 
         /// <summary>
-<<<<<<< HEAD
-        /// lblResultadoGuardar control.
+        /// Control lblResultadoGuardar.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblResultadoGuardar;
 
         /// <summary>
-        /// hlVentas control.
-=======
         /// Control hlVentas.
->>>>>>> abfa10c54bee7b194fe120d7d02c5dd7ff6e2dda
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.

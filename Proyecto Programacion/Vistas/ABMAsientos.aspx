@@ -167,7 +167,7 @@
                     </td>
                     <td class="auto-style18">
                         ID Sala:</td>
-      ID Sala:</td>
+     </td>
                     <td class="auto-style12">
                         <asp:TextBox ID="txtIDSala" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtIDSala" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
