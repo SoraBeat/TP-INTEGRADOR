@@ -11,20 +11,46 @@ namespace Negocios
 {
     public class NegocioUsuario
     {
-        public DataTable getTabla()
-        {
-            DAOUsuarios dao = new DAOUsuarios();
-            return dao.getTablaUsuarios();
-        }
-        public DataTable getTablaPorID(int id)
-        {
-            DAOUsuarios dao = new DAOUsuarios();
-            return dao.getTablaUsuariosPorID(id);
-        }
         public DataTable getListaUsuarios()
         {
             DAOUsuarios dao = new DAOUsuarios();
             return dao.getTablaUsuarios();
+        }
+
+        public DataTable getListaPorIDUsuario(string id)
+        {
+            DAOUsuarios dao = new DAOUsuarios();
+            return dao.getTablaUsuariosPorIDUsuario(id);
+        }
+        public DataTable getListaPorNombreUsuario(string nombre)
+        {
+            DAOUsuarios dao = new DAOUsuarios();
+            return dao.getTablaUsuariosPorNombreUsuario(nombre);
+        }
+        public DataTable getListaPorApellidoUsuario(string apellido)
+        {
+            DAOUsuarios dao = new DAOUsuarios();
+            return dao.getTablaUsuariosPorApellidoUsuario(apellido);
+        }
+        public DataTable getListaPorDNIUsuario(string DNI)
+        {
+            DAOUsuarios dao = new DAOUsuarios();
+            return dao.getTablaUsuariosPorDNIUsuario(DNI);
+        }
+        public DataTable getListaPorTelefonoUsuario(string telefono)
+        {
+            DAOUsuarios dao = new DAOUsuarios();
+            return dao.getTablaUsuariosPorDNIUsuario(telefono);
+        }
+        public DataTable getListaPorEmailUsuario(string email)
+        {
+            DAOUsuarios dao = new DAOUsuarios();
+            return dao.getTablaUsuariosPorEmailUsuario(email);
+        }
+        public DataTable getListaPorContraseñaUsuario(string contraseña)
+        {
+            DAOUsuarios dao = new DAOUsuarios();
+            return dao.getTablaUsuariosPorContraseñaUsuario(contraseña);
         }
 
         public Usuarios get(int id)
@@ -66,5 +92,22 @@ namespace Negocios
             }
         }
 
+        public bool ModificarUsuario(Usuarios usu)
+        {
+            int cantFilas = 0;
+            DAOUsuarios daoUsu = new DAOUsuarios();
+
+            cantFilas = daoUsu.ModificarUsuario(usu);
+
+            if (cantFilas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }

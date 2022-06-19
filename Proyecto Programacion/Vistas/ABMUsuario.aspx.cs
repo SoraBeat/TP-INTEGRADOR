@@ -20,6 +20,7 @@ namespace Vistas
 			if (!IsPostBack)
 			{
 				CargarTablaSinFiltro();
+				CargarDDL();
 			}
 		}
 		private void CargarTablaSinFiltro()
@@ -28,8 +29,59 @@ namespace Vistas
 			gvUsuarios.DataSource = tablaUsuarios;
 			gvUsuarios.DataBind();
 		}
+		private void CargarTablaConFiltro()
+		{
+			DataTable tablaUsu = new DataTable();
+			switch (ddlFiltro.Text)
+			{
+				case "ID":
+					tablaUsu = negUsu.getListaPorIDUsuario(txtFiltro.Text);
+					break;
+				case "NOMBRE":
+					tablaUsu = negUsu.getListaPorNombreUsuario(txtFiltro.Text);
+					break;
+				case "APELLIDO":
+					tablaUsu = negUsu.getListaPorApellidoUsuario(txtFiltro.Text);
+					break;
+				case "DNI":
+					tablaUsu = negUsu.getListaPorDNIUsuario(txtFiltro.Text);
+					break;
+				case "TELEFONO":
+					tablaUsu = negUsu.getListaPorTelefonoUsuario(txtFiltro.Text);
+					break;
+				case "EMAIL":
+					tablaUsu = negUsu.getListaPorEmailUsuario(txtFiltro.Text);
+					break;
+				case "CONTRASEÑA":
+					tablaUsu = negUsu.getListaPorContraseñaUsuario(txtFiltro.Text);
+					break;
+			}
+			gvUsuarios.DataSource = tablaUsu;
+			gvUsuarios.DataBind();
+			lblResultado.Text = "";
+			lblResultadoGuardar.Text = "";
+		}
+		private void CargarDDL()
+		{
+			ListItem item;
+			item = new ListItem("ID");
+			ddlFiltro.Items.Add(item);
+			item = new ListItem("NOMBRE");
+			ddlFiltro.Items.Add(item);
+			item = new ListItem("APELLIDO");
+			ddlFiltro.Items.Add(item);
+			item = new ListItem("DNI");
+			ddlFiltro.Items.Add(item);
+			item = new ListItem("TELEFONO");
+			ddlFiltro.Items.Add(item);
+			item = new ListItem("EMAIL");
+			ddlFiltro.Items.Add(item);
+			item = new ListItem("CONTRASEÑA");
+			ddlFiltro.Items.Add(item);
+			ddlFiltro.DataBind();
+		}
 
-        protected void gvUsuarios_RowDeleting(object sender, GridViewDeleteEventArgs e)
+		protected void gvUsuarios_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
 			String ID_Usuario = ((Label)gvUsuarios.Rows[e.RowIndex].FindControl("LBL_IT_ID")).Text;
 			bool res = negUsu.EliminarUsuario(Convert.ToInt32(ID_Usuario));
@@ -43,13 +95,13 @@ namespace Vistas
 				lblResultado.ForeColor = System.Drawing.Color.Red;
 				lblResultado.Text = "ERROR al borrar";
 			}
-			CargarTablaSinFiltro();
+			CargarTablaConFiltro();
 		}
 
         protected void gvUsuarios_RowEditing(object sender, GridViewEditEventArgs e)
         {
 			gvUsuarios.EditIndex = e.NewEditIndex;
-			CargarTablaSinFiltro();
+			CargarTablaConFiltro();
 		}
 
         protected void gvUsuarios_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
@@ -60,6 +112,8 @@ namespace Vistas
 
         protected void gvUsuarios_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+
+			String ID = ((Label)gvUsuarios.Rows[e.RowIndex].FindControl("LBL_EDIT_ID")).Text;
 			String Nombre = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_NOM")).Text;
 			String Apellido = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_APE")).Text;
 			String Dni = ((TextBox)gvUsuarios.Rows[e.RowIndex].FindControl("TXT_EDIT_DNI")).Text;
@@ -70,6 +124,7 @@ namespace Vistas
 
 
 			Usuarios usu = new Usuarios();
+			usu.IDUsuario = Convert.ToInt32(ID);
 			usu.NombreUsuario = Nombre;
 			usu.ApellidoUsuario = Apellido;
 			usu.DNIUsuario = Dni;
@@ -78,9 +133,9 @@ namespace Vistas
 			usu.ContraseñaUsuario = Contraseña;
 			usu.TipoUsuario = Convert.ToBoolean(Tipo_Usuario);
 
-			negUsu.AgregarUsuario(usu);
+			negUsu.ModificarUsuario(usu);
 			gvUsuarios.EditIndex = -1;
-			CargarTablaSinFiltro();
+			CargarTablaConFiltro();
 
 		}
 
@@ -118,8 +173,35 @@ namespace Vistas
 					lblResultadoGuardar.Text = "ERROR al guardar";
 				}
 				gvUsuarios.EditIndex = -1;
+				txtNombre.Text = "";
+				txtApellido.Text = "";
+				txtDni.Text = "";
+				txtTelefono.Text = "";
+				txtEmail.Text = "";
+				txtContraseña.Text = "";
+				chkSuperUsu.Text = "";
 				CargarTablaSinFiltro();
 			}
+		}
+
+        protected void gvUsuarios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+			gvUsuarios.PageIndex = e.NewPageIndex;
+			CargarTablaConFiltro();
+		}
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+			if (txtFiltro.Text != "".Trim())
+			{
+				CargarTablaConFiltro();
+			}
+		}
+
+        protected void btnQuitarFiltro_Click(object sender, EventArgs e)
+        {
+				CargarTablaSinFiltro();
+			txtFiltro.Text = "";
 		}
     }
 }

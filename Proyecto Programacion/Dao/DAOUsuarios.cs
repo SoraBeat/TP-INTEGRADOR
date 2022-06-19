@@ -18,10 +18,39 @@ namespace DAO
             string consulta = "SELECT * FROM Usuarios WHERE ID_Usuario_U = '" + usu.IDUsuario + "'";
             return ds.Existe(consulta);
         }
-        public DataTable getTablaUsuariosPorID(int id)
+        public DataTable getTablaUsuariosPorIDUsuario(string campo)
         {
-            String consultaSql = "SELECT * FROM Usuarios WHERE ID_Usuario_U " + id;
-            DataTable tabla = ds.ObtenerTabla("Usuarios", consultaSql);
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO] FROM USUARIOS WHERE ID_Usuario_U LIKE '%" + campo + "%' ORDER BY ABS(ID_Usuario_U)");
+            return tabla;
+        }
+        public DataTable getTablaUsuariosPorNombreUsuario(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO] FROM USUARIOS WHERE Nombre_U LIKE '%" + campo + "%' ORDER BY ABS(ID_Usuario_U)");
+            return tabla;
+        }
+        public DataTable getTablaUsuariosPorApellidoUsuario(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO] FROM USUARIOS WHERE Apellido_U LIKE '%" + campo + "%' ORDER BY ABS(ID_Usuario_U)");
+            return tabla;
+        }
+        public DataTable getTablaUsuariosPorDNIUsuario(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO] FROM USUARIOS WHERE DNI_U LIKE '%" + campo + "%' ORDER BY ABS(ID_Usuario_U)");
+            return tabla;
+        }
+        public DataTable getTablaUsuariosPorTelefonoUsuario(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO] FROM USUARIOS WHERE Telefono_U LIKE '%" + campo + "%' ORDER BY ABS(ID_Usuario_U)");
+            return tabla;
+        }
+        public DataTable getTablaUsuariosPorEmailUsuario(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO] FROM USUARIOS WHERE Email_U LIKE '%" + campo + "%' ORDER BY ABS(ID_Usuario_U)");
+            return tabla;
+        }
+        public DataTable getTablaUsuariosPorContraseñaUsuario(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO] FROM USUARIOS WHERE Contraseña_U LIKE '%" + campo + "%' ORDER BY ABS(ID_Usuario_U)");
             return tabla;
         }
         public Usuarios getUsuario(Usuarios usu)
@@ -54,17 +83,38 @@ namespace DAO
             ArmarParametrosUsuarioAgregar(ref comando, usu);
             return ds.EjecutarProcedimientoAlmacenado(comando, "sp_AgregarUsuario");
         }
-        public int ModificarComplejo(Usuarios usu)
+        public int ModificarUsuario(Usuarios usu)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametrosUsuarioAgregar(ref comando, usu);
+            ArmarParametrosUsuarioModificar(ref comando, usu);
             return ds.EjecutarProcedimientoAlmacenado(comando, "sp_ModificarUsuario");
         }
+
         private void ArmarParametrosUsuarioEliminar(ref SqlCommand comando, Usuarios usu)
         {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = comando.Parameters.Add("@IDUSUARIO", SqlDbType.Int);
             SqlParametros.Value = usu.IDUsuario;
+        }
+        private void ArmarParametrosUsuarioModificar(ref SqlCommand comando, Usuarios usu)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = comando.Parameters.Add("@IDUSUARIO", SqlDbType.Int);
+            SqlParametros.Value = usu.NombreUsuario;
+            SqlParametros = comando.Parameters.Add("@NOMBREUSUARIO", SqlDbType.VarChar);
+            SqlParametros.Value = usu.NombreUsuario;
+            SqlParametros = comando.Parameters.Add("@APELLIDOUSUARIO", SqlDbType.VarChar);
+            SqlParametros.Value = usu.ApellidoUsuario;
+            SqlParametros = comando.Parameters.Add("@DNIUSUARIO", SqlDbType.VarChar);
+            SqlParametros.Value = usu.DNIUsuario;
+            SqlParametros = comando.Parameters.Add("@TELEFONOUSUARIO", SqlDbType.VarChar);
+            SqlParametros.Value = usu.TelefonoUsuario;
+            SqlParametros = comando.Parameters.Add("@EMAILUSUARIO", SqlDbType.VarChar);
+            SqlParametros.Value = usu.EmailUsuario;
+            SqlParametros = comando.Parameters.Add("@CONTRASEÑAUSUARIO", SqlDbType.VarChar);
+            SqlParametros.Value = usu.ContraseñaUsuario;
+            SqlParametros = comando.Parameters.Add("@TIPOUSUARIO", SqlDbType.Bit);
+            SqlParametros.Value = usu.TipoUsuario;
         }
         private void ArmarParametrosUsuarioAgregar(ref SqlCommand comando, Usuarios usu)
         {
