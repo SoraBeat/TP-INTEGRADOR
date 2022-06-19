@@ -6,22 +6,24 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class AsientosComprados
+    public class AsientosComprados
     {
-        private int idAsiento;
+        private string idAsiento;
         private int idVenta;
         private int idDetalleVenta;
-        private int idFuncion;
-        private int idSala;
-        private int idComplejo;
+        private string idFuncion;
+        private string idSala;
+        private string idComplejo;
+        private bool estadoComplejo;
 
         public AsientosComprados() { }
 
-        public int IDAsiento { get => idAsiento; set => idAsiento = value; }
-        public int IDVenta { get => idVenta; set => idVenta = value; }
-        public int IDDetalleVenta { get => idDetalleVenta; set => idDetalleVenta = value; }
-        public int IDFuncion { get => idFuncion; set => idFuncion = value; }
-        public int IDSala { get => idSala; set => idSala = value; }
-        public int IDComplejo { get => idComplejo; set => idComplejo = value; }
+        public string IdAsiento { get => idAsiento; set => idAsiento = value; }
+        public int IdVenta { get => idVenta; set => idVenta = value; }
+        public int IdDetalleVenta { get => idDetalleVenta; set => idDetalleVenta = value; }
+        public string IdFuncion { get => idFuncion; set => idFuncion = value; }
+        public string IdSala { get => idSala; set => idSala = value; }
+        public string IdComplejo { get => idComplejo; set => idComplejo = value; }
+        public bool EstadoComplejo { get => estadoComplejo; set => estadoComplejo = value; }
     }
 }
