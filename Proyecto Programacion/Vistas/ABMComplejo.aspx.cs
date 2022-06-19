@@ -75,18 +75,10 @@ namespace Vistas
 			//Busco ID del Complejo
 			String ID_Complejo = ((Label)gvComplejos.Rows[e.RowIndex].FindControl("LBL_IT_ID")).Text;
 			bool res = negcom.EliminarComplejo(ID_Complejo);
-            if (res)
-            {
-				lblResultado.ForeColor = System.Drawing.Color.Green;
-				lblResultado.Text = "Se ha borrado correctamente";
-            }
-            else
-            {
-				lblResultado.ForeColor = System.Drawing.Color.Red;
-				lblResultado.Text = "ERROR al borrar";
-			}
 			CargarTablaConFiltro();
-        }
+			lblResultado.ForeColor = System.Drawing.Color.Green;
+			lblResultado.Text = "Se ha borrado correctamente";
+		}
 
         protected void gvComplejos_RowEditing(object sender, GridViewEditEventArgs e)
         {
@@ -97,7 +89,7 @@ namespace Vistas
         protected void gvComplejos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
 			gvComplejos.EditIndex = -1;
-			CargarTablaSinFiltro();
+			CargarTablaConFiltro();
         }
 
         protected void gvComplejos_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -117,9 +109,19 @@ namespace Vistas
 			com.Email = Email;
 			com.Estado_Co1 = Estado;
 
-			negcom.ModificarComplejo(com);
+			bool res=negcom.ModificarComplejo(com);
 			gvComplejos.EditIndex = -1;
 			CargarTablaConFiltro();
+            if (res)
+            {
+				lblResultado.ForeColor = System.Drawing.Color.Green;
+				lblResultado.Text = "Se ha editado correctamente";
+			}
+            else
+            {
+				lblResultado.ForeColor = System.Drawing.Color.Red;
+				lblResultado.Text = "ERROR al editar";
+			}
 		}
 
         protected void btnEnviar_Click(object sender, EventArgs e)
@@ -141,16 +143,6 @@ namespace Vistas
 
 
 				bool res = negcom.AgregarComplejo(com);
-                if (res)
-                {
-					lblResultadoGuardar.ForeColor = System.Drawing.Color.Green;
-					lblResultadoGuardar.Text = "Se ha guardado con exito";
-                }
-                else
-                {
-					lblResultadoGuardar.ForeColor = System.Drawing.Color.Red;
-					lblResultadoGuardar.Text = "ERROR al guardar";
-				}
 				gvComplejos.EditIndex = -1;
 				txtID.Text = "";
 				txtNombre.Text = "";
@@ -158,6 +150,16 @@ namespace Vistas
 				txtTelefono.Text = "";
 				txtEmail.Text = "";
 				CargarTablaSinFiltro();
+				if (res)
+				{
+					lblResultadoGuardar.ForeColor = System.Drawing.Color.Green;
+					lblResultadoGuardar.Text = "Se ha guardado con exito";
+				}
+				else
+				{
+					lblResultadoGuardar.ForeColor = System.Drawing.Color.Red;
+					lblResultadoGuardar.Text = "ERROR al guardar";
+				}
 			}
 		}
 

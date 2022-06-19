@@ -65,9 +65,11 @@ namespace Negocios
         {
             int cantFilas = 0;
             DAOComplejos daoCom = new DAOComplejos();
-
-            cantFilas = daoCom.AgregarComplejo(com);
-
+            bool existe = daoCom.ExisteComplejo(com);
+            if(!existe)
+            {
+                cantFilas = daoCom.AgregarComplejo(com);
+            }
             if (cantFilas == 1)
             {
                 return true;

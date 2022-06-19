@@ -77,7 +77,7 @@ namespace DAO
         public int ModificarComplejo(Complejos com)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametrosComplejoAgregar(ref comando, com);
+            ArmarParametrosComplejoModificar(ref comando, com);
             return ds.EjecutarProcedimientoAlmacenado(comando, "sp_ModificarComplejo");
         }
         private void ArmarParametrosComplejoEliminar(ref SqlCommand comando, Complejos com)
@@ -87,6 +87,20 @@ namespace DAO
             SqlParametros.Value = com.ID_Complejo;
         }
         private void ArmarParametrosComplejoAgregar(ref SqlCommand comando, Complejos com)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = comando.Parameters.Add("@IDCOMPLEJO", SqlDbType.VarChar);
+            SqlParametros.Value = com.ID_Complejo;
+            SqlParametros = comando.Parameters.Add("@NOMBRECOMPLEJO", SqlDbType.VarChar);
+            SqlParametros.Value = com.Nombre;
+            SqlParametros = comando.Parameters.Add("@DIRECCIONCOMPLEJO", SqlDbType.VarChar);
+            SqlParametros.Value = com.Direccion;
+            SqlParametros = comando.Parameters.Add("@TELEFONOCOMPLEJO", SqlDbType.VarChar);
+            SqlParametros.Value = com.Telefono;
+            SqlParametros = comando.Parameters.Add("@EMAILCOMPLEJO", SqlDbType.VarChar);
+            SqlParametros.Value = com.Email;
+        }
+        private void ArmarParametrosComplejoModificar(ref SqlCommand comando, Complejos com)
         {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = comando.Parameters.Add("@IDCOMPLEJO", SqlDbType.VarChar);
