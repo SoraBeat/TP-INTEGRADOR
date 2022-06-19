@@ -52,6 +52,16 @@ namespace Negocios
             DAOUsuarios dao = new DAOUsuarios();
             return dao.getTablaUsuariosPorContraseñaUsuario(contraseña);
         }
+        public DataTable getListaPorTipoDeUsuario(string tipoUsuario)
+        {
+            DAOUsuarios dao = new DAOUsuarios();
+            return dao.getTablaUsuariosPorTipoDeUsuario(tipoUsuario);
+        }
+        public DataTable getListaPorEstadoDeUsuario(string estado)
+        {
+            DAOUsuarios dao = new DAOUsuarios();
+            return dao.getTablaUsuariosPorEstadoDeUsuario(estado);
+        }
 
         public Usuarios get(int id)
         {
@@ -91,7 +101,6 @@ namespace Negocios
                 return false;
             }
         }
-
         public bool ModificarUsuario(Usuarios usu)
         {
             int cantFilas = 0;
@@ -107,7 +116,6 @@ namespace Negocios
             {
                 return false;
             }
-
         }
     }
 }

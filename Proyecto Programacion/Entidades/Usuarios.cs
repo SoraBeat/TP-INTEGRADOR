@@ -16,6 +16,7 @@ namespace Entidades
         private string emailUsuario;
         private string contraseñaUsuario;
         private bool tipoUsuario;
+        private bool estado;
         public Usuarios() { }
 
         public int IDUsuario { get => idUsuario; set => idUsuario = value; }
@@ -26,5 +27,6 @@ namespace Entidades
         public string EmailUsuario { get => emailUsuario; set => emailUsuario = value; }
         public string ContraseñaUsuario { get => contraseñaUsuario; set => contraseñaUsuario = value; }
         public bool TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }
+        public bool Estado { get => estado; set => estado= value; }
     }
 }
