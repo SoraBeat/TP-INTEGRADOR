@@ -12,13 +12,13 @@ namespace Entidades
         private int idUsuario;
         private string fechaVenta;
         private string metodoPagoVenta;
-        private int montoFinalVenta;
+        private float montoFinalVenta;
         public Ventas() { }
 
         public int IDVenta { get => idVenta; set => idVenta = value; }
         public int IDUsuario { get => idUsuario; set => idUsuario = value; }
         public string FechaVenta { get => fechaVenta; set => fechaVenta = value; }
         public string MetodoPagoVenta { get => metodoPagoVenta; set => metodoPagoVenta = value; }
-        public int MontoFinalVenta { get => montoFinalVenta; set => montoFinalVenta = value; }
+        public float MontoFinalVenta { get => montoFinalVenta; set => montoFinalVenta = value; }
     }
 }
