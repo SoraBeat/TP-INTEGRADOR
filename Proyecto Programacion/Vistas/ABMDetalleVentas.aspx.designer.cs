@@ -24,15 +24,6 @@ namespace Vistas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control lbCerrarSesion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbCerrarSesion;
-
-        /// <summary>
         /// Control ddlFiltro.
         /// </summary>
         /// <remarks>
@@ -78,13 +69,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.GridView gvDetalleVentas;
 
         /// <summary>
-        /// Control Label6.
+        /// Control Label5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
         /// Control hlComplejos.
