@@ -65,8 +65,7 @@
                 <tr>
                     <td class="auto-style8">Ticket:</td>
                     <td class="auto-style7">
-                        <asp:DropDownList ID="ddlTicket" runat="server" Height="18px" Width="191px">
-                        </asp:DropDownList>
+                        <asp:Label ID="lblTicket" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style6">&nbsp;</td>
                 </tr>

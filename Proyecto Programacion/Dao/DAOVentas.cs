@@ -47,5 +47,10 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Ventas", "SELECT ID_Venta_V AS [IDVenta], ID_Usuario_V AS [IDUsuario], Fecha_V AS [Fecha], Metodo_Pago_V AS [MetodoPago], Monto_Final_V AS [MontoFinal] FROM Ventas");
             return tabla;
         }
+        public int buscarProximaVenta()
+        {
+
+          return  ds.ObtenerMaximo("select max(id_venta_v)  from ventas");
+        }
     }
 }

@@ -46,5 +46,12 @@ namespace Negocios
             DAOVentas dao = new DAOVentas();
             return dao.getTablaVentasPorMontoFinalMenorA(campo);
         }
+
+        public int buscarProximaVenta()
+        {
+            DAOVentas dao = new DAOVentas();
+            return dao.buscarProximaVenta();
+
+        }
     }
 }
