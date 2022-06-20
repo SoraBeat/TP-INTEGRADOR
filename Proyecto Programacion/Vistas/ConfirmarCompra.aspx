@@ -77,15 +77,15 @@
                     <td class="auto-style6">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style8">Cantidad: </td>
-                    <td class="auto-style7">
+                    <td class="auto-style13">Cantidad: </td>
+                    <td class="auto-style14">
                         <input id="Text1" class="auto-style9" type="number" /></td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style15"></td>
                 </tr>
                 <tr>
                     <td class="auto-style8">Ubicacion:</td>
                     <td class="auto-style7">
-                        <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:DropDownList ID="ddlUbicacion" runat="server">
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style6">&nbsp;</td>
@@ -94,6 +94,8 @@
                     <td class="auto-style8">Forma de pago:</td>
                     <td class="auto-style7">
                         <asp:DropDownList ID="ddlFormaDePago" runat="server" AutoPostBack="True" Height="21px" Width="194px">
+                            <asp:ListItem Value="0">Debito</asp:ListItem>
+                            <asp:ListItem Value="1">Credito</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style6">&nbsp;</td>
@@ -106,7 +108,7 @@
                 <tr>
                     <td class="auto-style10">&nbsp;</td>
                     <td class="auto-style11">
-                        <asp:Button ID="Button1" runat="server" Text="Confirmar compra" />
+                        <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar compra" />
                     </td>
                     <td class="auto-style12">&nbsp;</td>
                 </tr>
