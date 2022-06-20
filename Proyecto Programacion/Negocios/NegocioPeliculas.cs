@@ -18,6 +18,42 @@ namespace Negocios
             return dao.getTablaPeliculas();
         }
 
+        public DataTable getListaPeliculasComplejos(string consulta)
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculasComplejos(consulta);
+        }
+
+        public DataTable getListaPeliculas2D()
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculas2D();
+        }
+
+        public DataTable getListaPeliculas3D()
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculas3D();
+        }
+
+        public DataTable getListaPeliculas4D()
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculas4D();
+        }
+
+        public DataTable getListaPeliculasSubtitulada()
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculasSubtitulada();
+        }
+
+        public DataTable getListaPeliculasEspanol()
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getTablaPeliculasEspanol();
+        }
+
         public DataTable getListaPeliculasPorID(string campo)
         {
             DAOPeliculas dao = new DAOPeliculas();
