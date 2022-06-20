@@ -79,7 +79,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="tbFiltro" runat="server"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button1" runat="server" Text="Filtrar" />
+                        <asp:Button ID="Button1" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
 &nbsp;&nbsp;&nbsp;
                         <asp:Button ID="Button2" runat="server" Text="Quitar filtro" OnClick="btnFiltrarTodo_Click" />
                     </td>
