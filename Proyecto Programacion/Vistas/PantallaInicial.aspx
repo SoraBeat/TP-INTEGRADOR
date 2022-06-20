@@ -13,21 +13,6 @@
         .auto-style2 {
             text-align: center;
         }
-        .auto-style3 {
-            width: 100%;
-            background-color: #33CCFF;
-        }
-        .auto-style4 {
-            height: 138px;
-            text-align: center;
-        }
-        .auto-style5 {
-            height: 131px;
-        }
-        .auto-style6 {
-            height: 131px;
-            text-align: center;
-        }
         .auto-style7 {
             color: #000000;
             background-color: #FFFFFF;
@@ -45,7 +30,7 @@
         .auto-style13 {
             width: 41px;
         }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -64,46 +49,173 @@
                 <td class="auto-style2">FORMATO</td>
                 <td class="auto-style2">IDIOMA</td>
                 <td class="auto-style2" rowspan="2">
-                    <asp:Button ID="Button10" runat="server" Text="Ver todo" />
+                    <asp:Button ID="btnVerTodo" runat="server" Text="Ver todo" OnClick="btnVerTodo_Click" />
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:DropDownList ID="DropDownList1" runat="server" Height="17px" Width="199px">
+                    <asp:DropDownList ID="DDLsucursales" runat="server" Height="17px" Width="199px" AutoPostBack="True" OnSelectedIndexChanged="DDLsucursales_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
                 <td class="auto-style2">
-                    <asp:Button ID="Button5" runat="server" Text="2D" />
-                    <asp:Button ID="Button6" runat="server" Text="3D" />
-                    <asp:Button ID="Button7" runat="server" Text="4D" />
+                    <asp:Button ID="btn2D" runat="server" Text="2D" OnClick="btn2D_Click" />
+                    <asp:Button ID="btn3D" runat="server" Text="3D" OnClick="btn3D_Click" />
+                    <asp:Button ID="btn4D" runat="server" Text="4D" OnClick="btn4D_Click" />
                 </td>
                 <td class="auto-style2">
-                    <asp:Button ID="Button8" runat="server" Text="Subtitulado" />
-                    <asp:Button ID="Button9" runat="server" Text="Español" />
+                    <asp:Button ID="btnSubtitulada" runat="server" Text="Subtitulado" OnClick="btnSubtitulada_Click" />
+                    <asp:Button ID="btnEspanol" runat="server" Text="Español" OnClick="btnEspanol_Click" />
+                </td>
+            </tr>
+        </table>
+        <table class="auto-style1">
+            <tr>
+                <td>
+                    <asp:ListView ID="lvPeliculas" runat="server"  GroupItemCount="4">
+<%--                        <AlternatingItemTemplate>
+                            <td runat="server" style="background-color: #FFFFFF;color: #284775;">Titulo_P:
+                                <asp:Label ID="Titulo_PLabel" runat="server" Text='<%# Eval("Titulo_P") %>' />
+                                <br />Portada_P:
+                                <asp:Label ID="Portada_PLabel" runat="server" Text='<%# Eval("Portada_P") %>' />
+                                <br />ID_Pelicula_P:
+                                <asp:Label ID="ID_Pelicula_PLabel" runat="server" Text='<%# Eval("ID_Pelicula_P") %>' />
+                                <br />Descripcion_P:
+                                <asp:Label ID="Descripcion_PLabel" runat="server" Text='<%# Eval("Descripcion_P") %>' />
+                                <br />Duracion_P:
+                                <asp:Label ID="Duracion_PLabel" runat="server" Text='<%# Eval("Duracion_P") %>' />
+                                <br />Clasificacion_P:
+                                <asp:Label ID="Clasificacion_PLabel" runat="server" Text='<%# Eval("Clasificacion_P") %>' />
+                                <br />Genero_P:
+                                <asp:Label ID="Genero_PLabel" runat="server" Text='<%# Eval("Genero_P") %>' />
+                                <br />Formato_P:
+                                <asp:Label ID="Formato_PLabel" runat="server" Text='<%# Eval("Formato_P") %>' />
+                                <br />
+                                <asp:CheckBox ID="Estado_PCheckBox" runat="server" Checked='<%# Eval("Estado_P") %>' Enabled="false" Text="Estado_P" />
+                                <br /></td>
+                        </AlternatingItemTemplate>--%>
+                        <EditItemTemplate>
+                            <td runat="server" style="background-color: #999999;">Titulo_P:
+                                <asp:TextBox ID="Titulo_PTextBox" runat="server" Text='<%# Bind("Titulo_P") %>' />
+                                <br />Portada_P:
+                                <asp:TextBox ID="Portada_PTextBox" runat="server" Text='<%# Bind("Portada_P") %>' />
+                                <br />ID_Pelicula_P:
+                                <asp:Label ID="ID_Pelicula_PLabel1" runat="server" Text='<%# Eval("ID_Pelicula_P") %>' />
+                                <br />Descripcion_P:
+                                <asp:TextBox ID="Descripcion_PTextBox" runat="server" Text='<%# Bind("Descripcion_P") %>' />
+                                <br />Duracion_P:
+                                <asp:TextBox ID="Duracion_PTextBox" runat="server" Text='<%# Bind("Duracion_P") %>' />
+                                <br />Clasificacion_P:
+                                <asp:TextBox ID="Clasificacion_PTextBox" runat="server" Text='<%# Bind("Clasificacion_P") %>' />
+                                <br />Genero_P:
+                                <asp:TextBox ID="Genero_PTextBox" runat="server" Text='<%# Bind("Genero_P") %>' />
+                                <br />Formato_P:
+                                <asp:TextBox ID="Formato_PTextBox" runat="server" Text='<%# Bind("Formato_P") %>' />
+                                <br />
+                                <asp:CheckBox ID="Estado_PCheckBox" runat="server" Checked='<%# Bind("Estado_P") %>' Text="Estado_P" />
+                                <br />
+                                <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
+                                <br />
+                                <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancelar" />
+                                <br /></td>
+                        </EditItemTemplate>
+                        <EmptyDataTemplate>
+                            <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
+                                <tr>
+                                    <td>No se han devuelto datos.</td>
+                                </tr>
+                            </table>
+                        </EmptyDataTemplate>
+                        <EmptyItemTemplate>
+<td runat="server" />
+                        </EmptyItemTemplate>
+                        <GroupTemplate>
+                            <tr id="itemPlaceholderContainer" runat="server">
+                                <td id="itemPlaceholder" runat="server"></td>
+                            </tr>
+                        </GroupTemplate>
+                        <InsertItemTemplate>
+                            <td runat="server" style="">Titulo_P:
+                                <asp:TextBox ID="Titulo_PTextBox" runat="server" Text='<%# Bind("Titulo_P") %>' />
+                                <br />Portada_P:
+                                <asp:TextBox ID="Portada_PTextBox" runat="server" Text='<%# Bind("Portada_P") %>' />
+                                <br />ID_Pelicula_P:
+                                <asp:TextBox ID="ID_Pelicula_PTextBox" runat="server" Text='<%# Bind("ID_Pelicula_P") %>' />
+                                <br />Descripcion_P:
+                                <asp:TextBox ID="Descripcion_PTextBox" runat="server" Text='<%# Bind("Descripcion_P") %>' />
+                                <br />Duracion_P:
+                                <asp:TextBox ID="Duracion_PTextBox" runat="server" Text='<%# Bind("Duracion_P") %>' />
+                                <br />Clasificacion_P:
+                                <asp:TextBox ID="Clasificacion_PTextBox" runat="server" Text='<%# Bind("Clasificacion_P") %>' />
+                                <br />Genero_P:
+                                <asp:TextBox ID="Genero_PTextBox" runat="server" Text='<%# Bind("Genero_P") %>' />
+                                <br />Formato_P:
+                                <asp:TextBox ID="Formato_PTextBox" runat="server" Text='<%# Bind("Formato_P") %>' />
+                                <br />
+                                <asp:CheckBox ID="Estado_PCheckBox" runat="server" Checked='<%# Bind("Estado_P") %>' Text="Estado_P" />
+                                <br />
+                                <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
+                                <br />
+                                <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
+                                <br /></td>
+                        </InsertItemTemplate>
+                        <ItemTemplate>
+                            <td runat="server" style="background-color: #E0FFFF;color: #333333;" class="auto-style2">&nbsp;<asp:Label ID="Titulo_PLabel" runat="server" Text='<%# Eval("Titulo_P") %>' />
+                                <br />
+                                <asp:Image ID="Image2" runat="server" Height="150px" Width="150px" />
+                                <br />
+                                <br />
+                                <asp:Button ID="btnSeleccionarPelicula" runat="server"  CommandName="EventoSeleccionar" OnCommand="btnSeleccionarPelicula_Command" Text="Seleccionar" />
+                                <br /></td>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <table runat="server">
+                                <tr runat="server">
+                                    <td runat="server">
+                                        <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                            <tr id="groupPlaceholder" runat="server">
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr runat="server">
+                                    <td runat="server" style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF">
+                                        <asp:DataPager ID="DataPager1" runat="server" PageSize="8">
+                                            <Fields>
+                                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                                <asp:NumericPagerField />
+                                                <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                            </Fields>
+                                        </asp:DataPager>
+                                    </td>
+                                </tr>
+                            </table>
+                        </LayoutTemplate>
+                        <SelectedItemTemplate>
+                            <td runat="server" style="background-color: #E2DED6;font-weight: bold;color: #333333;">Titulo_P:
+                                <asp:Label ID="Titulo_PLabel" runat="server" Text='<%# Eval("Titulo_P") %>' />
+                                <br />Portada_P:
+                                <asp:Label ID="Portada_PLabel" runat="server" Text='<%# Eval("Portada_P") %>' />
+                                <br />ID_Pelicula_P:
+                                <asp:Label ID="ID_Pelicula_PLabel" runat="server" Text='<%# Eval("ID_Pelicula_P") %>' />
+                                <br />Descripcion_P:
+                                <asp:Label ID="Descripcion_PLabel" runat="server" Text='<%# Eval("Descripcion_P") %>' />
+                                <br />Duracion_P:
+                                <asp:Label ID="Duracion_PLabel" runat="server" Text='<%# Eval("Duracion_P") %>' />
+                                <br />Clasificacion_P:
+                                <asp:Label ID="Clasificacion_PLabel" runat="server" Text='<%# Eval("Clasificacion_P") %>' />
+                                <br />Genero_P:
+                                <asp:Label ID="Genero_PLabel" runat="server" Text='<%# Eval("Genero_P") %>' />
+                                <br />Formato_P:
+                                <asp:Label ID="Formato_PLabel" runat="server" Text='<%# Eval("Formato_P") %>' />
+                                <br />
+                                <asp:CheckBox ID="Estado_PCheckBox" runat="server" Checked='<%# Eval("Estado_P") %>' Enabled="false" Text="Estado_P" />
+                                <br /></td>
+                        </SelectedItemTemplate>
+                    </asp:ListView>
                 </td>
             </tr>
         </table>
         <br />
-        <table class="auto-style3">
-            <tr>
-                <td class="auto-style4"><strong>PELICULA 1</td>
-                <td class="auto-style4">PELICULA 2</td>
-                <td class="auto-style4">PELICULA 3</td>
-                <td class="auto-style4">PELICULA 4</td>
-                <td class="auto-style4">PELICULA 6</td>
-                <td class="auto-style4">PELICULA 7</td>
-                <td class="auto-style4">PELICULA 8</td>
-            </tr>
-            <tr>
-                <td class="auto-style6">PELICULA 9</td>
-                <td class="auto-style6">PELICULA 10</td>
-                <td class="auto-style6">PELICULA 11</td>
-                <td class="auto-style5"></td>
-                <td class="auto-style5"></td>
-                <td class="auto-style5"></td>
-                <td class="auto-style5"></strong></td>
-            </tr>
-        </table>
         <br />
         <div>
             <br />

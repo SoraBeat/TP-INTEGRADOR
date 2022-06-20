@@ -34,7 +34,42 @@ namespace DAO
         }
         public DataTable getTablaPeliculas()
         {
-            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero],Formato_P [Formato],Portada_P [Portada], Estado_P [Estado] FROM Peliculas");
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT  Titulo_P FROM Peliculas INNER JOIN Funciones  on Peliculas.ID_Pelicula_P = Funciones.ID_Pelicula_F GROUP BY Titulo_P");
+            return tabla;
+        }
+        public DataTable getTablaPeliculasComplejos(string consulta)
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT Titulo_P FROM Peliculas INNER JOIN Funciones  on Peliculas.ID_Pelicula_P = Funciones.ID_Pelicula_F WHERE ID_Complejo_F =" + consulta + "GROUP BY Titulo_P");
+            return tabla;
+        }
+
+        public DataTable getTablaPeliculas2D()
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT Titulo_P FROM Peliculas INNER JOIN Funciones  on Peliculas.ID_Pelicula_P = Funciones.ID_Pelicula_F WHERE Formato_P = '2D' GROUP BY Titulo_P");
+            return tabla;
+        }
+
+        public DataTable getTablaPeliculas4D()
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT Titulo_P FROM Peliculas INNER JOIN Funciones  on Peliculas.ID_Pelicula_P = Funciones.ID_Pelicula_F WHERE Formato_P = '4D' GROUP BY Titulo_P");
+            return tabla;
+        }
+
+        public DataTable getTablaPeliculasSubtitulada()
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT  Titulo_P FROM Peliculas INNER JOIN Funciones  on Peliculas.ID_Pelicula_P = Funciones.ID_Pelicula_F WHERE Idioma_F = 'Subtitulado' GROUP BY Titulo_P");
+            return tabla;
+        }
+
+        public DataTable getTablaPeliculasEspanol()
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT  Titulo_P FROM Peliculas INNER JOIN Funciones  on Peliculas.ID_Pelicula_P = Funciones.ID_Pelicula_F WHERE Idioma_F = 'Español' GROUP BY Titulo_P");
+            return tabla;
+        }
+
+        public DataTable getTablaPeliculas3D()
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT Titulo_P FROM Peliculas INNER JOIN Funciones  on Peliculas.ID_Pelicula_P = Funciones.ID_Pelicula_F WHERE Formato_P = '3D' GROUP BY Titulo_P");
             return tabla;
         }
 
