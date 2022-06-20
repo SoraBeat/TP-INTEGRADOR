@@ -66,9 +66,6 @@
             </div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style20">&nbsp;</td>
-                </tr>
-                <tr>
                     <td class="auto-style16">
                         <asp:DropDownList ID="ddlFiltro" runat="server">
                         </asp:DropDownList>
