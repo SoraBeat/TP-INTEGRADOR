@@ -177,35 +177,35 @@
                     <h4>AGREGAR PELICULA</h4>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtID" runat="server" Width="267px" ValidationGroup="Grupo1" placeholder="ID"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtID" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtID" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtTitulo" runat="server" Width="267px" ValidationGroup="Grupo1" placeholder="TITULO"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtTitulo" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtTitulo" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtDescripcion" runat="server" Height="77px" TextMode="MultiLine" Width="273px" ValidationGroup="Grupo1" placeholder="DESCRIPCION"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtDuracion" runat="server" Width="267px" ValidationGroup="Grupo1" placeholder="DURACION"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtDuracion" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtDuracion" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtClasificacion" runat="server" Width="267px" ValidationGroup="Grupo1" placeholder="CLASIFICACION"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtClasificacion" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtClasificacion" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtGenero" runat="server" Width="267px" ValidationGroup="Grupo1" placeholder="GENERO"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtGenero" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtGenero" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtFormato" runat="server" Width="267px" ValidationGroup="Grupo1" placeholder="FORMATO"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtFormato" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtFormato" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtPortada" runat="server" Width="267px" ValidationGroup="Grupo1" placeholder="PORTADA"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtPortada" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtPortada" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:Button CssClass="btn btn-primary" ID="btnEnviar_Click" runat="server" OnClick="btnEnviar_Click_Click" Text="Guardar" ValidationGroup="Grupo1" />
