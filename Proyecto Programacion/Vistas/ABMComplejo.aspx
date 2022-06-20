@@ -82,7 +82,7 @@
                 </tr>
             </table>
             <div style="display: flex; flex-direction: row; margin-top: 20px;">
-                <div style="width: 20%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <div style="width: 20%; display: flex; flex-direction: column; justify-content: start; align-items: center;">
                     <img style="width: 100px; height: 100px;" src="Imagenes/Pagina/Persona.png" alt="Alternate Text" />
                     <h3>NOMBRE</h3>
                     <h3>APELLIDO</h3>
