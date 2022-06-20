@@ -54,8 +54,7 @@ namespace Negocios
         public int  buscarProximaVenta()
         {
             DAODetalleVentas dao = new DAODetalleVentas();
-           return dao.buscarProximaVenta();
-
+            return 0;
         }
 
     }
