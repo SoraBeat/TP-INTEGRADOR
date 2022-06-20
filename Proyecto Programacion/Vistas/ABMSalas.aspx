@@ -4,259 +4,152 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Salas ADMIN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <style type="text/css">
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            font-weight: 500;
+        }
+
         .auto-style1 {
             width: 100%;
         }
-        .auto-style2 {
-            width: 752px;
-        }
-        .auto-style3 {
-            height: 89px;
-        }
-        .auto-style4 {
-            margin-left: 40px;
-        }
-        .auto-style5 {
-            width: 171px;
-        }
-        .auto-style10 {
-            width: 26px;
-        }
-        .auto-style11 {
-            width: 26px;
-            height: 23px;
-        }
-        .auto-style12 {
-            height: 23px;
-        }
-        .auto-style14 {
-            height: 23px;
-            width: 192px;
-        }
+
         .auto-style16 {
             text-align: center;
-        }
-        .auto-style17 {
-            text-align: center;
-            width: 140px;
-        }
-        .auto-style18 {
-            height: 23px;
-            width: 140px;
-        }
-        .auto-style19 {
-            width: 140px;
-        }
-        .auto-style20 {
-            width: 532px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:ScriptManager runat="server">
+                <Scripts>
+                    <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                    <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                </Scripts>
+            </asp:ScriptManager>
+            <nav class="auto-style22" style="background-color: #10179B; padding: 10px 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                <a class="" href="PantallaInicial.aspx" style="margin-left: 30px;">
+                    <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
+                </a>
+                <button class="btn" style="height: 50px; color: white; font-weight: 700; font-size: 20px; margin-right: 30px;">
+                    Cerrar sesion
+                </button>
+            </nav>
+            <div>
+                <h1 style="text-align: center; background-color: #343434; padding: 10px 0; color: white;">SALAS</h1>
+            </div>
             <table class="auto-style1">
-                <tr>
-                    <td class="auto-style2">*Nombre del cine*</td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:LinkButton ID="LinkButton1" runat="server">Cerrar sesion</asp:LinkButton>
-                    </td>
-                </tr>
-            </table>
-            <p class="auto-style4">
-                <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SALAS</p>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style16">Filtrar busqueda</td>
-                </tr>
                 <tr>
                     <td class="auto-style16">
-                        <asp:DropDownList ID="ddlFiltro" runat="server">
+                        <asp:DropDownList CssClass="dropdown" ID="ddlFiltro" runat="server">
                         </asp:DropDownList>
-&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="tbFiltro" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button1" runat="server" Text="Filtrar" OnClick="Button1_Click" />
-&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button2" runat="server" Text="Quitar filtro" OnClick="Button2_Click" />
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:Button class="btn btn-secondary" ID="Button1" runat="server" Text="Filtrar" OnClick="Button1_Click" />
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:Button class="btn btn-secondary" ID="Button2" runat="server" Text="Quitar filtro" OnClick="Button2_Click" />
                     </td>
                 </tr>
             </table>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style5">
-                        <img alt="" class="auto-style3" src="" />*Perfil admin*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
-                    <td>
-                        <asp:GridView ID="gvSalas" runat="server" AutoGenerateDeleteButton="True" AutoGenerateEditButton="True" Width="734px" AutoGenerateColumns="False" OnRowDeleting="gvSals_RowDeleting" OnRowEditing="gvSalas_RowEditing" OnRowUpdating="gvSalas_RowUpdating" AllowPaging="True" OnPageIndexChanging="gvSalas_PageIndexChanging" OnRowCancelingEdit="gvSalas_RowCancelingEdit">
-                            <Columns>
-                                <asp:TemplateField HeaderText="ID">
-                                    <EditItemTemplate>
-                                        <asp:Label ID="LBL_EDT_ID" runat="server" Text='<%# Bind("ID") %>'></asp:Label>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_ID" runat="server" Text='<%# Bind("ID") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="ID COMPLEJO">
-                                    <EditItemTemplate>
-                                        <asp:Label ID="LBL_EDT_COMPLEJO" runat="server" Text='<%# Bind("Complejo") %>'></asp:Label>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_COMPLEJO" runat="server" Text='<%# Bind("Complejo") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="CANT. ASIENTOS">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="TXT_EDT_ASIENTOS" runat="server" Text='<%# Bind("ASIENTOS") %>'></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RFV_DIRECCION" runat="server" ControlToValidate="TXT_EDT_ASIENTOS" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_ASIENTOS" runat="server" Text='<%# Bind("ASIENTOS") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="ESTADO">
-                                    <EditItemTemplate>
-                                        <asp:CheckBox ID="TXT_EDT_ESTADO" runat="server" Checked="True" />
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_ESTADO" runat="server" Text='<%# Bind("Estado") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                            </Columns>
+            <div style="display: flex; flex-direction: row; margin-top: 20px;">
+                <div style="width: 20%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <img style="width: 100px; height: 100px;" src="Imagenes/Pagina/Persona.png" alt="Alternate Text" />
+                    <h3>NOMBRE</h3>
+                    <h3>APELLIDO</h3>
+                </div>
+                <div style="width: 80%">
+                    <asp:GridView Style="width: 80%;" ID="gvSalas" runat="server" AutoGenerateDeleteButton="True" AutoGenerateEditButton="True" Width="734px" AutoGenerateColumns="False" OnRowDeleting="gvSals_RowDeleting" OnRowEditing="gvSalas_RowEditing" OnRowUpdating="gvSalas_RowUpdating" AllowPaging="True" OnPageIndexChanging="gvSalas_PageIndexChanging" OnRowCancelingEdit="gvSalas_RowCancelingEdit" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                        <Columns>
+                            <asp:TemplateField HeaderText="ID">
+                                <EditItemTemplate>
+                                    <asp:Label ID="LBL_EDT_ID" runat="server" Text='<%# Bind("ID") %>'></asp:Label>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="LBL_IT_ID" runat="server" Text='<%# Bind("ID") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="ID COMPLEJO">
+                                <EditItemTemplate>
+                                    <asp:Label ID="LBL_EDT_COMPLEJO" runat="server" Text='<%# Bind("Complejo") %>'></asp:Label>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="LBL_IT_COMPLEJO" runat="server" Text='<%# Bind("Complejo") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="CANT. ASIENTOS">
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TXT_EDT_ASIENTOS" runat="server" Text='<%# Bind("ASIENTOS") %>'></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RFV_DIRECCION" runat="server" ControlToValidate="TXT_EDT_ASIENTOS" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="LBL_IT_ASIENTOS" runat="server" Text='<%# Bind("ASIENTOS") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="ESTADO">
+                                <EditItemTemplate>
+                                    <asp:CheckBox ID="TXT_EDT_ESTADO" runat="server" Checked="True" />
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="LBL_IT_ESTADO" runat="server" Text='<%# Bind("Estado") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
 
-                        </asp:GridView>
-                        <br />
-                        <asp:Label ID="lblResultado" runat="server"></asp:Label>
-                    </td>
-                </tr>
-            </table>
-            <br />
-&nbsp;&nbsp;
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style16">AGREGAR SALAS</td>
-                </tr>
-            </table>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br />
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style20">
-                        <asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Medium" Text="MODIFICACION"></asp:Label>
-                    </td>
-                    <td class="auto-style17">
-                        &nbsp;</td>
-                    <td class="auto-style16">
-                        &nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style11"></td>
-                    <td class="auto-style20">
-                        <asp:HyperLink ID="hlComplejos" runat="server" NavigateUrl="~/ABMComplejo.aspx">Complejos</asp:HyperLink>
-                    </td>
-                    <td class="auto-style18">
-                        ID:&nbsp;&nbsp;&nbsp;&nbsp;
-                    </td>
-                    <td class="auto-style12">
-                        <asp:TextBox ID="txtID" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style11"></td>
-                    <td class="auto-style20">
-                        <asp:HyperLink ID="hlSalas" runat="server" NavigateUrl="~/ABMSalas.aspx">Salas</asp:HyperLink>
-                    </td>
-                    <td class="auto-style18">
-                        ID COMPLEJO:</td>
-                    <td class="auto-style12">
-                        <asp:TextBox ID="txtIDComplejo" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style11"></td>
-                    <td class="auto-style20">
-                        <asp:HyperLink ID="hlPeliculas" runat="server" NavigateUrl="~/ABMPeliculas.aspx">Peliculas</asp:HyperLink>
-                    </td>
-                    <td class="auto-style18">
-                        Cantidad de asientos:</td>
-                    <td class="auto-style12">
-                        <asp:TextBox ID="txtCantidadAsientos" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style20">
-                        <asp:HyperLink ID="hlFunciones" runat="server" NavigateUrl="~/ABMFunciones.aspx">Funciones</asp:HyperLink>
-                    <td class="auto-style11"></td>
-                    <td class="auto-style14">
-                        &nbsp;<asp:Button ID="btnEnviar" runat="server" OnClick="btnEnviar_Click" Text="Guardar" ValidationGroup="Grupo1" />
-                    </td>
-                    <td class="auto-style18">
-                        &nbsp;</td>
-                    <td class="auto-style12">
-                        &nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style20">
-                        <asp:HyperLink ID="hlAsientos" runat="server" NavigateUrl="~/ABMAsientos.aspx">Asientos</asp:HyperLink>
-                    </td>
-                    <td class="auto-style19">
+                        <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                        <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                        <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                        <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                        <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                        <SortedDescendingHeaderStyle BackColor="#242121" />
+
+                    </asp:GridView>
+                    <asp:Label ID="lblResultado" runat="server"></asp:Label>
+                </div>
+            </div>
+            <div style="width: 100%; display: flex; flex-direction: row;">
+                <div class="list-group" style="width: 20%;">
+                    <asp:Label CssClass="auto-style23 font-weight-bolder" ID="Label5" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Medium" Text="MODIFICACION"></asp:Label>
+
+                    <asp:HyperLink CssClass="list-group-item" ID="hlComplejos" runat="server" NavigateUrl="~/ABMComplejo.aspx">Complejos</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlSalas" runat="server" NavigateUrl="~/ABMSalas.aspx">Salas</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlPeliculas" runat="server" NavigateUrl="~/ABMPeliculas.aspx">Peliculas</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlFunciones" runat="server" NavigateUrl="~/ABMFunciones.aspx">Funciones</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlAsientos" runat="server" NavigateUrl="~/ABMAsientos.aspx">Asientos</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlAsientosComprados" runat="server" NavigateUrl="~/ABMAsientosComprados.aspx">Asientos Comprados</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlVentas" runat="server" NavigateUrl="~/Ventas.aspx">Ventas</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlDV" runat="server" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlUsuarios" runat="server" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink>
+                </div>
+                <div style="width: 60%;display:flex;flex-direction:column;gap:15px;">
+                    <h4>AGREGAR SALAS</h4>
+                    <div>
+                    <asp:TextBox ID="txtID" runat="server" placeholder="ID"></asp:TextBox>
+                    </div>
+                    <div> 
+                    <asp:TextBox ID="txtIDComplejo" runat="server" placeholder="ID COMPLEJO"></asp:TextBox>
+                    </div>
+                    <div>
+                    <asp:TextBox ID="txtCantidadAsientos" TextMode="Number" runat="server" placeholder="CANTIDAD DE ASIENTOS"></asp:TextBox>
+                    </div>
+                    <div>
+                    <asp:Button class="btn btn-primary" ID="btnEnviar" runat="server" OnClick="btnEnviar_Click" Text="Guardar" ValidationGroup="Grupo1" />
+                    </div>
+                    <div>
                         <asp:Label ID="lblResultadoGuardar" runat="server"></asp:Label>
-                    </td>
-                    <td>
-                        &nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style20">
-                        <asp:HyperLink ID="hlAsientosComprados" runat="server" NavigateUrl="~/ABMAsientosComprados.aspx">Asientos Comprados</asp:HyperLink>
-                    <td class="auto-style11"></td>
-                    <td class="auto-style14">
-                        &nbsp;</td>
-                    <td class="auto-style18">
-                        &nbsp;</td>
-                    <td class="auto-style12">
-                        </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style20">
-                        <asp:HyperLink ID="hlVentas" runat="server" NavigateUrl="~/Ventas.aspx">Ventas</asp:HyperLink>
-                    </td>
-                    <td class="auto-style19">
-                        &nbsp;</td>
-                    <td>
-                        &nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style20">
-                        <asp:HyperLink ID="hlDV" runat="server" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>
-                    </td>
-                    <td class="auto-style19">
-                        &nbsp;</td>
-                    <td>
-                        &nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style20">
-                        <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink>
-                    </td>
-                    <td class="auto-style19">
-                        &nbsp;</td>
-                    <td>
-                        &nbsp;</td>
-                </tr>
-            </table>
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br />
+                        </div>
+                </div>
+            </div>
         </div>
     </form>
 </body>

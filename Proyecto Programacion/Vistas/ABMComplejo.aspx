@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>Complejos ADMIN</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -75,9 +75,9 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="tbFiltro" runat="server"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
+                        <asp:Button class="btn btn-secondary" ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
                         &nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnFiltrarTodo" runat="server" Text="Quitar filtro" OnClick="btnFiltrarTodo_Click" />
+                        <asp:Button class="btn btn-secondary" ID="btnFiltrarTodo" runat="server" Text="Quitar filtro" OnClick="btnFiltrarTodo_Click" />
                     </td>
                 </tr>
             </table>
