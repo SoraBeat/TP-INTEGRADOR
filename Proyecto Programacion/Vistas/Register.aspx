@@ -48,8 +48,8 @@
                 <tr>
                     <td class="auto-style3">Nombre:</td>
                     <td>
-                        <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtNombre" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RevNombre" runat="server" ControlToValidate="txtNombre" ValidationExpression="[A-Za-z ]*" ValidationGroup="Grupo1">Nombre invalido</asp:RegularExpressionValidator>
                     </td>
                 </tr>
@@ -57,7 +57,7 @@
                     <td class="auto-style3">Apellido:</td>
                     <td>
                         <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtApellido">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RevApellido" runat="server" ControlToValidate="txtApellido" ValidationExpression="[A-Za-z ]*" ValidationGroup="Grupo1">Apellido invalido</asp:RegularExpressionValidator>
                     </td>
                 </tr>
@@ -65,7 +65,7 @@
                     <td class="auto-style3">DNI:</td>
                     <td>
                         <asp:TextBox ID="txtDNI" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtDNI">*</asp:RequiredFieldValidator>
                         <asp:RangeValidator ID="rvDNI" runat="server" ControlToValidate="txtDNI" MaximumValue="5000000" MinimumValue="3000000">Dni invalido</asp:RangeValidator>
                     </td>
                 </tr>
@@ -73,7 +73,7 @@
                     <td class="auto-style3">Teléfono:</td>
                     <td>
                         <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtTelefono">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RevTelefono" runat="server" ControlToValidate="txtTelefono" ValidationExpression="^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$" ValidationGroup="Grupo1">Telefono invalido</asp:RegularExpressionValidator>
                     </td>
                 </tr>
@@ -81,7 +81,7 @@
                     <td class="auto-style3">Email:</td>
                     <td>
                         <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtEmail">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RevEmail" runat="server" ControlToValidate="txtEmail" ValidationGroup="Grupo1" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">Email invalido</asp:RegularExpressionValidator>
                     </td>
                 </tr>
@@ -89,7 +89,7 @@
                     <td class="auto-style3">Contraseña:</td>
                     <td>
                         <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtEmail">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RevContraseña" runat="server" ControlToValidate="txtPassword" ValidationExpression="(?=^.{8,10}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$" ValidationGroup="Grupo1">La contraseña debe tener entre 8 y 10 caracteres con al menos un carácter numérico, una letra y un carácter especial.</asp:RegularExpressionValidator>
                     </td>
                 </tr>
@@ -97,8 +97,8 @@
                     <td class="auto-style3">Confirmar contraseña:</td>
                     <td>
                         <asp:TextBox ID="txtPassword2" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvPassword2" runat="server" ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="revPass2" runat="server" ControlToValidate="txtPassword2" ErrorMessage="Las contraseñas no coinciden"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator ID="rfvPassword2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtPassword2">*</asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword2" ControlToValidate="txtPassword" ErrorMessage="Las contraseñas no coinciden"></asp:CompareValidator>
                     </td>
                 </tr>
                 <tr>
