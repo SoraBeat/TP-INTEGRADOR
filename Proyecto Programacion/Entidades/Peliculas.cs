@@ -16,7 +16,7 @@ namespace Entidades
         private string generoPelicula;
         private string formatoPelicula;
         private string portadaPelicula;
-        private int estadoPelicula;
+        private bool estadoPelicula;
 
         public Peliculas() { }
 
@@ -28,6 +28,6 @@ namespace Entidades
         public string Genero { get => generoPelicula; set => generoPelicula = value; }
         public string Formato { get => formatoPelicula; set => formatoPelicula = value; }
         public string Portada { get => portadaPelicula; set => portadaPelicula = value; }
-        public int Estado { get => estadoPelicula; set => estadoPelicula = value; }
+        public bool Estado { get => estadoPelicula; set => estadoPelicula = value; }
     }
 }

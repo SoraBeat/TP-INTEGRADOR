@@ -32,13 +32,6 @@
         .auto-style12 {
             height: 23px;
         }
-        .auto-style14 {
-            height: 23px;
-            width: 192px;
-        }
-        .auto-style15 {
-            width: 192px;
-        }
         .auto-style16 {
             text-align: center;
         }
@@ -159,7 +152,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Estado">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="TXT_EDT_ESTADO" runat="server" Text='<%# Bind("Estado") %>'></asp:TextBox>
+                                        <asp:CheckBox ID="TXT_EDT_ESTADO" runat="server" Checked="True" />
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lblEstadoPelicula" runat="server" Text='<%# Bind ("Estado") %>'></asp:Label>

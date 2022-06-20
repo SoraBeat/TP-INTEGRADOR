@@ -30,7 +30,6 @@ namespace DAO
             pel.Genero = (tabla.Rows[0][5].ToString());
             pel.Formato = (tabla.Rows[0][6].ToString());
             pel.Portada = (tabla.Rows[0][7].ToString());
-            pel.Estado = (Convert.ToInt32( tabla.Rows[0][8].ToString()));
             return pel;
         }
         public DataTable getTablaPeliculas()
@@ -138,8 +137,7 @@ namespace DAO
             SqlParametros.Value = pel.Formato;
             SqlParametros = comando.Parameters.Add("@Portada", SqlDbType.VarChar);
             SqlParametros.Value = pel.Portada;
-            SqlParametros = comando.Parameters.Add("@Estado", SqlDbType.Bit);
-            SqlParametros.Value = pel.Estado;
+
         }
 
     }
