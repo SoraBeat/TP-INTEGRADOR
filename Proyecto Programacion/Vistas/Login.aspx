@@ -52,6 +52,8 @@
                 <td class="auto-style3">Usuario:</td>
                 <td>
                     <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtUsuario">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RevEmail" runat="server" ControlToValidate="txtUsuario" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">Email invalido</asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -59,6 +61,7 @@
                 <td>
                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
                     <!-- validacion chk contraseña--> <input  type="checkbox" onchange="document.getElementById('txtPassword').type = this.checked ? 'text' : 'password'"/>
+                        <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtUsuario">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>

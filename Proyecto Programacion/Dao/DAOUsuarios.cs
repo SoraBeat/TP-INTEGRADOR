@@ -13,11 +13,11 @@ namespace DAO
     public class DAOUsuarios
     {
         AccesoDatos ds = new AccesoDatos();
-        public Boolean ExisteUsuario(Usuarios usu)
-        {
-            string consulta = "SELECT * FROM Usuarios WHERE ID_Usuario_U = '" + usu.IDUsuario + "'";
-            return ds.Existe(consulta);
-        }
+        //public Boolean ExisteUsuario(Usuarios usu)
+        //{
+        //    string consulta = "SELECT * FROM Usuarios WHERE ID_Usuario_U = '" + usu.IDUsuario + "'";
+        //    return ds.Existe(consulta);
+        //}
         public DataTable getTablaUsuariosPorIDUsuario(string campo)
         {
             DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO], Estado_U AS [ESTADO] FROM Usuarios WHERE ID_Usuario_U LIKE '%" + campo + "%' ORDER BY ABS(ID_Usuario_U)");
@@ -100,6 +100,18 @@ namespace DAO
             ArmarParametrosUsuarioModificar(ref comando, usu);
             return ds.EjecutarProcedimientoAlmacenado(comando, "sp_ModificarUsuario");
         }
+        public int BuscarUsuario(Usuarios usu)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosUsuarioExiste(ref comando, usu);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_ExisteUsuario");
+        }
+        public int VerTipoUsuario(Usuarios usu)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosTipoUsuario(ref comando, usu);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_EsAdmin");
+        }
         private void ArmarParametrosUsuarioEliminar(ref SqlCommand comando, Usuarios usu)
         {
             SqlParameter SqlParametros = new SqlParameter();
@@ -146,5 +158,21 @@ namespace DAO
             SqlParametros = comando.Parameters.Add("@ESTADOUSUARIO", SqlDbType.Bit);
             SqlParametros.Value = usu.Estado;
         }
+        private void ArmarParametrosUsuarioExiste(ref SqlCommand comando, Usuarios usu)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = comando.Parameters.Add("@EMAILUSUARIO", SqlDbType.VarChar);
+            SqlParametros.Value = usu.EmailUsuario;
+            SqlParametros = comando.Parameters.Add("@CONTRASEÑAUSUARIO", SqlDbType.VarChar);
+            SqlParametros.Value = usu.ContraseñaUsuario;
+
+        }
+        private void ArmarParametrosTipoUsuario(ref SqlCommand comando, Usuarios usu)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = comando.Parameters.Add("@EMAIL", SqlDbType.Int);
+            SqlParametros.Value = usu.IDUsuario;
+        }
+
     }
 }
