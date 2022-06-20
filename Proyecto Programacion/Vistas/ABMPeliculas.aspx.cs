@@ -98,18 +98,9 @@ namespace Vistas
         {
             String ID_Pelicula = ((Label)gvPeliculas.Rows[e.RowIndex].FindControl("lblIDPelicula")).Text;
             bool res = negPel.EliminarPelicula(ID_Pelicula);
-            if (res)
-            {   
-
-                lblResultado.ForeColor = System.Drawing.Color.Green;
-                lblResultado.Text = "Se ha borrado correctamente";
-            }
-            else
-            {
-                lblResultado.ForeColor = System.Drawing.Color.Red;
-                lblResultado.Text = "ERROR al borrar";
-            }
-            ///CargarTablaConFiltro();
+            CargarTablaConFiltro();
+            lblResultado.ForeColor = System.Drawing.Color.Green;
+            lblResultado.Text = "Se ha borrado correctamente";
 
         }
 
@@ -121,7 +112,7 @@ namespace Vistas
 
         protected void gvPeliculas_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            String ID = ((TextBox)gvPeliculas.Rows[e.RowIndex].FindControl("LBL_EDT_ID")).Text;
+            String ID = ((Label)gvPeliculas.Rows[e.RowIndex].FindControl("LBL_EDT_ID")).Text;
             String Titulo = ((TextBox)gvPeliculas.Rows[e.RowIndex].FindControl("TXT_EDT_TITULO")).Text;
             String Descripcion = ((TextBox)gvPeliculas.Rows[e.RowIndex].FindControl("TXT_EDT_DESCRIPCION")).Text;
             String Duracion = ((TextBox)gvPeliculas.Rows[e.RowIndex].FindControl("TXT_EDT_DURACION")).Text;
@@ -129,7 +120,8 @@ namespace Vistas
             String Genero = ((TextBox)gvPeliculas.Rows[e.RowIndex].FindControl("TXT_EDT_GENERO")).Text;
             String Formato = ((TextBox)gvPeliculas.Rows[e.RowIndex].FindControl("TXT_EDT_FORMATO")).Text;
             String Portada = ((TextBox)gvPeliculas.Rows[e.RowIndex].FindControl("TXT_EDT_PORTADA")).Text;
-            String Estado = ((TextBox)gvPeliculas.Rows[e.RowIndex].FindControl("TXT_EDT_ESTADO")).Text;
+            bool Estado = Convert.ToBoolean(((CheckBox)gvPeliculas.Rows[e.RowIndex].FindControl("TXT_EDT_ESTADO")).Checked);
+           
 
 
             Peliculas Pel = new Peliculas();
@@ -141,7 +133,7 @@ namespace Vistas
             Pel.Genero = Genero;
             Pel.Formato = Formato;
             Pel.Portada = Portada;
-            Pel.Estado = Convert.ToInt32(Estado);
+            Pel.Estado = Estado;
 
             
             negPel.ModificarPelicula(Pel);

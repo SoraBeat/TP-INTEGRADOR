@@ -212,5 +212,11 @@ namespace Vistas
 			gvUsuarios.EditIndex = -1;
 			CargarTablaConFiltro();
 		}
+
+        protected void gvUsuarios_RowCancelingEdit1(object sender, GridViewCancelEditEventArgs e)
+        {
+			gvUsuarios.EditIndex = -1;
+			CargarTablaConFiltro();
+		}
     }
 }
