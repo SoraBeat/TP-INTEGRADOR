@@ -4,342 +4,219 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Funciones ADMIN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 752px;
-        }
-        .auto-style3 {
-            height: 89px;
-        }
-        .auto-style4 {
-            margin-left: 40px;
-        }
-        .auto-style5 {
-            width: 171px;
-        }
-        .auto-style10 {
-            width: 26px;
-        }
-        .auto-style11 {
-            width: 26px;
-            height: 23px;
-        }
-        .auto-style12 {
-            height: 23px;
-        }
-        .auto-style16 {
+        body {
+            font-family: 'Roboto', sans-serif;
             text-align: center;
-        }
-        .auto-style17 {
-            text-align: center;
-            width: 101px;
-        }
-        .auto-style18 {
-            height: 23px;
-            width: 101px;
-        }
-        .auto-style19 {
-            width: 101px;
-        }
-        .auto-style20 {
-            width: 26px;
-            height: 26px;
-        }
-        .auto-style22 {
-            width: 101px;
-            height: 26px;
-        }
-        .auto-style23 {
-            height: 26px;
-        }
-        .auto-style24 {
-            width: 26px;
-            height: 30px;
-        }
-        .auto-style25 {
-            height: 30px;
-        }
-        .auto-style26 {
-            width: 101px;
-            height: 30px;
-        }
-        .auto-style27 {
-            width: 257px;
-        }
-        .auto-style28 {
-            height: 30px;
-            width: 257px;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style2">*Nombre del cine*</td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:LinkButton ID="LinkButton1" runat="server">Cerrar sesion</asp:LinkButton>
-                    </td>
-                </tr>
-            </table>
-            <p class="auto-style4">
-                <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FUNCIONES</p>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style16">Filtrar busqueda</td>
-                </tr>
+            <asp:ScriptManager runat="server">
+                <Scripts>
+                    <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                    <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                </Scripts>
+            </asp:ScriptManager>
+            <nav class="auto-style22" style="background-color: #10179B; padding: 10px 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                <a class="" style="margin-left: 30px;" href="PantallaInicial.aspx">
+                    <img style="width: 120px; height: 70px;" src="./Imagenes/Pagina/logo-piola.png" />
+                </a>
+                <button class="btn" style="height: 50px; color: white; font-weight: 700; font-size: 20px; margin-right: 30px;">Cerrar sesion</button>
+            </nav>
+            <div>
+                <h1 style="text-align: center; background-color: #343434; padding: 10px 0; color: white; font-weight: 700;">FUNCIONES</h1>
+            </div>
+            <br />
+            <table style="width: 100%;">
                 <tr>
                     <td class="auto-style16">
                         <asp:DropDownList ID="ddlFiltro" runat="server">
                         </asp:DropDownList>
-&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="txtFiltro" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
-&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnFiltrarTodo" runat="server" Text="Quitar filtro" OnClick="btnFiltrarTodo_Click" />
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:Button CssClass="btn btn-secondary" ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:Button CssClass="btn btn-secondary" ID="btnFiltrarTodo" runat="server" Text="Quitar filtro" OnClick="btnFiltrarTodo_Click" />
                     </td>
                 </tr>
             </table>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style5">
-                        <img alt="" class="auto-style3" src="" />*Perfil admin*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
-                    <td>
-                        <asp:GridView ID="gvFunciones" runat="server" AutoGenerateDeleteButton="True" AutoGenerateEditButton="True" Width="734px" AutoGenerateColumns="False" OnRowDeleting="gvFunciones_RowDeleting" OnRowEditing="gvFunciones_RowEditing" OnRowUpdating="gvFunciones_RowUpdating" AllowPaging="True" OnPageIndexChanging="gvFunciones_PageIndexChanging" OnRowCancelingEdit="gvFunciones_RowCancelingEdit">
-                            <Columns>
-                                <asp:TemplateField HeaderText="ID">
-                                    <EditItemTemplate>
-                                        <asp:Label ID="LBL_EDT_ID" runat="server" Text='<%# Bind("ID") %>'></asp:Label>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_ID" runat="server" Text='<%# Bind("ID") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="ID Pelicula">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="TXT_EDT_IDPELICULA" runat="server" Text='<%# Bind("IDPELICULA") %>'></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="TXT_EDT_IDPELICULA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_IDPELICULA" runat="server" Text='<%# Bind("IDPELICULA") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="ID Sala">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="TXT_EDT_IDSALA" runat="server" Text='<%# Bind("IDSALA") %>'></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="TXT_EDT_IDSALA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_IDSALA" runat="server" Text='<%# Bind("IDSALA") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="ID Complejo">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="TXT_EDT_IDCOMPLEJO" runat="server" Text='<%# Bind("IDCOMPLEJO") %>'></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="TXT_EDT_IDCOMPLEJO" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_IDCOMPLEJO" runat="server" Text='<%# Bind("IDCOMPLEJO") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Fecha">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="TXT_EDT_FECHA" runat="server" Text='<%# Bind("FECHA") %>'></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="TXT_EDT_FECHA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator14" runat="server" ControlToValidate="TXT_EDT_FECHA" Display="Dynamic" ValidationExpression="^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$">Feha invalida</asp:RegularExpressionValidator>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_FECHA" runat="server" Text='<%# Bind("FECHA") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Horario">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="TXT_EDT_HORARIO" runat="server" Text='<%# Bind("HORARIO") %>'></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="TXT_EDT_HORARIO" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator15" runat="server" ControlToValidate="TXT_EDT_HORARIO" Display="Dynamic" ValidationExpression="^(?:0?[1-9]|1[0-2]):[0-5][0-9]\s?(?:[aApP](\.?)[mM]\1)?$">Horario invalido</asp:RegularExpressionValidator>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_HORARIO" runat="server" Text='<%# Bind("HORARIO") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Idioma">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="TXT_EDT_IDIOMA" runat="server" Text='<%# Bind("IDIOMA") %>'></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ControlToValidate="TXT_EDT_IDIOMA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_IDIOMA" runat="server" Text='<%# Bind("IDIOMA") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Precio">
-                                    <EditItemTemplate>
-                                        <asp:TextBox ID="TXT_EDT_PRECIO" runat="server" Text='<%# Bind("PRECIO") %>'></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ControlToValidate="TXT_EDT_PRECIO" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator17" runat="server" ControlToValidate="TXT_EDT_PRECIO" Display="Dynamic" ValidationExpression="[0-9]+,[0-9]{2}">Precio invalido</asp:RegularExpressionValidator>
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_PRECIO" runat="server" Text='<%# Bind("PRECIO") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Estado">
-                                    <EditItemTemplate>
-                                        <asp:CheckBox ID="CB_EDT_ESTADO" runat="server" Checked='<%# Bind("ESTADO") %>' />
-                                    </EditItemTemplate>
-                                    <ItemTemplate>
-                                        <asp:Label ID="LBL_IT_ESTADO" runat="server" Text='<%# Bind("ESTADO") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                            </Columns>
+            <div style="display: flex; flex-direction: row; margin-top: 20px;">
+                <div style="width: 20%; display: flex; flex-direction: column; justify-content: start; align-items: center;">
+                    <img style="width: 100px; height: 100px;" src="Imagenes/Pagina/Persona.png" alt="Alternate Text" />
+                    <h3>NOMBRE</h3>
+                    <h3>APELLIDO</h3>
+                </div>
+                <div style="width: 80%">
+                    <asp:GridView Style="width: 80%;" ID="gvFunciones" runat="server" AutoGenerateDeleteButton="True" AutoGenerateEditButton="True" Width="734px" AutoGenerateColumns="False" OnRowDeleting="gvFunciones_RowDeleting" OnRowEditing="gvFunciones_RowEditing" OnRowUpdating="gvFunciones_RowUpdating" AllowPaging="True" OnPageIndexChanging="gvFunciones_PageIndexChanging" OnRowCancelingEdit="gvFunciones_RowCancelingEdit" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                        <Columns>
+                            <asp:TemplateField HeaderText="ID">
+                                <EditItemTemplate>
+                                    <asp:Label ID="LBL_EDT_ID" runat="server" Text='<%# Bind("ID") %>'></asp:Label>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="LBL_IT_ID" runat="server" Text='<%# Bind("ID") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="ID Pelicula">
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TXT_EDT_IDPELICULA" runat="server" Text='<%# Bind("IDPELICULA") %>'></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="TXT_EDT_IDPELICULA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="LBL_IT_IDPELICULA" runat="server" Text='<%# Bind("IDPELICULA") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="ID Sala">
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TXT_EDT_IDSALA" runat="server" Text='<%# Bind("IDSALA") %>'></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="TXT_EDT_IDSALA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="LBL_IT_IDSALA" runat="server" Text='<%# Bind("IDSALA") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="ID Complejo">
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TXT_EDT_IDCOMPLEJO" runat="server" Text='<%# Bind("IDCOMPLEJO") %>'></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="TXT_EDT_IDCOMPLEJO" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="LBL_IT_IDCOMPLEJO" runat="server" Text='<%# Bind("IDCOMPLEJO") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Fecha">
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TXT_EDT_FECHA" runat="server" Text='<%# Bind("FECHA") %>'></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="TXT_EDT_FECHA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator14" runat="server" ControlToValidate="TXT_EDT_FECHA" Display="Dynamic" ValidationExpression="^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$">Feha invalida</asp:RegularExpressionValidator>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="LBL_IT_FECHA" runat="server" Text='<%# Bind("FECHA") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Horario">
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TXT_EDT_HORARIO" runat="server" Text='<%# Bind("HORARIO") %>'></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="TXT_EDT_HORARIO" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator15" runat="server" ControlToValidate="TXT_EDT_HORARIO" Display="Dynamic" ValidationExpression="^(?:0?[1-9]|1[0-2]):[0-5][0-9]\s?(?:[aApP](\.?)[mM]\1)?$">Horario invalido</asp:RegularExpressionValidator>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="LBL_IT_HORARIO" runat="server" Text='<%# Bind("HORARIO") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Idioma">
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TXT_EDT_IDIOMA" runat="server" Text='<%# Bind("IDIOMA") %>'></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ControlToValidate="TXT_EDT_IDIOMA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="LBL_IT_IDIOMA" runat="server" Text='<%# Bind("IDIOMA") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Precio">
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TXT_EDT_PRECIO" runat="server" Text='<%# Bind("PRECIO") %>'></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ControlToValidate="TXT_EDT_PRECIO" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator17" runat="server" ControlToValidate="TXT_EDT_PRECIO" Display="Dynamic" ValidationExpression="[0-9]+,[0-9]{2}">Precio invalido</asp:RegularExpressionValidator>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="LBL_IT_PRECIO" runat="server" Text='<%# Bind("PRECIO") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Estado">
+                                <EditItemTemplate>
+                                    <asp:CheckBox ID="CB_EDT_ESTADO" runat="server" Checked='<%# Bind("ESTADO") %>' />
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="LBL_IT_ESTADO" runat="server" Text='<%# Bind("ESTADO") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
 
-                        </asp:GridView>
-                        <asp:Label ID="lblResultado" runat="server"></asp:Label>
-                    </td>
-                </tr>
-            </table>
+                        <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                        <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                        <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                        <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                        <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                        <SortedDescendingHeaderStyle BackColor="#242121" />
+
+                    </asp:GridView>
+                    <asp:Label ID="lblResultado" runat="server"></asp:Label>
+                </div>
+            </div>
             <br />
-&nbsp;&nbsp;
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style16">AGREGAR FUNCIONES
-                </tr>
-            </table>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br />
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style27">
-                        <asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Medium" Text="MODIFICACION"></asp:Label>
-                    </td>
-                    <td class="auto-style17">
-                        &nbsp;</td>
-                    <td class="auto-style16">
-                        &nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style11"></td>
-                    <td class="auto-style27">
-                        <asp:HyperLink ID="hlComplejos" runat="server" NavigateUrl="~/ABMComplejo.aspx">Complejos</asp:HyperLink>
-                    </td>
-                    <td class="auto-style18">
-                        ID:&nbsp;&nbsp;&nbsp;&nbsp;
-                    </td>
-                    <td class="auto-style12">
-                        <asp:TextBox ID="txtID" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
+            <div style="width: 100%; display: flex; flex-direction: row;">
+                <div class="list-group" style="width: 20%;">
+                    <asp:Label CssClass="auto-style23 font-weight-bolder" ID="Label5" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Medium" Text="MODIFICACION"></asp:Label>
+
+                    <asp:HyperLink CssClass="list-group-item" ID="hlComplejos" runat="server" NavigateUrl="~/ABMComplejo.aspx">Complejos</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlSalas" runat="server" NavigateUrl="~/ABMSalas.aspx">Salas</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlPeliculas" runat="server" NavigateUrl="~/ABMPeliculas.aspx">Peliculas</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlFunciones" runat="server" NavigateUrl="~/ABMFunciones.aspx">Funciones</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlAsientos" runat="server" NavigateUrl="~/ABMAsientos.aspx">Asientos</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlAsientosComprados" runat="server" NavigateUrl="~/ABMAsientosComprados.aspx">Asientos Comprados</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlVentas" runat="server" NavigateUrl="~/Ventas.aspx">Ventas</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlDV" runat="server" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>
+                    <asp:HyperLink CssClass="list-group-item" ID="hlUsuarios" runat="server" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink>
+                </div>
+                <div style="width: 60%; display: flex; flex-direction: column; gap: 15px;">
+                    <h4>AGREGAR FUNCION</h4>
+                    <div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtID" runat="server" ValidationGroup="Grupo1" placeholder="ID"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtID" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style11"></td>
-                    <td class="auto-style27">
-                        <asp:HyperLink ID="hlSalas" runat="server" NavigateUrl="~/ABMSalas.aspx">Salas</asp:HyperLink>
-                    </td>
-                    <td class="auto-style18">
-                        ID Pelicula:</td>
-                    <td class="auto-style12">
-                        <asp:TextBox ID="txtIDPELICULA" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
+                    </div>
+                    <div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtIDPELICULA" runat="server" ValidationGroup="Grupo1" placeholder="ID PELICULA"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtIDPELICULA" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style11"></td>
-                    <td class="auto-style27">
-                        <asp:HyperLink ID="hlPeliculas" runat="server" NavigateUrl="~/ABMPeliculas.aspx">Peliculas</asp:HyperLink>
-                    </td>
-                    <td class="auto-style18">
-                        ID Sala:</td>
-                    <td class="auto-style12">
-                        <asp:TextBox ID="txtIDSALA" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
+                    </div>
+                    <div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtIDSALA" runat="server" ValidationGroup="Grupo1" placeholder="ID SALA"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtIDSALA" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style20"></td>
-                    <td class="auto-style27">
-                        <asp:HyperLink ID="hlFunciones" runat="server" NavigateUrl="~/ABMFunciones.aspx">Funciones</asp:HyperLink>
-                    </td>
-                    <td class="auto-style18">
-                        ID Complejo:</td>
-                    <td class="auto-style12">
-                        <asp:TextBox ID="txtIDCOMPLEJO" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
+                    </div>
+                    <div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtIDCOMPLEJO" runat="server" ValidationGroup="Grupo1" placeholder="ID COMPLEJO"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtIDCOMPLEJO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style24"></td>
-                    <td class="auto-style28">
-                        <asp:HyperLink ID="hlAsientos" runat="server" NavigateUrl="~/ABMAsientos.aspx">Asientos</asp:HyperLink>
-                    </td>
-                    <td class="auto-style22">
-                        Fecha:</td>
-                    <td class="auto-style23">
-                        <asp:TextBox ID="txtFECHA" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
+                    </div>
+                    <div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtFECHA" runat="server" ValidationGroup="Grupo1" placeholder="FECHA"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtFECHA" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtFECHA" Display="Dynamic" ValidationExpression="^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$" ValidationGroup="Grupo1">Feha invalida</asp:RegularExpressionValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style27">
-                        <asp:HyperLink ID="hlAsientosComprados" runat="server" NavigateUrl="~/ABMAsientosComprados.aspx">Asientos Comprados</asp:HyperLink>
-                    </td>
-                    <td class="auto-style26">
-                        Horario:</td>
-                    <td class="auto-style25">
-                        <asp:TextBox ID="txtHORARIO" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
+                    </div>
+                    <div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtHORARIO" runat="server" ValidationGroup="Grupo1" placeholder="HORARIO"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtHORARIO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtHORARIO" Display="Dynamic" ValidationExpression="^(?:0?[1-9]|1[0-2]):[0-5][0-9]\s?(?:[aApP](\.?)[mM]\1)?$" ValidationGroup="Grupo1">Horario invalido</asp:RegularExpressionValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style27">
-                        <asp:HyperLink ID="hlVentas" runat="server" NavigateUrl="~/Ventas.aspx">Ventas</asp:HyperLink>
-                    </td>
-                    <td class="auto-style19">
-                        Idioma:</td>
-                    <td>
-                        <asp:TextBox ID="txtIDIOMA" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
+                    </div>
+                    <div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtIDIOMA" runat="server" ValidationGroup="Grupo1" placeholder="IDIOMA"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtIDIOMA" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style27">
-                        <asp:HyperLink ID="hlDV" runat="server" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>
-                    </td>
-                    <td class="auto-style19">
-                        PreciPrecio:</td>
-                    <td>
-                        <asp:TextBox ID="txtPRECIO" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
+                    </div>
+                    <div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtPRECIO" runat="server" ValidationGroup="Grupo1" placeholder="PRECIO"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtPRECIO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtPRECIO" Display="Dynamic" ValidationExpression="[0-9]+,[0-9]{2}" ValidationGroup="Grupo1">Precio invalido</asp:RegularExpressionValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style27">
-                        <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink>
-                    </td>
-                    <td class="auto-style19">
-                        &nbsp;</td>
-                    <td>
-                        <asp:Button ID="btnENVIAR" runat="server" Text="Button" ValidationGroup="Grupo1" OnClick="btnENVIAR_Click1" />
-                        <br />
+                    </div>
+                    <div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:Button CssClass="btn btn-primary" ID="btnENVIAR" runat="server" Text="Button" ValidationGroup="Grupo1" OnClick="btnENVIAR_Click1" />
+                    </div>
+                    <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:Label ID="lblResultadoEnviar" runat="server"></asp:Label>
-                    </td>
-                </tr>
-            </table>
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br />
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 </body>
