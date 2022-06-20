@@ -64,6 +64,7 @@
             <div>
                 <h1 style="text-align: center; background-color: #343434; padding: 10px 0; color: white; font-weight: 700;">COMPLEJOS</h1>
             </div>
+            <br />
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style16">

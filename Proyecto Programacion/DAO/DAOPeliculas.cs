@@ -37,6 +37,11 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT  Titulo_P FROM Peliculas INNER JOIN Funciones  on Peliculas.ID_Pelicula_P = Funciones.ID_Pelicula_F GROUP BY Titulo_P");
             return tabla;
         }
+        public DataTable getTablaPeliculas2()
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Formato_P AS [Formato], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas ORDER BY ABS(ID_Pelicula_P)");
+            return tabla;
+        }
         public DataTable getTablaPeliculasComplejos(string consulta)
         {
             DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT Titulo_P FROM Peliculas INNER JOIN Funciones  on Peliculas.ID_Pelicula_P = Funciones.ID_Pelicula_F WHERE ID_Complejo_F =" + consulta + "GROUP BY Titulo_P");

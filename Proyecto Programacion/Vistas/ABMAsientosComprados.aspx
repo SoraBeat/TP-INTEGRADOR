@@ -44,9 +44,9 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="TXT_FILTRO" runat="server"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="BTN_FILTRAR" runat="server" Text="Filtrar" OnClick="BTN_FILTRAR_Click" />
+                        <asp:Button CssClass="btn btn-secondary" ID="BTN_FILTRAR" runat="server" Text="Filtrar" OnClick="BTN_FILTRAR_Click" />
                         &nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="BTN_QUITARFILTRO" runat="server" Text="Quitar filtro" OnClick="BTN_QUITARFILTRO_Click" />
+                        <asp:Button CssClass="btn btn-secondary" ID="BTN_QUITARFILTRO" runat="server" Text="Quitar filtro" OnClick="BTN_QUITARFILTRO_Click" />
                     </td>
                 </tr>
             </table>

@@ -15,7 +15,7 @@ namespace Negocios
         public DataTable getListaPeliculas()
         {
             DAOPeliculas dao = new DAOPeliculas();
-            return dao.getTablaPeliculas();
+            return dao.getTablaPeliculas2();
         }
 
         public DataTable getListaPeliculasComplejos(string consulta)
