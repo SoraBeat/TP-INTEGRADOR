@@ -25,7 +25,7 @@ namespace Vistas
 
         private void CargarTablaSinFiltro()
         {
-            DataTable tablaPeliculas = negPel.getListaPeliculas();
+            DataTable tablaPeliculas = negPel.getListaPeliculas2();
             gvPeliculas.DataSource = tablaPeliculas;
             gvPeliculas.DataBind();
           
