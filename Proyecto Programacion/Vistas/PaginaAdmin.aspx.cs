@@ -21,5 +21,10 @@ namespace Vistas
             LBL_TELEFONO.Text = datos[4];
             LBL_EMAIL.Text = datos[5];
         }
+        public void desloguear(object sender, EventArgs e)
+        {
+            Session["DATOSUSUARIO"] = null;
+            Response.Redirect("PantallaInicial.aspx");
+        }
     }
 }

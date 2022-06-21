@@ -4,177 +4,105 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Asientos ADMIN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <style type="text/css">
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            font-weight: 500;
+        }
 
         .auto-style1 {
-            width: 100%;
+            font-weight: bold;
+            font-size: 30px;
+            color: #FFFFFF;
         }
-        .auto-style2 {
-            width: 799px;
-        }
-        .auto-style3 {
-            width: 276px;
-        }
-        .auto-style4 {
-            width: 120px;
-        }
-        .auto-style7 {
-            width: 100%;
-            height: 218px;
-        }
-        .auto-style8 {
-            width: 119px;
-        }
-        .auto-style9 {
-            width: 118px;
-        }
-        .auto-style10 {
-            width: 26px;
-        }
-    </style>
+
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style2">
-                        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="XX-Large" Text="CINEPOLIS"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:LinkButton ID="LinkButton1" runat="server">Cerrar Sesión</asp:LinkButton>
-&nbsp;</td>
-                </tr>
-            </table>
+            <asp:ScriptManager runat="server">
+                <Scripts>
+                    <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                    <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                </Scripts>
+            </asp:ScriptManager>
+            <nav class="auto-style22" style="background-color: #10179B; padding: 10px 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                <a class="" style="margin-left: 30px;" href="PantallaInicial.aspx">
+                    <img style="width: 120px; height: 70px;" src="./Imagenes/Pagina/logo-piola.png" />
+                </a>
+                <asp:Button runat="server" OnClick="desloguear" class="btn" Style="height: 50px; color: white; font-weight: 700; font-size: 20px; margin-right: 30px;" Text="Cerrar sesion"></asp:Button>
+            </nav>
+            <div>
+                <h1 style="text-align: center; background-color: #343434; padding: 10px 0; color: white; font-weight: 700;">Bienvenido a la administracion</h1>
+            </div>
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="X-Large" Text="Bienvenido a la administracion"></asp:Label>
-                    <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <table class="auto-style7">
-                <tr>
-                    <td class="auto-style3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Image ID="Image1" runat="server" Height="156px" Width="148px" />
-                        <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
-                    <td>
-                        <asp:Label ID="Label4" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Large" Text="Informacion personal"></asp:Label>
-                        <br />
-                        <table class="auto-style1">
-                            <tr>
-                                <td class="auto-style4">ID Usuario:</td>
-                                <td>
-                                    <asp:Label ID="LBL_ID" runat="server"></asp:Label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="auto-style4">Nombre: </td>
-                                <td>
-                                    <asp:Label ID="LBL_NOMBRE" runat="server"></asp:Label>
-                                </td>
-                            </tr>
-                        </table>
-                        <table class="auto-style1">
-                            <tr>
-                                <td class="auto-style8">Apellido:</td>
-                                <td>
-                                    <asp:Label ID="LBL_APELLIDO" runat="server"></asp:Label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="auto-style8">DNI:</td>
-                                <td>
-                                    <asp:Label ID="LBL_DNI" runat="server"></asp:Label>
-                                </td>
-                            </tr>
-                        </table>
-                        <table class="auto-style1">
-                            <tr>
-                                <td class="auto-style9">Telefono:</td>
-                                <td>
-                                    <asp:Label ID="LBL_TELEFONO" runat="server"></asp:Label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="auto-style9">Email:</td>
-                                <td>
-                                    <asp:Label ID="LBL_EMAIL" runat="server"></asp:Label>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-            </table>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td>
-                        <asp:Label ID="Label5" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Medium" Text="MODIFICACION"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td>
-                        <asp:HyperLink ID="hlComplejos" runat="server" NavigateUrl="~/ABMComplejo.aspx">Complejos</asp:HyperLink>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td>
-                        <asp:HyperLink ID="hlSalas" runat="server" NavigateUrl="~/ABMSalas.aspx">Salas</asp:HyperLink>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td>
-                        <asp:HyperLink ID="hlPeliculas" runat="server" NavigateUrl="~/ABMPeliculas.aspx">Peliculas</asp:HyperLink>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td>
-                        <asp:HyperLink ID="hlFunciones" runat="server" NavigateUrl="~/ABMFunciones.aspx">Funciones</asp:HyperLink>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td>
-                        <asp:HyperLink ID="hlAsientos" runat="server" NavigateUrl="~/ABMAsientos.aspx">Asientos</asp:HyperLink>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td>
-                        <asp:HyperLink ID="hlAsientosComprados" runat="server" NavigateUrl="~/ABMAsientosComprados.aspx">Asientos Comprados</asp:HyperLink>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td>
-                        <asp:HyperLink ID="hlVentas" runat="server" NavigateUrl="~/Ventas.aspx">Ventas</asp:HyperLink>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td>
-                        <asp:HyperLink ID="hlDV" runat="server" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td>
-                        <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink>
-                    </td>
-                </tr>
-            </table>
+
+            <div style="display: flex; flex-direction: row; margin-top: 20px;">
+                <div style="width: 20%; display: flex; flex-direction: column; justify-content: start; align-items: center;">
+                    <img style="width: 100px; height: 100px;" src="Imagenes/Pagina/Persona.png" alt="Alternate Text" />
+                    <h3>NOMBRE</h3>
+                    <h3>APELLIDO</h3>
+                </div>
+                <div style="width: 70%; display: grid;grid-template-columns:repeat(6,1fr);gap:20px;margin:0 10%">
+                    <div style="height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:#10179B;border-radius:10px;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);padding:10px">
+                        <label class="auto-style1">ID</label>
+                        <asp:Label ID="LBL_ID" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
+                    </div>
+                    <div style="height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:#10179B;border-radius:10px;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);padding:10px">
+                        <label style="font-weight: bold; font-size: 30px; color: #FFFFFF;">Nombre</label>
+                        <asp:Label ID="LBL_NOMBRE" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
+                    </div>
+                    <div style="height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:#10179B;border-radius:10px;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);padding:10px">
+                        <label style="font-weight: bold; font-size: 30px; color: #FFFFFF;">Apellido</label>
+                        <asp:Label ID="LBL_APELLIDO" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
+                    </div>
+                    <div style="height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:#10179B;border-radius:10px;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);padding:10px">
+                        <label style="font-weight: bold; font-size: 30px; color: #FFFFFF;">DNI</label>
+                        <asp:Label ID="LBL_DNI" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
+                    </div>
+                    <div style="height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:#10179B;border-radius:10px;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);padding:10px">
+                        <label style="font-weight: bold; font-size: 30px; color: #FFFFFF;">Telefono</label>
+                        <asp:Label ID="LBL_TELEFONO" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
+                    </div>
+                    <div style="height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:#10179B;border-radius:10px;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);padding:10px">
+                        <label style="font-weight: bold; font-size: 30px; color: #FFFFFF;">Email</label>
+                        <asp:Label ID="LBL_EMAIL" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="list-group" style="width: 20%;">
+                <asp:Label ID="Label5" runat="server" CssClass="auto-style23 font-weight-bolder" Font-Bold="True" Font-Italic="False" Font-Size="Medium" Text="MODIFICACION"></asp:Label>
+                <asp:HyperLink ID="hlComplejos" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMComplejo.aspx">Complejos</asp:HyperLink>
+                <asp:HyperLink ID="hlSalas" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMSalas.aspx">Salas</asp:HyperLink>
+                <asp:HyperLink ID="hlPeliculas" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMPeliculas.aspx">Peliculas</asp:HyperLink>
+                <asp:HyperLink ID="hlFunciones" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMFunciones.aspx">Funciones</asp:HyperLink>
+                <asp:HyperLink ID="hlAsientos" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMAsientos.aspx">Asientos</asp:HyperLink>
+                <asp:HyperLink ID="hlAsientosComprados" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMAsientosComprados.aspx">Asientos Comprados</asp:HyperLink>
+                <asp:HyperLink ID="hlVentas" runat="server" CssClass="list-group-item" NavigateUrl="~/Ventas.aspx">Ventas</asp:HyperLink>
+                <asp:HyperLink ID="hlDV" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>
+                <asp:HyperLink ID="hlUsuarios" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink>
+            </div>
         </div>
     </form>
 </body>
