@@ -18,10 +18,12 @@ namespace Vistas
         {
             if (IsPostBack == false)
             {
+                btnIrPaginaAdmin();
                 CargarLv();
                 CargarDDL();
             }
         }
+
 
         protected void btnSeleccionarPelicula_Command(object sender, CommandEventArgs e)
         {
@@ -106,6 +108,22 @@ namespace Vistas
         {
             ImageButton btn = (ImageButton)sender;
             Response.Redirect("MostrarPelicula.aspx?id=" + btn.CommandName);
+        }
+
+        protected void txtPaginaAdmin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PaginaAdmin.aspx");
+        }
+        private void btnIrPaginaAdmin()
+        {
+            string datosUsuario = (string)Session["DATOSUSUARIO"];
+            string[] separador = new string[] { " ", "$" };
+            string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+            bool TipoUsuario = Convert.ToBoolean(datos[7]);
+            if (TipoUsuario == true)
+            {
+                txtPaginaAdmin.Visible = true;
+            }
         }
     }
 }
