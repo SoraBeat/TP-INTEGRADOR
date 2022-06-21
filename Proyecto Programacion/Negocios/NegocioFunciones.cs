@@ -56,6 +56,11 @@ namespace Negocios
             DAOFunciones dao = new DAOFunciones();
             return dao.getTablaFuncionPorPrecio(id);
         }
+        public DataTable getTablaPorFormato(string id)
+        {
+            DAOFunciones dao = new DAOFunciones();
+            return dao.getTablaFuncionPorEstado(id);
+        }
         public DataTable getTablaPorEstado(string id)
         {
             DAOFunciones dao = new DAOFunciones();

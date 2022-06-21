@@ -16,6 +16,7 @@ namespace Entidades
         private string horarioFuncion;
         private string idiomaFuncion;
         private decimal precioFuncion;
+        private string formatoFuncion;
         private bool estadoFuncion;
         public Funciones() { }
 
@@ -27,6 +28,7 @@ namespace Entidades
         public string HorarioFuncion { get => horarioFuncion; set => horarioFuncion = value; }
         public string IdiomaFuncion { get => idiomaFuncion; set => idiomaFuncion = value; }
         public decimal PrecioFuncion { get => precioFuncion; set => precioFuncion = value; }
+        public string FormatoFuncion { get => formatoFuncion; set => formatoFuncion = value; }
         public bool EstadoFuncion { get => estadoFuncion; set => estadoFuncion = value; }
     }
 }
