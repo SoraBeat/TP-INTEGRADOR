@@ -14,7 +14,6 @@ namespace Entidades
         private string duracionPelicula;
         private string clasificacionPelicula;
         private string generoPelicula;
-        private string formatoPelicula;
         private string portadaPelicula;
         private bool estadoPelicula;
 
@@ -26,7 +25,6 @@ namespace Entidades
         public string Duracion { get => duracionPelicula; set => duracionPelicula = value; }
         public string Clasificacion { get => clasificacionPelicula; set => clasificacionPelicula = value; }
         public string Genero { get => generoPelicula; set => generoPelicula = value; }
-        public string Formato { get => formatoPelicula; set => formatoPelicula = value; }
         public string Portada { get => portadaPelicula; set => portadaPelicula = value; }
         public bool Estado { get => estadoPelicula; set => estadoPelicula = value; }
     }

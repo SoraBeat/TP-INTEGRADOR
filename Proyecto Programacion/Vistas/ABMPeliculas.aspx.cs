@@ -54,9 +54,6 @@ namespace Vistas
                 case "GENERO":
                     tablaPelicula = negPel.getListaPeliculasPorGenero(tbFiltro.Text);
                     break;
-                case "FORMATO":
-                    tablaPelicula = negPel.getListaPeliculasPorFormato(tbFiltro.Text);
-                    break;
                 case "PORTADA":
                     tablaPelicula = negPel.getListaPeliculasPorPortada(tbFiltro.Text);
                     break;
@@ -85,8 +82,6 @@ namespace Vistas
             ddlFiltro.Items.Add(item);
             item = new ListItem("GENERO");
             ddlFiltro.Items.Add(item);
-            item = new ListItem("FORMATO");
-            ddlFiltro.Items.Add(item);
             item = new ListItem("PORTADA");
             ddlFiltro.Items.Add(item);
             item = new ListItem("ESTADO");
@@ -101,7 +96,6 @@ namespace Vistas
             CargarTablaConFiltro();
             lblResultado.ForeColor = System.Drawing.Color.Green;
             lblResultado.Text = "Se ha borrado correctamente";
-
         }
 
         protected void gvPeliculas_RowEditing(object sender, GridViewEditEventArgs e)
@@ -118,7 +112,6 @@ namespace Vistas
             String Duracion = ((TextBox)gvPeliculas.Rows[e.RowIndex].FindControl("TXT_EDT_DURACION")).Text;
             String Clasificacion = ((TextBox)gvPeliculas.Rows[e.RowIndex].FindControl("TXT_EDT_CLASIFICACION")).Text;
             String Genero = ((TextBox)gvPeliculas.Rows[e.RowIndex].FindControl("TXT_EDT_GENERO")).Text;
-            String Formato = ((TextBox)gvPeliculas.Rows[e.RowIndex].FindControl("TXT_EDT_FORMATO")).Text;
             String Portada = ((TextBox)gvPeliculas.Rows[e.RowIndex].FindControl("TXT_EDT_PORTADA")).Text;
             bool Estado = Convert.ToBoolean(((CheckBox)gvPeliculas.Rows[e.RowIndex].FindControl("TXT_EDT_ESTADO")).Checked);
            
@@ -131,7 +124,6 @@ namespace Vistas
             Pel.Duracion = Duracion;
             Pel.Clasificacion = Clasificacion;
             Pel.Genero = Genero;
-            Pel.Formato = Formato;
             Pel.Portada = Portada;
             Pel.Estado = Estado;
 
@@ -164,7 +156,6 @@ namespace Vistas
                 String Duracion = txtDuracion.Text;
                 String Clasificacion = txtClasificacion.Text;
                 String Genero = txtGenero.Text;
-                String Formato = txtFormato.Text;
                 String Portada = txtPortada.Text;
                 
 
@@ -175,7 +166,6 @@ namespace Vistas
                 Pel.Duracion = Duracion;
                 Pel.Clasificacion = Clasificacion;
                 Pel.Genero = Genero;
-                Pel.Formato = Formato;
                 Pel.Portada = Portada;
 
 
@@ -197,7 +187,6 @@ namespace Vistas
                 txtDuracion.Text = "";
                 txtClasificacion.Text = "";
                 txtGenero.Text = "";
-                txtFormato.Text = "";
                 txtPortada.Text = "";
                 CargarTablaSinFiltro();
             }

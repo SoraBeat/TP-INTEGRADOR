@@ -95,11 +95,6 @@ namespace Negocios
             return dao.getTablaPeliculaPorGenero(campo);
         }
 
-        public DataTable getListaPeliculasPorFormato(string campo)
-        {
-            DAOPeliculas dao = new DAOPeliculas();
-            return dao.getTablaPeliculaPorFormato(campo);
-        }
 
         public DataTable getListaPeliculasPorPortada(string campo)
         {
@@ -126,7 +121,6 @@ namespace Negocios
             tabla.Columns.Add("Duracion_P", typeof(string));
             tabla.Columns.Add("Clasificacion_P", typeof(string));
             tabla.Columns.Add("Genero_P", typeof(string));
-            tabla.Columns.Add("Formato_P ", typeof(string));
             tabla.Columns.Add("Estado_P", typeof(bool));
             return tabla;
         }

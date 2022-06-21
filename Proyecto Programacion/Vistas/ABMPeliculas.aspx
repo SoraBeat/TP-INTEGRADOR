@@ -116,15 +116,6 @@
                                     <asp:Label ID="lblGeneroPeliculas" runat="server" Text='<%# Bind ("Genero") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Formato">
-                                <EditItemTemplate>
-                                    <asp:TextBox ID="TXT_EDT_FORMATO" runat="server" Text='<%# Bind("Formato") %>'></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RFV_Formato" runat="server" ControlToValidate="TXT_EDT_FORMATO" ErrorMessage="RequiredFieldValidator" ForeColor="Red">CAMPO VACIO</asp:RequiredFieldValidator>
-                                </EditItemTemplate>
-                                <ItemTemplate>
-                                    <asp:Label ID="lblFormatoPeliculas" runat="server" Text='<%# Bind ("Formato") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
                             <asp:TemplateField HeaderText="Portada">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="TXT_EDT_PORTADA" runat="server" Text='<%# Bind("Portada") %>'></asp:TextBox>
@@ -198,10 +189,6 @@
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtGenero" runat="server" Width="267px" ValidationGroup="Grupo1" placeholder="GENERO"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtGenero" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1" Display="Dynamic"></asp:RequiredFieldValidator>
-                    </div>
-                    <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:TextBox ID="txtFormato" runat="server" Width="267px" ValidationGroup="Grupo1" placeholder="FORMATO"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtFormato" ErrorMessage="*" ForeColor="Red" ValidationGroup="Grupo1" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtPortada" runat="server" Width="267px" ValidationGroup="Grupo1" placeholder="PORTADA"></asp:TextBox>
