@@ -36,13 +36,13 @@ namespace Vistas
 				{
 					if (columna["Email_U"] != null && columna["Contraseña_U"] != null && (bool)columna["Estado_U"]==true &&(bool)columna["Tipo_Usuario_U"]==true)
 					{
-						Session["Usuario"] = Email;
+						Session["DATOSUSUARIO"] = columna["ID_Usuario_U"] + "$" + columna["Nombre_U"] + "$" + columna["Apellido_U"] + "$" + columna["DNI_U"] + "$" + columna["Telefono_U"] + "$" + columna["Email_U"] + "$" + columna["Contraseña_U"] + "$" + columna["Tipo_Usuario_U"] + "$" + columna["Estado_U"];
 						Response.Redirect("PaginaAdmin.aspx");
 						return;
 					}
 					else if (columna["Email_U"] != null && columna["Contraseña_U"] != null && (bool)columna["Estado_U"] == true && (bool)columna["Tipo_Usuario_U"] == false)
 					{
-						Session["Usuario"] = Email;
+						Session["DATOSUSUARIO"] = columna["ID_Usuario_U"] + "$" + columna["Nombre_U"] + "$" + columna["Apellido_U"] + "$" + columna["DNI_U"] + "$" + columna["Telefono_U"] + "$" + columna["Email_U"] + "$" + columna["Contraseña_U"] + "$" + columna["Tipo_Usuario_U"] + "$" + columna["Estado_U"];
 						Response.Redirect("PantallaInicial.aspx");
 						return;
 					}

@@ -65,31 +65,43 @@
                         <table class="auto-style1">
                             <tr>
                                 <td class="auto-style4">ID Usuario:</td>
-                                <td>0001</td>
+                                <td>
+                                    <asp:Label ID="LBL_ID" runat="server"></asp:Label>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="auto-style4">Nombre: </td>
-                                <td>Pepito</td>
+                                <td>
+                                    <asp:Label ID="LBL_NOMBRE" runat="server"></asp:Label>
+                                </td>
                             </tr>
                         </table>
                         <table class="auto-style1">
                             <tr>
                                 <td class="auto-style8">Apellido:</td>
-                                <td>Gomez</td>
+                                <td>
+                                    <asp:Label ID="LBL_APELLIDO" runat="server"></asp:Label>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="auto-style8">DNI:</td>
-                                <td>42.123.123</td>
+                                <td>
+                                    <asp:Label ID="LBL_DNI" runat="server"></asp:Label>
+                                </td>
                             </tr>
                         </table>
                         <table class="auto-style1">
                             <tr>
                                 <td class="auto-style9">Telefono:</td>
-                                <td>11-1234-1234</td>
+                                <td>
+                                    <asp:Label ID="LBL_TELEFONO" runat="server"></asp:Label>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="auto-style9">Email:</td>
-                                <td>PepitoGomez@gmail.com</td>
+                                <td>
+                                    <asp:Label ID="LBL_EMAIL" runat="server"></asp:Label>
+                                </td>
                             </tr>
                         </table>
                     </td>
