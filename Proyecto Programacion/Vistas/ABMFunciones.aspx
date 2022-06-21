@@ -124,6 +124,15 @@
                                     <asp:Label ID="LBL_IT_IDIOMA" runat="server" Text='<%# Bind("IDIOMA") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Formato">
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TXT_EDT_FORMATO" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="txtFORMATO" ErrorMessage="CAMPO VACIO"></asp:RequiredFieldValidator>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="LBL_IT_FORMATO" runat="server" Text='<%# Bind("FORMATO") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:TemplateField HeaderText="Precio">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="TXT_EDT_PRECIO" runat="server" Text='<%# Bind("PRECIO") %>'></asp:TextBox>
@@ -208,6 +217,10 @@
                         <asp:TextBox ID="txtPRECIO" runat="server" ValidationGroup="Grupo1" placeholder="PRECIO"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtPRECIO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtPRECIO" Display="Dynamic" ValidationExpression="[0-9]+,[0-9]{2}" ValidationGroup="Grupo1">Precio invalido</asp:RegularExpressionValidator>
+                    </div>
+                    <div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtFORMATO" runat="server" ValidationGroup="Grupo1" placeholder="FORMATO"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFORMATO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:Button CssClass="btn btn-primary" ID="btnENVIAR" runat="server" Text="Button" ValidationGroup="Grupo1" OnClick="btnENVIAR_Click1" />

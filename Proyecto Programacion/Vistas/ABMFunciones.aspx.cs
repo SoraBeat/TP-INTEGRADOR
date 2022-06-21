@@ -54,6 +54,9 @@ namespace Vistas
 				case "Idioma":
 					tablaSala = negfu.getTablaPorIdioma(txtFiltro.Text);
 					break;
+				case "Formato":
+					tablaSala = negfu.getTablaPorFormato(txtFiltro.Text);
+					break;
 				case "Precio":
 					tablaSala = negfu.getTablaPorPrecio(txtFiltro.Text);
 					break;
@@ -80,6 +83,8 @@ namespace Vistas
 			item = new ListItem("Horario");
 			ddlFiltro.Items.Add(item);
 			item = new ListItem("Idioma");
+			ddlFiltro.Items.Add(item);
+			item = new ListItem("Formato");
 			ddlFiltro.Items.Add(item);
 			item = new ListItem("Precio");
 			ddlFiltro.Items.Add(item);
@@ -120,8 +125,9 @@ namespace Vistas
 			string Fecha = ((TextBox)gvFunciones.Rows[e.RowIndex].FindControl("TXT_EDT_FECHA")).Text;
 			string Horario = ((TextBox)gvFunciones.Rows[e.RowIndex].FindControl("TXT_EDT_HORARIO")).Text;
 			string Idioma = ((TextBox)gvFunciones.Rows[e.RowIndex].FindControl("TXT_EDT_IDIOMA")).Text;
+			string Formato = ((TextBox)gvFunciones.Rows[e.RowIndex].FindControl("TXT_EDT_FORMATO")).Text;
 			decimal Precio = Convert.ToDecimal(((TextBox)gvFunciones.Rows[e.RowIndex].FindControl("TXT_EDT_PRECIO")).Text);
-			bool Estados = Convert.ToBoolean(((CheckBox)gvFunciones.Rows[e.RowIndex].FindControl("CB_EDT_ESTADO")).Checked);
+			bool Estado = Convert.ToBoolean(((CheckBox)gvFunciones.Rows[e.RowIndex].FindControl("CB_EDT_ESTADO")).Checked);
 
 
 			Funciones funcion = new Funciones();
@@ -132,8 +138,9 @@ namespace Vistas
 			funcion.FechaFuncion = Fecha;
 			funcion.HorarioFuncion = Horario;
 			funcion.IdiomaFuncion = Idioma;
+			funcion.FormatoFuncion = Formato;
 			funcion.PrecioFuncion = Precio;
-			funcion.EstadoFuncion = Estados;
+			funcion.EstadoFuncion = Estado;
 
 			gvFunciones.EditIndex = -1;
 			CargarTablaConFiltro();
@@ -186,6 +193,7 @@ namespace Vistas
 				string Fecha = txtFECHA.Text;
 				string Horario = txtHORARIO.Text;
 				string Idioma = txtIDIOMA.Text;
+				string Formato = txtFORMATO.Text;
 				decimal Precio = Convert.ToDecimal(txtPRECIO.Text);
 
 				Funciones funcion = new Funciones();
@@ -196,6 +204,7 @@ namespace Vistas
 				funcion.FechaFuncion = Fecha;
 				funcion.HorarioFuncion = Horario;
 				funcion.IdiomaFuncion = Idioma;
+				funcion.FormatoFuncion = Formato;
 				funcion.PrecioFuncion = Precio;
 
 				bool res = negfu.AgregarFuncion(funcion);
@@ -208,6 +217,7 @@ namespace Vistas
 				txtFECHA.Text = "";
 				txtHORARIO.Text = "";
 				txtIDIOMA.Text = "";
+				txtFORMATO.Text = "";
 				txtPRECIO.Text = "";
 				CargarTablaSinFiltro();
 				if (res)
