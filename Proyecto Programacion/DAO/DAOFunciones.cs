@@ -9,7 +9,6 @@ using Entidades;
 
 namespace DAO
 {
-
     public class DAOFunciones
     {
         AccesoDatos ds = new AccesoDatos();

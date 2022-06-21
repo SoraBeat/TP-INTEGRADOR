@@ -30,6 +30,20 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div>
+            <nav class="auto-style22" style="background-color: #10179B; width:120%; padding-left:0; padding-right:0; padding: 10px; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                <a class="" href="PantallaInicial.aspx"">
+                    <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
+                </a>
+            </nav>
+            </div>
+        <br />
+            <asp:ScriptManager runat="server">
+                <Scripts>
+                    <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                    <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                </Scripts>
+            </asp:ScriptManager>
         <br />
         <br />
         <br />
@@ -40,57 +54,29 @@
         <br />
         <br />
         <br />
-        <br />
-        <table class="auto-style1">
-            <tr>
-                <td class="auto-style2" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INICIAR SESIÓN</td>
-            </tr>
-            <tr>
-                <td class="auto-style6" colspan="2"></td>
-            </tr>
-            <tr>
-                <td class="auto-style3">Usuario:</td>
-                <td>
-                    <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtUsuario">*</asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RevEmail" runat="server" ControlToValidate="txtUsuario" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">Email invalido</asp:RegularExpressionValidator>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style3">Contraseña:</td>
-                <td>
+        <div style="width: 100%; display: flex; flex-direction: row; justify-content:center;">
+            <div style="width: 60%; display: flex; flex-direction: column; gap: 15px; align-items:center">
+                <h4 style="justify-content:center">INICIAR SESIÓN</h4>
+                <div style="display:flex;justify-content:center;flex-direction:row;">
+                    <asp:TextBox style="margin-right:20px" ID="txtUsuario" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtUsuario" Display="Dynamic">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RevEmail" runat="server" ControlToValidate="txtUsuario" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic">Email invalido</asp:RegularExpressionValidator>
+                </div>
+            <div style="display:flex;justify-content:center;flex-direction:row;">
                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
                     <!-- validacion chk contraseña--> <input  type="checkbox" onchange="document.getElementById('txtPassword').type = this.checked ? 'text' : 'password'"/>
-                        <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtUsuario">*</asp:RequiredFieldValidator>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style4">&nbsp;</td>
-                <td>
-                    <asp:Label ID="lblMensaje" runat="server"></asp:Label>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style2" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtUsuario" Display="Dynamic">*</asp:RequiredFieldValidator>
+                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                </div>
+            <div style="display:flex;justify-content:center;flex-direction:row;">
                     <asp:Button ID="btnAceptar" runat="server" Text="ACEPTAR" OnClick="btnAceptar_Click" />
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style4">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style3">No tienes una cuenta?</td>
-                <td>
+            </div>
+                <div 
+                    <h1>No tienes una cuenta?  
                     <asp:HyperLink ID="hlRegistrarse" runat="server" CssClass="auto-style5" NavigateUrl="~/Register.aspx">Registrarse</asp:HyperLink>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style4">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
-        <div>
+                        </h1>  
+            </div>
+            </div>
         </div>
     </form>
 </body>
