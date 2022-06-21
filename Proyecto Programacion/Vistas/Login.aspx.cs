@@ -31,28 +31,27 @@ namespace Vistas
 				usu.EmailUsuario = Email;
 				usu.ContraseñaUsuario = Contraseña;
 
-				bool res = negUsu.ExisteUsuario(usu);
-				if (res)
+				DataTable res = negUsu.ExisteUsuario(usu);
+				foreach (DataRow columna in res.Rows)
 				{
-					bool admin = negUsu.EsAdmin(usu);
-                    if (admin)
-                    {
+					if (columna["Email_U"] != null && columna["Contraseña_U"] != null && (bool)columna["Estado_U"]==true &&(bool)columna["Tipo_Usuario_U"]==true)
+					{
 						Session["Usuario"] = Email;
 						Response.Redirect("PaginaAdmin.aspx");
+						return;
 					}
-                    else
-                    {
+					else if (columna["Email_U"] != null && columna["Contraseña_U"] != null && (bool)columna["Estado_U"] == true && (bool)columna["Tipo_Usuario_U"] == false)
+					{
 						Session["Usuario"] = Email;
 						Response.Redirect("PantallaInicial.aspx");
+						return;
 					}
 				}
-				else
-				{
-					lblMensaje.ForeColor = System.Drawing.Color.Red;
-					lblMensaje.Text = "Los datos del usuario ingresado no existe";
-				}
+				lblMensaje.ForeColor = System.Drawing.Color.Red;
+				lblMensaje.Text = "Los datos del usuario ingresado no existe";
 				txtUsuario.Text = "";
 				txtPassword.Text = "";
+				return;
 			}
 		}
     }

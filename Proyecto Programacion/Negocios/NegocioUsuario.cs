@@ -117,41 +117,12 @@ namespace Negocios
                 return false;
             }
         }
-        public bool ExisteUsuario(Usuarios usu)
+        public DataTable ExisteUsuario(Usuarios usu)
         {
-            int estado = 0;
             DAOUsuarios daoUsu = new DAOUsuarios();
 
-            estado = daoUsu.BuscarUsuario(usu);
-
-            if (estado == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
+            return daoUsu.BuscarUsuario(usu);
         }
-        public bool EsAdmin(Usuarios usu)
-        {
-            int estado = 0;
-            DAOUsuarios daoUsu = new DAOUsuarios();
 
-            estado = daoUsu.VerTipoUsuario(usu);
-
-            if (estado == 1)
-            {
-                // es admin.
-                return true;
-            }
-            else
-            {
-                //es usuario comun.
-                return false;
-            }
-
-        }
     }
 }
