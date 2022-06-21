@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using Negocios;
+using Entidades;
 
 namespace Vistas
 {
@@ -33,7 +34,7 @@ namespace Vistas
 
         private void CargarLv ()
         {
-                DataTable tablaSucursales = Pel.getListaPeliculas();
+                DataTable tablaSucursales = Pel.getListaPeliculas2();
                 lvPeliculas.DataSource = tablaSucursales;
                 lvPeliculas.DataBind();
 
@@ -100,6 +101,11 @@ namespace Vistas
             DataTable tablaSucursales = Pel.getListaPeliculasComplejos(consulta);
             lvPeliculas.DataSource = tablaSucursales;
             lvPeliculas.DataBind();
+        }
+        public void guardarPeliculaEvento(object sender,EventArgs e)
+        {
+            ImageButton btn = (ImageButton)sender;
+            Response.Redirect("MostrarPelicula.aspx?id=" + btn.CommandName);
         }
     }
 }
