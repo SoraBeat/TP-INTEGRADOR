@@ -22,7 +22,11 @@ namespace Vistas
             }
 
         }
-
+        public void desloguear(object sender, EventArgs e)
+        {
+            Session["DATOSUSUARIO"] = null;
+            Response.Redirect("PantallaInicial.aspx");
+        }
         private void CargarTablaSinFiltro()
         {
             DataTable tablaPeliculas = negPel.getListaPeliculas2();

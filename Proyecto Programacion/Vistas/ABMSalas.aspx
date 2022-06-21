@@ -39,9 +39,8 @@
                 <a class="" href="PantallaInicial.aspx" style="margin-left: 30px;">
                     <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
                 </a>
-                <button class="btn" style="height: 50px; color: white; font-weight: 700; font-size: 20px; margin-right: 30px;">
-                    Cerrar sesion
-                </button>
+                <asp:Button runat="server" onclick="desloguear" class="btn" style="height: 50px; color: white; font-weight: 700; font-size: 20px; margin-right: 30px;" Text="Cerrar sesion">
+                </asp:Button>
             </nav>
             <div>
                 <h1 style="text-align: center; background-color: #343434; padding: 10px 0; color: white;">SALAS</h1>

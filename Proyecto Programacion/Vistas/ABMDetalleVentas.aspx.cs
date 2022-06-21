@@ -19,13 +19,19 @@ namespace Vistas
 			{
 				CargarTablaSinFiltro();
 				CargarDDL();
-			}
-		}
-		private void CargarTablaSinFiltro()
+            }
+        }
+        private void CargarTablaSinFiltro()
+        {
+            DataTable tablaDetalleVentas = negDV.getListaDetalleVentas();
+            gvDetalleVentas.DataSource = tablaDetalleVentas;
+            gvDetalleVentas.DataBind();
+        }
+
+		public void desloguear(object sender, EventArgs e)
 		{
-			DataTable tablaDetalleVentas = negDV.getListaDetalleVentas();
-			gvDetalleVentas.DataSource = tablaDetalleVentas;
-			gvDetalleVentas.DataBind();
+			Session["DATOSUSUARIO"] = null;
+			Response.Redirect("PantallaInicial.aspx");
 		}
 		private void CargarTablaConFiltro()
 		{

@@ -20,8 +20,13 @@ namespace Vistas
                 CargarTablaSinFiltro();
                 CargarDDL();
             }
-        }
-        private void CargarTablaSinFiltro()
+		}
+		public void desloguear(object sender, EventArgs e)
+		{
+			Session["DATOSUSUARIO"] = null;
+			Response.Redirect("PantallaInicial.aspx");
+		}
+		private void CargarTablaSinFiltro()
         {
             DataTable tablaVentas = negVen.getListaVentas();
             gvVentas.DataSource = tablaVentas;

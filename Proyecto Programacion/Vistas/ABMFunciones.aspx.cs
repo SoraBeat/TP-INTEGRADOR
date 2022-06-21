@@ -28,6 +28,11 @@ namespace Vistas
 			gvFunciones.DataSource = tablaSala;
 			gvFunciones.DataBind();
 		}
+		public void desloguear(object sender, EventArgs e)
+		{
+			Session["DATOSUSUARIO"] = null;
+			Response.Redirect("PantallaInicial.aspx");
+		}
 		private void CargarTablaConFiltro()
 		{
 			DataTable tablaSala = new DataTable();

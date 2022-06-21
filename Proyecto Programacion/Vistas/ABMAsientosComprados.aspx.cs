@@ -21,6 +21,11 @@ namespace Vistas
 				CargarGrid();
 			}
 		}
+		public void desloguear(object sender, EventArgs e)
+		{
+			Session["DATOSUSUARIO"] = null;
+			Response.Redirect("PantallaInicial.aspx");
+		}
 		private void CargarTablaSinFiltro()
 		{
 			DataTable tablaSala = negasico.getTabla();
