@@ -16,7 +16,12 @@ namespace Negocios
             DAOUsuarios dao = new DAOUsuarios();
             return dao.getTablaUsuarios();
         }
-
+        public DataTable cantidadUsuarios()
+        {
+            DAOUsuarios dao = new DAOUsuarios();
+            return dao.cantidadUsuarios();
+        }
+        
         public DataTable getListaPorIDUsuario(string id)
         {
             DAOUsuarios dao = new DAOUsuarios();

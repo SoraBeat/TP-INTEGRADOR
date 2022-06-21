@@ -17,6 +17,18 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Ventas", "SELECT ID_Venta_V AS [IDVenta], ID_Usuario_V AS [IDUsuario], Fecha_V AS [Fecha], Metodo_Pago_V AS [MetodoPago], Monto_Final_V AS [MontoFinal] FROM Ventas WHERE ID_Venta_V LIKE '%" + campo + "%' ORDER BY ABS(ID_Venta_V)");
             return tabla;
         }
+        public DataTable cantidadVentas()
+        {
+            DataTable tabla = ds.ObtenerTabla("Ventas", "SELECT COUNT(ID_Venta_V) AS [CANTIDAD] FROM Ventas");
+            return tabla;
+        }
+        public DataTable dineroGanado()
+        {
+            DataTable tabla = ds.ObtenerTabla("Ventas", "SELECT SUM(Precio_DV) AS [CANTIDAD] FROM Detalle_Ventas");
+            return tabla;
+        }
+        
+
         public DataTable getTablaVentasPorIDUsuario(string campo)
         {
             DataTable tabla = ds.ObtenerTabla("Ventas", "SELECT ID_Venta_V AS [IDVenta], ID_Usuario_V AS [IDUsuario], Fecha_V AS [Fecha], Metodo_Pago_V AS [MetodoPago], Monto_Final_V AS [MontoFinal] FROM Ventas WHERE ID_Usuario_V LIKE '%" + campo + "%' ORDER BY ABS(ID_Venta_V)");

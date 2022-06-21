@@ -45,14 +45,14 @@
             <br />
 
             <div style="display: flex; flex-direction: row; margin-top: 20px;">
-                <a style="width: 20%;text-decoration:none;color:black;" href="PaginaAdmin.aspx">
-                <div style=" display: flex; flex-direction: column; justify-content: start; align-items: center;">
-                    
-                    <img style="width: 100px; height: 100px;" src="Imagenes/Pagina/Persona.png" alt="Alternate Text" />
+                <a style="width: 20%; text-decoration: none; color: black;" href="PaginaAdmin.aspx">
+                    <div style="display: flex; flex-direction: column; justify-content: start; align-items: center;">
+
+                        <img style="width: 100px; height: 100px;" src="Imagenes/Pagina/Persona.png" alt="Alternate Text" />
                         <asp:Label Style="font-size: 20px; font-weight: 700;" ID="LBL_NOMBREUSUARIO" Text="Nombre" runat="server" />
                         <asp:Label Style="font-size: 20px; font-weight: 700;" ID="LBL_APELLIDOUSUARIO" Text="Apellido" runat="server" />
-                    
-                </div>
+
+                    </div>
                 </a>
                 <div style="width: 70%; display: grid; grid-template-columns: repeat(6,1fr); gap: 20px; margin: 0 10%">
                     <div style="height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #10179B; border-radius: 10px; -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); padding: 10px">
@@ -82,17 +82,41 @@
                 </div>
             </div>
             <br />
-            <div class="list-group" style="width: 20%;">
-                <asp:Label ID="Label5" runat="server" CssClass="auto-style23 font-weight-bolder" Font-Bold="True" Font-Italic="False" Font-Size="Medium" Text="MODIFICACION"></asp:Label>
-                <asp:HyperLink ID="hlComplejos" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMComplejo.aspx">Complejos</asp:HyperLink>
-                <asp:HyperLink ID="hlSalas" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMSalas.aspx">Salas</asp:HyperLink>
-                <asp:HyperLink ID="hlPeliculas" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMPeliculas.aspx">Peliculas</asp:HyperLink>
-                <asp:HyperLink ID="hlFunciones" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMFunciones.aspx">Funciones</asp:HyperLink>
-                <asp:HyperLink ID="hlAsientos" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMAsientos.aspx">Asientos</asp:HyperLink>
-                <asp:HyperLink ID="hlAsientosComprados" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMAsientosComprados.aspx">Asientos Comprados</asp:HyperLink>
-                <asp:HyperLink ID="hlVentas" runat="server" CssClass="list-group-item" NavigateUrl="~/Ventas.aspx">Ventas</asp:HyperLink>
-                <asp:HyperLink ID="hlDV" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>
-                <asp:HyperLink ID="hlUsuarios" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink>
+            <br />
+            <div style="display: flex; flex-direction: row;">
+                <div class="list-group" style="width: 20%;">
+                    <asp:Label ID="Label5" runat="server" CssClass="auto-style23 font-weight-bolder" Font-Bold="True" Font-Italic="False" Font-Size="Medium" Text="MODIFICACION"></asp:Label>
+                    <asp:HyperLink ID="hlComplejos" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMComplejo.aspx">Complejos</asp:HyperLink>
+                    <asp:HyperLink ID="hlSalas" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMSalas.aspx">Salas</asp:HyperLink>
+                    <asp:HyperLink ID="hlPeliculas" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMPeliculas.aspx">Peliculas</asp:HyperLink>
+                    <asp:HyperLink ID="hlFunciones" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMFunciones.aspx">Funciones</asp:HyperLink>
+                    <asp:HyperLink ID="hlAsientos" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMAsientos.aspx">Asientos</asp:HyperLink>
+                    <asp:HyperLink ID="hlAsientosComprados" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMAsientosComprados.aspx">Asientos Comprados</asp:HyperLink>
+                    <asp:HyperLink ID="hlVentas" runat="server" CssClass="list-group-item" NavigateUrl="~/Ventas.aspx">Ventas</asp:HyperLink>
+                    <asp:HyperLink ID="hlDV" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>
+                    <asp:HyperLink ID="hlUsuarios" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink>
+                </div>
+                <div style="width: 80%;">
+                    <h3 style="font-size:30px;font-weight:700;">ESTADISTICAS</h3>
+                    <br />
+                    <div style="display: grid; grid-template-columns: repeat(4,1fr); gap: 10%; margin-left: 60px;">
+                        <div style="height: auto; background-color: rgba(4, 4, 4, 0.8); display: flex; justify-content: start; align-items: center; width: 250px; padding: 15px 20px; gap: 10px; border-radius: 10px;flex-direction:column;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);">
+                            <img style="width: 100px; height: 100px" src="Imagenes/Pagina/logo-usuario.png" alt="Alternate Text" />
+                            <asp:Label style="font-weight:700;color:white;" Text="USUARIOS" runat="server" Font-Size="X-Large" />
+                            <asp:Label style="font-weight:700;color:white;font-size:25px;"  ID="LBL_USUARIOS" Text="14" runat="server" />
+                        </div>
+                        <div style="height: auto; background-color: rgba(4, 4, 4, 0.8); display: flex; justify-content: start; align-items: center; width: 250px; padding: 15px 20px; gap: 10px; border-radius: 10px;flex-direction:column;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);">
+                            <img style="width: 100px; height: 100px" src="Imagenes/Pagina/venta-logo.png" alt="Alternate Text" />
+                            <asp:Label style="font-weight:700;color:white;" Text="VENTAS" runat="server" Font-Size="X-Large" />
+                            <asp:Label style="font-weight:700;color:white;font-size:25px;" ID="LBL_VENTAS" Text="100" runat="server" />
+                        </div>
+                        <div style="height: auto; background-color: rgba(4, 4, 4, 0.8); display: flex; justify-content: start; align-items: center; width: 250px; padding: 15px 20px; gap: 10px; border-radius: 10px;flex-direction:column;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);">
+                            <img style="width: 100px; height: 100px" src="Imagenes/Pagina/logo-dinero.png" alt="Alternate Text" />
+                            <asp:Label style="font-weight:700;color:white;" Text="DINERO" runat="server" Font-Size="X-Large" />
+                            <asp:Label style="font-weight:700;color:white;font-size:25px;" ID="LBL_DINERO" Text="$1200" runat="server" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </form>

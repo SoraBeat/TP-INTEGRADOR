@@ -23,6 +23,12 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO], Estado_U AS [ESTADO] FROM Usuarios WHERE ID_Usuario_U LIKE '%" + campo + "%' ORDER BY ABS(ID_Usuario_U)");
             return tabla;
         }
+        public DataTable cantidadUsuarios()
+        {
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT COUNT(ID_Usuario_U) AS [CANTIDAD] FROM Usuarios");
+            return tabla;
+        }
+        
         public DataTable getTablaUsuariosPorNombreUsuario(string campo)
         {
             DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO], Estado_U AS [ESTADO] FROM USUARIOS WHERE Nombre_U LIKE '%" + campo + "%' ORDER BY ABS(ID_Usuario_U)");

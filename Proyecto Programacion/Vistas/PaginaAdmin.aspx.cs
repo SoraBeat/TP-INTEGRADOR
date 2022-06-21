@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using Negocios;
+using Entidades;
+
 
 namespace Vistas
 {
@@ -23,7 +27,14 @@ namespace Vistas
             LBL_TELEFONO.Text = datos[4];
             LBL_EMAIL.Text = datos[5];
 
-            
+            NegocioUsuario negusu = new NegocioUsuario();
+            NegocioVentas negven = new NegocioVentas();
+            DataTable usuarios = negusu.cantidadUsuarios();
+            DataTable ventas = negven.cantidadVentas();
+            DataTable dinero = negven.dineroGanado();
+            LBL_USUARIOS.Text = usuarios.Rows[0]["CANTIDAD"].ToString();
+            LBL_VENTAS.Text = ventas.Rows[0]["CANTIDAD"].ToString();
+            LBL_DINERO.Text = "$"+dinero.Rows[0]["CANTIDAD"].ToString();
         }
         public void desloguear(object sender, EventArgs e)
         {

@@ -92,10 +92,13 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Imagenes\Pagina\logo-dinero.png" />
     <Content Include="Imagenes\Pagina\logo-piola.png" />
+    <Content Include="Imagenes\Pagina\logo-usuario.png" />
     <Content Include="Imagenes\Pagina\logo.png" />
     <Content Include="Imagenes\Pagina\persona.png" />
     <Content Include="Imagenes\Pagina\persona2.png" />
+    <Content Include="Imagenes\Pagina\venta-logo.png" />
     <Content Include="Imagenes\Portadas\Doctor Strange.jpg" />
     <Content Include="Imagenes\Portadas\Jurassic World.jpg" />
     <Content Include="Imagenes\Portadas\Lightyear.jpg" />
