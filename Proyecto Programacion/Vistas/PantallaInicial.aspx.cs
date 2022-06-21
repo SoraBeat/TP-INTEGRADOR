@@ -136,7 +136,10 @@ namespace Vistas
             if (Session["DATOSUSUARIO"] != null)
             {
                 hlLogin.Text = "CERRAR SESION";
+                hlLogin.NavigateUrl = "~/PantallaInicial.aspx";
+                
             }
+            Session["DATOSUSUARIO"] = null;
         }
 
     }
