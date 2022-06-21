@@ -14,12 +14,16 @@ namespace Vistas
             string datosUsuario = (string)Session["DATOSUSUARIO"];
             string[] separador = new string[] {" ","$"};
             string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+            LBL_NOMBREUSUARIO.Text = datos[1];
+            LBL_APELLIDOUSUARIO.Text = datos[2];
             LBL_ID.Text = datos[0];
             LBL_NOMBRE.Text = datos[1];
             LBL_APELLIDO.Text = datos[2];
             LBL_DNI.Text = datos[3];
             LBL_TELEFONO.Text = datos[4];
             LBL_EMAIL.Text = datos[5];
+
+            
         }
         public void desloguear(object sender, EventArgs e)
         {

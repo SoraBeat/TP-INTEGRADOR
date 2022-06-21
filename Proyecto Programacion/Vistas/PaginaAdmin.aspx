@@ -22,8 +22,7 @@
             font-size: 30px;
             color: #FFFFFF;
         }
-
-        </style>
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -46,45 +45,37 @@
             <br />
 
             <div style="display: flex; flex-direction: row; margin-top: 20px;">
-                <div style="width: 20%; display: flex; flex-direction: column; justify-content: start; align-items: center;">
+                <a style="width: 20%;text-decoration:none;color:black;" href="PaginaAdmin.aspx">
+                <div style=" display: flex; flex-direction: column; justify-content: start; align-items: center;">
+                    
                     <img style="width: 100px; height: 100px;" src="Imagenes/Pagina/Persona.png" alt="Alternate Text" />
-                    <h3>NOMBRE</h3>
-                    <h3>APELLIDO</h3>
+                        <asp:Label Style="font-size: 20px; font-weight: 700;" ID="LBL_NOMBREUSUARIO" Text="Nombre" runat="server" />
+                        <asp:Label Style="font-size: 20px; font-weight: 700;" ID="LBL_APELLIDOUSUARIO" Text="Apellido" runat="server" />
+                    
                 </div>
-                <div style="width: 70%; display: grid;grid-template-columns:repeat(6,1fr);gap:20px;margin:0 10%">
-                    <div style="height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:#10179B;border-radius:10px;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);padding:10px">
+                </a>
+                <div style="width: 70%; display: grid; grid-template-columns: repeat(6,1fr); gap: 20px; margin: 0 10%">
+                    <div style="height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #10179B; border-radius: 10px; -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); padding: 10px">
                         <label class="auto-style1">ID</label>
                         <asp:Label ID="LBL_ID" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
                     </div>
-                    <div style="height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:#10179B;border-radius:10px;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);padding:10px">
+                    <div style="height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #10179B; border-radius: 10px; -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); padding: 10px">
                         <label style="font-weight: bold; font-size: 30px; color: #FFFFFF;">Nombre</label>
                         <asp:Label ID="LBL_NOMBRE" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
                     </div>
-                    <div style="height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:#10179B;border-radius:10px;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);padding:10px">
+                    <div style="height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #10179B; border-radius: 10px; -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); padding: 10px">
                         <label style="font-weight: bold; font-size: 30px; color: #FFFFFF;">Apellido</label>
                         <asp:Label ID="LBL_APELLIDO" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
                     </div>
-                    <div style="height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:#10179B;border-radius:10px;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);padding:10px">
+                    <div style="height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #10179B; border-radius: 10px; -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); padding: 10px">
                         <label style="font-weight: bold; font-size: 30px; color: #FFFFFF;">DNI</label>
                         <asp:Label ID="LBL_DNI" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
                     </div>
-                    <div style="height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:#10179B;border-radius:10px;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);padding:10px">
+                    <div style="height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #10179B; border-radius: 10px; -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); padding: 10px">
                         <label style="font-weight: bold; font-size: 30px; color: #FFFFFF;">Telefono</label>
                         <asp:Label ID="LBL_TELEFONO" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
                     </div>
-                    <div style="height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:#10179B;border-radius:10px;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);padding:10px">
+                    <div style="height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #10179B; border-radius: 10px; -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); padding: 10px">
                         <label style="font-weight: bold; font-size: 30px; color: #FFFFFF;">Email</label>
                         <asp:Label ID="LBL_EMAIL" runat="server" Font-Size="Large" ForeColor="White"></asp:Label>
                     </div>

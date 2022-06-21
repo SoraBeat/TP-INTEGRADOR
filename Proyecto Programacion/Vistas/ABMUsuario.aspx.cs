@@ -22,6 +22,11 @@ namespace Vistas
 				CargarTablaSinFiltro();
 				CargarDDL();
 			}
+			string datosUsuario = (string)Session["DATOSUSUARIO"];
+			string[] separador = new string[] { " ", "$" };
+			string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+			LBL_NOMBREUSUARIO.Text = datos[1];
+			LBL_APELLIDOUSUARIO.Text = datos[2];
 		}
 		public void desloguear(object sender, EventArgs e)
 		{

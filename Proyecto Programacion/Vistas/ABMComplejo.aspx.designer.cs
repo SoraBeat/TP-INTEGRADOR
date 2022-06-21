@@ -60,6 +60,24 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Button btnFiltrarTodo;
 
         /// <summary>
+        /// Control LBL_NOMBREUSUARIO.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBL_NOMBREUSUARIO;
+
+        /// <summary>
+        /// Control LBL_APELLIDOUSUARIO.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBL_APELLIDOUSUARIO;
+
+        /// <summary>
         /// Control gvComplejos.
         /// </summary>
         /// <remarks>

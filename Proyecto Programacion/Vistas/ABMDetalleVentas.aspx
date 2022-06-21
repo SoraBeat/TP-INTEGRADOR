@@ -41,9 +41,6 @@
             <br />
             <table style="width: 100%;">
                 <tr>
-                    <td class="auto-style16">Filtrar busqueda</td>
-                </tr>
-                <tr>
                     <td class="auto-style16">
                         <asp:DropDownList ID="ddlFiltro" runat="server">
                         </asp:DropDownList>
@@ -57,11 +54,15 @@
                 </tr>
             </table>
             <div style="display: flex; flex-direction: row; margin-top: 20px;">
-                <div style="width: 20%; display: flex; flex-direction: column; justify-content: start; align-items: center;">
+                <a style="width: 20%;text-decoration:none;color:black;" href="PaginaAdmin.aspx">
+                <div style=" display: flex; flex-direction: column; justify-content: start; align-items: center;">
+                    
                     <img style="width: 100px; height: 100px;" src="Imagenes/Pagina/Persona.png" alt="Alternate Text" />
-                    <h3>NOMBRE</h3>
-                    <h3>APELLIDO</h3>
+                        <asp:Label Style="font-size: 20px; font-weight: 700;" ID="LBL_NOMBREUSUARIO" Text="Nombre" runat="server" />
+                        <asp:Label Style="font-size: 20px; font-weight: 700;" ID="LBL_APELLIDOUSUARIO" Text="Apellido" runat="server" />
+                    
                 </div>
+                </a>
                 <div style="width: 80%">
                     <asp:GridView Style="width: 80%" ID="gvDetalleVentas" runat="server" Width="734px" AllowPaging="True" AutoGenerateColumns="False">
                         <Columns>
