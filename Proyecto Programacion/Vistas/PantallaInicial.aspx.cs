@@ -18,6 +18,7 @@ namespace Vistas
         {
             if (IsPostBack == false)
             {
+                opcionCerrarSesion();
                 btnIrPaginaAdmin();
                 CargarLv();
                 CargarDDL();
@@ -116,14 +117,27 @@ namespace Vistas
         }
         private void btnIrPaginaAdmin()
         {
-            string datosUsuario = (string)Session["DATOSUSUARIO"];
-            string[] separador = new string[] { " ", "$" };
-            string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
-            bool TipoUsuario = Convert.ToBoolean(datos[7]);
-            if (TipoUsuario == true)
+            if (Session["DATOSUSUARIO"]!= null)
             {
-                txtPaginaAdmin.Visible = true;
+                string datosUsuario = (string)Session["DATOSUSUARIO"];
+                string[] separador = new string[] { " ", "$" };
+                string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+                bool TipoUsuario = Convert.ToBoolean(datos[7]);
+                if (TipoUsuario == true)
+                {
+                    txtPaginaAdmin.Visible = true;
+                }
+            }
+
+        }
+
+        private void opcionCerrarSesion()
+        {
+            if (Session["DATOSUSUARIO"] != null)
+            {
+                hlLogin.Text = "CERRAR SESION";
             }
         }
+
     }
 }
