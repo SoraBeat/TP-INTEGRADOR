@@ -13,10 +13,16 @@ namespace Vistas
 {
     public partial class PaginaAdmin : System.Web.UI.Page
     {
+
+        private string NombreDePeliculas;
+        private string VecesVista;
+        public string NOMBREDEPELICULAS { get { return NombreDePeliculas; } }
+        public string VECESVISTA { get { return VecesVista; } }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string datosUsuario = (string)Session["DATOSUSUARIO"];
-            string[] separador = new string[] {" ","$"};
+            string[] separador = new string[] { " ", "$" };
             string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
             LBL_NOMBREUSUARIO.Text = datos[1];
             LBL_APELLIDOUSUARIO.Text = datos[2];
@@ -29,17 +35,27 @@ namespace Vistas
 
             NegocioUsuario negusu = new NegocioUsuario();
             NegocioVentas negven = new NegocioVentas();
+            NegocioPeliculas negpe = new NegocioPeliculas();
             DataTable usuarios = negusu.cantidadUsuarios();
             DataTable ventas = negven.cantidadVentas();
             DataTable dinero = negven.dineroGanado();
             LBL_USUARIOS.Text = usuarios.Rows[0]["CANTIDAD"].ToString();
             LBL_VENTAS.Text = ventas.Rows[0]["CANTIDAD"].ToString();
-            LBL_DINERO.Text = "$"+dinero.Rows[0]["CANTIDAD"].ToString();
+            LBL_DINERO.Text = "$" + dinero.Rows[0]["CANTIDAD"].ToString();
+
+            
+            DataTable datospeliculas = negpe.getListaVentas();
+            foreach(DataRow columna in datospeliculas.Rows)
+            {
+                NombreDePeliculas += "$" + columna["PELICULAS"];
+                VecesVista += "$" + columna["VENTAS"];
+            }
         }
         public void desloguear(object sender, EventArgs e)
         {
             Session["DATOSUSUARIO"] = null;
             Response.Redirect("PantallaInicial.aspx");
         }
+
     }
 }

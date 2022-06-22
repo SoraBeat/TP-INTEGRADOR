@@ -11,7 +11,11 @@ namespace Negocios
 {
     public class NegocioPeliculas
     {
-
+        public DataTable getListaVentas()
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getListaVentas();
+        }
         public DataTable getListaPeliculas2()
         {
             DAOPeliculas dao = new DAOPeliculas();

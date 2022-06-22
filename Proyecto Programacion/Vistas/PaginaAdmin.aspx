@@ -40,7 +40,7 @@
                 <asp:Button runat="server" OnClick="desloguear" class="btn" Style="height: 50px; color: white; font-weight: 700; font-size: 20px; margin-right: 30px;" Text="Cerrar sesion"></asp:Button>
             </nav>
             <div>
-                <h1 style="text-align: center; background-color: #343434; padding: 10px 0; color: white; font-weight: 700;">Bienvenido a la administracion</h1>
+                <h1 id="LABELPIOLA" style="text-align: center; background-color: #343434; padding: 10px 0; color: white; font-weight: 700;">Bienvenido a la administracion</h1>
             </div>
             <br />
 
@@ -97,28 +97,69 @@
                     <asp:HyperLink ID="hlUsuarios" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink>
                 </div>
                 <div style="width: 80%;">
-                    <h3 style="font-size:30px;font-weight:700;">ESTADISTICAS</h3>
+                    <h3 style="font-size: 30px; font-weight: 700;">ESTADISTICAS</h3>
                     <br />
                     <div style="display: grid; grid-template-columns: repeat(4,1fr); gap: 10%; margin-left: 60px;">
-                        <div style="height: auto; background-color: rgba(4, 4, 4, 0.8); display: flex; justify-content: start; align-items: center; width: 250px; padding: 15px 20px; gap: 10px; border-radius: 10px;flex-direction:column;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);">
+                        <div style="height: auto; background-color: rgba(4, 4, 4, 0.8); display: flex; justify-content: start; align-items: center; width: 250px; padding: 15px 20px; gap: 10px; border-radius: 10px; flex-direction: column; -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);">
                             <img style="width: 100px; height: 100px" src="Imagenes/Pagina/logo-usuario.png" alt="Alternate Text" />
-                            <asp:Label style="font-weight:700;color:white;" Text="USUARIOS" runat="server" Font-Size="X-Large" />
-                            <asp:Label style="font-weight:700;color:white;font-size:25px;"  ID="LBL_USUARIOS" Text="14" runat="server" />
+                            <asp:Label Style="font-weight: 700; color: white;" Text="USUARIOS" runat="server" Font-Size="X-Large" />
+                            <asp:Label Style="font-weight: 700; color: white; font-size: 25px;" ID="LBL_USUARIOS" Text="14" runat="server" />
                         </div>
-                        <div style="height: auto; background-color: rgba(4, 4, 4, 0.8); display: flex; justify-content: start; align-items: center; width: 250px; padding: 15px 20px; gap: 10px; border-radius: 10px;flex-direction:column;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);">
+                        <div style="height: auto; background-color: rgba(4, 4, 4, 0.8); display: flex; justify-content: start; align-items: center; width: 250px; padding: 15px 20px; gap: 10px; border-radius: 10px; flex-direction: column; -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);">
                             <img style="width: 100px; height: 100px" src="Imagenes/Pagina/venta-logo.png" alt="Alternate Text" />
-                            <asp:Label style="font-weight:700;color:white;" Text="VENTAS" runat="server" Font-Size="X-Large" />
-                            <asp:Label style="font-weight:700;color:white;font-size:25px;" ID="LBL_VENTAS" Text="100" runat="server" />
+                            <asp:Label Style="font-weight: 700; color: white;" Text="VENTAS" runat="server" Font-Size="X-Large" />
+                            <asp:Label Style="font-weight: 700; color: white; font-size: 25px;" ID="LBL_VENTAS" Text="100" runat="server" />
                         </div>
-                        <div style="height: auto; background-color: rgba(4, 4, 4, 0.8); display: flex; justify-content: start; align-items: center; width: 250px; padding: 15px 20px; gap: 10px; border-radius: 10px;flex-direction:column;-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);">
+                        <div style="height: auto; background-color: rgba(4, 4, 4, 0.8); display: flex; justify-content: start; align-items: center; width: 250px; padding: 15px 20px; gap: 10px; border-radius: 10px; flex-direction: column; -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);">
                             <img style="width: 100px; height: 100px" src="Imagenes/Pagina/logo-dinero.png" alt="Alternate Text" />
-                            <asp:Label style="font-weight:700;color:white;" Text="DINERO" runat="server" Font-Size="X-Large" />
-                            <asp:Label style="font-weight:700;color:white;font-size:25px;" ID="LBL_DINERO" Text="$1200" runat="server" />
+                            <asp:Label Style="font-weight: 700; color: white;" Text="DINERO" runat="server" Font-Size="X-Large" />
+                            <asp:Label Style="font-weight: 700; color: white; font-size: 25px;" ID="LBL_DINERO" Text="$1200" runat="server" />
                         </div>
                     </div>
+                    <br />
+                    <h4>Tóp 5 peliculas mas vistas</h4>
+                    <br />
+                    <div>
+                        <canvas style="width:300px !important;height:300px !important;" id="myChart"></canvas>
+                    </div>
                 </div>
+
             </div>
         </div>
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var nombreDePeliculas = '<%=this.NOMBREDEPELICULAS%>'.split("$");
+    var vecesVista = '<%=this.VECESVISTA%>'.split("$");
+    nombreDePeliculas.shift();
+    vecesVista.shift();
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: nombreDePeliculas,
+            datasets: [{
+                label: 'Peliculas mas vistas',
+                data: vecesVista,
+                backgroundColor: [
+                    'rgba(255, 0, 0, 0.5)',
+                    'rgba(0, 255, 0, 0.5)',
+                    'rgba(0, 0, 255, 0.5)',
+                    'rgba(255, 255, 0, 0.5)',
+                    'rgba(255, 0, 255, 0.5)'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
 </body>
 </html>
