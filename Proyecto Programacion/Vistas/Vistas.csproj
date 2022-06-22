@@ -92,6 +92,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Imagenes\Pagina\fondo-login.jpg" />
+    <Content Include="Imagenes\Pagina\fondo-login.png" />
     <Content Include="Imagenes\Pagina\logo-dinero.png" />
     <Content Include="Imagenes\Pagina\logo-piola.png" />
     <Content Include="Imagenes\Pagina\logo-usuario.png" />
