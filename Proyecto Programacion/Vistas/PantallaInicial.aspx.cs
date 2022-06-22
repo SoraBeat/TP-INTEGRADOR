@@ -16,9 +16,9 @@ namespace Vistas
         NegocioComplejos Com = new NegocioComplejos();
         protected void Page_Load(object sender, EventArgs e)
         {
+            nombrebtn();
             if (IsPostBack == false)
             {
-                opcionCerrarSesion();
                 btnIrPaginaAdmin();
                 CargarLv();
                 CargarDDL();
@@ -131,16 +131,29 @@ namespace Vistas
 
         }
 
-        private void opcionCerrarSesion()
+        private void nombrebtn()
         {
-            if (Session["DATOSUSUARIO"] != null)
+            if(Session["DATOSUSUARIO"] == null)
             {
-                hlLogin.Text = "CERRAR SESION";
-                hlLogin.NavigateUrl = "~/PantallaInicial.aspx";
-                
+                btnIniciarSesion.Text =  "Iniciar Sesion";
             }
-            Session["DATOSUSUARIO"] = null;
+            else
+            {
+                btnIniciarSesion.Text = "Cerrar Sesion";
+            }
         }
+        protected void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            if (Session["DATOSUSUARIO"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
+            else
+            {
+                Session["DATOSUSUARIO"] = null;
+                Response.Redirect("PantallaInicial.aspx");
 
+            }
+        }
     }
 }
