@@ -32,5 +32,10 @@ namespace Vistas
             ddlUbicacion.DataBind();
             ddlUbicacion.Items.Insert(0, new ListItem("Seleccione Un Asiento", "0"));
         }
+
+        protected void btnConfirmar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
