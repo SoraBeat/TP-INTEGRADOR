@@ -183,7 +183,7 @@
                         </InsertItemTemplate>
                         <ItemTemplate>
                             <td runat="server" style="background-color: #E0FFFF; color: #333333;" class="auto-style2">
-                                <asp:ImageButton runat="server" OnClick="guardarPeliculaEvento" CommandName='<%# Eval("ID") %>' imageUrl='<%# Eval("Portada") %>'>
+                                <asp:ImageButton style="width:150px;height:300px" runat="server" OnClick="guardarPeliculaEvento" CommandName='<%# Eval("ID") %>' imageUrl='<%# Eval("Portada") %>'>
                                 </asp:ImageButton>
                             </td>
                         </ItemTemplate>

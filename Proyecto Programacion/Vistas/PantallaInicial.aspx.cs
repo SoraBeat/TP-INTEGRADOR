@@ -92,7 +92,7 @@ namespace Vistas
             DDLsucursales.DataTextField = "Nombre";
             DDLsucursales.DataValueField = "ID";
             DDLsucursales.DataBind();
-            DDLsucursales.Items.Insert(0, new ListItem ("Seleccione Una Sucursal","0"));
+            DDLsucursales.Items.Insert(0, new ListItem ("Seleccione Una Sucursal","%"));
         }
 
 
