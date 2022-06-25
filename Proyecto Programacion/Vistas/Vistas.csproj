@@ -100,6 +100,7 @@
     <Content Include="Imagenes\Pagina\logo.png" />
     <Content Include="Imagenes\Pagina\persona.png" />
     <Content Include="Imagenes\Pagina\persona2.png" />
+    <None Include="Imagenes\Pagina\ticket.png" />
     <Content Include="Imagenes\Pagina\venta-logo.png" />
     <Content Include="Imagenes\Portadas\Doctor Strange.jpg" />
     <Content Include="Imagenes\Portadas\Jurassic World.jpg" />
@@ -108,6 +109,7 @@
     <Content Include="MostrarPelicula.aspx" />
     <Content Include="PaginaAdmin.aspx" />
     <Content Include="PantallaInicial.aspx" />
+    <Content Include="Precompra.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -206,6 +208,13 @@
     <Compile Include="PantallaInicial.aspx.designer.cs">
       <DependentUpon>PantallaInicial.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Precompra.aspx.cs">
+      <DependentUpon>Precompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Precompra.aspx.designer.cs">
+      <DependentUpon>Precompra.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -213,6 +222,11 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -269,6 +283,12 @@
       <Project>{9e945821-c7c1-48fd-830d-f24803390cb9}</Project>
       <Name>Negocios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
