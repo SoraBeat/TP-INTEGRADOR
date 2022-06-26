@@ -41,6 +41,25 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE ID_Funcion_F LIKE '%" + campo + "%' ORDER BY ABS(ID_Funcion_F)");
             return tabla;
         }
+
+        public DataTable getTablaFuncionPorIDformatos(string idPelicula, string idComplejo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT distinct Formato_F AS [FORMATO], ID_Pelicula_F AS [ID] FROM Funciones WHERE Estado_F = '1' AND ID_Pelicula_F = '" + idPelicula + "' AND ID_Complejo_F = '" + idComplejo + "' ");
+            return tabla;
+        }
+
+        public DataTable getTablaFuncionPorIDidioma(string IDpelicula, string IDcomplejo, string formato)
+        {
+            DataTable tabla = ds.ObtenerTabla("Funciones", "Select distinct  Idioma_F AS [IDIOMA] from Funciones where Estado_F = 1 AND  ID_Pelicula_F = '"+IDpelicula+"' AND ID_Complejo_F = '"+IDcomplejo+ "' AND Formato_F = '"+formato+"'");
+            return tabla;
+        }
+
+        public DataTable getTablaFuncionPorIDcomplejo(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Funciones", "Select Nombre_Co AS [COMPLEJO], ID_Complejo_Co AS [ID] FROM Funciones INNER JOIN Complejos ON ID_Complejo_F = ID_Complejo_Co WHERE ID_Pelicula_F = '" + campo + "' GROUP BY Nombre_Co, ID_Complejo_Co");
+            return tabla;
+        }
+
         public DataTable getTablaFuncionPorPelicula(string campo)
         {
             DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE ID_Pelicula_F LIKE '%" + campo + "%' ORDER BY ABS(ID_Pelicula_F)");
@@ -61,9 +80,20 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Fecha_F LIKE '%" + campo + "%' ORDER BY ABS(Fecha_F)");
             return tabla;
         }
+        public DataTable getTablaFuncionPorFecha2(string idPelicula, string idcomplejo, string formato, string idioma)
+        {
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT distinct format (Fecha_F,'dd/MM') AS [FECHA] FROM Funciones WHERE Estado_F = 1 AND  ID_Pelicula_F = '" + idPelicula + "' AND ID_Complejo_F = '" + idcomplejo + "' AND Formato_F = '" + formato + "' AND Idioma_F = '" + idioma + "'");
+            return tabla;
+        }
         public DataTable getTablaFuncionPorHorario(string campo)
         {
             DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Horario_F LIKE '%" + campo + "%' ORDER BY ABS(Horario_F)");
+            return tabla;
+        }
+        public DataTable getTablaFuncionPorHorario2(string idPelicula, string idcomplejo, string formato, string idioma, string fecha)
+        {
+            
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT convert (varchar(5),Horario_F,108) AS [HORARIO] FROM Funciones WHERE Estado_F = 1 AND  ID_Pelicula_F = '" + idPelicula + "' AND ID_Complejo_F = '" + idcomplejo + "' AND Formato_F = '" + formato + "' AND Idioma_F = '" + idioma + "' AND Fecha_F = '"+fecha+"'");
             return tabla;
         }
         public DataTable getTablaFuncionPorIdioma(string campo)
