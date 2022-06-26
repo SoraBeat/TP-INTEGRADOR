@@ -128,6 +128,11 @@ namespace Negocios
 
             return daoUsu.BuscarUsuario(usu);
         }
+        public DataTable ExisteUsuarioEmail(Usuarios usu)
+        {
+            DAOUsuarios daoUsu = new DAOUsuarios();
 
+            return daoUsu.BuscarUsuarioPorEmail(usu);
+        }
     }
 }

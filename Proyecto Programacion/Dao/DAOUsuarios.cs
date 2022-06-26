@@ -117,6 +117,11 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U, Nombre_U, Apellido_U, DNI_U , Telefono_U , Email_U , Contraseña_U, Estado_U, Tipo_Usuario_U FROM Usuarios WHERE Email_U='"+usu.EmailUsuario+"' AND Contraseña_U='"+usu.ContraseñaUsuario+"' AND Estado_U=1");
             return tabla;
         }
+        public DataTable BuscarUsuarioPorEmail(Usuarios usu)
+        {
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U, Nombre_U, Apellido_U, DNI_U , Telefono_U , Email_U , Contraseña_U, Estado_U, Tipo_Usuario_U FROM Usuarios WHERE Email_U='" + usu.EmailUsuario + "' AND Estado_U=1");
+            return tabla;
+        }
 
         private void ArmarParametrosUsuarioEliminar(ref SqlCommand comando, Usuarios usu)
         {
