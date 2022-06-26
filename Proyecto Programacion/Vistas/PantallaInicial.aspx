@@ -5,80 +5,113 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>Galag CINE
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/owl.carousel.css" />
     <style type="text/css">
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            font-weight: 500;
+            background-color: black;
+        }
+
         .auto-style1 {
-            width: 100%;
+            width: 744px;
         }
 
         .auto-style2 {
-            text-align: center;
+            width: 618px;
         }
 
-        .auto-style7 {
-            color: #000000;
-            background-color: #FFFFFF;
+        .auto-style3 {
+            width: 100%;
         }
-
-        .auto-style8 {
-            width: 30px;
-            height: 30px;
-        }
-
-        .auto-style11 {
-            width: 44px;
-        }
-
-        .auto-style12 {
-            width: 16px;
-        }
-
-        .auto-style13 {
-            width: 41px;
+        .auto-style4 {
+            width: 515px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:Label ID="Label1" runat="server" Text="NOMBRE DEL CINE"></asp:Label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="txtPaginaAdmin" runat="server" OnClick="txtPaginaAdmin_Click" Text="Funciones admin" Visible="False" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label3" runat="server" Text="SOPORTE"></asp:Label>
+        <div style="width: 100%; background-color: black; height: 90px;"></div>
+        <nav class="auto-style22 navbar fixed-top" style="background-color: rgba(0, 0, 0, 0.79); padding: 10px 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+            <a class="" href="PantallaInicial.aspx" style="margin-left: 30px;">
+                <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
+            </a>
+            <div style="margin-right: 20px">
+                <asp:Button class="btn btn-primary" ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click" />
+                <asp:Button class="btn btn-warning" ID="txtPaginaAdmin" runat="server" OnClick="txtPaginaAdmin_Click" Text="Funciones admin" Visible="False" />
+            </div>
+        </nav>
+        <!-- CARRUSEL-->
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+                <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for carousel items -->
+            <div class="carousel-inner" style="height: 500px; width: 100%">
+                <div class="carousel-item active" style="height: 500px; width: 100%">
+                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/lightyear horizontal.jpg" class="d-block w-100" alt="Slide 1">
+                </div>
+                <div class="carousel-item" style="height: 500px; width: 100%">
+                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/dr strange horizontal2.jpg" class="d-block w-100" alt="Slide 2">
+                </div>
+                <div class="carousel-item" style="height: 500px; width: 100%">
+                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/pulp fiction horizontal.jpg" class="d-block w-100" alt="Slide 3">
+                </div>
+            </div>
+
+            <!-- Carousel controls -->
+            <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
         </div>
-        <asp:Image ID="Image1" runat="server" Height="421px" Width="1391px" />
+        <!-- CARRUSEL-->
         <br />
-        <table class="auto-style1">
+        <br />
+        <div style="width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 30px;">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+                <h4 style="color: white;">COMPLEJO</h4>
+                <asp:DropDownList Style="background-color: #212529; color: white; border-color: #212529; border-radius: 0.25rem;" ID="DDLsucursales" runat="server" Height="38px" Width="199px" AutoPostBack="True" OnSelectedIndexChanged="DDLsucursales_SelectedIndexChanged">
+                </asp:DropDownList>
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+                <h4 style="color: white;">FORMATO</h4>
+                <div style="display: flex; flex-direction: row; gap: 10px">
+                    <asp:Button class="btn btn-dark" ID="btn2D" runat="server" Text="2D" OnClick="btn2D_Click" />
+                    <asp:Button class="btn btn-dark" ID="btn3D" runat="server" Text="3D" OnClick="btn3D_Click" />
+                    <asp:Button class="btn btn-dark" ID="btn4D" runat="server" Text="4D" OnClick="btn4D_Click" />
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+                <h4 style="color: white;">IDIOMA</h4>
+                <div>
+                    <asp:Button class="btn btn-dark" ID="btnSubtitulada" runat="server" Text="Subtitulado" OnClick="btnSubtitulada_Click" />
+                    <asp:Button class="btn btn-dark" ID="btnEspanol" runat="server" Text="Español" OnClick="btnEspanol_Click" />
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; align-self: end">
+                <asp:Button class="btn btn-success" ID="btnVerTodo" runat="server" Text="Ver todo" OnClick="btnVerTodo_Click" />
+            </div>
+        </div>
+        <br />
+        <table>
             <tr>
-                <td class="auto-style2">COMPLEJO</td>
-                <td class="auto-style2">FORMATO</td>
-                <td class="auto-style2">IDIOMA</td>
-                <td class="auto-style2" rowspan="2">
-                    <asp:Button ID="btnVerTodo" runat="server" Text="Ver todo" OnClick="btnVerTodo_Click" />
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style2">
-                    <asp:DropDownList ID="DDLsucursales" runat="server" Height="17px" Width="199px" AutoPostBack="True" OnSelectedIndexChanged="DDLsucursales_SelectedIndexChanged">
-                    </asp:DropDownList>
-                </td>
-                <td class="auto-style2">
-                    <asp:Button ID="btn2D" runat="server" Text="2D" OnClick="btn2D_Click" />
-                    <asp:Button ID="btn3D" runat="server" Text="3D" OnClick="btn3D_Click" />
-                    <asp:Button ID="btn4D" runat="server" Text="4D" OnClick="btn4D_Click" />
-                </td>
-                <td class="auto-style2">
-                    <asp:Button ID="btnSubtitulada" runat="server" Text="Subtitulado" OnClick="btnSubtitulada_Click" />
-                    <asp:Button ID="btnEspanol" runat="server" Text="Español" OnClick="btnEspanol_Click" />
-                </td>
-            </tr>
-        </table>
-        <table class="auto-style1">
-            <tr>
-                <td>
-                    <asp:ListView ID="lvPeliculas" runat="server" GroupItemCount="4">
+                <td class="auto-style3">
+                    <br />
+                    <asp:ListView Style="width: 100%" ID="lvPeliculas" runat="server" GroupItemCount="4">
                         <%--                        <AlternatingItemTemplate>
                             <td runat="server" style="background-color: #FFFFFF;color: #284775;">Titulo_P:
                                 <asp:Label ID="Titulo_PLabel" runat="server" Text='<%# Eval("Titulo_P") %>' />
@@ -182,28 +215,27 @@
                             </td>
                         </InsertItemTemplate>
                         <ItemTemplate>
-                            <td runat="server" style="background-color: #E0FFFF; color: #333333;" class="auto-style2">
-                                <asp:ImageButton style="width:150px;height:300px" runat="server" OnClick="guardarPeliculaEvento" CommandName='<%# Eval("ID") %>' imageUrl='<%# Eval("Portada") %>'>
-                                </asp:ImageButton>
+                            <td runat="server" style="background-color: black; color: #333333;" class="auto-style2">
+                                <asp:ImageButton Style="width: 240px; height: 380px; border-radius: 10px" runat="server" OnClick="guardarPeliculaEvento" CommandName='<%# Eval("ID") %>' ImageUrl='<%# Eval("Portada") %>'></asp:ImageButton>
                             </td>
                         </ItemTemplate>
                         <LayoutTemplate>
                             <table runat="server">
                                 <tr runat="server">
                                     <td runat="server">
-                                        <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px; font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                        <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">
                                             <tr id="groupPlaceholder" runat="server">
                                             </tr>
                                         </table>
                                     </td>
                                 </tr>
                                 <tr runat="server">
-                                    <td runat="server" style="text-align: center; background-color: #5D7B9D; font-family: Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF">
+                                    <td runat="server" style="text-align: center; background-color: black; color: #FFFFFF; padding: 30px;">
                                         <asp:DataPager ID="DataPager1" runat="server" PageSize="8">
                                             <Fields>
-                                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="False" ShowNextPageButton="False" ShowPreviousPageButton="True" />
                                                 <asp:NumericPagerField />
-                                                <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                                <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="False" ShowNextPageButton="True" ShowPreviousPageButton="False" />
                                             </Fields>
                                         </asp:DataPager>
                                     </td>
@@ -243,37 +275,41 @@
                 </td>
             </tr>
         </table>
-        <br />
-        <br />
         <div>
             <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONTACTANOS<br />
+            <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
+            <br />
+            <br />
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style12">&nbsp;</td>
+                    <td class="auto-style4"></td>
                     <td class="auto-style13">
-                        <img alt="" class="auto-style8" src="" /></td>
+                        <img style="height:30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-facebook.png" /></td>
                     <td class="auto-style13">
-                        <img alt="" class="auto-style8" src="" /></td>
+                        <img style="height:30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-twitter.png" /></td>
                     <td class="auto-style11">
-                        <img alt="" class="auto-style8" src="" /></td>
+                        <img style="height:30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-instagram.png" /></td>
                     <td>
-                        <img alt="" class="auto-style8" src="" /></td>
+                        <img style="height:30px"style="height:50px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-youtube.png" /></td>
                 </tr>
             </table>
             <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email: <a href="mailto:GmailEmpresa@gmail.com">GmailEmpresa@gmail.com</a><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telefono soporte: 11-1232-1234&nbsp;&nbsp;
+            Email:<a style="color:white" href="mailto:GmailEmpresa@gmail.com"> Empresa@gmail.com</a>
             <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:HyperLink ID="HyperLink1" runat="server">Ayuda</asp:HyperLink>
+            Tel: 11-1232-1234
             <br />
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 NOMBRE DEL CINE<br />
-        </span>
+            Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 GALAG<br />
+            </span>
         </div>
         <br />
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                <asp:ScriptReference Path="Scripts/bootstrap.bundle.min.js" />
+                <asp:ScriptReference Path="Scripts/jquery-3.6.0.min.js" />
+                <asp:ScriptReference Path="Scripts/owl.carousel.js" />
+            </Scripts>
+        </asp:ScriptManager>
     </form>
 </body>
 </html>

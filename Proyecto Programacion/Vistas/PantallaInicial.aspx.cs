@@ -136,9 +136,11 @@ namespace Vistas
             if(Session["DATOSUSUARIO"] == null)
             {
                 btnIniciarSesion.Text =  "Iniciar Sesion";
+                btnIniciarSesion.CssClass = "btn btn-primary";
             }
             else
             {
+                btnIniciarSesion.CssClass = "btn btn-danger";
                 btnIniciarSesion.Text = "Cerrar Sesion";
             }
         }

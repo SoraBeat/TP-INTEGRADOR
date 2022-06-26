@@ -24,24 +24,6 @@ namespace Vistas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
-        /// Control txtPaginaAdmin.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button txtPaginaAdmin;
-
-        /// <summary>
         /// Control btnIniciarSesion.
         /// </summary>
         /// <remarks>
@@ -51,31 +33,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Button btnIniciarSesion;
 
         /// <summary>
-        /// Control Label3.
+        /// Control txtPaginaAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-
-        /// <summary>
-        /// Control Image1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
-
-        /// <summary>
-        /// Control btnVerTodo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVerTodo;
+        protected global::System.Web.UI.WebControls.Button txtPaginaAdmin;
 
         /// <summary>
         /// Control DDLsucursales.
@@ -132,6 +96,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Button btnEspanol;
 
         /// <summary>
+        /// Control btnVerTodo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVerTodo;
+
+        /// <summary>
         /// Control lvPeliculas.
         /// </summary>
         /// <remarks>
@@ -139,14 +112,5 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView lvPeliculas;
-
-        /// <summary>
-        /// Control HyperLink1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
     }
 }
