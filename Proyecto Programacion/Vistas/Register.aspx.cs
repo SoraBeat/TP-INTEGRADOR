@@ -38,12 +38,12 @@ namespace Vistas
 				usu.EmailUsuario = Email;
 				usu.ContraseñaUsuario = Contraseña;
 
-				bool res = negUsu.AgregarUsuario(usu);
-				if (res)
-				{
-					Session["Usuario"] = Nombre;
+				bool add = negUsu.AgregarUsuario(usu);
+				DataTable res = negUsu.ExisteUsuario(usu); //una vez ya agregado el usuario agarramos toda la data con esta función
+				foreach(DataRow columna in res.Rows)
+                {
+					Session["DATOSUSUARIO"] = columna["ID_Usuario_U"] + "$" + columna["Nombre_U"] + "$" + columna["Apellido_U"] + "$" + columna["DNI_U"] + "$" + columna["Telefono_U"] + "$" + columna["Email_U"] + "$" + columna["Contraseña_U"] + "$" + columna["Tipo_Usuario_U"] + "$" + columna["Estado_U"];
 					Response.Redirect("PantallaInicial.aspx");
-					//Session.RemoveAll();
 				}
 			}
 		}
