@@ -69,13 +69,13 @@
                         </div>
                         <div style="display: flex; justify-content: center; flex-direction: row;">
                             <asp:TextBox ID="txtPassword" runat="server" ValidationGroup="Grupo1" Style="margin-right: 22px" placeholder="contraseña"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtEmail" ValidationGroup="Grupo1" Display="Dynamic">*</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="RevContraseña" runat="server" ControlToValidate="txtPassword" Display="Dynamic" ValidationExpression="(?=^.{8,10}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$" ValidationGroup="Grupo1">*</asp:RegularExpressionValidator>
+                            <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtPassword" ValidationGroup="Grupo1" Display="Dynamic">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RevContraseña" runat="server" ControlToValidate="txtPassword" Display="Dynamic" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$" ValidationGroup="Grupo1">*</asp:RegularExpressionValidator>
                         </div>
                         <div style="display: flex; justify-content: center; flex-direction: row;">
                             <asp:TextBox ID="txtPassword2" runat="server" ValidationGroup="Grupo1" Style="margin-right: 22px" placeholder="repetir contraseña"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="rfvPassword2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtPassword2" ValidationGroup="Grupo1" Display="Dynamic">*</asp:RequiredFieldValidator>
-                            <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword2" ControlToValidate="txtPassword" Display="Dynamic" ErrorMessage="Las contraseñas no coinciden" ValidationGroup="Grupo1"></asp:CompareValidator>
+                            <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtPassword2" Display="Dynamic" ErrorMessage="Las contraseñas no coinciden" ValidationGroup="Grupo1"></asp:CompareValidator>
                         </div>
                         <br />
                         <div style="display: flex; justify-content: center; flex-direction: row;">
