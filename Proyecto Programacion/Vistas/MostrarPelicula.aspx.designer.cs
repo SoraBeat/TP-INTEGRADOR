@@ -51,13 +51,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
-        /// Control Label2.
+        /// Control LBLtitulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label LBLtitulo;
 
         /// <summary>
         /// Control Image1.
@@ -85,15 +85,6 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDLcomplejo;
-
-        /// <summary>
-        /// Control ll.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ll;
 
         /// <summary>
         /// Control DDLformato.
@@ -150,13 +141,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Image Image3;
 
         /// <summary>
-        /// Control Label4.
+        /// Control LBLduracion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label LBLduracion;
 
         /// <summary>
         /// Control Image4.
@@ -168,13 +159,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Image Image4;
 
         /// <summary>
-        /// Control Label5.
+        /// Control LBLclasificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label LBLclasificacion;
 
         /// <summary>
         /// Control Label6.
@@ -186,6 +177,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
+        /// Control LBLSinopsis.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBLSinopsis;
+
+        /// <summary>
         /// Control Label7.
         /// </summary>
         /// <remarks>
@@ -193,6 +193,42 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label7;
+
+        /// <summary>
+        /// Control LBL_Titulo_Tecnico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBL_Titulo_Tecnico;
+
+        /// <summary>
+        /// Control LBL_Genero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBL_Genero;
+
+        /// <summary>
+        /// Control LBL_Clasificacion_Tecnico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBL_Clasificacion_Tecnico;
+
+        /// <summary>
+        /// Control LBL_Duracion_Tecnico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBL_Duracion_Tecnico;
 
         /// <summary>
         /// Control HyperLink1.
