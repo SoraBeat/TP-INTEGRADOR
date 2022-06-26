@@ -22,12 +22,14 @@ namespace Vistas
         private static string IDIOMA;
         private static string FORMATO;
         private static string FECHA;
+        private static string HORARIO;
 
         public static string idPelicula { get => IDpelicula; set => IDpelicula = value; }
         public static string idcomplejo { get => IDcomplejo; set => IDcomplejo = value; }
         public static string idioma { get => IDIOMA; set => IDIOMA = value; }
         public static string formato { get => FORMATO; set => FORMATO = value; }
         public static string fecha { get => FECHA; set => FECHA = value; }
+        public static string horario { get => HORARIO; set => HORARIO = value; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -134,7 +136,13 @@ namespace Vistas
 
         protected void DDLhorario_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            horario = DDLhorario.SelectedValue;
+            string IDfuncion;
+            DataTable tabla = Fun.getTablaPorID2(idPelicula, idcomplejo, formato, idioma, fecha, horario);
+            DataRow row = tabla.Rows[0];
+            IDfuncion = Convert.ToString(row["ID"]);
+            Response.Redirect("ConfirmarCompra.aspx?ID=" + IDfuncion);
+ 
 
         }
 

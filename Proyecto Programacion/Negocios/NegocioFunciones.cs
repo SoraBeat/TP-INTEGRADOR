@@ -22,7 +22,13 @@ namespace Negocios
             return dao.getTablaFuncionPorID(id);
         }
 
-       public DataTable getTablaPorFormato(string id)
+        public DataTable getTablaPorID2(string idPelicula, string idComplejo, string Formato, string Idioma, string Fecha, string Horario)
+        {
+            DAOFunciones dao = new DAOFunciones();
+            return dao.getTablaFuncionPorID2(idPelicula, idComplejo, Formato, Idioma, Fecha, Horario);
+        }
+
+        public DataTable getTablaPorFormato(string id)
         {
             DAOFunciones dao = new DAOFunciones();
             return dao.getTablaFuncionPorFormato(id);

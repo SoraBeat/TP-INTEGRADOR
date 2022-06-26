@@ -119,7 +119,9 @@
                     <td class="auto-style11">
                         <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar compra" />
                     </td>
-                    <td class="auto-style12">&nbsp;</td>
+                    <td class="auto-style12">
+                        <asp:Label ID="ll" runat="server" Text="Label"></asp:Label>
+                    </td>
                 </tr>
             </table>
         </div>

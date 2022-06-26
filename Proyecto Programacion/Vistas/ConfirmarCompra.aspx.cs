@@ -19,11 +19,11 @@ namespace Vistas
             lblTicket.Text = nv.buscarProximaVenta().ToString();
             if (IsPostBack == false)
             {
-                
-                CargarDDL();
+               ll.Text = Request.QueryString["ID"];
+               // CargarDDL();
             }
         }
-        private void CargarDDL()
+        /*private void CargarDDL()
         {
             DataTable tablaComplejos = na.getListaAsientos();
             ddlUbicacion.DataSource = tablaComplejos;
@@ -31,7 +31,7 @@ namespace Vistas
             ddlUbicacion.DataValueField = "ID_Asiento_A";
             ddlUbicacion.DataBind();
             ddlUbicacion.Items.Insert(0, new ListItem("Seleccione Un Asiento", "0"));
-        }
+        }*/
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {

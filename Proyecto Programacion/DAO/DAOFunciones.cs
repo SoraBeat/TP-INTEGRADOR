@@ -41,6 +41,12 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE ID_Funcion_F LIKE '%" + campo + "%' ORDER BY ABS(ID_Funcion_F)");
             return tabla;
         }
+        public DataTable getTablaFuncionPorID2(string idPelicula,string idComplejo, string Formato, string Idioma, string Fecha,string Horario)
+        {
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID] FROM Funciones WHERE Estado_F = 1 AND ID_Pelicula_F = '" + idPelicula + "' AND ID_Complejo_F ='" + idComplejo + "'AND Formato_F = '" + Formato + "' AND Idioma_F = '" + Idioma + "' AND Fecha_F = '" + Fecha + "' AND Horario_F = '" + Horario + "'");
+            return tabla;
+        }
+
 
         public DataTable getTablaFuncionPorIDformatos(string idPelicula, string idComplejo)
         {
