@@ -14,7 +14,7 @@ namespace Vistas
     public partial class MostrarPelicula : System.Web.UI.Page
     {
         
-         NegocioPeliculas Pel = new NegocioPeliculas();
+        NegocioPeliculas Pel = new NegocioPeliculas();
         NegocioComplejos Com = new NegocioComplejos();
         NegocioFunciones Fun = new NegocioFunciones();
         private static string IDpelicula;
@@ -26,7 +26,6 @@ namespace Vistas
         public static string idPelicula { get => IDpelicula; set => IDpelicula = value; }
         public static string idcomplejo { get => IDcomplejo; set => IDcomplejo = value; }
         public static string idioma { get => IDIOMA; set => IDIOMA = value; }
-
         public static string formato { get => FORMATO; set => FORMATO = value; }
         public static string fecha { get => FECHA; set => FECHA = value; }
 
@@ -34,9 +33,9 @@ namespace Vistas
         {
             if (IsPostBack == false)
             {
+                
                 idPelicula = Request.QueryString["ID"];
-                Label2.Text = ID;
-
+                CargarDatosPagina();
                 CargarDDLcomplejo();
               
             }
@@ -66,7 +65,7 @@ namespace Vistas
 
         private void CargarDDLidioma()
         {
-            ll.Text = formato;
+            
             DataTable tabla = Fun.getTablaPoridioma(idPelicula, idcomplejo, formato);
             DDLidioma.DataSource = tabla;
             DDLidioma.DataTextField = "IDIOMA";
@@ -99,35 +98,65 @@ namespace Vistas
 
         protected void DDLcomplejo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            DDLformato.Visible = false;
+            DDLidioma.Visible = false;
+            DDLfecha.Visible = false;
+            DDLhorario.Visible = false;
             idcomplejo = DDLcomplejo.SelectedValue;
             CargarDDLformato();
-         
+            DDLformato.Visible = true;
+
         }
 
         protected void DDLformato_SelectedIndexChanged(object sender, EventArgs e)
         {
+            DDLfecha.Visible = false;
+            DDLhorario.Visible = false;
+            DDLidioma.Visible = true;
             formato = DDLformato.SelectedValue;
             CargarDDLidioma();
         }
 
         protected void DDLidioma_SelectedIndexChanged(object sender, EventArgs e)
         {
+            DDLhorario.Visible = false;
+            DDLfecha.Visible = true;
             idioma = DDLidioma.SelectedValue;
             CargarDDLFecha();
         }
 
-        protected void DDLhorario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-            
-        }
-
         protected void DDLfecha_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ll.Text = DateTime.Now.Year.ToString();
+            DDLhorario.Visible = true;
             fecha = DDLfecha.SelectedValue + "/"+DateTime.Now.Year.ToString();
             CargarDDLHorario();
         }
+
+        protected void DDLhorario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        public void CargarDatosPagina()
+        {
+            DDLformato.Visible = false;
+            DDLidioma.Visible = false;
+            DDLfecha.Visible = false;
+            DDLhorario.Visible = false;
+            DataTable tabla = Pel.getListaPeliculasPorID(idPelicula);
+            DataRow row = tabla.Rows[0];
+            LBLtitulo.Text = Convert.ToString(row["Titulo"]);
+            LBL_Titulo_Tecnico.Text = Convert.ToString(row["Titulo"]);
+            LBLSinopsis.Text = Convert.ToString(row["Descripcion"]);
+            LBL_Genero.Text = Convert.ToString(row["Genero"]);
+            LBL_Clasificacion_Tecnico.Text = Convert.ToString(row["Clasificacion"]);
+            LBLclasificacion.Text = Convert.ToString(row["Clasificacion"]);
+            LBL_Duracion_Tecnico.Text = Convert.ToString(row["Duracion"]);
+            LBLduracion.Text = Convert.ToString(row["Duracion"]);
+
+        }
+
+
     }
 }

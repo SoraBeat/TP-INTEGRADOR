@@ -107,7 +107,7 @@
                 <tr>
                     <td class="auto-style3">&nbsp;</td>
                     <td>
-                        <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="X-Large" Text="TITULO PELICULA"></asp:Label>
+                        <asp:Label ID="LBLtitulo" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="X-Large"></asp:Label>
                     </td>
                 </tr>
             </table>
@@ -125,7 +125,6 @@
                                 <td class="auto-style7">
                                     <asp:DropDownList ID="DDLcomplejo" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLcomplejo_SelectedIndexChanged">
                                     </asp:DropDownList>
-                                    <asp:Label ID="ll" runat="server" Text="Label"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
@@ -178,13 +177,12 @@
                                     <asp:Image ID="Image3" runat="server" Height="29px" />
                                     <br />
 &nbsp;
-                                    <asp:Label ID="Label4" runat="server" Text="120 m"></asp:Label>
+                                    <asp:Label ID="LBLduracion" runat="server"></asp:Label>
                                 </td>
                                 <td class="auto-style14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <asp:Image ID="Image4" runat="server" Height="29px" />
                                     <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:Label ID="Label5" runat="server" Text="P-16"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="LBLclasificacion" runat="server"></asp:Label>
                                 </td>
                             </tr>
                         </table>
@@ -196,15 +194,21 @@
                                     <asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Large" Text="Sinopsis"></asp:Label>
                                     <br />
                                     <br />
-                                    <span style="color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </span></td>
+                                    <asp:Label ID="LBLSinopsis" runat="server"></asp:Label>
+                                </td>
                                 <td class="auto-style15">
                                     <asp:Label ID="Label7" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Large" Text="Datos técnicos"></asp:Label>
                                     <br />
                                     <br />
-                                    Titulo: Lorem Ipsum<br />
-                                    Genero: Lorem Ipsum, Lorem Ipsum, Lorem Ipsum<br />
-                                    Clasificacion: P-16<br />
-                                    Duracion: 120 m<br />
+                                    Titulo: <asp:Label ID="LBL_Titulo_Tecnico" runat="server"></asp:Label>
+                                    <br />
+                                    Genero:
+                                    <asp:Label ID="LBL_Genero" runat="server"></asp:Label>
+                                    <br />
+                                    Clasificacion:<asp:Label ID="LBL_Clasificacion_Tecnico" runat="server"></asp:Label>
+                                    <br />
+                                    Duracion:<asp:Label ID="LBL_Duracion_Tecnico" runat="server"></asp:Label>
+                                    <br />
                                 </td>
                             </tr>
                         </table>
