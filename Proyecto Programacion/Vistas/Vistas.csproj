@@ -76,6 +76,9 @@
     <Content Include="ABMSalas.aspx" />
     <Content Include="ABMUsuario.aspx" />
     <Content Include="ConfirmarCompra.aspx" />
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\animate.min.css" />
+    <Content Include="Content\animate2.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -92,6 +95,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\hover.css" />
     <Content Include="Content\owl.carousel.css" />
     <Content Include="Imagenes\Pagina\fondo-login.jpg" />
     <Content Include="Imagenes\Pagina\fondo-login.png" />
@@ -108,7 +112,7 @@
     <None Include="Imagenes\Pagina\ticket.png" />
     <Content Include="Imagenes\Pagina\venta-logo.png" />
     <Content Include="Imagenes\Portadas\Doctor Strange.jpg" />
-    <Content Include="Imagenes\Portadas\dr strange horizontal2.jpg" />
+    <Content Include="Imagenes\Portadas\dr strange2 horizontal piola.png" />
     <Content Include="Imagenes\Portadas\Jurassic World.jpg" />
     <Content Include="Imagenes\Portadas\lightyear horizontal.jpg" />
     <Content Include="Imagenes\Portadas\Lightyear.jpg" />

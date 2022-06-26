@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/Content/owl.carousel.css" />
+    <link href="Content/hover.css" rel="stylesheet" />
+    <link href="Content/animate.min.css" rel="stylesheet" />
+    <link href="Content/animate2.css" rel="stylesheet" />
     <style type="text/css">
         body {
             font-family: 'Roboto', sans-serif;
@@ -31,15 +34,16 @@
         .auto-style3 {
             width: 100%;
         }
+
         .auto-style4 {
-            width: 515px;
+            width: 455px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div style="width: 100%; background-color: black; height: 90px;"></div>
-        <nav class="auto-style22 navbar fixed-top" style="background-color: rgba(0, 0, 0, 0.79); padding: 10px 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+        <nav class="auto-style22 navbar fixed-top animate__animated animate__slideInDown" style="background-color: rgba(0, 0, 0, 0.79); padding: 10px 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
             <a class="" href="PantallaInicial.aspx" style="margin-left: 30px;">
                 <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
             </a>
@@ -49,7 +53,7 @@
             </div>
         </nav>
         <!-- CARRUSEL-->
-        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div id="myCarousel" class="carousel slide animate__animated animate__fadeIn" data-bs-ride="carousel">
             <!-- Carousel indicators -->
             <ol class="carousel-indicators">
                 <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
@@ -63,7 +67,7 @@
                     <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/lightyear horizontal.jpg" class="d-block w-100" alt="Slide 1">
                 </div>
                 <div class="carousel-item" style="height: 500px; width: 100%">
-                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/dr strange horizontal2.jpg" class="d-block w-100" alt="Slide 2">
+                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/dr strange2 horizontal piola.png" class="d-block w-100" alt="Slide 2">
                 </div>
                 <div class="carousel-item" style="height: 500px; width: 100%">
                     <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/pulp fiction horizontal.jpg" class="d-block w-100" alt="Slide 3">
@@ -81,7 +85,7 @@
         <!-- CARRUSEL-->
         <br />
         <br />
-        <div style="width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 30px;">
+        <div class="animate__animated animate__bounceIn" style="width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 30px;">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
                 <h4 style="color: white;">COMPLEJO</h4>
                 <asp:DropDownList Style="background-color: #212529; color: white; border-color: #212529; border-radius: 0.25rem;" ID="DDLsucursales" runat="server" Height="38px" Width="199px" AutoPostBack="True" OnSelectedIndexChanged="DDLsucursales_SelectedIndexChanged">
@@ -109,7 +113,7 @@
         <br />
         <table>
             <tr>
-                <td class="auto-style3">
+                <td class="auto-style3 animate__animated animate__fadeIn">
                     <br />
                     <asp:ListView Style="width: 100%" ID="lvPeliculas" runat="server" GroupItemCount="4">
                         <%--                        <AlternatingItemTemplate>
@@ -216,7 +220,7 @@
                         </InsertItemTemplate>
                         <ItemTemplate>
                             <td runat="server" style="background-color: black; color: #333333;" class="auto-style2">
-                                <asp:ImageButton Style="width: 240px; height: 380px; border-radius: 10px" runat="server" OnClick="guardarPeliculaEvento" CommandName='<%# Eval("ID") %>' ImageUrl='<%# Eval("Portada") %>'></asp:ImageButton>
+                                <asp:ImageButton CssClass="hvr-grow" Style="width: 240px; height: 380px; border-radius: 10px" runat="server" OnClick="guardarPeliculaEvento" CommandName='<%# Eval("ID") %>' ImageUrl='<%# Eval("Portada") %>'></asp:ImageButton>
                             </td>
                         </ItemTemplate>
                         <LayoutTemplate>
@@ -277,24 +281,19 @@
         </table>
         <div>
             <br />
-            <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
+            </div>
             <br />
             <br />
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style13">
-                        <img style="height:30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-facebook.png" /></td>
-                    <td class="auto-style13">
-                        <img style="height:30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-twitter.png" /></td>
-                    <td class="auto-style11">
-                        <img style="height:30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-instagram.png" /></td>
-                    <td>
-                        <img style="height:30px"style="height:50px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-youtube.png" /></td>
-                </tr>
-            </table>
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px">
+                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-facebook.png" />
+                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-twitter.png" />
+                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-instagram.png" />
+                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-youtube.png" />
+            </div>
             <br />
-            Email:<a style="color:white" href="mailto:GmailEmpresa@gmail.com"> Empresa@gmail.com</a>
+            Email:<a style="color: white" href="mailto:GmailEmpresa@gmail.com"> Empresa@gmail.com</a>
             <br />
             Tel: 11-1232-1234
             <br />
