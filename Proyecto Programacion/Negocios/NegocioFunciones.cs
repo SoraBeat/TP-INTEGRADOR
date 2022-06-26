@@ -21,6 +21,13 @@ namespace Negocios
             DAOFunciones dao = new DAOFunciones();
             return dao.getTablaFuncionPorID(id);
         }
+
+       public DataTable getTablaPorFormato(string id)
+        {
+            DAOFunciones dao = new DAOFunciones();
+            return dao.getTablaFuncionPorFormato(id);
+        }
+
         public DataTable getTablaPorPelicula(string id)
         {
             DAOFunciones dao = new DAOFunciones();
@@ -41,10 +48,22 @@ namespace Negocios
             DAOFunciones dao = new DAOFunciones();
             return dao.getTablaFuncionPorFecha(id);
         }
+
+        public DataTable getTablaPorFecha2(string idPelicula, string idcomplejo, string formato, string idioma)
+        {
+            DAOFunciones dao = new DAOFunciones();
+            return dao.getTablaFuncionPorFecha2(idPelicula, idcomplejo, formato, idioma);
+        }
         public DataTable getTablaPorHorario(string id)
         {
             DAOFunciones dao = new DAOFunciones();
             return dao.getTablaFuncionPorHorario(id);
+        }
+
+        public DataTable getTablaPorHorario2(string idPelicula, string idcomplejo, string formato, string idioma, string fecha)
+        {
+            DAOFunciones dao = new DAOFunciones();
+            return dao.getTablaFuncionPorHorario2(idPelicula, idcomplejo, formato, idioma, fecha);
         }
         public DataTable getTablaPorIdioma(string id)
         {
@@ -56,10 +75,23 @@ namespace Negocios
             DAOFunciones dao = new DAOFunciones();
             return dao.getTablaFuncionPorPrecio(id);
         }
-        public DataTable getTablaPorFormato(string id)
+        public DataTable getTablaPorFormatoid(string idPelicula, string idComplejo)
         {
             DAOFunciones dao = new DAOFunciones();
-            return dao.getTablaFuncionPorEstado(id);
+            return dao.getTablaFuncionPorIDformatos(idPelicula, idComplejo);
+        }
+
+        public DataTable getTablaPoridioma(string IDpelicula, string IDcomplejo, string formato)
+        {
+            DAOFunciones dao = new DAOFunciones();
+            
+            return dao.getTablaFuncionPorIDidioma(IDpelicula,IDcomplejo,formato);
+        }
+
+        public DataTable getTablaPorComplejos(string id)
+        {
+            DAOFunciones dao = new DAOFunciones();
+            return dao.getTablaFuncionPorIDcomplejo(id);
         }
         public DataTable getTablaPorEstado(string id)
         {

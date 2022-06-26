@@ -82,6 +82,10 @@
             width: 31px;
             height: 34px;
         }
+        .auto-style23 {
+            width: 102px;
+            height: 23px;
+        }
     </style>
 </head>
 <body>
@@ -117,29 +121,40 @@
                         <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="X-Large" Text="ELEGIR PELICULA POR:"></asp:Label>
                         <table class="auto-style1">
                             <tr>
+                                <td class="auto-style6">COMPLEJO</td>
+                                <td class="auto-style7">
+                                    <asp:DropDownList ID="DDLcomplejo" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLcomplejo_SelectedIndexChanged">
+                                    </asp:DropDownList>
+                                    <asp:Label ID="ll" runat="server" Text="Label"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td class="auto-style6">FORMATO</td>
                                 <td class="auto-style7">
-                                    <asp:DropDownList ID="DropDownList1" runat="server">
+                                    <asp:DropDownList ID="DDLformato" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLformato_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="auto-style8">IDIOMA</td>
                                 <td class="auto-style9">
-                                    <asp:DropDownList ID="DropDownList2" runat="server">
+                                    <asp:DropDownList ID="DDLidioma" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLidioma_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style10">FUNCION</td>
+                                <td class="auto-style10">FECHA</td>
                                 <td class="auto-style11">
-                                    <asp:DropDownList ID="DropDownList3" runat="server">
+                                    <asp:DropDownList ID="DDLfecha" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLfecha_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style5"></td>
-                                <td></td>
+                                <td class="auto-style23">HORARIO</td>
+                                <td class="auto-style15">
+                                    <asp:DropDownList ID="DDLhorario" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLhorario_SelectedIndexChanged" Width="113px">
+                                    </asp:DropDownList>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="auto-style5">&nbsp;</td>
