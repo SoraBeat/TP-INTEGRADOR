@@ -26,7 +26,6 @@
                     <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
                 </a>
             </nav>
-
             <br />
             <asp:ScriptManager runat="server">
                 <Scripts>
@@ -39,8 +38,8 @@
             <br />
             <div style="width: 100%; display: flex; flex-direction: row; justify-content: center;">
                 <div style="width: 25%; display: flex; flex-direction: column; gap: 15px; align-items: center;background-color:rgba(0, 0, 0, 0.85);-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);border-radius:10px;color:white;padding:20px 20px">
+                    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);border-radius:10px;color:white;padding:20px 20px">
                     <h4 style="justify-content: center;font-weight:700;">INICIAR SESIÓN</h4>
                     <div style="display: flex; justify-content: center; flex-direction: row;">
                         <asp:TextBox Style="margin-right: 22px" ID="txtUsuario" runat="server"  placeholder="usuario"></asp:TextBox>
