@@ -93,7 +93,7 @@ namespace DAO
         public DataTable getTablaFuncionPorHorario2(string idPelicula, string idcomplejo, string formato, string idioma, string fecha)
         {
             
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT convert (varchar(5),Horario_F,108) AS [HORARIO] FROM Funciones WHERE Estado_F = 1 AND  ID_Pelicula_F = '" + idPelicula + "' AND ID_Complejo_F = '" + idcomplejo + "' AND Formato_F = '" + formato + "' AND Idioma_F = '" + idioma + "' AND Fecha_F = '"+fecha+"'");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SET LANGUAGE Spanish SELECT convert (varchar(5),Horario_F,108) AS [HORARIO] FROM Funciones WHERE Estado_F = 1 AND  ID_Pelicula_F = '" + idPelicula + "' AND ID_Complejo_F = '" + idcomplejo + "' AND Formato_F = '" + formato + "' AND Idioma_F = '" + idioma + "' AND Fecha_F = '"+fecha+"'");
             return tabla;
         }
         public DataTable getTablaFuncionPorIdioma(string campo)
