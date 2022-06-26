@@ -5,50 +5,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>Galag CINE
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/owl.carousel.css" />
     <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-
-        .auto-style2 {
+        body {
+            font-family: 'Roboto', sans-serif;
             text-align: center;
-        }
-
-        .auto-style7 {
-            color: #000000;
-            background-color: #FFFFFF;
-        }
-
-        .auto-style8 {
-            width: 30px;
-            height: 30px;
-        }
-
-        .auto-style11 {
-            width: 44px;
-        }
-
-        .auto-style12 {
-            width: 16px;
-        }
-
-        .auto-style13 {
-            width: 41px;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:Label ID="Label1" runat="server" Text="NOMBRE DEL CINE"></asp:Label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="txtPaginaAdmin" runat="server" OnClick="txtPaginaAdmin_Click" Text="Funciones admin" Visible="False" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label3" runat="server" Text="SOPORTE"></asp:Label>
+        <div style="width:100%; background-color:black;height:90px;"></div>
+        <nav class="auto-style22 navbar fixed-top" style="background-color: rgba(0, 0, 0, 0.79); padding: 10px 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+            <a class="" href="PantallaInicial.aspx" style="margin-left: 30px;">
+                <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
+            </a>
+            <div style="margin-right: 20px">
+                <asp:Button class="btn btn-primary" ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click" />
+                <asp:Button class="btn btn-warning" ID="txtPaginaAdmin" runat="server" OnClick="txtPaginaAdmin_Click" Text="Funciones admin" Visible="False" />
+            </div>
+        </nav>
+        <!-- CARRUSEL-->
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+                <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for carousel items -->
+            <div class="carousel-inner" style="height:500px;width:100%">
+                <div class="carousel-item active" style="height:500px;width:100%">
+                    <img style="height:500px;width:100%" src="/Imagenes/Portadas/lightyear horizontal.jpg" class="d-block w-100" alt="Slide 1">
+                </div>
+                <div class="carousel-item" style="height:500px;width:100%">
+                    <img style="height:500px;width:100%" src="/Imagenes/Portadas/dr strange horizontal2.jpg" class="d-block w-100" alt="Slide 2">
+                </div>
+                <div class="carousel-item" style="height:500px;width:100%">
+                    <img style="height:500px;width:100%" src="/Imagenes/Portadas/pulp fiction horizontal.jpg" class="d-block w-100" alt="Slide 3">
+                </div>
+            </div>
+
+            <!-- Carousel controls -->
+            <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
         </div>
-        <asp:Image ID="Image1" runat="server" Height="421px" Width="1391px" />
+        <!-- CARRUSEL-->
         <br />
         <table class="auto-style1">
             <tr>
@@ -183,8 +197,7 @@
                         </InsertItemTemplate>
                         <ItemTemplate>
                             <td runat="server" style="background-color: #E0FFFF; color: #333333;" class="auto-style2">
-                                <asp:ImageButton style="width:150px;height:300px" runat="server" OnClick="guardarPeliculaEvento" CommandName='<%# Eval("ID") %>' imageUrl='<%# Eval("Portada") %>'>
-                                </asp:ImageButton>
+                                <asp:ImageButton Style="width: 150px; height: 300px" runat="server" OnClick="guardarPeliculaEvento" CommandName='<%# Eval("ID") %>' ImageUrl='<%# Eval("Portada") %>'></asp:ImageButton>
                             </td>
                         </ItemTemplate>
                         <LayoutTemplate>
@@ -274,6 +287,14 @@
         </span>
         </div>
         <br />
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                <asp:ScriptReference Path="Scripts/bootstrap.bundle.min.js" />
+                <asp:ScriptReference Path="Scripts/jquery-3.6.0.min.js" />
+                <asp:ScriptReference Path="Scripts/owl.carousel.js" />
+            </Scripts>
+        </asp:ScriptManager>
     </form>
 </body>
 </html>
