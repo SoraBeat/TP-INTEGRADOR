@@ -100,31 +100,62 @@ namespace Vistas
 
         protected void DDLcomplejo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DDLformato.Visible = false;
-            DDLidioma.Visible = false;
-            DDLfecha.Visible = false;
-            DDLhorario.Visible = false;
-            idcomplejo = DDLcomplejo.SelectedValue;
-            CargarDDLformato();
-            DDLformato.Visible = true;
+            if (DDLcomplejo.SelectedIndex == 0)
+            {
+                DDLformato.Visible = false;
+                DDLidioma.Visible = false;
+                DDLfecha.Visible = false;
+                DDLhorario.Visible = false;
+                DDLformato.Visible = false;
+
+
+            }
+            else
+            {
+                DDLformato.Visible = false;
+                DDLidioma.Visible = false;
+                DDLfecha.Visible = false;
+                DDLhorario.Visible = false;
+                idcomplejo = DDLcomplejo.SelectedValue;
+                CargarDDLformato();
+                DDLformato.Visible = true;
+            }
 
         }
 
         protected void DDLformato_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DDLfecha.Visible = false;
-            DDLhorario.Visible = false;
-            DDLidioma.Visible = true;
-            formato = DDLformato.SelectedValue;
-            CargarDDLidioma();
+            if (DDLformato.SelectedIndex == 0)
+            {
+                DDLfecha.Visible = false;
+                DDLhorario.Visible = false;
+                DDLidioma.Visible = false;
+            }
+            else
+            {
+
+                DDLfecha.Visible = false;
+                DDLhorario.Visible = false;
+                DDLidioma.Visible = true;
+                formato = DDLformato.SelectedValue;
+                CargarDDLidioma();
+            }
         }
 
         protected void DDLidioma_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DDLhorario.Visible = false;
-            DDLfecha.Visible = true;
-            idioma = DDLidioma.SelectedValue;
-            CargarDDLFecha();
+            if (DDLidioma.SelectedIndex == 0)
+            {
+                DDLhorario.Visible = false;
+                DDLfecha.Visible = false;
+            }
+            else
+            {
+                DDLhorario.Visible = false;
+                DDLfecha.Visible = true;
+                idioma = DDLidioma.SelectedValue;
+                CargarDDLFecha();
+            }
         }
 
         protected void DDLfecha_SelectedIndexChanged(object sender, EventArgs e)

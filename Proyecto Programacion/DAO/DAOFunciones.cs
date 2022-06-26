@@ -88,7 +88,7 @@ namespace DAO
         }
         public DataTable getTablaFuncionPorFecha2(string idPelicula, string idcomplejo, string formato, string idioma)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT distinct format (Fecha_F,'dd/MM') AS [FECHA] FROM Funciones WHERE Estado_F = 1 AND  ID_Pelicula_F = '" + idPelicula + "' AND ID_Complejo_F = '" + idcomplejo + "' AND Formato_F = '" + formato + "' AND Idioma_F = '" + idioma + "'");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SET LANGUAGE Spanish SELECT distinct format (Fecha_F,'dd/MM') AS [FECHA] FROM Funciones WHERE Estado_F = 1 AND  ID_Pelicula_F = '" + idPelicula + "' AND ID_Complejo_F = '" + idcomplejo + "' AND Formato_F = '" + formato + "' AND Idioma_F = '" + idioma + "'");
             return tabla;
         }
         public DataTable getTablaFuncionPorHorario(string campo)

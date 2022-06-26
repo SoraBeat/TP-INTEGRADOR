@@ -72,13 +72,6 @@
             <br />
             <table class="auto-style4">
                 <tr>
-                    <td class="auto-style8">Ticket:</td>
-                    <td class="auto-style7">
-                        <asp:Label ID="lblTicket" runat="server"></asp:Label>
-                    </td>
-                    <td class="auto-style6">&nbsp;</td>
-                </tr>
-                <tr>
                     <td class="auto-style8">Costo:</td>
                     <td class="auto-style7">
                         <asp:Label ID="lblCosto" runat="server"></asp:Label>

@@ -16,7 +16,7 @@ namespace Vistas
         NegocioAsientos na = new NegocioAsientos();
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblTicket.Text = nv.buscarProximaVenta().ToString();
+            
             if (IsPostBack == false)
             {
                ll.Text = Request.QueryString["ID"];
