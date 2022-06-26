@@ -96,8 +96,12 @@
     <Content Include="Imagenes\Pagina\fondo-login.jpg" />
     <Content Include="Imagenes\Pagina\fondo-login.png" />
     <Content Include="Imagenes\Pagina\logo-dinero.png" />
+    <Content Include="Imagenes\Pagina\logo-facebook.png" />
+    <Content Include="Imagenes\Pagina\logo-instagram.png" />
     <Content Include="Imagenes\Pagina\logo-piola.png" />
+    <Content Include="Imagenes\Pagina\logo-twitter.png" />
     <Content Include="Imagenes\Pagina\logo-usuario.png" />
+    <Content Include="Imagenes\Pagina\logo-youtube.png" />
     <Content Include="Imagenes\Pagina\logo.png" />
     <Content Include="Imagenes\Pagina\persona.png" />
     <Content Include="Imagenes\Pagina\persona2.png" />

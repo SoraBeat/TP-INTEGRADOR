@@ -17,7 +17,22 @@
             font-family: 'Roboto', sans-serif;
             text-align: center;
             font-weight: 500;
-            background-color:black;
+            background-color: black;
+        }
+
+        .auto-style1 {
+            width: 744px;
+        }
+
+        .auto-style2 {
+            width: 618px;
+        }
+
+        .auto-style3 {
+            width: 100%;
+        }
+        .auto-style4 {
+            width: 515px;
         }
     </style>
 </head>
@@ -65,37 +80,38 @@
         </div>
         <!-- CARRUSEL-->
         <br />
+        <br />
         <div style="width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 30px;">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
-                <h4 style="color:white;">COMPLEJO</h4>
-                <asp:DropDownList style="background-color: #212529;color: white;border-color: #212529;border-radius: 0.25rem;" ID="DDLsucursales" runat="server" Height="38px" Width="199px" AutoPostBack="True" OnSelectedIndexChanged="DDLsucursales_SelectedIndexChanged">
+                <h4 style="color: white;">COMPLEJO</h4>
+                <asp:DropDownList Style="background-color: #212529; color: white; border-color: #212529; border-radius: 0.25rem;" ID="DDLsucursales" runat="server" Height="38px" Width="199px" AutoPostBack="True" OnSelectedIndexChanged="DDLsucursales_SelectedIndexChanged">
                 </asp:DropDownList>
             </div>
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
-                <h4 style="color:white;">FORMATO</h4>
-                <div style="display:flex;flex-direction:row;gap:10px">
+                <h4 style="color: white;">FORMATO</h4>
+                <div style="display: flex; flex-direction: row; gap: 10px">
                     <asp:Button class="btn btn-dark" ID="btn2D" runat="server" Text="2D" OnClick="btn2D_Click" />
                     <asp:Button class="btn btn-dark" ID="btn3D" runat="server" Text="3D" OnClick="btn3D_Click" />
                     <asp:Button class="btn btn-dark" ID="btn4D" runat="server" Text="4D" OnClick="btn4D_Click" />
                 </div>
             </div>
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
-                <h4 style="color:white;">IDIOMA</h4>
+                <h4 style="color: white;">IDIOMA</h4>
                 <div>
                     <asp:Button class="btn btn-dark" ID="btnSubtitulada" runat="server" Text="Subtitulado" OnClick="btnSubtitulada_Click" />
                     <asp:Button class="btn btn-dark" ID="btnEspanol" runat="server" Text="Español" OnClick="btnEspanol_Click" />
                 </div>
             </div>
-            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;align-self:end">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; align-self: end">
                 <asp:Button class="btn btn-success" ID="btnVerTodo" runat="server" Text="Ver todo" OnClick="btnVerTodo_Click" />
             </div>
         </div>
         <br />
-
-        <table class="auto-style1">
+        <table>
             <tr>
-                <td>
-                    <asp:ListView ID="lvPeliculas" runat="server" GroupItemCount="4">
+                <td class="auto-style3">
+                    <br />
+                    <asp:ListView Style="width: 100%" ID="lvPeliculas" runat="server" GroupItemCount="4">
                         <%--                        <AlternatingItemTemplate>
                             <td runat="server" style="background-color: #FFFFFF;color: #284775;">Titulo_P:
                                 <asp:Label ID="Titulo_PLabel" runat="server" Text='<%# Eval("Titulo_P") %>' />
@@ -199,27 +215,27 @@
                             </td>
                         </InsertItemTemplate>
                         <ItemTemplate>
-                            <td runat="server" style="background-color: #E0FFFF; color: #333333;" class="auto-style2">
-                                <asp:ImageButton Style="width: 150px; height: 300px" runat="server" OnClick="guardarPeliculaEvento" CommandName='<%# Eval("ID") %>' ImageUrl='<%# Eval("Portada") %>'></asp:ImageButton>
+                            <td runat="server" style="background-color: black; color: #333333;" class="auto-style2">
+                                <asp:ImageButton Style="width: 240px; height: 380px; border-radius: 10px" runat="server" OnClick="guardarPeliculaEvento" CommandName='<%# Eval("ID") %>' ImageUrl='<%# Eval("Portada") %>'></asp:ImageButton>
                             </td>
                         </ItemTemplate>
                         <LayoutTemplate>
                             <table runat="server">
                                 <tr runat="server">
                                     <td runat="server">
-                                        <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px; font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                        <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">
                                             <tr id="groupPlaceholder" runat="server">
                                             </tr>
                                         </table>
                                     </td>
                                 </tr>
                                 <tr runat="server">
-                                    <td runat="server" style="text-align: center; background-color: #5D7B9D; font-family: Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF">
+                                    <td runat="server" style="text-align: center; background-color: black; color: #FFFFFF; padding: 30px;">
                                         <asp:DataPager ID="DataPager1" runat="server" PageSize="8">
                                             <Fields>
-                                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="False" ShowNextPageButton="False" ShowPreviousPageButton="True" />
                                                 <asp:NumericPagerField />
-                                                <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                                <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="False" ShowNextPageButton="True" ShowPreviousPageButton="False" />
                                             </Fields>
                                         </asp:DataPager>
                                     </td>
@@ -259,35 +275,31 @@
                 </td>
             </tr>
         </table>
-        <br />
-        <br />
         <div>
             <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONTACTANOS<br />
+            <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
+            <br />
+            <br />
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style12">&nbsp;</td>
+                    <td class="auto-style4"></td>
                     <td class="auto-style13">
-                        <img alt="" class="auto-style8" src="" /></td>
+                        <img style="height:30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-facebook.png" /></td>
                     <td class="auto-style13">
-                        <img alt="" class="auto-style8" src="" /></td>
+                        <img style="height:30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-twitter.png" /></td>
                     <td class="auto-style11">
-                        <img alt="" class="auto-style8" src="" /></td>
+                        <img style="height:30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-instagram.png" /></td>
                     <td>
-                        <img alt="" class="auto-style8" src="" /></td>
+                        <img style="height:30px"style="height:50px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-youtube.png" /></td>
                 </tr>
             </table>
             <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email: <a href="mailto:GmailEmpresa@gmail.com">GmailEmpresa@gmail.com</a><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telefono soporte: 11-1232-1234&nbsp;&nbsp;
+            Email:<a style="color:white" href="mailto:GmailEmpresa@gmail.com"> Empresa@gmail.com</a>
             <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:HyperLink ID="HyperLink1" runat="server">Ayuda</asp:HyperLink>
+            Tel: 11-1232-1234
             <br />
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 NOMBRE DEL CINE<br />
-        </span>
+            Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 GALAG<br />
+            </span>
         </div>
         <br />
         <asp:ScriptManager runat="server">
