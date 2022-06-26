@@ -17,12 +17,13 @@
             font-family: 'Roboto', sans-serif;
             text-align: center;
             font-weight: 500;
+            background-color:black;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="width:100%; background-color:black;height:90px;"></div>
+        <div style="width: 100%; background-color: black; height: 90px;"></div>
         <nav class="auto-style22 navbar fixed-top" style="background-color: rgba(0, 0, 0, 0.79); padding: 10px 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
             <a class="" href="PantallaInicial.aspx" style="margin-left: 30px;">
                 <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
@@ -42,15 +43,15 @@
             </ol>
 
             <!-- Wrapper for carousel items -->
-            <div class="carousel-inner" style="height:500px;width:100%">
-                <div class="carousel-item active" style="height:500px;width:100%">
-                    <img style="height:500px;width:100%" src="/Imagenes/Portadas/lightyear horizontal.jpg" class="d-block w-100" alt="Slide 1">
+            <div class="carousel-inner" style="height: 500px; width: 100%">
+                <div class="carousel-item active" style="height: 500px; width: 100%">
+                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/lightyear horizontal.jpg" class="d-block w-100" alt="Slide 1">
                 </div>
-                <div class="carousel-item" style="height:500px;width:100%">
-                    <img style="height:500px;width:100%" src="/Imagenes/Portadas/dr strange horizontal2.jpg" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-item" style="height: 500px; width: 100%">
+                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/dr strange horizontal2.jpg" class="d-block w-100" alt="Slide 2">
                 </div>
-                <div class="carousel-item" style="height:500px;width:100%">
-                    <img style="height:500px;width:100%" src="/Imagenes/Portadas/pulp fiction horizontal.jpg" class="d-block w-100" alt="Slide 3">
+                <div class="carousel-item" style="height: 500px; width: 100%">
+                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/pulp fiction horizontal.jpg" class="d-block w-100" alt="Slide 3">
                 </div>
             </div>
 
@@ -64,31 +65,33 @@
         </div>
         <!-- CARRUSEL-->
         <br />
-        <table class="auto-style1">
-            <tr>
-                <td class="auto-style2">COMPLEJO</td>
-                <td class="auto-style2">FORMATO</td>
-                <td class="auto-style2">IDIOMA</td>
-                <td class="auto-style2" rowspan="2">
-                    <asp:Button ID="btnVerTodo" runat="server" Text="Ver todo" OnClick="btnVerTodo_Click" />
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style2">
-                    <asp:DropDownList ID="DDLsucursales" runat="server" Height="17px" Width="199px" AutoPostBack="True" OnSelectedIndexChanged="DDLsucursales_SelectedIndexChanged">
-                    </asp:DropDownList>
-                </td>
-                <td class="auto-style2">
-                    <asp:Button ID="btn2D" runat="server" Text="2D" OnClick="btn2D_Click" />
-                    <asp:Button ID="btn3D" runat="server" Text="3D" OnClick="btn3D_Click" />
-                    <asp:Button ID="btn4D" runat="server" Text="4D" OnClick="btn4D_Click" />
-                </td>
-                <td class="auto-style2">
-                    <asp:Button ID="btnSubtitulada" runat="server" Text="Subtitulado" OnClick="btnSubtitulada_Click" />
-                    <asp:Button ID="btnEspanol" runat="server" Text="Español" OnClick="btnEspanol_Click" />
-                </td>
-            </tr>
-        </table>
+        <div style="width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 30px;">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+                <h4 style="color:white;">COMPLEJO</h4>
+                <asp:DropDownList style="background-color: #212529;color: white;border-color: #212529;border-radius: 0.25rem;" ID="DDLsucursales" runat="server" Height="38px" Width="199px" AutoPostBack="True" OnSelectedIndexChanged="DDLsucursales_SelectedIndexChanged">
+                </asp:DropDownList>
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+                <h4 style="color:white;">FORMATO</h4>
+                <div style="display:flex;flex-direction:row;gap:10px">
+                    <asp:Button class="btn btn-dark" ID="btn2D" runat="server" Text="2D" OnClick="btn2D_Click" />
+                    <asp:Button class="btn btn-dark" ID="btn3D" runat="server" Text="3D" OnClick="btn3D_Click" />
+                    <asp:Button class="btn btn-dark" ID="btn4D" runat="server" Text="4D" OnClick="btn4D_Click" />
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+                <h4 style="color:white;">IDIOMA</h4>
+                <div>
+                    <asp:Button class="btn btn-dark" ID="btnSubtitulada" runat="server" Text="Subtitulado" OnClick="btnSubtitulada_Click" />
+                    <asp:Button class="btn btn-dark" ID="btnEspanol" runat="server" Text="Español" OnClick="btnEspanol_Click" />
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;align-self:end">
+                <asp:Button class="btn btn-success" ID="btnVerTodo" runat="server" Text="Ver todo" OnClick="btnVerTodo_Click" />
+            </div>
+        </div>
+        <br />
+
         <table class="auto-style1">
             <tr>
                 <td>
