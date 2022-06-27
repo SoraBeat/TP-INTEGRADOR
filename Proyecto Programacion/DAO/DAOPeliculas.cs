@@ -38,10 +38,10 @@ namespace DAO
         }
         public DataTable getNombrePelicula(string id)
         {
-            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT LinkYoutube_P FROM Peliculas WHERE ID_Pelicula_P='"+id+"'");
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT LinkYoutube_P FROM Peliculas WHERE ID_Pelicula_P='" + id + "'");
             return tabla;
         }
-        
+
         public DataTable getTablaPeliculas()
         {
             DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas INNER JOIN Funciones on ID_Pelicula_P = ID_Pelicula_F GROUP BY Titulo_P");
@@ -54,7 +54,7 @@ namespace DAO
         }
         public DataTable getTablaPeliculasComplejos(string consulta)
         {
-            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT DISTINCT CAST(ID_Pelicula_P AS int) AS [ID],Titulo_P AS [Titulo], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas inner JOIN Funciones  on Peliculas.ID_Pelicula_P = Funciones.ID_Pelicula_F WHERE ID_Complejo_F LIKE '"+consulta+"' AND Estado_P=1");
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT DISTINCT CAST(ID_Pelicula_P AS int) AS [ID],Titulo_P AS [Titulo], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas inner JOIN Funciones  on Peliculas.ID_Pelicula_P = Funciones.ID_Pelicula_F WHERE ID_Complejo_F LIKE '" + consulta + "' AND Estado_P=1");
             return tabla;
         }
 
@@ -88,6 +88,11 @@ namespace DAO
             return tabla;
         }
 
+        public DataTable getListaPeliculasCompleto()
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], SUBSTRING(Descripcion_P,0,30) AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas ORDER BY ABS(ID_Pelicula_P)");
+            return tabla;
+        }
         public DataTable getTablaPeliculaPorID(string campo)
         {
             DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas WHERE ID_Pelicula_P LIKE '%" + campo + "%' ORDER BY ABS(ID_Pelicula_P)");

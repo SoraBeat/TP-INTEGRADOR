@@ -32,7 +32,12 @@ namespace Negocios
             DAOPeliculas dao = new DAOPeliculas();
             return dao.getTablaPeliculas();
         }
-
+        public DataTable getListaPeliculasCompleto()
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getListaPeliculasCompleto();
+        }
+        
         public DataTable getListaPeliculasComplejos(string consulta)
         {
             DAOPeliculas dao = new DAOPeliculas();

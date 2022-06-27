@@ -132,7 +132,7 @@
                             <asp:TemplateField HeaderText="Formato">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="TXT_EDT_FORMATO" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="txtFORMATO" ErrorMessage="CAMPO VACIO"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="TXT_EDT_FORMATO" ErrorMessage="CAMPO VACIO"></asp:RequiredFieldValidator>
                                 </EditItemTemplate>
                                 <ItemTemplate>
                                     <asp:Label ID="LBL_IT_FORMATO" runat="server" Text='<%# Bind("FORMATO") %>'></asp:Label>

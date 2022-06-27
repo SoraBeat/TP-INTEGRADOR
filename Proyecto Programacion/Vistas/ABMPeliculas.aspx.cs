@@ -20,11 +20,15 @@ namespace Vistas
                 CargarTablaSinFiltro();
                 CargarGrid(); 
             }
-            string datosUsuario = (string)Session["DATOSUSUARIO"];
-            string[] separador = new string[] { " ", "$" };
-            string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
-            LBL_NOMBREUSUARIO.Text = datos[1];
-            LBL_APELLIDOUSUARIO.Text = datos[2];
+            if (Session["DATOSUSUARIO"]!=null)
+            {
+                string datosUsuario = (string)Session["DATOSUSUARIO"];
+                string[] separador = new string[] { " ", "$" };
+                string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+                LBL_NOMBREUSUARIO.Text = datos[1];
+                LBL_APELLIDOUSUARIO.Text = datos[2];
+            }
+
 
         }
         public void desloguear(object sender, EventArgs e)
@@ -34,7 +38,7 @@ namespace Vistas
         }
         private void CargarTablaSinFiltro()
         {
-            DataTable tablaPeliculas = negPel.getListaPeliculas2();
+            DataTable tablaPeliculas = negPel.getListaPeliculasCompleto();
             gvPeliculas.DataSource = tablaPeliculas;
             gvPeliculas.DataBind();
           
