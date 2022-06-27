@@ -178,11 +178,11 @@
                             </table>
                         </EmptyDataTemplate>
                         <EmptyItemTemplate>
-                            <td runat="server" />
+                            <td runat="server" style="background-color:black"/>
                         </EmptyItemTemplate>
                         <GroupTemplate>
                             <tr id="itemPlaceholderContainer" runat="server">
-                                <td id="itemPlaceholder" runat="server"></td>
+                                <td id="itemPlaceholder" runat="server" ></td>
                             </tr>
                         </GroupTemplate>
                         <InsertItemTemplate>
@@ -224,7 +224,7 @@
                             </td>
                         </ItemTemplate>
                         <LayoutTemplate>
-                            <table runat="server">
+                            <table runat="server" >
                                 <tr runat="server">
                                     <td runat="server">
                                         <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">
