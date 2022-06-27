@@ -29,5 +29,12 @@ namespace Vistas
         {
 
         }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
+
+     
     }
 }

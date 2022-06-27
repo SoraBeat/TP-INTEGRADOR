@@ -92,7 +92,7 @@
                         &nbsp;</td>
                     <td class="auto-style29">
 
-                         <asp:ImageButton ID="ImageButton1" runat="server" Height="240px" ImageUrl="~/Imagenes/Portadas/Doctor Strange.jpg" Width="240px" />
+                         <asp:ImageButton ID="ImageButton1" runat="server" Height="240px" ImageUrl="~/Imagenes/Portadas/Doctor Strange.jpg" Width="240px" OnClick="ImageButton1_Click" />
                          
                         </td>
                     <td class="destacado">

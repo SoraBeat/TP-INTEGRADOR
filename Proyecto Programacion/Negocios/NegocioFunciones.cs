@@ -86,6 +86,11 @@ namespace Negocios
             DAOFunciones dao = new DAOFunciones();
             return dao.getTablaFuncionPorIDformatos(idPelicula, idComplejo);
         }
+        public DataTable getTablaPorFuncionid(string idFuncion)
+        {
+            DAOFunciones dao = new DAOFunciones();
+            return dao.getTablaFuncionPorIDfuncion(idFuncion);
+        }
 
         public DataTable getTablaPoridioma(string IDpelicula, string IDcomplejo, string formato)
         {

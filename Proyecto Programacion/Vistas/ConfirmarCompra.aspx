@@ -5,116 +5,161 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>Galag CINE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/owl.carousel.css" />
+    <link href="Content/hover.css" rel="stylesheet" />
+    <link href="Content/animate.min.css" rel="stylesheet" />
+    <link href="Content/animate2.css" rel="stylesheet" />
     <style type="text/css">
-        .auto-style1 {
-            width: 33%;
-        }
-
-        .auto-style3 {
-            width: 122px;
-        }
-
-        .auto-style4 {
+        body {
             width: 100%;
+            height: auto;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            font-weight: 500;
+            background-image: url("/Imagenes/Pagina/fondo-mostrarpelicula4.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-color: rgba(0, 0, 0, 0.79);
+            color: white;
         }
 
-        .auto-style6 {
-            width: 876px;
+        .auto-style1 {
+            width: 498px;
+        }
+        .auto-style2 {
+            width: 737px;
+        }
+        .auto-style3 {
+            width: 560px;
         }
 
-        .auto-style7 {
-            width: 222px;
-        }
-
-        .auto-style8 {
-            width: 155px;
-        }
-
-        .auto-style9 {
-            width: 41px;
-        }
-
-        .auto-style10 {
-            width: 155px;
-            height: 23px;
-        }
-
-        .auto-style11 {
-            width: 222px;
-            height: 23px;
-        }
-
-        .auto-style12 {
-            width: 876px;
-            height: 23px;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            *NOMBRE DEL CINE*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *USUARIO*<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style3">*IMAGEN<br />
-                        DE LA PELICULA*</td>
-                    <td>*TITULO PELICULA*<br />
-                        *FECHA DE LA FUNCIÓN*<br />
-                        *DIRECCION DEL COMPLEJO*<br />
-                    </td>
-                </tr>
-            </table>
+            <asp:ScriptManager runat="server">
+                <Scripts>
+                    <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                    <asp:ScriptReference Path="Scripts/bootstrap.bundle.min.js" />
+                    <asp:ScriptReference Path="Scripts/jquery-3.6.0.min.js" />
+                    <asp:ScriptReference Path="Scripts/owl.carousel.js" />
+                </Scripts>
+            </asp:ScriptManager>
+            <nav class="navbar fixed-top" style="background-color: rgba(0, 0, 0, 0.79); padding: 10px 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                <a class="" href="PantallaInicial.aspx" style="margin-left: 30px;">
+                    <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
+                </a>
+                <div style="margin-right: 20px">
+                    <asp:Button class="btn btn-primary" ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click" />
+                    <asp:Button class="btn btn-warning" ID="txtPaginaAdmin" runat="server" OnClick="txtPaginaAdmin_Click" Text="Funciones admin" Visible="False" />
+                </div>
+            </nav>
             <br />
             <br />
-            DETALLE DE COMPRA<br />
+            <br />
+            <br />
+            <br />
+            <div style="width: 100%; background-color: rgba(0, 0, 0, 0.79);">
+                <asp:Label Style="color: white; font-size: 40px" ID="LBLtitulo" runat="server" Font-Bold="True" Font-Italic="False"></asp:Label>
+            </div>
+            <br />
+            <br />
+            <br />
+          
+    
+            <br />
+            <br />
+            <br />
             <br />
             <table class="auto-style4">
                 <tr>
-                    <td class="auto-style8">Costo:</td>
-                    <td class="auto-style7">
+                    <td class="auto-style19">
+
+                         <img src="/Imagenes/Pagina/ticket.png" style="width: 120px; height: 70px;" /></td>
+                    <td class="auto-style3">
                         <asp:Label ID="lblCosto" runat="server"></asp:Label>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style1"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style13">Cantidad: </td>
-                    <td class="auto-style14">
-                        <input id="Text1" class="auto-style9" type="number" /></td>
-                    <td class="auto-style15"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style8">Ubicacion:</td>
-                    <td class="auto-style7">
-                        <asp:DropDownList ID="ddlUbicacion" runat="server">
-                        </asp:DropDownList>
+                    <td class="auto-style26">
+                        <asp:TextBox ID="txtCantidad" runat="server"></asp:TextBox>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style3">
+                        <asp:Label ID="lblTotal" runat="server"></asp:Label>
+                    </td>
+                    <td class="auto-style2">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style8">Forma de pago:</td>
-                    <td class="auto-style7">
-                        <asp:DropDownList ID="ddlFormaDePago" runat="server" AutoPostBack="True" Height="21px" Width="194px">
-                            <asp:ListItem Value="0">Debito</asp:ListItem>
-                            <asp:ListItem Value="1">Credito</asp:ListItem>
-                        </asp:DropDownList>
+                    <td class="auto-style23">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
+                    <td class="auto-style2">
+
+                         <asp:ImageButton ID="ImageButton1" runat="server" Height="240px" ImageUrl="~/Imagenes/Portadas/Doctor Strange.jpg" Width="240px" />
+                         
+                        </td>
+                    <td class="auto-style1">
+                        <table class="destacado">
+                            <td >
+                                <p>
+                                    <asp:Label ID="lblNombrePelicula" runat="server"></asp:Label>
+                                    <asp:Label ID="lblIdioma" runat="server"></asp:Label>
+                                    </br>
+                                    <asp:Label ID="lblComplejo" runat="server"></asp:Label>
+                                <br>
+                                    <asp:Label ID="lblDireccion" runat="server"></asp:Label>
+                                    </br>
+                                    <asp:Label ID="lblFechayhora" runat="server"></asp:Label>
+&nbsp;</p>
+                                <p>
+                                    <br>
+                                   <br>
+                    &nbsp;</p>
+                            </td>
+
+                        </table>
+
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
+                 
                 </tr>
                 <tr>
-                    <td class="auto-style10"></td>
-                    <td class="auto-style11"></td>
-                    <td class="auto-style12"></td>
+                    <td class="auto-style31">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
+                    <td class="auto-style2">
+                        <asp:Button ID="btnConfirmar0" runat="server" Text="Volver" OnClick="btnConfirmar_Click" Height="26px" />
+                    </td>
+                    <td class="auto-style1"><asp:Button ID="btnConfirmar" runat="server" Text="Siguiente" OnClick="btnConfirmar_Click" Height="26px" />
+                                    </td>
                 </tr>
                 <tr>
-                    <td class="auto-style10">&nbsp;</td>
-                    <td class="auto-style11">
-                        <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar compra" />
-                    </td>
-                    <td class="auto-style12">
-                        <asp:Label ID="ll" runat="server" Text="Label"></asp:Label>
-                    </td>
+                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style1">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style35"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style2"></td>
+                    <td class="auto-style1"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style19">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style1">&nbsp;</td>
                 </tr>
             </table>
         </div>
