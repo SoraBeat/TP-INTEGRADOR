@@ -202,23 +202,26 @@ namespace Vistas
         protected void DDLhorario_SelectedIndexChanged(object sender, EventArgs e)
         {
             BTN_COMPRAR.Visible = true;
-            if (Session["DATOSUSUARIO"]!=null)
+            if (Session["DATOSUSUARIO"] != null)
             {
-                BTN_COMPRAR.Enabled = true;
+                BTN_COMPRAR.BackColor =System.Drawing.Color.DarkGreen;
             }
             else
             {
-                BTN_COMPRAR.Enabled = false;
+                BTN_COMPRAR.BackColor = System.Drawing.Color.Tomato;
             }
         }
         protected void btnComprar_Click(object sender, EventArgs e)
         {
-            horario = DDLhorario.SelectedValue;
-            string IDfuncion;
-            DataTable tabla = Fun.getTablaPorID2(idPelicula, idcomplejo, formato, idioma, fecha, horario);
-            DataRow row = tabla.Rows[0];
-            IDfuncion = Convert.ToString(row["ID"]);
-            Response.Redirect("ConfirmarCompra.aspx?ID=" + IDfuncion);
+            if (Session["DATOSUSUARIO"]!=null)
+            {
+                horario = DDLhorario.SelectedValue;
+                string IDfuncion;
+                DataTable tabla = Fun.getTablaPorID2(idPelicula, idcomplejo, formato, idioma, fecha, horario);
+                DataRow row = tabla.Rows[0];
+                IDfuncion = Convert.ToString(row["ID"]);
+                Response.Redirect("ConfirmarCompra.aspx?ID=" + IDfuncion);
+            }
         }
         
         public void CargarDatosPagina()

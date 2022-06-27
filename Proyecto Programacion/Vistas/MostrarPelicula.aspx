@@ -36,15 +36,15 @@
 </head>
 <body>
     <form id="form1" runat="server">
+                <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                <asp:ScriptReference Path="Scripts/bootstrap.bundle.min.js" />
+                <asp:ScriptReference Path="Scripts/jquery-3.6.0.min.js" />
+                <asp:ScriptReference Path="Scripts/owl.carousel.js" />
+            </Scripts>
+        </asp:ScriptManager>
         <div>
-            <asp:ScriptManager runat="server">
-                <Scripts>
-                    <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
-                    <asp:ScriptReference Path="Scripts/bootstrap.bundle.min.js" />
-                    <asp:ScriptReference Path="Scripts/jquery-3.6.0.min.js" />
-                    <asp:ScriptReference Path="Scripts/owl.carousel.js" />
-                </Scripts>
-            </asp:ScriptManager>
             <nav class="navbar fixed-top" style="background-color: rgba(0, 0, 0, 0.79); padding: 10px 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
                 <a class="" href="PantallaInicial.aspx" style="margin-left: 30px;">
                     <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
@@ -67,7 +67,15 @@
             <br />
             <div style="display: flex; flex-direction: row; width: 100%">
                 <div style="width: 50%">
-                    <iframe id="youtube" runat="server" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="500" height="300" type="text/html" style="margin-left: 30px; border-radius: 10px;"></iframe>
+                    <asp:UpdatePanel runat="server" UpdateMode="Conditional">
+                        <Triggers>
+                        </Triggers>
+                        <ContentTemplate>
+                            <iframe id="youtube" runat="server" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="500" height="300" type="text/html" style="margin-left: 30px; border-radius: 10px;"></iframe>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+
+
                 </div>
                 <div style="width: 50%; display: flex; flex-direction: column; align-items: start">
                     <h3>ELEGIR FUNCION</h3>
@@ -97,7 +105,7 @@
                         </asp:DropDownList>
                     </div>
                     <div style="display: flex; flex-direction: row">
-                        <asp:Button ID="BTN_COMPRAR" OnClick="btnComprar_Click" runat="server" class="btn btn-success" Text="COMPRAR"></asp:Button>
+                        <asp:Button Style="color: white; font-weight: 400" ID="BTN_COMPRAR" runat="server" OnClick="btnComprar_Click" type="button" class="btn" data-bs-trigger="hover focus" data-bs-toggle="popover" data-bs-content="Tiene que iniciar secion para comprar." Text="COMPRAR"></asp:Button>
                     </div>
                 </div>
             </div>
@@ -183,6 +191,13 @@
             <br />
             <br />
         </div>
+
+        <script>
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl)
+            })
+        </script>
     </form>
 </body>
 </html>
