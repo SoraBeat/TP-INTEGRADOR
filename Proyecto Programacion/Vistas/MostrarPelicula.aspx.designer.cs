@@ -24,31 +24,22 @@ namespace Vistas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control Label1.
+        /// Control btnIniciarSesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Button btnIniciarSesion;
 
         /// <summary>
-        /// Control Button1.
+        /// Control txtPaginaAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
-        /// Control Button2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button txtPaginaAdmin;
 
         /// <summary>
         /// Control LBLtitulo.
@@ -60,22 +51,22 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label LBLtitulo;
 
         /// <summary>
-        /// Control Image1.
+        /// Control youtube.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.HtmlControls.HtmlIframe youtube;
 
         /// <summary>
-        /// Control Label3.
+        /// Control LBL_COMPLEJO.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LBL_COMPLEJO;
 
         /// <summary>
         /// Control DDLcomplejo.
@@ -87,6 +78,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.DropDownList DDLcomplejo;
 
         /// <summary>
+        /// Control LBL_FORMATO.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LBL_FORMATO;
+
+        /// <summary>
         /// Control DDLformato.
         /// </summary>
         /// <remarks>
@@ -94,6 +94,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDLformato;
+
+        /// <summary>
+        /// Control LBL_IDIOMA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LBL_IDIOMA;
 
         /// <summary>
         /// Control DDLidioma.
@@ -105,6 +114,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.DropDownList DDLidioma;
 
         /// <summary>
+        /// Control LBL_FECHA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LBL_FECHA;
+
+        /// <summary>
         /// Control DDLfecha.
         /// </summary>
         /// <remarks>
@@ -112,6 +130,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDLfecha;
+
+        /// <summary>
+        /// Control LBL_HORARIO.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LBL_HORARIO;
 
         /// <summary>
         /// Control DDLhorario.
@@ -123,13 +150,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.DropDownList DDLhorario;
 
         /// <summary>
-        /// Control Image2.
+        /// Control IMG_PORTADA.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image2;
+        protected global::System.Web.UI.WebControls.Image IMG_PORTADA;
 
         /// <summary>
         /// Control Image3.
@@ -229,14 +256,5 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LBL_Duracion_Tecnico;
-
-        /// <summary>
-        /// Control HyperLink1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
     }
 }

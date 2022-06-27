@@ -4,211 +4,151 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Galag CINE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/owl.carousel.css" />
+    <link href="Content/hover.css" rel="stylesheet" />
+    <link href="Content/animate.min.css" rel="stylesheet" />
+    <link href="Content/animate2.css" rel="stylesheet" />
     <style type="text/css">
-        .auto-style1 {
+        body {
             width: 100%;
+            height: auto;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            font-weight: 500;
+            background-image: url("/Imagenes/Pagina/fondo-mostrarpelicula4.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-color: rgba(0, 0, 0, 0.79);
+            color: white;
         }
-        .auto-style2 {
-            width: 663px;
-        }
-        .auto-style3 {
-            width: 273px;
-        }
-        .auto-style4 {
-            width: 399px;
-        }
-        .auto-style5 {
-            width: 102px;
-        }
-        .auto-style6 {
-            width: 102px;
-            height: 35px;
-        }
-        .auto-style7 {
-            height: 35px;
-        }
-        .auto-style8 {
-            width: 102px;
-            height: 34px;
-        }
-        .auto-style9 {
-            height: 34px;
-        }
-        .auto-style10 {
-            width: 102px;
-            height: 33px;
-        }
-        .auto-style11 {
-            height: 33px;
-        }
-        .auto-style12 {
-            width: 150px;
-        }
-        .auto-style13 {
-            width: 48px;
-        }
-        .auto-style14 {
-            width: 65px;
-        }
-        .auto-style15 {
-            height: 23px;
-        }
-        .auto-style16 {
-            height: 23px;
-            width: 260px;
-        }
-        .auto-style17 {
-            width: 24px;
-        }
-        .auto-style18 {
-            width: 35px;
-            height: 34px;
-        }
-        .auto-style19 {
-            width: 38px;
-            height: 34px;
-        }
-        .auto-style20 {
-            width: 34px;
-            height: 34px;
-        }
-        .auto-style21 {
-            height: 33px;
-            width: 42px;
-        }
-        .auto-style22 {
-            width: 31px;
-            height: 34px;
-        }
-        .auto-style23 {
-            width: 102px;
-            height: 23px;
+
+        .auto-style1 {
+            width: 375px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style2">
-                        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="XX-Large" Text="CINEPOLIS"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:Button ID="Button1" runat="server" Text="Ayuda" />
-                        <asp:Button ID="Button2" runat="server" Text="Menu" />
-                    </td>
-                </tr>
-            </table>
+            <asp:ScriptManager runat="server">
+                <Scripts>
+                    <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                    <asp:ScriptReference Path="Scripts/bootstrap.bundle.min.js" />
+                    <asp:ScriptReference Path="Scripts/jquery-3.6.0.min.js" />
+                    <asp:ScriptReference Path="Scripts/owl.carousel.js" />
+                </Scripts>
+            </asp:ScriptManager>
+            <nav class="navbar fixed-top" style="background-color: rgba(0, 0, 0, 0.79); padding: 10px 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                <a class="" href="PantallaInicial.aspx" style="margin-left: 30px;">
+                    <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
+                </a>
+                <div style="margin-right: 20px">
+                    <asp:Button class="btn btn-primary" ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click" />
+                    <asp:Button class="btn btn-warning" ID="txtPaginaAdmin" runat="server" OnClick="txtPaginaAdmin_Click" Text="Funciones admin" Visible="False" />
+                </div>
+            </nav>
             <br />
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>
-                        <asp:Label ID="LBLtitulo" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="X-Large"></asp:Label>
-                    </td>
-                </tr>
-            </table>
             <br />
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style4">
-                        <asp:Image ID="Image1" runat="server" Height="201px" Width="396px" />
-                    </td>
-                    <td>
-                        <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="X-Large" Text="ELEGIR PELICULA POR:"></asp:Label>
-                        <table class="auto-style1">
-                            <tr>
-                                <td class="auto-style6">COMPLEJO</td>
-                                <td class="auto-style7">
-                                    <asp:DropDownList ID="DDLcomplejo" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLcomplejo_SelectedIndexChanged">
-                                    </asp:DropDownList>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="auto-style6">FORMATO</td>
-                                <td class="auto-style7">
-                                    <asp:DropDownList ID="DDLformato" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLformato_SelectedIndexChanged">
-                                    </asp:DropDownList>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="auto-style8">IDIOMA</td>
-                                <td class="auto-style9">
-                                    <asp:DropDownList ID="DDLidioma" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLidioma_SelectedIndexChanged">
-                                    </asp:DropDownList>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="auto-style10">FECHA</td>
-                                <td class="auto-style11">
-                                    <asp:DropDownList ID="DDLfecha" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLfecha_SelectedIndexChanged">
-                                    </asp:DropDownList>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="auto-style23">HORARIO</td>
-                                <td class="auto-style15">
-                                    <asp:DropDownList ID="DDLhorario" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLhorario_SelectedIndexChanged" Width="113px">
-                                    </asp:DropDownList>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="auto-style5">&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td class="auto-style5">&nbsp;</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
+            <br />
+            <br />
+            <br />
+            <div style="width: 100%; background-color: rgba(0, 0, 0, 0.79);">
+                <asp:Label Style="color: white; font-size: 40px" ID="LBLtitulo" runat="server" Font-Bold="True" Font-Italic="False"></asp:Label>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div style="display: flex; flex-direction: row; width: 100%">
+                <div style="width: 50%">
+                    <iframe id="youtube" runat="server" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="500" height="300" type="text/html" style="margin-left: 30px"></iframe>
+                </div>
+                <div style="width: 50%; display: flex; flex-direction: column; align-items: start">
+                    <h3>ELEGIR FUNCION</h3>
+                    <div style="display: flex; flex-direction: row; margin-top: 20px">
+                        <h5 id="LBL_COMPLEJO" runat="server">Complejo</h5>
+                        <asp:DropDownList Style="margin-left: 20px; background-color: #212529; color: white;" ID="DDLcomplejo" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLcomplejo_SelectedIndexChanged">
+                        </asp:DropDownList>
+                    </div>
+                    <div style="display: flex; flex-direction: row">
+                        <h5 id="LBL_FORMATO" runat="server">Formato</h5>
+                        <asp:DropDownList Style="margin-left: 30px; background-color: #212529; color: white;" ID="DDLformato" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLformato_SelectedIndexChanged">
+                        </asp:DropDownList>
+                    </div>
+                    <div style="display: flex; flex-direction: row">
+                        <h5 id="LBL_IDIOMA" runat="server">Idioma</h5>
+                        <asp:DropDownList Style="margin-left: 44px; background-color: #212529; color: white;" ID="DDLidioma" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLidioma_SelectedIndexChanged">
+                        </asp:DropDownList>
+                    </div>
+                    <div style="display: flex; flex-direction: row">
+                        <h5 id="LBL_FECHA" runat="server">Fecha</h5>
+                        <asp:DropDownList Style="margin-left: 52px; background-color: #212529; color: white;" ID="DDLfecha" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLfecha_SelectedIndexChanged">
+                        </asp:DropDownList>
+                    </div>
+                    <div style="display: flex; flex-direction: row">
+                        <h5 id="LBL_HORARIO" runat="server">Hora</h5>
+                        <asp:DropDownList Style="margin-left: 62px; background-color: #212529; color: white;" ID="DDLhorario" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLhorario_SelectedIndexChanged" Width="113px">
+                        </asp:DropDownList>
+                    </div>
+                </div>
+            </div>
             <br />
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style12">
-                        <asp:Image ID="Image2" runat="server" Width="145px" />
+                        <asp:Image Style="margin-left: 80px" ID="IMG_PORTADA" runat="server" Width="250px" />
                         <br />
                         <table class="auto-style1">
                             <tr>
-                                <td class="auto-style13">&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:Image ID="Image3" runat="server" Height="29px" />
-                                    <br />
-&nbsp;
-                                    <asp:Label ID="LBLduracion" runat="server"></asp:Label>
-                                </td>
-                                <td class="auto-style14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:Image ID="Image4" runat="server" Height="29px" />
-                                    <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="LBLclasificacion" runat="server"></asp:Label>
-                                </td>
+                                <div style="width:250px;display:flex;flex-direction:row;justify-content:space-around;align-content:center;margin-left:100px;margin-top:20px">
+                                    <div style="display:flex;flex-direction:column;justify-content:center;align-items:center">
+                                        <asp:Image style="height:80px;width:80px;" ImageUrl="/Imagenes/Pagina/logo-duracion.png" ID="Image3" runat="server" Height="29px" />
+                                        <asp:Label style="font-size:30px" ID="LBLduracion" runat="server"></asp:Label>
+                                    </div>
+                                    <div style="display:flex;flex-direction:column;justify-content:center;align-items:center">
+                                        <asp:Image style="height:80px;width:80px;" ImageUrl="/Imagenes/Pagina/logo-edad.png" ID="Image4" runat="server" Height="29px" />
+                                        <asp:Label style="font-size:30px" ID="LBLclasificacion" runat="server"></asp:Label>
+                                    </div>
+                                </div>
                             </tr>
                         </table>
                     </td>
                     <td>
                         <table class="auto-style1">
                             <tr>
-                                <td class="auto-style16">
-                                    <asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Large" Text="Sinopsis"></asp:Label>
-                                    <br />
-                                    <br />
-                                    <asp:Label ID="LBLSinopsis" runat="server"></asp:Label>
-                                </td>
-                                <td class="auto-style15">
-                                    <asp:Label ID="Label7" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Large" Text="Datos técnicos"></asp:Label>
-                                    <br />
-                                    <br />
-                                    Titulo: <asp:Label ID="LBL_Titulo_Tecnico" runat="server"></asp:Label>
-                                    <br />
-                                    Genero:
-                                    <asp:Label ID="LBL_Genero" runat="server"></asp:Label>
-                                    <br />
-                                    Clasificacion:<asp:Label ID="LBL_Clasificacion_Tecnico" runat="server"></asp:Label>
-                                    <br />
-                                    Duracion:<asp:Label ID="LBL_Duracion_Tecnico" runat="server"></asp:Label>
-                                    <br />
+                                <td class="auto-style16">&nbsp;</td>
+                                <td class="">
+                                    <div style="display: flex; flex-direction: row;height:400px">
+                                        <div style="display: flex; flex-direction: column;align-items:start;justify-content:start;text-align:justify;width:250px">
+                                            <asp:Label style="font-size:25px" ID="Label6" runat="server" Font-Bold="True" Text="Sinopsis"></asp:Label>
+                                            <asp:Label ID="LBLSinopsis" runat="server"></asp:Label>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: start; margin-left: 30px; justify-content: start; text-align: start; width:250px">
+                                            <asp:Label style="font-size:25px" ID="Label7" runat="server" Font-Bold="True" Font-Italic="False" Text="Datos técnicos"></asp:Label>
+                                            <div>
+                                                <label>Titulo: </label>
+                                                <asp:Label ID="LBL_Titulo_Tecnico" runat="server"></asp:Label>
+                                            </div>
+                                            <div>
+                                                <label>Genero: </label>
+                                                <asp:Label ID="LBL_Genero" runat="server"></asp:Label>
+                                            </div>
+                                            <div>
+                                                <label>Clasificacion: </label>
+                                                <asp:Label ID="LBL_Clasificacion_Tecnico" runat="server"></asp:Label>
+                                            </div>
+                                            <div>
+                                                <label>Duracion: </label>
+                                                <asp:Label ID="LBL_Duracion_Tecnico" runat="server"></asp:Label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         </table>
@@ -218,30 +158,23 @@
             <br />
             <div>
                 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONTACTANOS<br />
-                <table class="auto-style1">
-                    <tr>
-                        <td class="auto-style17">&nbsp;</td>
-                        <td class="auto-style13">
-                            <img alt="" class="auto-style18" src="" /></td>
-                        <td class="auto-style13">
-                            <img alt="" class="auto-style19" src="" /></td>
-                        <td class="auto-style21">
-                            <img alt="" class="auto-style20" src="" /></td>
-                        <td>
-                            <img alt="" class="auto-style22" src="" /></td>
-                    </tr>
-                </table>
-                <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email: <a href="mailto:GmailEmpresa@gmail.com">GmailEmpresa@gmail.com</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telefono soporte: 11-1232-1234&nbsp;&nbsp;
-                <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:HyperLink ID="HyperLink1" runat="server">Ayuda</asp:HyperLink>
+                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                    <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
+                </div>
                 <br />
                 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 NOMBRE DEL CINE<br />
+                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px">
+                    <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-facebook.png" />
+                    <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-twitter.png" />
+                    <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-instagram.png" />
+                    <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-youtube.png" />
+                </div>
+                <br />
+                Email:<a style="color: white" href="mailto:GmailEmpresa@gmail.com"> Empresa@gmail.com</a>
+                <br />
+                Tel: 11-1232-1234
+            <br />
+                Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 GALAG<br />
                 </span>
             </div>
             <br />

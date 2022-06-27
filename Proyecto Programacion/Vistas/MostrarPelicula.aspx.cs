@@ -33,10 +33,18 @@ namespace Vistas
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            nombrebtn();
             if (IsPostBack == false)
             {
-                
                 idPelicula = Request.QueryString["ID"];
+                DataTable urlPelicula = new DataTable();
+                urlPelicula = Pel.getNombrePelicula(idPelicula);
+                if(youtube.Src=="")
+                {
+                    youtube.Src = "https://www.youtube.com/embed/" + urlPelicula.Rows[0]["LinkYoutube_P"] + "?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com";
+                }
+                btnIrPaginaAdmin();
                 CargarDatosPagina();
                 CargarDDLcomplejo();
               
@@ -107,7 +115,10 @@ namespace Vistas
                 DDLfecha.Visible = false;
                 DDLhorario.Visible = false;
                 DDLformato.Visible = false;
-
+                LBL_FORMATO.Visible = false;
+                LBL_IDIOMA.Visible = false;
+                LBL_FECHA.Visible = false;
+                LBL_HORARIO.Visible = false;
 
             }
             else
@@ -116,9 +127,13 @@ namespace Vistas
                 DDLidioma.Visible = false;
                 DDLfecha.Visible = false;
                 DDLhorario.Visible = false;
+                LBL_IDIOMA.Visible = false;
+                LBL_FECHA.Visible = false;
+                LBL_HORARIO.Visible = false;
                 idcomplejo = DDLcomplejo.SelectedValue;
                 CargarDDLformato();
                 DDLformato.Visible = true;
+                LBL_FORMATO.Visible = true;
             }
 
         }
@@ -130,6 +145,10 @@ namespace Vistas
                 DDLfecha.Visible = false;
                 DDLhorario.Visible = false;
                 DDLidioma.Visible = false;
+                LBL_IDIOMA.Visible = false;
+                LBL_FECHA.Visible = false;
+                LBL_HORARIO.Visible = false;
+
             }
             else
             {
@@ -137,6 +156,9 @@ namespace Vistas
                 DDLfecha.Visible = false;
                 DDLhorario.Visible = false;
                 DDLidioma.Visible = true;
+                LBL_IDIOMA.Visible = true;
+                LBL_FECHA.Visible = false;
+                LBL_HORARIO.Visible = false;
                 formato = DDLformato.SelectedValue;
                 CargarDDLidioma();
             }
@@ -148,11 +170,15 @@ namespace Vistas
             {
                 DDLhorario.Visible = false;
                 DDLfecha.Visible = false;
+                LBL_FECHA.Visible = false;
+                LBL_HORARIO.Visible = false;
             }
             else
             {
                 DDLhorario.Visible = false;
                 DDLfecha.Visible = true;
+                LBL_FECHA.Visible = true;
+                LBL_HORARIO.Visible = false;
                 idioma = DDLidioma.SelectedValue;
                 CargarDDLFecha();
             }
@@ -161,6 +187,7 @@ namespace Vistas
         protected void DDLfecha_SelectedIndexChanged(object sender, EventArgs e)
         {
             DDLhorario.Visible = true;
+            LBL_HORARIO.Visible = true;
             fecha = DDLfecha.SelectedValue + "/"+DateTime.Now.Year.ToString();
             CargarDDLHorario();
         }
@@ -183,9 +210,14 @@ namespace Vistas
             DDLidioma.Visible = false;
             DDLfecha.Visible = false;
             DDLhorario.Visible = false;
+            LBL_FORMATO.Visible = false;
+            LBL_IDIOMA.Visible = false;
+            LBL_FECHA.Visible = false;
+            LBL_HORARIO.Visible = false;
+
             DataTable tabla = Pel.getListaPeliculasPorID(idPelicula);
             DataRow row = tabla.Rows[0];
-            LBLtitulo.Text = Convert.ToString(row["Titulo"]);
+            LBLtitulo.Text = Convert.ToString(row["Titulo"]).ToUpper();
             LBL_Titulo_Tecnico.Text = Convert.ToString(row["Titulo"]);
             LBLSinopsis.Text = Convert.ToString(row["Descripcion"]);
             LBL_Genero.Text = Convert.ToString(row["Genero"]);
@@ -193,9 +225,54 @@ namespace Vistas
             LBLclasificacion.Text = Convert.ToString(row["Clasificacion"]);
             LBL_Duracion_Tecnico.Text = Convert.ToString(row["Duracion"]);
             LBLduracion.Text = Convert.ToString(row["Duracion"]);
+            IMG_PORTADA.ImageUrl = Convert.ToString(row["Portada"]);
+        }
+        protected void txtPaginaAdmin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PaginaAdmin.aspx");
+        }
+        private void btnIrPaginaAdmin()
+        {
+            if (Session["DATOSUSUARIO"] != null)
+            {
+                string datosUsuario = (string)Session["DATOSUSUARIO"];
+                string[] separador = new string[] { " ", "$" };
+                string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+                bool TipoUsuario = Convert.ToBoolean(datos[7]);
+                if (TipoUsuario == true)
+                {
+                    txtPaginaAdmin.Visible = true;
+                }
+            }
 
         }
 
+        private void nombrebtn()
+        {
+            if (Session["DATOSUSUARIO"] == null)
+            {
+                btnIniciarSesion.Text = "Iniciar Sesion";
+                btnIniciarSesion.CssClass = "btn btn-primary";
+            }
+            else
+            {
+                btnIniciarSesion.CssClass = "btn btn-danger";
+                btnIniciarSesion.Text = "Cerrar Sesion";
+            }
+        }
+        protected void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            if (Session["DATOSUSUARIO"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
+            else
+            {
+                Session["DATOSUSUARIO"] = null;
+                Response.Redirect("PantallaInicial.aspx");
+
+            }
+        }
 
     }
 }

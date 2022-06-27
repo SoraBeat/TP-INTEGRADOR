@@ -99,7 +99,14 @@
     <Content Include="Content\owl.carousel.css" />
     <Content Include="Imagenes\Pagina\fondo-login.jpg" />
     <Content Include="Imagenes\Pagina\fondo-login.png" />
+    <Content Include="Imagenes\Pagina\fondo-mostrarpelicula.png" />
+    <Content Include="Imagenes\Pagina\fondo-mostrarpelicula2.png" />
+    <Content Include="Imagenes\Pagina\fondo-mostrarpelicula3.png" />
+    <Content Include="Imagenes\Pagina\fondo-mostrarpelicula4.jpg" />
+    <Content Include="Imagenes\Pagina\fondo-mostrarpelicula4.png" />
     <Content Include="Imagenes\Pagina\logo-dinero.png" />
+    <Content Include="Imagenes\Pagina\logo-duracion.png" />
+    <Content Include="Imagenes\Pagina\logo-edad.png" />
     <Content Include="Imagenes\Pagina\logo-facebook.png" />
     <Content Include="Imagenes\Pagina\logo-instagram.png" />
     <Content Include="Imagenes\Pagina\logo-piola.png" />
