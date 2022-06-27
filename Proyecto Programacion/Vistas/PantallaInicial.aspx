@@ -59,6 +59,7 @@
                 <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
                 <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
                 <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
             </ol>
 
             <!-- Wrapper for carousel items -->
@@ -71,6 +72,9 @@
                 </div>
                 <div class="carousel-item" style="height: 500px; width: 100%">
                     <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/pulp fiction horizontal.jpg" class="d-block w-100" alt="Slide 3">
+                </div>
+                <div class="carousel-item" style="height: 500px; width: 100%">
+                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/Rápidos y Furiosos 9 horizontal.jpg" class="d-block w-100" alt="Slide 4">
                 </div>
             </div>
 
@@ -178,11 +182,11 @@
                             </table>
                         </EmptyDataTemplate>
                         <EmptyItemTemplate>
-                            <td runat="server" style="background-color:black"/>
+                            <td runat="server" style="background-color: black" />
                         </EmptyItemTemplate>
                         <GroupTemplate>
                             <tr id="itemPlaceholderContainer" runat="server">
-                                <td id="itemPlaceholder" runat="server" ></td>
+                                <td id="itemPlaceholder" runat="server"></td>
                             </tr>
                         </GroupTemplate>
                         <InsertItemTemplate>
@@ -224,7 +228,7 @@
                             </td>
                         </ItemTemplate>
                         <LayoutTemplate>
-                            <table runat="server" >
+                            <table runat="server">
                                 <tr runat="server">
                                     <td runat="server">
                                         <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">

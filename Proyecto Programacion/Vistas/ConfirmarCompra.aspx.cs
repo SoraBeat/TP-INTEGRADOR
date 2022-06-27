@@ -112,9 +112,6 @@ namespace Vistas
 
         public void CargarDatosPagina()
         {
-
-       
-
             DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion);
             DataRow row = tabla.Rows[0];
             idPelicula=Convert.ToString(row["IDPELICULA"]);
@@ -150,6 +147,13 @@ namespace Vistas
             lblComplejo.Text ="Complejo  :"+ Convert.ToString(row["NOMBRE"]);
             lblDireccion.Text ="Direccion :"+ Convert.ToString(row["DIRECCION"]);
 
+        }
+
+        protected void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion);
+            DataRow row = tabla.Rows[0];
+            lblTotal.Text = (Convert.ToInt32(txtCantidad.Text) * Convert.ToInt32(row["PRECIO"])).ToString();
         }
     }
 

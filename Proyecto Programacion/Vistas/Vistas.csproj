@@ -125,6 +125,7 @@
     <Content Include="Imagenes\Portadas\Lightyear.jpg" />
     <Content Include="Imagenes\Portadas\pulp fiction horizontal.jpg" />
     <Content Include="Imagenes\Portadas\Pulp Fiction.jpg" />
+    <Content Include="Imagenes\Portadas\Rápidos y Furiosos 9 horizontal.jpg" />
     <Content Include="MostrarPelicula.aspx" />
     <Content Include="PaginaAdmin.aspx" />
     <Content Include="PantallaInicial.aspx" />

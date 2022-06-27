@@ -91,7 +91,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style26">
-                        <asp:TextBox ID="txtCantidad" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtCantidad" runat="server" AutoPostBack="True" OnTextChanged="txtCantidad_TextChanged"></asp:TextBox>
                     </td>
                     <td class="auto-style3">
                         <asp:Label ID="lblTotal" runat="server"></asp:Label>
