@@ -202,6 +202,14 @@ namespace Vistas
         protected void DDLhorario_SelectedIndexChanged(object sender, EventArgs e)
         {
             BTN_COMPRAR.Visible = true;
+            if (Session["DATOSUSUARIO"] != null)
+            {
+                BTN_COMPRAR.BackColor =System.Drawing.Color.DarkGreen;
+            }
+            else
+            {
+                BTN_COMPRAR.BackColor = System.Drawing.Color.Tomato;
+            }
         }
         protected void btnComprar_Click(object sender, EventArgs e)
         {
