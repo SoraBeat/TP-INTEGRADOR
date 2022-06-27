@@ -40,7 +40,7 @@ namespace Vistas
                 idPelicula = Request.QueryString["ID"];
                 DataTable urlPelicula = new DataTable();
                 urlPelicula = Pel.getNombrePelicula(idPelicula);
-                if(youtube.Src=="")
+               if(youtube.Src=="")
                 {
                     youtube.Src = "https://www.youtube.com/embed/" + urlPelicula.Rows[0]["LinkYoutube_P"] + "?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com";
                 }
