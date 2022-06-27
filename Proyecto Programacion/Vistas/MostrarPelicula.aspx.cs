@@ -119,6 +119,7 @@ namespace Vistas
                 LBL_IDIOMA.Visible = false;
                 LBL_FECHA.Visible = false;
                 LBL_HORARIO.Visible = false;
+                BTN_COMPRAR.Visible = false;
 
             }
             else
@@ -130,6 +131,7 @@ namespace Vistas
                 LBL_IDIOMA.Visible = false;
                 LBL_FECHA.Visible = false;
                 LBL_HORARIO.Visible = false;
+                BTN_COMPRAR.Visible = false;
                 idcomplejo = DDLcomplejo.SelectedValue;
                 CargarDDLformato();
                 DDLformato.Visible = true;
@@ -148,6 +150,7 @@ namespace Vistas
                 LBL_IDIOMA.Visible = false;
                 LBL_FECHA.Visible = false;
                 LBL_HORARIO.Visible = false;
+                BTN_COMPRAR.Visible = false;
 
             }
             else
@@ -159,6 +162,7 @@ namespace Vistas
                 LBL_IDIOMA.Visible = true;
                 LBL_FECHA.Visible = false;
                 LBL_HORARIO.Visible = false;
+                BTN_COMPRAR.Visible = false;
                 formato = DDLformato.SelectedValue;
                 CargarDDLidioma();
             }
@@ -172,6 +176,7 @@ namespace Vistas
                 DDLfecha.Visible = false;
                 LBL_FECHA.Visible = false;
                 LBL_HORARIO.Visible = false;
+                BTN_COMPRAR.Visible = false;
             }
             else
             {
@@ -179,6 +184,7 @@ namespace Vistas
                 DDLfecha.Visible = true;
                 LBL_FECHA.Visible = true;
                 LBL_HORARIO.Visible = false;
+                BTN_COMPRAR.Visible = false;
                 idioma = DDLidioma.SelectedValue;
                 CargarDDLFecha();
             }
@@ -188,11 +194,24 @@ namespace Vistas
         {
             DDLhorario.Visible = true;
             LBL_HORARIO.Visible = true;
+            BTN_COMPRAR.Visible = false;
             fecha = DDLfecha.SelectedValue + "/"+DateTime.Now.Year.ToString();
             CargarDDLHorario();
         }
 
         protected void DDLhorario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BTN_COMPRAR.Visible = true;
+            if (Session["DATOSUSUARIO"]!=null)
+            {
+                BTN_COMPRAR.Enabled = true;
+            }
+            else
+            {
+                BTN_COMPRAR.Enabled = false;
+            }
+        }
+        protected void btnComprar_Click(object sender, EventArgs e)
         {
             horario = DDLhorario.SelectedValue;
             string IDfuncion;
@@ -200,10 +219,8 @@ namespace Vistas
             DataRow row = tabla.Rows[0];
             IDfuncion = Convert.ToString(row["ID"]);
             Response.Redirect("ConfirmarCompra.aspx?ID=" + IDfuncion);
- 
-
         }
-
+        
         public void CargarDatosPagina()
         {
             DDLformato.Visible = false;
@@ -214,6 +231,7 @@ namespace Vistas
             LBL_IDIOMA.Visible = false;
             LBL_FECHA.Visible = false;
             LBL_HORARIO.Visible = false;
+            BTN_COMPRAR.Visible = false;
 
             DataTable tabla = Pel.getListaPeliculasPorID(idPelicula);
             DataRow row = tabla.Rows[0];

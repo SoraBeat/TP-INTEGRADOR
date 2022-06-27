@@ -67,7 +67,7 @@
             <br />
             <div style="display: flex; flex-direction: row; width: 100%">
                 <div style="width: 50%">
-                    <iframe id="youtube" runat="server" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="500" height="300" type="text/html" style="margin-left: 30px"></iframe>
+                    <iframe id="youtube" runat="server" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="500" height="300" type="text/html" style="margin-left: 30px; border-radius: 10px;"></iframe>
                 </div>
                 <div style="width: 50%; display: flex; flex-direction: column; align-items: start">
                     <h3>ELEGIR FUNCION</h3>
@@ -96,24 +96,27 @@
                         <asp:DropDownList Style="margin-left: 62px; background-color: #212529; color: white;" ID="DDLhorario" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLhorario_SelectedIndexChanged" Width="113px">
                         </asp:DropDownList>
                     </div>
+                    <div style="display: flex; flex-direction: row">
+                        <asp:Button ID="BTN_COMPRAR" OnClick="btnComprar_Click" runat="server" class="btn btn-success" Text="COMPRAR"></asp:Button>
+                    </div>
                 </div>
             </div>
             <br />
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style12">
-                        <asp:Image Style="margin-left: 80px" ID="IMG_PORTADA" runat="server" Width="250px" />
+                        <asp:Image Style="margin-left: 80px; border-radius: 10px;" ID="IMG_PORTADA" runat="server" Width="250px" />
                         <br />
                         <table class="auto-style1">
                             <tr>
-                                <div style="width:250px;display:flex;flex-direction:row;justify-content:space-around;align-content:center;margin-left:100px;margin-top:20px">
-                                    <div style="display:flex;flex-direction:column;justify-content:center;align-items:center">
-                                        <asp:Image style="height:80px;width:80px;" ImageUrl="/Imagenes/Pagina/logo-duracion.png" ID="Image3" runat="server" Height="29px" />
-                                        <asp:Label style="font-size:30px" ID="LBLduracion" runat="server"></asp:Label>
+                                <div style="width: 250px; display: flex; flex-direction: row; justify-content: space-around; align-content: center; margin-left: 100px; margin-top: 20px">
+                                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+                                        <asp:Image Style="height: 80px; width: 80px;" ImageUrl="/Imagenes/Pagina/logo-duracion.png" ID="Image3" runat="server" Height="29px" />
+                                        <asp:Label Style="font-size: 30px" ID="LBLduracion" runat="server"></asp:Label>
                                     </div>
-                                    <div style="display:flex;flex-direction:column;justify-content:center;align-items:center">
-                                        <asp:Image style="height:80px;width:80px;" ImageUrl="/Imagenes/Pagina/logo-edad.png" ID="Image4" runat="server" Height="29px" />
-                                        <asp:Label style="font-size:30px" ID="LBLclasificacion" runat="server"></asp:Label>
+                                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+                                        <asp:Image Style="height: 80px; width: 80px;" ImageUrl="/Imagenes/Pagina/logo-edad.png" ID="Image4" runat="server" Height="29px" />
+                                        <asp:Label Style="font-size: 30px" ID="LBLclasificacion" runat="server"></asp:Label>
                                     </div>
                                 </div>
                             </tr>
@@ -124,13 +127,13 @@
                             <tr>
                                 <td class="auto-style16">&nbsp;</td>
                                 <td class="">
-                                    <div style="display: flex; flex-direction: row;height:400px">
-                                        <div style="display: flex; flex-direction: column;align-items:start;justify-content:start;text-align:justify;width:250px">
-                                            <asp:Label style="font-size:25px" ID="Label6" runat="server" Font-Bold="True" Text="Sinopsis"></asp:Label>
+                                    <div style="display: flex; flex-direction: row; height: 400px">
+                                        <div style="display: flex; flex-direction: column; align-items: start; justify-content: start; text-align: justify; width: 250px">
+                                            <asp:Label Style="font-size: 25px" ID="Label6" runat="server" Font-Bold="True" Text="Sinopsis"></asp:Label>
                                             <asp:Label ID="LBLSinopsis" runat="server"></asp:Label>
                                         </div>
-                                        <div style="display: flex; flex-direction: column; align-items: start; margin-left: 30px; justify-content: start; text-align: start; width:250px">
-                                            <asp:Label style="font-size:25px" ID="Label7" runat="server" Font-Bold="True" Font-Italic="False" Text="Datos técnicos"></asp:Label>
+                                        <div style="display: flex; flex-direction: column; align-items: start; margin-left: 30px; justify-content: start; text-align: start; width: 250px">
+                                            <asp:Label Style="font-size: 25px" ID="Label7" runat="server" Font-Bold="True" Font-Italic="False" Text="Datos técnicos"></asp:Label>
                                             <div>
                                                 <label>Titulo: </label>
                                                 <asp:Label ID="LBL_Titulo_Tecnico" runat="server"></asp:Label>

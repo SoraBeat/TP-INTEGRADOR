@@ -43,7 +43,7 @@ namespace DAO
         }
         public DataTable getTablaFuncionPorID2(string idPelicula,string idComplejo, string Formato, string Idioma, string Fecha,string Horario)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID] FROM Funciones WHERE Estado_F = 1 AND ID_Pelicula_F = '" + idPelicula + "' AND ID_Complejo_F ='" + idComplejo + "'AND Formato_F = '" + Formato + "' AND Idioma_F = '" + Idioma + "' AND Fecha_F = '" + Fecha + "' AND Horario_F = '" + Horario + "'");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SET LANGUAGE Spanish SELECT ID_Funcion_F AS [ID] FROM Funciones WHERE Estado_F = 1 AND ID_Pelicula_F = '" + idPelicula + "' AND ID_Complejo_F ='" + idComplejo + "'AND Formato_F = '" + Formato + "' AND Idioma_F = '" + Idioma + "' AND Fecha_F = '" + Fecha + "' AND Horario_F = '" + Horario + "'");
             return tabla;
         }
 
