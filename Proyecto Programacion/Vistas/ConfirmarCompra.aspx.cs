@@ -24,6 +24,7 @@ namespace Vistas
         private static string FECHA;
         private static string HORARIO;
         private static string Costo;
+        private static int AsientosDisponibles;
 
 
         public static string idPelicula { get => IDpelicula; set => IDpelicula = value; }
@@ -34,6 +35,7 @@ namespace Vistas
         public static string horario { get => HORARIO; set => HORARIO = value; }
         public static string IDfuncion1 { get => IDfuncion; set => IDfuncion = value; }
         public static string Costo1 { get => Costo; set => Costo = value; }
+        public static int AsientosDisponibles1 { get => AsientosDisponibles; set => AsientosDisponibles = value; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -45,8 +47,8 @@ namespace Vistas
                 DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion1);
                 CargarDatosPagina();
                 cargarListView();
+                CargarAsientosDisponibles();
 
-          
 
 
 
@@ -68,7 +70,13 @@ namespace Vistas
             ddlUbicacion.DataBind();
             ddlUbicacion.Items.Insert(0, new ListItem("Seleccione Un Asiento", "0"));
         }*/
-
+        private void CargarAsientosDisponibles()
+        {
+            DataTable tabla = Asi.getListaAsientosDisponibles(IDfuncion);
+            DataRow fila = tabla.Rows[0];
+            AsientosDisponibles1 = (int)fila["AsientosDisponibles"];
+            RV_CANTIDAD.MaximumValue = AsientosDisponibles1.ToString();
+        }
         public void desloguear(object sender, EventArgs e)
         {
             Session["DATOSUSUARIO"] = null;
@@ -117,27 +125,27 @@ namespace Vistas
         {
             DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion);
             DataRow row = tabla.Rows[0];
-            idPelicula=Convert.ToString(row["IDPELICULA"]);
+            idPelicula = Convert.ToString(row["IDPELICULA"]);
             CargarDatosPelicula();
-        
-           idcomplejo= Convert.ToString(row["IDCOMPLEJO"]);
+
+            idcomplejo = Convert.ToString(row["IDCOMPLEJO"]);
             CargarDDLcomplejo();
-      
-            lblFechayhora.Text = "FECHA : "+Convert.ToString(row["FECHA"]) + " Horario "+ Convert.ToString(row["HORARIO"]);
+
+            lblFechayhora.Text = "FECHA : " + Convert.ToString(row["FECHA"]) + " Horario " + Convert.ToString(row["HORARIO"]);
 
             lblIdioma.Text = Convert.ToString(row["IDIOMA"]);
             lblCosto.Text = Convert.ToString(row["PRECIO"]);
-            
+
         }
 
         public void CargarDatosPelicula()
         {
-        
+
 
             DataTable tabla = Pel.getListaPeliculasPorID(idPelicula);
             DataRow row = tabla.Rows[0];
-            lblNombrePelicula.Text  = Convert.ToString(row["Titulo"]).ToUpper();
-          
+            lblNombrePelicula.Text = Convert.ToString(row["Titulo"]).ToUpper();
+
             ImageButton1.ImageUrl = Convert.ToString(row["Portada"]);
         }
 
@@ -146,21 +154,20 @@ namespace Vistas
 
             DataTable tabla = Com.getListaComplejosPorID(idcomplejo);
             DataRow row = tabla.Rows[0];
-           
-            lblComplejo.Text ="Complejo  :"+ Convert.ToString(row["NOMBRE"]);
-            lblDireccion.Text ="Direccion :"+ Convert.ToString(row["DIRECCION"]);
+
+            lblComplejo.Text = "Complejo  :" + Convert.ToString(row["NOMBRE"]);
+            lblDireccion.Text = "Direccion :" + Convert.ToString(row["DIRECCION"]);
 
         }
 
         protected void txtCantidad_TextChanged(object sender, EventArgs e)
         {
-            if (Page.IsValid)
+            if(IsValid)
             {
                 DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion);
                 DataRow row = tabla.Rows[0];
                 lblTotal.Text = (Convert.ToInt32(txtCantidad.Text) * Convert.ToInt32(row["PRECIO"])).ToString();
             }
-
         }
 
         private void cargarListView()
@@ -168,18 +175,6 @@ namespace Vistas
             DataTable tabla = Asi.getListaAsientosPorFuncion(IDfuncion);
             lvAsientos.DataSource = tabla;
             lvAsientos.DataBind();
-        }
-
-        protected void cv_txtCantidad_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            if((Convert.ToInt32(args.Value) < 7) && (Convert.ToInt32(args.Value) > 0))
-            {
-                args.IsValid = true;
-            }
-            else
-            {
-                args.IsValid = false;
-            }
         }
     }
 

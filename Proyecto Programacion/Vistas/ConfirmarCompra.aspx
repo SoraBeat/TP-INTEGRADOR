@@ -95,8 +95,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style26">
-                        <asp:CustomValidator ID="cv_txtCantidad" runat="server" ClientValidationFunction="txtCantidad_TextChanged" ControlToValidate="txtCantidad" OnServerValidate="cv_txtCantidad_ServerValidate" ValidationGroup="Grupo1"></asp:CustomValidator>
-                        <asp:TextBox ID="txtCantidad" runat="server" AutoPostBack="True" OnTextChanged="txtCantidad_TextChanged" TextMode="Number" ValidationGroup="Grupo1"></asp:TextBox>
+                        <asp:TextBox ID="txtCantidad" runat="server" AutoPostBack="True" OnTextChanged="txtCantidad_TextChanged" TextMode="Number" ValidationGroup="Grupo1" CausesValidation="True" ValidateRequestMode="Enabled"></asp:TextBox>
+                        <asp:RangeValidator ID="RV_CANTIDAD" runat="server" ControlToValidate="txtCantidad" MaximumValue="7" MinimumValue="1" Type="Integer" ValidationGroup="Grupo1">*</asp:RangeValidator>
                     </td>
                     <td class="auto-style3">
                         <asp:Label ID="lblTotal" runat="server"></asp:Label>
