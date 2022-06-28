@@ -16,6 +16,7 @@ namespace Vistas
         NegocioComplejos Com = new NegocioComplejos();
         NegocioFunciones Fun = new NegocioFunciones();
         NegocioAsientos Asi = new NegocioAsientos();
+        NegocioAsientosComprados AsiC = new NegocioAsientosComprados();
         private static string IDfuncion;
         private static string IDpelicula;
         private static string IDcomplejo;
@@ -48,6 +49,7 @@ namespace Vistas
                 CargarDatosPagina();
                 cargarListView();
                 CargarAsientosDisponibles();
+                
 
 
 
@@ -77,9 +79,20 @@ namespace Vistas
             AsientosDisponibles1 = (int)fila["AsientosDisponibles"];
             RV_CANTIDAD.MaximumValue = AsientosDisponibles1.ToString();
         }
-        private void chequearBoton(object sender,EventArgs e)
+        public void chequearBoton(object sender,CommandEventArgs e)
         {
-
+            if (e.CommandName == "chequear")
+            {
+                DataTable existeAsiento = AsiC.getTablaExisteAsiento(e.CommandArgument.ToString(), IDfuncion1);
+                DataRow asientos = existeAsiento.Rows[0];
+                bool existe = Convert.ToBoolean(asientos["EXISTE"]);
+                Button button = (Button)sender;
+                if (existe == true)
+                {
+                    button.Enabled = false;
+                    button.ForeColor = System.Drawing.Color.Red;
+                }
+            }
         }
         public void desloguear(object sender, EventArgs e)
         {

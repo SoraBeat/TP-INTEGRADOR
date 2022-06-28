@@ -54,7 +54,7 @@ namespace DAO
         }
         public DataTable getTablaExisteAsiento(string idAsiento, string idFuncion)
         {
-            DataTable tabla = ds.ObtenerTabla("AsientosComprados", "IF EXISTS (SELECT Estado_AC FROM AsientosComprados WHERE ID_Asiento_AC='"+ idAsiento + "' AND ID_Funcion_AC='" + idFuncion + "') BEGIN SELECT 1 AS EXISTE; END ELSE BEGIN SELECT 0 AS EXISTE; END GO");
+            DataTable tabla = ds.ObtenerTabla("AsientosComprados", "IF EXISTS (SELECT Estado_AC FROM AsientosComprados WHERE ID_Asiento_AC='"+ idAsiento + "' AND ID_Funcion_AC='" + idFuncion + "') BEGIN SELECT 1 AS EXISTE; END ELSE BEGIN SELECT 0 AS EXISTE; END");
             return tabla;
         }
     }
