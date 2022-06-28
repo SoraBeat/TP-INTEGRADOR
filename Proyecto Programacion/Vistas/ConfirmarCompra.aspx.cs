@@ -28,7 +28,7 @@ namespace Vistas
         private static int AsientosDisponibles;
         private static bool[] seleccionarAsientos;
         private static int cantidadDeAsientosSeleccionados;
-        private static bool recagarPagina = false;
+        private static bool recargarPagina = false;
         private static string seleccionAnterior;
 
 
@@ -43,7 +43,7 @@ namespace Vistas
         public static int AsientosDisponibles1 { get => AsientosDisponibles; set => AsientosDisponibles = value; }
         public static bool[] SeleccionarAsientos { get => seleccionarAsientos; set => seleccionarAsientos = value; }
         public static int CantidadDeAsientosSeleccionados { get => cantidadDeAsientosSeleccionados; set => cantidadDeAsientosSeleccionados = value; }
-        public static bool RecagarPagina { get => recagarPagina; set => recagarPagina = value; }
+        public static bool RecargarPagina { get => recargarPagina; set => recargarPagina = value; }
         public static string SeleccionAnterior { get => seleccionAnterior; set => seleccionAnterior = value; }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -51,9 +51,11 @@ namespace Vistas
 
             if (IsPostBack == false)
             {
+                
+                seleccionAnterior = "1";
                 lvAsientos.Visible = false;
                 IDfuncion1 = Request.QueryString["ID"];
-                if (Request.QueryString["cant"]!=null)
+                if (Request.QueryString["cant"] != null && Request.QueryString["cant"] != "")
                 {
                     seleccionAnterior = Request.QueryString["cant"];
                 }
@@ -62,7 +64,9 @@ namespace Vistas
                 CargarDatosPagina();
                 cargarListView();
                 CargarAsientosDisponibles();
-                
+                seleccionarAsientos = new bool[lvAsientos.Items.Count];
+                cantidadDeAsientosSeleccionados = 0;
+
 
 
 
@@ -120,13 +124,19 @@ namespace Vistas
                     }
                     else
                     {
-
+                        int asientosSeleccionados = 0;
                         for (int i = 0; i < seleccionarAsientos.Length - 1; i++)
                         {
-
+                            if (seleccionarAsientos[i] == true)
+                            {
+                                asientosSeleccionados++;
+                            }
                         }
-                        seleccionarAsientos[Convert.ToInt32(e.CommandArgument) - 1] = true;
-                        button.ForeColor = System.Drawing.Color.Green;
+                        if (asientosSeleccionados < Convert.ToInt32(txtCantidad.Text))
+                        {
+                            seleccionarAsientos[Convert.ToInt32(e.CommandArgument) - 1] = true;
+                            button.ForeColor = System.Drawing.Color.Green;
+                        }
                     }
                 }
             }
@@ -204,18 +214,20 @@ namespace Vistas
 
             lblIdioma.Text = Convert.ToString(row["IDIOMA"]);
             lblCosto.Text = Convert.ToString(row["PRECIO"]);
-            if (seleccionAnterior != null && seleccionAnterior!="")
+            if (seleccionAnterior != null && seleccionAnterior != "")
             {
                 txtCantidad.Text = seleccionAnterior;
                 lvAsientos.Visible = true;
                 lblTotal.Text = (Convert.ToInt32(txtCantidad.Text) * Convert.ToInt32(row["PRECIO"])).ToString();
             }
+            else
+            {
+                lvAsientos.Visible = false;
+            }
         }
 
         public void CargarDatosPelicula()
         {
-
-
             DataTable tabla = Pel.getListaPeliculasPorID(idPelicula);
             DataRow row = tabla.Rows[0];
             lblNombrePelicula.Text = Convert.ToString(row["Titulo"]).ToUpper();
@@ -225,42 +237,70 @@ namespace Vistas
 
         private void CargarDDLcomplejo()
         {
-
             DataTable tabla = Com.getListaComplejosPorID(idcomplejo);
             DataRow row = tabla.Rows[0];
 
             lblComplejo.Text = "Complejo  :" + Convert.ToString(row["NOMBRE"]);
             lblDireccion.Text = "Direccion :" + Convert.ToString(row["DIRECCION"]);
-
         }
 
         protected void txtCantidad_TextChanged(object sender, EventArgs e)
         {
-            if (IsValid)
+            if (recargarPagina == false)
             {
-                if (recagarPagina == false)
+                if (IsValid)
                 {
-                    recagarPagina = true;
-                    lvAsientos.Visible = true;
+                    recargarPagina = true;
                     DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion);
                     DataRow row = tabla.Rows[0];
                     lblTotal.Text = (Convert.ToInt32(txtCantidad.Text) * Convert.ToInt32(row["PRECIO"])).ToString();
                     seleccionarAsientos = new bool[lvAsientos.Items.Count];
                     cantidadDeAsientosSeleccionados = 0;
+                    Response.Redirect("ConfirmarCompra.aspx?id=" + IDfuncion1 + "&cant=" + txtCantidad.Text);
                 }
-                else
-                {
-                    Response.Redirect("ConfirmarCompra.aspx?id=" + IDfuncion1+"&cant="+txtCantidad.Text);
-                    recagarPagina = false;
-                }
+            }
+            else
+            {
+                recargarPagina = false;
+                seleccionarAsientos = new bool[lvAsientos.Items.Count];
+                cantidadDeAsientosSeleccionados = 0;
+                Response.Redirect("ConfirmarCompra.aspx?id=" + IDfuncion1 + "&cant=" + txtCantidad.Text);
             }
         }
 
+        public void validarAlIniciar(object sender, EventArgs e)
+        {
+            this.Validate();
+        }
         private void cargarListView()
         {
             DataTable tabla = Asi.getListaAsientosPorFuncion(IDfuncion);
             lvAsientos.DataSource = tabla;
             lvAsientos.DataBind();
+        }
+
+        protected void CVCantidad_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            try
+            {
+                if (Convert.ToInt32(txtCantidad.Text)>0 && Convert.ToInt32(txtCantidad.Text) <= AsientosDisponibles1)
+                {
+                    lvAsientos.Visible = true;
+                    args.IsValid = true;
+                }
+                else
+                {
+                    lvAsientos.Visible = false;
+                    lblTotal.Text = "";
+                    args.IsValid = false;
+                }
+            }
+            catch(Exception ex)
+            {
+                lvAsientos.Visible = false;
+                lblTotal.Text = "";
+                args.IsValid = false;
+            }
         }
     }
 
