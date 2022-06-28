@@ -151,7 +151,7 @@
                             <ItemTemplate>
                                 <td runat="server" style="">ID_Asiento_A:
                                     <asp:Label ID="ID_Asiento_ALabel" runat="server" Text='<%# Eval("ID_Asiento_A") %>' />
-                                    <asp:Button runat="server" id="ButtonAsiento" OnCommand="chequearBoton" CommandName="chequear" CommandArgument='<%# Eval("ID_Asiento_A") %>' text='<%# Eval("ID_Asiento_A") %>'></asp:Button>
+                                    <asp:Button OnLoad="secargaLosBotones" runat="server" id="ButtonAsiento" OnCommand="chequearBoton" CommandName="chequear" CommandArgument='<%# Eval("ID_Asiento_A") %>' text='<%# Eval("ID_Asiento_A") %>'></asp:Button>
                                     <br />
                                 </td>
                             </ItemTemplate>

@@ -72,6 +72,11 @@ namespace Vistas
             ddlUbicacion.DataBind();
             ddlUbicacion.Items.Insert(0, new ListItem("Seleccione Un Asiento", "0"));
         }*/
+        public void secargaLosBotones(object sender, EventArgs e)
+        {
+            Button boton = (Button)sender;
+            chequearBoton2(boton, boton.CommandName,boton.CommandArgument);
+        }
         private void CargarAsientosDisponibles()
         {
             DataTable tabla = Asi.getListaAsientosDisponibles(IDfuncion);
@@ -84,6 +89,21 @@ namespace Vistas
             if (e.CommandName == "chequear")
             {
                 DataTable existeAsiento = AsiC.getTablaExisteAsiento(e.CommandArgument.ToString(), IDfuncion1);
+                DataRow asientos = existeAsiento.Rows[0];
+                bool existe = Convert.ToBoolean(asientos["EXISTE"]);
+                Button button = (Button)sender;
+                if (existe == true)
+                {
+                    button.Enabled = false;
+                    button.ForeColor = System.Drawing.Color.Red;
+                }
+            }
+        }
+        public void chequearBoton2(Button sender, string CommandName, string CommandArgument)
+        {
+            if (CommandName == "chequear")
+            {
+                DataTable existeAsiento = AsiC.getTablaExisteAsiento(CommandArgument, IDfuncion1);
                 DataRow asientos = existeAsiento.Rows[0];
                 bool existe = Convert.ToBoolean(asientos["EXISTE"]);
                 Button button = (Button)sender;
