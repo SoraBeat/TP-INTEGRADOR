@@ -26,6 +26,7 @@ namespace Vistas
         private static string HORARIO;
         private static string Costo;
         private static int AsientosDisponibles;
+        private static bool[] seleccionarAsientos;
 
 
         public static string idPelicula { get => IDpelicula; set => IDpelicula = value; }
@@ -37,6 +38,7 @@ namespace Vistas
         public static string IDfuncion1 { get => IDfuncion; set => IDfuncion = value; }
         public static string Costo1 { get => Costo; set => Costo = value; }
         public static int AsientosDisponibles1 { get => AsientosDisponibles; set => AsientosDisponibles = value; }
+        public static bool[] SeleccionarAsientos { get => seleccionarAsientos; set => seleccionarAsientos = value; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -49,7 +51,8 @@ namespace Vistas
                 CargarDatosPagina();
                 cargarListView();
                 CargarAsientosDisponibles();
-                
+                lvAsientos.Visible = false;
+
 
 
 
@@ -75,7 +78,7 @@ namespace Vistas
         public void secargaLosBotones(object sender, EventArgs e)
         {
             Button boton = (Button)sender;
-            chequearBoton2(boton, boton.CommandName,boton.CommandArgument);
+            chequearBoton2(boton, boton.CommandName, boton.CommandArgument);
         }
         private void CargarAsientosDisponibles()
         {
@@ -84,7 +87,7 @@ namespace Vistas
             AsientosDisponibles1 = (int)fila["AsientosDisponibles"];
             RV_CANTIDAD.MaximumValue = AsientosDisponibles1.ToString();
         }
-        public void chequearBoton(object sender,CommandEventArgs e)
+        public void chequearBoton(object sender, CommandEventArgs e)
         {
             if (e.CommandName == "chequear")
             {
@@ -96,6 +99,19 @@ namespace Vistas
                 {
                     button.Enabled = false;
                     button.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    if (seleccionarAsientos[Convert.ToInt32(e.CommandArgument)-1]==true)
+                    {
+                        seleccionarAsientos[Convert.ToInt32(e.CommandArgument) - 1] = false;
+                        button.ForeColor=System.Drawing.Color.Black;
+                    }
+                    else
+                    {
+                        seleccionarAsientos[Convert.ToInt32(e.CommandArgument) - 1] = true;
+                        button.ForeColor = System.Drawing.Color.Green;
+                    }
                 }
             }
         }
@@ -199,11 +215,13 @@ namespace Vistas
 
         protected void txtCantidad_TextChanged(object sender, EventArgs e)
         {
-            if(IsValid)
+            if (IsValid)
             {
+                lvAsientos.Visible = true;
                 DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion);
                 DataRow row = tabla.Rows[0];
                 lblTotal.Text = (Convert.ToInt32(txtCantidad.Text) * Convert.ToInt32(row["PRECIO"])).ToString();
+                seleccionarAsientos = new bool[lvAsientos.Items.Count];
             }
         }
 
