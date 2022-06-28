@@ -92,7 +92,7 @@ namespace Vistas
             DDLfecha.DataTextField = "FECHA";
             DDLfecha.DataValueField = "FECHA";
             DDLfecha.DataBind();
-            DDLfecha.Items.Insert(0, new ListItem("Seleccione Una Fecha", "%"));
+            DDLfecha.Items.Insert(0, new ListItem("Seleccione Una Fecha", "00/00/0000"));
          }
 
         private void CargarDDLHorario()
@@ -103,7 +103,7 @@ namespace Vistas
             DDLhorario.DataTextField = "HORARIO";
             DDLhorario.DataValueField = "HORARIO";
             DDLhorario.DataBind();
-            DDLhorario.Items.Insert(0, new ListItem("Seleccione Un Horario", "%"));
+            DDLhorario.Items.Insert(0, new ListItem("Seleccione Un Horario", "00:00:00"));
         }
 
         protected void DDLcomplejo_SelectedIndexChanged(object sender, EventArgs e)
@@ -192,30 +192,48 @@ namespace Vistas
 
         protected void DDLfecha_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DDLhorario.Visible = true;
-            LBL_HORARIO.Visible = true;
+            if(DDLfecha.SelectedIndex == 0)
+            {
+            DDLhorario.Visible = false;
+            LBL_HORARIO.Visible = false;
             BTN_COMPRAR.Visible = false;
-            fecha = DDLfecha.SelectedValue + "/"+DateTime.Now.Year.ToString();
-            CargarDDLHorario();
+
+            }
+            else
+            {
+                DDLhorario.Visible = true;
+                LBL_HORARIO.Visible = true;
+                BTN_COMPRAR.Visible = false;
+                fecha = DDLfecha.SelectedValue + "/"+DateTime.Now.Year.ToString();
+                CargarDDLHorario();
+            }
         }
 
         protected void DDLhorario_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BTN_COMPRAR.Visible = true;
-            if (Session["DATOSUSUARIO"] != null)
+            if(DDLhorario.SelectedIndex == 0)
             {
-                BTN_COMPRAR.BackColor =System.Drawing.Color.DarkGreen;
+
             }
             else
             {
-                BTN_COMPRAR.BackColor = System.Drawing.Color.Tomato;
+                horario = DDLhorario.SelectedValue + ":00";
+                BTN_COMPRAR.Visible = true;
+                if (Session["DATOSUSUARIO"] != null)
+                {
+                    BTN_COMPRAR.BackColor =System.Drawing.Color.DarkGreen;
+                }
+                else
+                {
+                    BTN_COMPRAR.BackColor = System.Drawing.Color.Tomato;
+                }
+
             }
         }
         protected void btnComprar_Click(object sender, EventArgs e)
         {
             if (Session["DATOSUSUARIO"]!=null)
             {
-                horario = DDLhorario.SelectedValue;
                 string IDfuncion;
                 DataTable tabla = Fun.getTablaPorID2(idPelicula, idcomplejo, formato, idioma, fecha, horario);
                 DataRow row = tabla.Rows[0];

@@ -39,6 +39,10 @@
             width: 560px;
         }
 
+        .auto-style4 {
+            height: 20px;
+        }
+
         </style>
 </head>
 <body>
@@ -91,7 +95,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style26">
-                        <asp:TextBox ID="txtCantidad" runat="server" AutoPostBack="True" OnTextChanged="txtCantidad_TextChanged"></asp:TextBox>
+                        <asp:CustomValidator ID="cv_txtCantidad" runat="server" ClientValidationFunction="txtCantidad_TextChanged" ControlToValidate="txtCantidad" OnServerValidate="cv_txtCantidad_ServerValidate" ValidationGroup="Grupo1"></asp:CustomValidator>
+                        <asp:TextBox ID="txtCantidad" runat="server" AutoPostBack="True" OnTextChanged="txtCantidad_TextChanged" TextMode="Number" ValidationGroup="Grupo1"></asp:TextBox>
                     </td>
                     <td class="auto-style3">
                         <asp:Label ID="lblTotal" runat="server"></asp:Label>
@@ -99,7 +104,75 @@
                     <td class="auto-style2">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style23">&nbsp;</td>
+                    <td class="auto-style23">
+               
+                        <asp:ListView ID="lvAsientos" runat="server" GroupItemCount="3">
+                            <%--<AlternatingItemTemplate>
+                                <td runat="server" style="">ID_Asiento_A:
+                                    <asp:Label ID="ID_Asiento_ALabel" runat="server" Text='<%# Eval("ID_Asiento_A") %>' />
+                                    <br /></td>
+                            </AlternatingItemTemplate>--%>
+                            <EditItemTemplate>
+                                <td runat="server" style="">ID_Asiento_A:
+                                    <asp:TextBox ID="ID_Asiento_ATextBox" runat="server" Text='<%# Bind("ID_Asiento_A") %>' />
+                                    <br />
+                                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
+                                    <br />
+                                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancelar" />
+                                    <br /></td>
+                            </EditItemTemplate>
+                            <EmptyDataTemplate>
+                                <table runat="server" style="">
+                                    <tr>
+                                        <td>No se han devuelto datos.</td>
+                                    </tr>
+                                </table>
+                            </EmptyDataTemplate>
+                            <EmptyItemTemplate>
+<td runat="server" />
+                            </EmptyItemTemplate>
+                            <GroupTemplate>
+                                <tr id="itemPlaceholderContainer" runat="server">
+                                    <td id="itemPlaceholder" runat="server"></td>
+                                </tr>
+                            </GroupTemplate>
+                            <InsertItemTemplate>
+                                <td runat="server" style="">ID_Asiento_A:
+                                    <asp:TextBox ID="ID_Asiento_ATextBox" runat="server" Text='<%# Bind("ID_Asiento_A") %>' />
+                                    <br />
+                                    <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
+                                    <br />
+                                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
+                                    <br /></td>
+                            </InsertItemTemplate>
+                            <ItemTemplate>
+                                <td runat="server" style="">ID_Asiento_A:
+                                    <asp:Label ID="ID_Asiento_ALabel" runat="server" Text='<%# Eval("ID_Asiento_A") %>' />
+                                    <button runat="server" id="ButtonAsiento" text='<%# Eval("ID_Asiento_A") %>'> </button>  
+                                    <br /></td>
+                            </ItemTemplate>
+                            <LayoutTemplate>
+                                <table runat="server">
+                                    <tr runat="server">
+                                        <td runat="server">
+                                            <table id="groupPlaceholderContainer" runat="server" border="0" style="">
+                                                <tr id="groupPlaceholder" runat="server">
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr runat="server">
+                                        <td runat="server" style=""></td>
+                                    </tr>
+                                </table>
+                            </LayoutTemplate>
+                            <SelectedItemTemplate>
+                                <td runat="server" style="">ID_Asiento_A:
+                                    <asp:Label ID="ID_Asiento_ALabel" runat="server" Text='<%# Eval("ID_Asiento_A") %>' />
+                                    <br /></td>
+                            </SelectedItemTemplate>
+                        </asp:ListView>
+                    </td>
                     <td class="auto-style3">
                         &nbsp;</td>
                     <td class="auto-style2">
@@ -142,7 +215,9 @@
                                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style18">
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DBCineConnectionString %>" SelectCommand="SELECT [ID_Asiento_A] FROM [Asientos]"></asp:SqlDataSource>
+                    </td>
                     <td class="auto-style3">
                         &nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>

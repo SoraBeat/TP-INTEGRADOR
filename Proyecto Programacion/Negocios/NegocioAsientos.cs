@@ -36,6 +36,16 @@ namespace Negocios
             DAOAsientos dao = new DAOAsientos();
             return dao.getTablaAsientosPorEstado(estado);
         }
+        public DataTable getListaAsientosPorFuncion(string estado)
+        {
+            DAOAsientos dao = new DAOAsientos();
+            return dao.getTablaAsientosPorFuncion(estado);
+        }
+        public DataTable getListaAsientosDisponibles(string estado)
+        {
+            DAOAsientos dao = new DAOAsientos();
+            return dao.getTablaAsientosDisponibles(estado);
+        }
 
         public Asientos get(string id)
         {

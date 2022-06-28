@@ -88,7 +88,7 @@ namespace DAO
         }
         public DataTable getTablaFuncionPorFecha(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Fecha_F LIKE '%" + campo + "%' ORDER BY ABS(Fecha_F)");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SET LANGUAGE Spanish SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Fecha_F LIKE '%" + campo + "%' ORDER BY ABS(Fecha_F)");
             return tabla;
         }
         public DataTable getTablaFuncionPorFecha2(string idPelicula, string idcomplejo, string formato, string idioma)
@@ -98,7 +98,7 @@ namespace DAO
         }
         public DataTable getTablaFuncionPorHorario(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Horario_F LIKE '%" + campo + "%' ORDER BY ABS(Horario_F)");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SET LANGUAGE Spanish SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Horario_F LIKE '%" + campo + "%' ORDER BY ABS(Horario_F)");
             return tabla;
         }
         public DataTable getTablaFuncionPorHorario2(string idPelicula, string idcomplejo, string formato, string idioma, string fecha)

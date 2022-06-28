@@ -50,6 +50,17 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [IDASIENTO], ID_Sala_A AS [IDSALA], ID_Complejo_A AS [IDCOMPLEJO], Estado_A AS [ESTADO] FROM Asientos WHERE Estado_A LIKE '%" + campo + "%' ORDER BY ABS(ID_Asiento_A)");
             return tabla;
         }
+        public DataTable getTablaAsientosPorFuncion(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT id_Asiento_A FROM Asientos INNER JOIN salas ON Asientos.ID_Sala_A = Salas.ID_Sala_S AND Asientos.ID_Complejo_A = Salas.ID_Complejo_S INNER JOIN Funciones ON salas.ID_Sala_S = Funciones.ID_Sala_F AND Salas.ID_Complejo_S = Funciones.ID_Complejo_F WHERE ID_Funcion_F ='" + campo + "' AND Estado_A = '1'");
+            return tabla;
+        }
+        public DataTable getTablaAsientosDisponibles(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Asientos", "Declare @asientosComprados INT = (SELECT count (ID_Asiento_AC) FROM AsientosComprados WHERE ID_Funcion_AC ='" + campo + "') Declare @AsientosTotales INT = (SELECT  Total_Asientos_S FROM Salas INNER JOIN Funciones ON Salas.ID_Sala_S = Funciones.ID_Sala_F AND Salas.ID_Complejo_S = Funciones.ID_Complejo_F WHERE ID_Funcion_F = '" + campo + "') Select SUM(@AsientosTotales - @asientosComprados) AS [AsientosDisponibles]"
+);
+            return tabla;
+        }
         public int EliminarAsiento(Asientos asi)
         {
             SqlCommand comando = new SqlCommand();

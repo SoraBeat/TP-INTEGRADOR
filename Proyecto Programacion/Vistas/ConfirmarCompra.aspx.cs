@@ -15,6 +15,7 @@ namespace Vistas
         NegocioPeliculas Pel = new NegocioPeliculas();
         NegocioComplejos Com = new NegocioComplejos();
         NegocioFunciones Fun = new NegocioFunciones();
+        NegocioAsientos Asi = new NegocioAsientos();
         private static string IDfuncion;
         private static string IDpelicula;
         private static string IDcomplejo;
@@ -43,7 +44,9 @@ namespace Vistas
                 IDfuncion1 = Request.QueryString["ID"];
                 DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion1);
                 CargarDatosPagina();
+                cargarListView();
 
+          
 
 
 
@@ -151,9 +154,32 @@ namespace Vistas
 
         protected void txtCantidad_TextChanged(object sender, EventArgs e)
         {
-            DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion);
-            DataRow row = tabla.Rows[0];
-            lblTotal.Text = (Convert.ToInt32(txtCantidad.Text) * Convert.ToInt32(row["PRECIO"])).ToString();
+            if (Page.IsValid)
+            {
+                DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion);
+                DataRow row = tabla.Rows[0];
+                lblTotal.Text = (Convert.ToInt32(txtCantidad.Text) * Convert.ToInt32(row["PRECIO"])).ToString();
+            }
+
+        }
+
+        private void cargarListView()
+        {
+            DataTable tabla = Asi.getListaAsientosPorFuncion(IDfuncion);
+            lvAsientos.DataSource = tabla;
+            lvAsientos.DataBind();
+        }
+
+        protected void cv_txtCantidad_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if((Convert.ToInt32(args.Value) < 7) && (Convert.ToInt32(args.Value) > 0))
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                args.IsValid = false;
+            }
         }
     }
 
