@@ -77,6 +77,10 @@ namespace Vistas
             AsientosDisponibles1 = (int)fila["AsientosDisponibles"];
             RV_CANTIDAD.MaximumValue = AsientosDisponibles1.ToString();
         }
+        private void chequearBoton(object sender,EventArgs e)
+        {
+
+        }
         public void desloguear(object sender, EventArgs e)
         {
             Session["DATOSUSUARIO"] = null;

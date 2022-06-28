@@ -32,9 +32,11 @@
         .auto-style1 {
             width: 498px;
         }
+
         .auto-style2 {
             width: 737px;
         }
+
         .auto-style3 {
             width: 560px;
         }
@@ -42,8 +44,7 @@
         .auto-style4 {
             height: 20px;
         }
-
-        </style>
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -76,8 +77,8 @@
             <br />
             <br />
             <br />
-          
-    
+
+
             <br />
             <br />
             <br />
@@ -86,7 +87,7 @@
                 <tr>
                     <td class="auto-style19">
 
-                         <img src="/Imagenes/Pagina/ticket.png" style="width: 120px; height: 70px;" /></td>
+                        <img src="/Imagenes/Pagina/ticket.png" style="width: 120px; height: 70px;" /></td>
                     <td class="auto-style3">
                         <asp:Label ID="lblCosto" runat="server"></asp:Label>
                     </td>
@@ -105,7 +106,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style23">
-               
+
                         <asp:ListView ID="lvAsientos" runat="server" GroupItemCount="3">
                             <%--<AlternatingItemTemplate>
                                 <td runat="server" style="">ID_Asiento_A:
@@ -119,7 +120,8 @@
                                     <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
                                     <br />
                                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancelar" />
-                                    <br /></td>
+                                    <br />
+                                </td>
                             </EditItemTemplate>
                             <EmptyDataTemplate>
                                 <table runat="server" style="">
@@ -129,7 +131,7 @@
                                 </table>
                             </EmptyDataTemplate>
                             <EmptyItemTemplate>
-<td runat="server" />
+                                <td runat="server" />
                             </EmptyItemTemplate>
                             <GroupTemplate>
                                 <tr id="itemPlaceholderContainer" runat="server">
@@ -143,13 +145,15 @@
                                     <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
                                     <br />
                                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
-                                    <br /></td>
+                                    <br />
+                                </td>
                             </InsertItemTemplate>
                             <ItemTemplate>
                                 <td runat="server" style="">ID_Asiento_A:
                                     <asp:Label ID="ID_Asiento_ALabel" runat="server" Text='<%# Eval("ID_Asiento_A") %>' />
-                                    <button runat="server" id="ButtonAsiento" text='<%# Eval("ID_Asiento_A") %>'> </button>  
-                                    <br /></td>
+                                    <button runat="server" id="ButtonAsiento" onload="chequearBoton" text='<%# Eval("ID_Asiento_A") %>'></button>
+                                    <br />
+                                </td>
                             </ItemTemplate>
                             <LayoutTemplate>
                                 <table runat="server">
@@ -169,57 +173,58 @@
                             <SelectedItemTemplate>
                                 <td runat="server" style="">ID_Asiento_A:
                                     <asp:Label ID="ID_Asiento_ALabel" runat="server" Text='<%# Eval("ID_Asiento_A") %>' />
-                                    <br /></td>
+                                    <br />
+                                </td>
                             </SelectedItemTemplate>
                         </asp:ListView>
                     </td>
-                    <td class="auto-style3">
-                        &nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">
 
-                         <asp:ImageButton ID="ImageButton1" runat="server" Height="240px" ImageUrl="~/Imagenes/Portadas/Doctor Strange.jpg" Width="240px" />
-                         
-                        </td>
+                        <asp:ImageButton ID="ImageButton1" runat="server" Height="240px" ImageUrl="~/Imagenes/Portadas/Doctor Strange.jpg" Width="240px" />
+
+                    </td>
                     <td class="auto-style1">
                         <table class="destacado">
-                            <td >
+                            <td>
                                 <p>
                                     <asp:Label ID="lblNombrePelicula" runat="server"></asp:Label>
                                     <asp:Label ID="lblIdioma" runat="server"></asp:Label>
                                     </br>
                                     <asp:Label ID="lblComplejo" runat="server"></asp:Label>
-                                <br>
-                                    <asp:Label ID="lblDireccion" runat="server"></asp:Label>
+                                    <br>
+                                        <asp:Label ID="lblDireccion" runat="server"></asp:Label>
                                     </br>
                                     <asp:Label ID="lblFechayhora" runat="server"></asp:Label>
-&nbsp;</p>
+                                    &nbsp;
+                                </p>
                                 <p>
                                     <br>
-                                   <br>
-                    &nbsp;</p>
+                                    <br>
+                                    &nbsp;
+                                </p>
                             </td>
 
                         </table>
 
                     </td>
-                 
+
                 </tr>
                 <tr>
                     <td class="auto-style31">&nbsp;</td>
-                    <td class="auto-style3">
-                        &nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">
                         <asp:Button ID="btnConfirmar0" runat="server" Text="Volver" OnClick="btnConfirmar_Click" Height="26px" />
                     </td>
-                    <td class="auto-style1"><asp:Button ID="btnConfirmar" runat="server" Text="Siguiente" OnClick="btnConfirmar_Click" Height="26px" />
-                                    </td>
+                    <td class="auto-style1">
+                        <asp:Button ID="btnConfirmar" runat="server" Text="Siguiente" OnClick="btnConfirmar_Click" Height="26px" />
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style18">
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DBCineConnectionString %>" SelectCommand="SELECT [ID_Asiento_A] FROM [Asientos]"></asp:SqlDataSource>
                     </td>
-                    <td class="auto-style3">
-                        &nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style1">&nbsp;</td>
                 </tr>
@@ -231,8 +236,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style19">&nbsp;</td>
-                    <td class="auto-style3">
-                        &nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style1">&nbsp;</td>
                 </tr>
