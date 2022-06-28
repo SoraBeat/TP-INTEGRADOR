@@ -215,7 +215,7 @@
                     <td class="auto-style31">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">
-                        <asp:Button ID="btnConfirmar0" runat="server" Text="Volver" OnClick="btnConfirmar_Click" Height="26px" />
+                        <asp:Button ID="btnVolver" runat="server" Text="Volver" OnClick="btnConfirmar_Click" Height="26px" />
                     </td>
                     <td class="auto-style1">
                         <asp:Button ID="btnConfirmar" runat="server" Text="Siguiente" OnClick="btnConfirmar_Click" Height="26px" />

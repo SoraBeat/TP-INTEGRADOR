@@ -48,10 +48,9 @@ namespace Vistas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (IsPostBack == false)
             {
-                
+                btnConfirmar.Enabled = false;
                 seleccionAnterior = "1";
                 lvAsientos.Visible = false;
                 IDfuncion1 = Request.QueryString["ID"];
@@ -66,30 +65,8 @@ namespace Vistas
                 CargarAsientosDisponibles();
                 seleccionarAsientos = new bool[lvAsientos.Items.Count];
                 cantidadDeAsientosSeleccionados = 0;
-
-
-
-
-
-
-                /*lblNombrePelicula.Text = "Doctor Strange en el multiverso de la locura";
-                lblFechayhora.Text = "2022-06-22";
-                lblDireccion.Text = "Hipolito Yrigoyen 213";
-                ImageButton1.ImageUrl = "~/Imagenes/Portadas/Doctor Strange.jpg";
-                */
-                //ll.Text = Request.QueryString["ID"];
-                // CargarDDL();
             }
         }
-        /*private void CargarDDL()
-        {
-            DataTable tablaComplejos = na.getListaAsientos();
-            ddlUbicacion.DataSource = tablaComplejos;
-            ddlUbicacion.DataTextField = "ID_Asiento_A";
-            ddlUbicacion.DataValueField = "ID_Asiento_A";
-            ddlUbicacion.DataBind();
-            ddlUbicacion.Items.Insert(0, new ListItem("Seleccione Un Asiento", "0"));
-        }*/
         public void secargaLosBotones(object sender, EventArgs e)
         {
             Button boton = (Button)sender;
@@ -119,6 +96,7 @@ namespace Vistas
                 {
                     if (seleccionarAsientos[Convert.ToInt32(e.CommandArgument) - 1] == true)
                     {
+                        btnConfirmar.Enabled = false;
                         seleccionarAsientos[Convert.ToInt32(e.CommandArgument) - 1] = false;
                         button.ForeColor = System.Drawing.Color.Black;
                     }
@@ -136,6 +114,14 @@ namespace Vistas
                         {
                             seleccionarAsientos[Convert.ToInt32(e.CommandArgument) - 1] = true;
                             button.ForeColor = System.Drawing.Color.Green;
+                            if (asientosSeleccionados + 1 == Convert.ToInt32(txtCantidad.Text))
+                            {
+                                btnConfirmar.Enabled = true;
+                            }
+                        }
+                        else
+                        {
+                            btnConfirmar.Enabled = true;
                         }
                     }
                 }
@@ -253,7 +239,10 @@ namespace Vistas
                     recargarPagina = true;
                     DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion);
                     DataRow row = tabla.Rows[0];
-                    lblTotal.Text = (Convert.ToInt32(txtCantidad.Text) * Convert.ToInt32(row["PRECIO"])).ToString();
+                    if (txtCantidad.Text != "")
+                    {
+                        lblTotal.Text = (Convert.ToInt32(txtCantidad.Text) * Convert.ToInt32(row["PRECIO"])).ToString();
+                    }
                     seleccionarAsientos = new bool[lvAsientos.Items.Count];
                     cantidadDeAsientosSeleccionados = 0;
                     Response.Redirect("ConfirmarCompra.aspx?id=" + IDfuncion1 + "&cant=" + txtCantidad.Text);
