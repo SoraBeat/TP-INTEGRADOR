@@ -51,5 +51,10 @@ namespace Negocios
             DAOAsientosComprados dao = new DAOAsientosComprados();
             return dao.getTablaAsientosCompradosPorEstado(id);
         }
+        public DataTable getTablaExisteAsiento(string idAsiento, string idFuncion)
+        {
+            DAOAsientosComprados dao = new DAOAsientosComprados();
+            return dao.getTablaExisteAsiento(idAsiento, idFuncion);
+        }
     }
 }

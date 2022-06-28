@@ -52,5 +52,10 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("AsientosComprados", "SELECT ID_Asiento_AC AS[ID], ID_DetalleVenta_AC AS [IDDETALLEVENTA], ID_Venta_AC AS [IDVENTA], ID_Funcion_AC AS [IDFUNCION], ID_Sala_AC AS [IDSALA], ID_Complejo_AC AS [IDCOMPLEJO], Estado_AC AS [ESTADO] FROM AsientosComprados WHERE Estado_AC LIKE '%" + com + "%' ORDER BY ABS(Estado_AC)");
             return tabla;
         }
+        public DataTable getTablaExisteAsiento(string idAsiento, string idFuncion)
+        {
+            DataTable tabla = ds.ObtenerTabla("AsientosComprados", "IF EXISTS (SELECT Estado_AC FROM AsientosComprados WHERE ID_Asiento_AC='"+ idAsiento + "' AND ID_Funcion_AC='" + idFuncion + "') BEGIN SELECT 1 AS EXISTE; END ELSE BEGIN SELECT 0 AS EXISTE; END GO");
+            return tabla;
+        }
     }
 }
