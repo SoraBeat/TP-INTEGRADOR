@@ -42,7 +42,7 @@ namespace Vistas
 				DataTable res = negUsu.ExisteUsuarioEmail(usu); 
 				foreach(DataRow columna in res.Rows)
                 {
-                    if (columna["Email_U"] != null)
+                    if (columna["Email_U"] != null || columna ["DNI_U"] != null)
                     {
 						lblMensaje.ForeColor = System.Drawing.Color.Red;
 						lblMensaje.Text = "Ese usuario ya existe";

@@ -16,6 +16,18 @@ namespace Negocios
             DAOVentas dao = new DAOVentas();
             return dao.getTablaVentas();
         }
+        public DataTable getListaVentas2()
+        {
+            DAOVentas dao = new DAOVentas();
+            return dao.getTablaVentas2();
+        }
+
+        public DataTable getListaFechas(string Inicio, string Final)
+        {
+            DAOVentas dao = new DAOVentas();
+            return dao.getTablaFecha(Inicio,Final);
+        }
+
         public DataTable cantidadVentas()
         {
             DAOVentas dao = new DAOVentas();
