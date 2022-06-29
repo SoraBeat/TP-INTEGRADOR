@@ -14,7 +14,7 @@ namespace DAO
         AccesoDatos ds = new AccesoDatos();
         public Boolean ExisteSala(Salas sala)
         {
-            string consulta = "SELECT * FROM Salas WHERE ID_Sala_S = '" + sala.IDSala + "'";
+            string consulta = "SELECT * FROM Salas WHERE ID_Sala_S = '" + sala.IDSala + "' AND ID_Complejo_S = '"+sala.IDComplejo+"'";
             return ds.Existe(consulta);
         }
         public Salas getSala(Salas sala)
@@ -31,7 +31,13 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas ORDER BY ABS(ID_Sala_S)");
             return tabla;
         }
-  
+
+        public DataTable getTablaSala2(Salas sal)
+        {
+            DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas WHERE ID_Sala_S = '"+sal.IDSala+ "' OR ID_Complejo_S = '"+sal.IDComplejo+"' ORDER BY ABS(ID_Sala_S)");
+            return tabla;
+        }
+
         public DataTable getTablaSalaPorID(string campo)
         {
             DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas WHERE ID_Sala_S = '" + campo + "' ORDER BY ABS(ID_Sala_S)");

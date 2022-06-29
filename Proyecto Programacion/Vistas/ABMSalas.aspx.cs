@@ -144,6 +144,16 @@ namespace Vistas
 				sala.IDSala = ID;
 				sala.IDComplejo = ID_Complejo;
 				sala.TotalAsientos = Convert.ToInt32(Asientos);
+				DataTable res2 = negsa.ExisteSala(sala);
+				foreach (DataRow columna in res2.Rows)
+				{
+					if (columna["ID"] != null || columna["COMPLEJO"] != null)
+					{
+						lblResultadoGuardar.ForeColor = System.Drawing.Color.Red;
+						lblResultadoGuardar.Text = "Error Sala";
+						return;
+					}
+				}
 
 				bool res = negsa.AgregarSala(sala);
 				gvSalas.EditIndex = -1;

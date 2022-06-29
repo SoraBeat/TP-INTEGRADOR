@@ -16,6 +16,12 @@ namespace Negocios
              DAOSalas dao= new DAOSalas();
             return dao.getTablaSala();
         }
+
+        public DataTable ExisteSala(Salas sal)
+        {
+            DAOSalas dao = new DAOSalas();
+            return dao.getTablaSala2(sal);
+        }
         public DataTable getTablaPorID(string id)
         {
             DAOSalas dao = new DAOSalas();
