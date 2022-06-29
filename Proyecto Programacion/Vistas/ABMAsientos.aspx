@@ -133,17 +133,17 @@
                     <asp:HyperLink CssClass="list-group-item" ID="hlUsuarios" runat="server" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink>
                 </div>
                 <div style="width: 60%; display: flex; flex-direction: column; gap: 15px;">
-                    <h4>AGREGAR COMPLEJO</h4>
+                    <h4>AGREGAR ASIENTOS</h4>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:TextBox ID="txtIDAsiento" runat="server" ValidationGroup="Grupo1" placeholder="ID"></asp:TextBox>
+                        <asp:TextBox ID="txtIDAsiento" runat="server" ValidationGroup="Grupo1" placeholder="ID" TextMode="Number"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtIDAsiento" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:TextBox ID="txtIDSala" runat="server" ValidationGroup="Grupo1" placeholder="ID SALA"></asp:TextBox>
+                        <asp:TextBox ID="txtIDSala" runat="server" ValidationGroup="Grupo1" placeholder="ID SALA" TextMode="Number"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtIDSala" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:TextBox ID="txtIDComplejo" runat="server" placeholder="ID COMPLEJO"></asp:TextBox>
+                        <asp:TextBox ID="txtIDComplejo" runat="server" placeholder="ID COMPLEJO" TextMode="Number"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtIDComplejo" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;gap:20px;">
