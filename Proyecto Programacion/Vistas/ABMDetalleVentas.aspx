@@ -45,7 +45,7 @@
                         <asp:DropDownList ID="ddlFiltro" runat="server">
                         </asp:DropDownList>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="txtFiltro" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtFiltro" runat="server" TextMode="Number"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;
                         <asp:Button CssClass="btn btn-secondary" ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
                         &nbsp;&nbsp;&nbsp;
