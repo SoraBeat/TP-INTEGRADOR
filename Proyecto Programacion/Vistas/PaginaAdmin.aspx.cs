@@ -13,14 +13,23 @@ namespace Vistas
 {
     public partial class PaginaAdmin : System.Web.UI.Page
     {
+        NegocioVentas Ven = new NegocioVentas();
 
         private string NombreDePeliculas;
         private string VecesVista;
+        private static string FechaG;
+        private static string Total = "";
         public string NOMBREDEPELICULAS { get { return NombreDePeliculas; } }
         public string VECESVISTA { get { return VecesVista; } }
 
+
+        public static string Total1 { get => Total; set => Total = value; }
+        public static string FechaG2 { get => FechaG; set => FechaG = value; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            LBL_VENTAS.ForeColor = System.Drawing.Color.White;
+            LBL_DINERO.ForeColor = System.Drawing.Color.White;
             string datosUsuario = (string)Session["DATOSUSUARIO"];
             string[] separador = new string[] { " ", "$" };
             string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
@@ -41,11 +50,11 @@ namespace Vistas
             DataTable dinero = negven.dineroGanado();
             LBL_USUARIOS.Text = usuarios.Rows[0]["CANTIDAD"].ToString();
             LBL_VENTAS.Text = ventas.Rows[0]["CANTIDAD"].ToString();
-            LBL_DINERO.Text = "$" + dinero.Rows[0]["CANTIDAD"].ToString();
+            LBL_DINERO.Text = "$" + dinero.Rows[0]["TOTAL"].ToString();
 
-            
+
             DataTable datospeliculas = negpe.getListaVentas();
-            foreach(DataRow columna in datospeliculas.Rows)
+            foreach (DataRow columna in datospeliculas.Rows)
             {
                 NombreDePeliculas += "$" + columna["PELICULAS"];
                 VecesVista += "$" + columna["VENTAS"];
@@ -57,5 +66,64 @@ namespace Vistas
             Response.Redirect("PantallaInicial.aspx");
         }
 
+
+
+        public void FiltroFecha()
+        {
+            LBL_VENTAS.ForeColor = System.Drawing.Color.White;
+            LBL_DINERO.ForeColor = System.Drawing.Color.White;
+            DataTable resultado = Ven.getListaFechas(CLD1.SelectedDate.ToString(), CLD2.SelectedDate.ToString());
+            if (resultado.Rows[0]["TOTAL"].ToString() != "0" && resultado.Rows[0]["CANTIDAD_VENTA"].ToString() != "0")
+            {
+                LBL_DINERO.Text = resultado.Rows[0]["TOTAL"].ToString();
+                LBL_VENTAS.Text = resultado.Rows[0]["CANTIDAD_VENTA"].ToString();
+            }
+            else
+            {
+                LBL_DINERO.Text = "$0";
+                LBL_VENTAS.Text = "0";
+            }
+
+        }
+
+        protected void CLD1_SelectionChanged(object sender, EventArgs e)
+        {
+
+            if (CLD1.SelectedDate.ToString() != "01/01/0001 0:00:00" && CLD2.SelectedDate.ToString() != "01/01/0001 0:00:00")
+            {
+                FiltroFecha();
+
+            }
+            else
+            {
+                LBL_VENTAS.ForeColor = System.Drawing.Color.Red;
+                LBL_DINERO.ForeColor = System.Drawing.Color.Red;
+                LBL_VENTAS.Text = "FALTA FECHA";
+                LBL_DINERO.Text = "FALTA FECHA";
+
+            }
+
+        }
+
+        protected void CLD2_SelectionChanged(object sender, EventArgs e)
+        {
+            if (CLD1.SelectedDate.ToString() != "01/01/0001 0:00:00" && CLD2.SelectedDate.ToString() != "01/01/0001 0:00:00")
+            {
+                FiltroFecha();
+            }
+            else
+            {
+                LBL_VENTAS.ForeColor = System.Drawing.Color.Red;
+                LBL_DINERO.ForeColor = System.Drawing.Color.Red;
+                LBL_VENTAS.Text = "FALTA FECHA";
+                LBL_DINERO.Text = "FALTA FECHA";
+
+            }
+        }
+
+        protected void BTNBorrarFiltro_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PaginaAdmin.aspx");
+        }
     }
 }

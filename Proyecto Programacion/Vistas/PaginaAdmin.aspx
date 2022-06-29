@@ -22,6 +22,9 @@
             font-size: 30px;
             color: #FFFFFF;
         }
+        .auto-style2 {
+            width: 80%;
+        }
     </style>
 </head>
 <body>
@@ -96,7 +99,7 @@
                     <asp:HyperLink ID="hlDV" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>
                     <asp:HyperLink ID="hlUsuarios" runat="server" CssClass="list-group-item" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink>
                 </div>
-                <div style="width: 80%;">
+                <div class="auto-style2">
                     <h3 style="font-size: 30px; font-weight: 700;">ESTADISTICAS</h3>
                     <br />
                     <div style="display: grid; grid-template-columns: repeat(4,1fr); gap: 10%; margin-left: 60px;">
@@ -108,12 +111,19 @@
                         <div style="height: auto; background-color: rgba(4, 4, 4, 0.8); display: flex; justify-content: start; align-items: center; width: 250px; padding: 15px 20px; gap: 10px; border-radius: 10px; flex-direction: column; -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);">
                             <img style="width: 100px; height: 100px" src="Imagenes/Pagina/venta-logo.png" alt="Alternate Text" />
                             <asp:Label Style="font-weight: 700; color: white;" Text="VENTAS" runat="server" Font-Size="X-Large" />
-                            <asp:Label Style="font-weight: 700; color: white; font-size: 25px;" ID="LBL_VENTAS" Text="100" runat="server" />
+                            <asp:Label Style="font-weight: 700; font-size: 25px;" ID="LBL_VENTAS" Text="100" runat="server" />
                         </div>
                         <div style="height: auto; background-color: rgba(4, 4, 4, 0.8); display: flex; justify-content: start; align-items: center; width: 250px; padding: 15px 20px; gap: 10px; border-radius: 10px; flex-direction: column; -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);">
                             <img style="width: 100px; height: 100px" src="Imagenes/Pagina/logo-dinero.png" alt="Alternate Text" />
                             <asp:Label Style="font-weight: 700; color: white;" Text="DINERO" runat="server" Font-Size="X-Large" />
-                            <asp:Label Style="font-weight: 700; color: white; font-size: 25px;" ID="LBL_DINERO" Text="$1200" runat="server" />
+                            <asp:Label Style="font-weight: 700; font-size: 25px;" ID="LBL_DINERO" Text="$1200" runat="server" />
+                            <br />
+                            INICIO<asp:Calendar ID="CLD1" runat="server" OnSelectionChanged="CLD1_SelectionChanged"></asp:Calendar>
+                            <br />
+                            FINAL<br />
+                            <asp:Calendar ID="CLD2" runat="server" OnSelectionChanged="CLD2_SelectionChanged"></asp:Calendar>
+                            <br />
+                            <asp:Button ID="BTNBorrarFiltro" runat="server" OnClick="BTNBorrarFiltro_Click" Text="Borrar Filtro" />
                         </div>
                     </div>
                     <br />

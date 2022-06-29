@@ -59,7 +59,7 @@
             <br />
             <br />
             <br />
-            <div style="width: 100%; background-color: rgba(0, 0, 0, 0.79);">
+            <div style="background-color: rgba(0, 0, 0, 0.79);" class="w-100">
                 <asp:Label Style="color: white; font-size: 40px" ID="LBLtitulo" runat="server" Font-Bold="True" Font-Italic="False"></asp:Label>
             </div>
             <br />
