@@ -41,7 +41,8 @@ namespace Vistas
             DataTable tablaPeliculas = negPel.getListaPeliculasCompleto();
             gvPeliculas.DataSource = tablaPeliculas;
             gvPeliculas.DataBind();
-          
+            lblResultado.Text = "";
+            lblResultadoGuardar.Text = "";
         }
 
         private void CargarTablaConFiltro()

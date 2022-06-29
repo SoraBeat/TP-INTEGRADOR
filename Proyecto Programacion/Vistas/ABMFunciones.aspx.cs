@@ -21,6 +21,7 @@ namespace Vistas
 				CargarTablaSinFiltro();
 				CargarGrid();
 			}
+			
 			string datosUsuario = (string)Session["DATOSUSUARIO"];
 			string[] separador = new string[] { " ", "$" };
 			string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
@@ -32,6 +33,8 @@ namespace Vistas
 			DataTable tablaSala = negfu.getTabla();
 			gvFunciones.DataSource = tablaSala;
 			gvFunciones.DataBind();
+			lblResultado.Text = "";
+			lblResultadoEnviar.Text = "";
 		}
 		public void desloguear(object sender, EventArgs e)
 		{
@@ -76,6 +79,8 @@ namespace Vistas
 			}
 			gvFunciones.DataSource = tablaSala;
 			gvFunciones.DataBind();
+			lblResultado.Text = "";
+			lblResultadoEnviar.Text = "";
 		}
 		private void CargarGrid()
 		{

@@ -142,7 +142,7 @@
                                 <EditItemTemplate>
                                     <asp:TextBox ID="TXT_EDT_PRECIO" runat="server" Text='<%# Bind("PRECIO") %>'></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ControlToValidate="TXT_EDT_PRECIO" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator17" runat="server" ControlToValidate="TXT_EDT_PRECIO" Display="Dynamic" ValidationExpression="[0-9]+,[0-9]{2}">Precio invalido</asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator17" runat="server" ControlToValidate="TXT_EDT_PRECIO" Display="Dynamic" ValidationExpression="[0-9]+.[0-9]{2}">Precio invalido</asp:RegularExpressionValidator>
                                 </EditItemTemplate>
                                 <ItemTemplate>
                                     <asp:Label ID="LBL_IT_PRECIO" runat="server" Text='<%# Bind("PRECIO") %>'></asp:Label>
@@ -207,7 +207,7 @@
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtFECHA" runat="server" ValidationGroup="Grupo1" placeholder="FECHA"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtFECHA" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtFECHA" Display="Dynamic" ValidationExpression="^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$" ValidationGroup="Grupo1">Feha invalida</asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtFECHA" Display="Dynamic" ValidationExpression="^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$" ValidationGroup="Grupo1">Fecha invalida</asp:RegularExpressionValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtHORARIO" runat="server" ValidationGroup="Grupo1" placeholder="HORARIO"></asp:TextBox>
@@ -221,14 +221,14 @@
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtPRECIO" runat="server" ValidationGroup="Grupo1" placeholder="PRECIO"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtPRECIO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtPRECIO" Display="Dynamic" ValidationExpression="[0-9]+,[0-9]{2}" ValidationGroup="Grupo1">Precio invalido</asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtPRECIO" Display="Dynamic" ValidationExpression="[0-9]+.[0-9]{2}" ValidationGroup="Grupo1">Precio invalido</asp:RegularExpressionValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtFORMATO" runat="server" ValidationGroup="Grupo1" placeholder="FORMATO"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFORMATO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:Button CssClass="btn btn-primary" ID="btnENVIAR" runat="server" Text="Button" ValidationGroup="Grupo1" OnClick="btnENVIAR_Click1" />
+                        <asp:Button CssClass="btn btn-primary" ID="btnENVIAR" runat="server" Text="Guardar" ValidationGroup="Grupo1" OnClick="btnENVIAR_Click1" />
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:Label ID="lblResultadoEnviar" runat="server"></asp:Label>
