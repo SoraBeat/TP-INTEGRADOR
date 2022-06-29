@@ -103,7 +103,7 @@ namespace Vistas
                     else
                     {
                         int asientosSeleccionados = 0;
-                        for (int i = 0; i < seleccionarAsientos.Length - 1; i++)
+                        for (int i = 0; i < seleccionarAsientos.Length ; i++)
                         {
                             if (seleccionarAsientos[i] == true)
                             {
@@ -289,6 +289,15 @@ namespace Vistas
                 lvAsientos.Visible = false;
                 lblTotal.Text = "";
                 args.IsValid = false;
+            }
+        }
+
+        protected void BTN_FEO_Click(object sender, EventArgs e)
+        {
+            LBL_FEO.Text = "";
+            for (int i = 0; i < seleccionarAsientos.Length; i++)
+            {
+                LBL_FEO.Text += seleccionarAsientos[i]+" ";
             }
         }
     }

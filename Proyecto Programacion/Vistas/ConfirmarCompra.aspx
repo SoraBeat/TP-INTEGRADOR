@@ -75,7 +75,9 @@
                 <asp:Label Style="color: white; font-size: 40px" ID="LBLtitulo" runat="server" Font-Bold="True" Font-Italic="False"></asp:Label>
             </div>
             <br />
+            <asp:Label ID="LBL_FEO" runat="server"></asp:Label>
             <br />
+            <asp:Button ID="BTN_FEO" runat="server" OnClick="BTN_FEO_Click" Text="Button" />
             <br />
 
 
