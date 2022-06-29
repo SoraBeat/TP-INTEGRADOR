@@ -14,7 +14,7 @@ namespace DAO
         AccesoDatos ds = new AccesoDatos();
         public Boolean ExisteAsiento(Asientos asi)
         {
-            string consulta = "SELECT * FROM Asientos WHERE ID_Asiento_A = '" + asi.IDAsiento + "'";
+            string consulta = "SELECT * FROM Asientos WHERE ID_Asiento_A = '" + asi.IDAsiento + "'AND ID_Sala_A = '"+asi.IDSala +"' AND ID_Complejo_A = '"+ asi.IDComplejo +"'";
             return ds.Existe(consulta);
         }
         public Asientos getAsiento(Asientos asi)

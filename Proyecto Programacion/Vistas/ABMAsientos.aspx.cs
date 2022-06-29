@@ -161,6 +161,9 @@ namespace Vistas
             negasi.ModificarAsiento(asi);
             gvAsientos.EditIndex = -1;
             CargarTablaConFiltro();
+
+            lblResultado.ForeColor = System.Drawing.Color.Green;
+            lblResultado.Text = "Se ha editado con exito";
         }
 
         protected void gvAsientos_RowEditing(object sender, GridViewEditEventArgs e)
