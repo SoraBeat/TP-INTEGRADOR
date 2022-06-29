@@ -141,9 +141,10 @@ namespace Vistas
             Pel.Portada = Portada;
             Pel.Estado = Estado;
 
+            bool res = negPel.ModificarPelicula(Pel);
             gvPeliculas.EditIndex = -1;
             CargarTablaConFiltro();
-            bool res = negPel.ModificarPelicula(Pel);
+            
             if (res)
             {
                 lblResultado.ForeColor = System.Drawing.Color.Green;
