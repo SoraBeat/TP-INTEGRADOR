@@ -141,7 +141,11 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT ID_Pelicula_P AS [ID], Titulo_P AS [Titulo], Descripcion_P AS [Descripcion], Duracion_P AS [Duracion], Clasificacion_P AS [Clasificacion], Genero_P AS [Genero], Portada_P AS [Portada], Estado_P AS [Estado] FROM Peliculas WHERE Estado_P LIKE '%" + campo + "%' ORDER BY ABS(ID_Pelicula_P)");
             return tabla;
         }
-
+        public DataTable getPortadaPorID(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Peliculas", "SELECT Portada_P AS [Portada] FROM Peliculas WHERE ID_Pelicula_P LIKE '%" + campo + "%'");
+            return tabla;
+        }
 
         public int ModificarPeliculas(Peliculas com)
         {

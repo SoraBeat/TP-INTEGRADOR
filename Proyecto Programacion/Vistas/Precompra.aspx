@@ -71,19 +71,17 @@
                 <tr>
                     <td class="auto-style19">
 
-                         <img src="/Imagenes/Pagina/ticket.png" style="width: 120px; height: 70px;" /></td>
+                         &nbsp;</td>
                     <td class="auto-style19">
-                        <asp:Label ID="lblTicket" runat="server"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style20"></td>
                     <td class="auto-style17"></td>
                 </tr>
                 <tr>
                     <td class="auto-style26">
-                        <input id="Text1" class="auto-style9" type="number" /></td>
+                        &nbsp;</td>
                     <td class="auto-style27">
-                        <asp:Label ID="lblCosto" runat="server"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style28"></td>
                 </tr>
                 <tr>
@@ -92,21 +90,35 @@
                         &nbsp;</td>
                     <td class="auto-style29">
 
-                         <asp:ImageButton ID="ImageButton1" runat="server" Height="240px" ImageUrl="~/Imagenes/Portadas/Doctor Strange.jpg" Width="240px" OnClick="ImageButton1_Click" />
+                         <asp:ImageButton ID="ImageButton" runat="server" Height="240px" Width="240px" OnClick="ImageButton1_Click" />
                          
                         </td>
                     <td class="destacado">
                         <table class="destacado">
                             <td >
                                 <p>
+                        <asp:Label ID="lblFuncion" runat="server"></asp:Label>
+                                    </p>
+                                <p>
                                     <asp:Label ID="lblNombrePelicula" runat="server"></asp:Label>
                                 <br>
-                                    <asp:Label ID="lblDireccion" runat="server"></asp:Label>
+                                    <asp:Label ID="lblComplejo" runat="server"></asp:Label>
                                     </br>
-                                    <asp:Label ID="lblFechayhora" runat="server"></asp:Label>
-&nbsp;<br></br>
-                        <asp:Button ID="btnConfirmar" runat="server" Text="Siguiente" OnClick="btnConfirmar_Click" Height="26px" />
+                                    <asp:Label ID="lblIdioma" runat="server"></asp:Label>
+&nbsp;<br>
+                        <asp:Label ID="lblFormato" runat="server"></asp:Label>
                                     </p>
+                                <p>
+                                    <asp:Label ID="lblFecha" runat="server"></asp:Label>
+                                    </p>
+                                <p>
+                                    <asp:Label ID="lblHorario" runat="server"></asp:Label>
+                                    </p>
+                                <p>
+                                    <asp:Label ID="lblCosto" runat="server"></asp:Label>
+                                    </p>
+                                <p>
+                                    &nbsp;</p>
                                 <p>
                                    <br>
                         <asp:Button ID="btnConfirmar0" runat="server" Text="Volver" OnClick="btnConfirmar_Click" Height="26px" />

@@ -127,6 +127,12 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Estado_F LIKE '%" + campo + "%' ORDER BY ABS(Estado_F)");
             return tabla;
         }
+        
+        public DataTable getTablaPrecioPorID(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT Precio_F AS [PRECIO] FROM Funciones WHERE ID_Funcion_F="+campo);
+            return tabla;
+        }
 
         public int EliminarFuncion(Funciones funcion)
         {

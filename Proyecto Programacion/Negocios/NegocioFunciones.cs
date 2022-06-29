@@ -109,6 +109,11 @@ namespace Negocios
             DAOFunciones dao = new DAOFunciones();
             return dao.getTablaFuncionPorEstado(id);
         }
+        public DataTable getTablaPrecioPorID(string id)
+        {
+            DAOFunciones dao = new DAOFunciones();
+            return dao.getTablaPrecioPorID(id);
+        }
 
         public bool EliminarFuncion(string id)
         {

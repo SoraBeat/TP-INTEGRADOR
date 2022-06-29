@@ -156,7 +156,14 @@ namespace Vistas
         }
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
-
+            if (btnConfirmar.CssClass == "btn btn-success")
+            {
+                DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion);
+                DataRow row = tabla.Rows[0];
+                string subtotal = (Convert.ToInt32(txtCantidad.Text) * Convert.ToInt32(row["PRECIO"])).ToString();
+                Session["DATOSTICKET"] = IDfuncion1 + "$" + idPelicula + "$" + idcomplejo + "$"+ idioma + "$" + formato + "$" + fecha + "$" + horario + "$" + subtotal;
+                Response.Redirect("Precompra.aspx?subtotal="+subtotal);
+            }
         }
 
         protected void txtPaginaAdmin_Click(object sender, EventArgs e)
@@ -174,7 +181,6 @@ namespace Vistas
             {
                 Session["DATOSUSUARIO"] = null;
                 Response.Redirect("PantallaInicial.aspx");
-
             }
         }
 

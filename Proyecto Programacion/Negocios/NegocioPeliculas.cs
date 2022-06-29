@@ -123,7 +123,11 @@ namespace Negocios
             return dao.getTablaPeliculaPorEstado(campo);
         }
 
-
+        public DataTable getPortadaPorID(string campo)
+        {
+            DAOPeliculas dao = new DAOPeliculas();
+            return dao.getPortadaPorID(campo);
+        }
 
 
 
