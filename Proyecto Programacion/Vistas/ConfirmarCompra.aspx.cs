@@ -52,7 +52,7 @@ namespace Vistas
             {
                 nombrebtn();
                 btnIrPaginaAdmin();
-                btnConfirmar.Enabled = false;
+                btnConfirmar.CssClass = "btn btn-warning";
                 seleccionAnterior = "1";
                 lvAsientos.Visible = false;
                 IDfuncion1 = Request.QueryString["ID"];
@@ -99,7 +99,7 @@ namespace Vistas
                     {
                         button.Enabled = true;
                         button.CssClass = "asiento-libre";
-                        btnConfirmar.Enabled = false;
+                        btnConfirmar.CssClass = "btn btn-warning";
                         seleccionarAsientos[Convert.ToInt32(e.CommandArgument) - 1] = false;
                     }
                     else
@@ -119,12 +119,12 @@ namespace Vistas
                             button.CssClass = "asiento-seleccionado";
                             if (asientosSeleccionados + 1 == Convert.ToInt32(txtCantidad.Text))
                             {
-                                btnConfirmar.Enabled = true;
+                                btnConfirmar.CssClass = "btn btn-success";
                             }
                         }
                         else
                         {
-                            btnConfirmar.Enabled = true;
+                            btnConfirmar.CssClass = "btn btn-success";
                         }
                     }
                 }
@@ -312,8 +312,6 @@ namespace Vistas
                 args.IsValid = false;
             }
         }
-
-
     }
 
 }

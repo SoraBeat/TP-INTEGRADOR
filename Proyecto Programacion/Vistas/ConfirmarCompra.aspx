@@ -146,7 +146,7 @@
                     <asp:Label Style="font-size: 30px; font-weight: 900" Text="INFORMACIOND DE COMPRA" runat="server" />
                     <div>
                         <asp:Label Style="font-size: 20px" Text="Metodo de pago" runat="server" />
-                        <asp:DropDownList runat="server" style="height: 30px;width: 100px;background-color: #212529;border-color: #212529;color: white;">
+                        <asp:DropDownList runat="server" Style="height: 30px; width: 100px; background-color: #212529; border-color: #212529; color: white;">
                             <asp:ListItem Text="Credito" Value="Credito" />
                             <asp:ListItem Text="Debito" Value="Debito" />
                         </asp:DropDownList>
@@ -158,14 +158,14 @@
                     <div>
                         <div>
                             <asp:Label Style="font-size: 20px" Text="Cantidad de asientos" runat="server" />
-                            <asp:TextBox style="width:50px;background-color: #212529;border-color: #212529;color: white;" ID="txtCantidad" runat="server" AutoPostBack="True" OnTextChanged="txtCantidad_TextChanged" TextMode="Number" ValidationGroup="Grupo1" CausesValidation="True" ValidateRequestMode="Enabled"></asp:TextBox>
-                            <asp:CustomValidator ID="CVCantidad" runat="server" ControlToValidate="txtCantidad" ErrorMessage="CustomValidator" OnServerValidate="CVCantidad_ServerValidate"></asp:CustomValidator>
+                            <asp:TextBox Style="width: 50px; background-color: #212529; border-color: #212529; color: white;" ID="txtCantidad" runat="server" AutoPostBack="True" OnTextChanged="txtCantidad_TextChanged" TextMode="Number" ValidationGroup="Grupo1" CausesValidation="True" ValidateRequestMode="Enabled"></asp:TextBox>
+                            <asp:CustomValidator ID="CVCantidad" runat="server" ControlToValidate="txtCantidad" OnServerValidate="CVCantidad_ServerValidate" Display="Dynamic" ValidationGroup="Grupo1">Cantidad invalida</asp:CustomValidator>
                         </div>
                         <br />
                         <div style="display: flex; justify-content: center">
                             <asp:Label Style="font-size: 30px" Text="ELEGIR ASIENTOS" runat="server" />
                         </div>
-                        <div style="display: flex; justify-content: center;flex-direction:column;align-items:center;">
+                        <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
                             <asp:ListView ID="lvAsientos" runat="server" GroupItemCount="3">
                                 <%--<AlternatingItemTemplate>
                                 <td runat="server" style="">ID_Asiento_A:
@@ -234,7 +234,7 @@
                                     </td>
                                 </SelectedItemTemplate>
                             </asp:ListView>
-                            <asp:Image style="width:220px" ImageUrl="/Imagenes/Pagina/logo-pantalla.png" runat="server" />
+                            <asp:Image Style="width: 220px" ImageUrl="/Imagenes/Pagina/logo-pantalla.png" runat="server" />
                         </div>
                     </div>
                     <div>
@@ -243,11 +243,17 @@
                     </div>
                 </div>
             </div>
-            <div style="display:flex;gap:30px;justify-content:center;align-items:center;margin-bottom:30px">
-                <asp:Button style="font-weight: 900;width: 161px;height: 53px;" CssClass="btn btn-danger" ID="btnVolver" runat="server" Text="CANCELAR" OnClick="btnCancelar_Click" />
-                <asp:Button style="font-weight: 900;width: 161px;height: 53px;" CssClass="btn btn-success" ID="btnConfirmar" runat="server" Text="CONFIRMAR" OnClick="btnConfirmar_Click" />
+            <div style="display: flex; gap: 30px; justify-content: center; align-items: center; margin-bottom: 30px">
+                <asp:Button Style="font-weight: 900; width: 161px; height: 53px;" CssClass="btn btn-danger" ID="btnVolver" runat="server" Text="CANCELAR" OnClick="btnCancelar_Click" />
+                <asp:Button Style="font-weight: 900; width: 161px; height: 53px;" CssClass="btn btn-success" ID="btnConfirmar" runat="server" Text="CONFIRMAR" OnClick="btnConfirmar_Click" type="button" class="btn" data-bs-trigger="hover focus" data-bs-toggle="popover" data-bs-content="Por favor, seleccione metodo de pago, cantidad de asientos y locacion de los mismos para confirmar la compra." />
             </div>
         </div>
+        <script>
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl)
+            })
+        </script>
     </form>
 </body>
 </html>
