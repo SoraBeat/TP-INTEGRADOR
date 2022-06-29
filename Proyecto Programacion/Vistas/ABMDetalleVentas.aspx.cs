@@ -65,6 +65,7 @@ namespace Vistas
 					tablaDetalleVentas = negDV.getListaPorPrecio(txtFiltro.Text);
 					break;
 			}
+			txtFiltro.Text = "";
 			gvDetalleVentas.DataSource = tablaDetalleVentas;
 			gvDetalleVentas.DataBind();
 		}
