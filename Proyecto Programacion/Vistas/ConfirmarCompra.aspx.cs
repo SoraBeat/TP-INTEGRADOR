@@ -50,6 +50,8 @@ namespace Vistas
         {
             if (IsPostBack == false)
             {
+                nombrebtn();
+                btnIrPaginaAdmin();
                 btnConfirmar.Enabled = false;
                 seleccionAnterior = "1";
                 lvAsientos.Visible = false;
@@ -77,7 +79,6 @@ namespace Vistas
             DataTable tabla = Asi.getListaAsientosDisponibles(IDfuncion);
             DataRow fila = tabla.Rows[0];
             AsientosDisponibles1 = (int)fila["AsientosDisponibles"];
-            RV_CANTIDAD.MaximumValue = AsientosDisponibles1.ToString();
         }
         public void chequearBoton(object sender, CommandEventArgs e)
         {
@@ -90,15 +91,16 @@ namespace Vistas
                 if (existe == true)
                 {
                     button.Enabled = false;
-                    button.ForeColor = System.Drawing.Color.Red;
+                    button.CssClass = "asiento-ocupado";
                 }
                 else
                 {
                     if (seleccionarAsientos[Convert.ToInt32(e.CommandArgument) - 1] == true)
                     {
+                        button.Enabled = true;
+                        button.CssClass = "asiento-libre";
                         btnConfirmar.Enabled = false;
                         seleccionarAsientos[Convert.ToInt32(e.CommandArgument) - 1] = false;
-                        button.ForeColor = System.Drawing.Color.Black;
                     }
                     else
                     {
@@ -113,7 +115,8 @@ namespace Vistas
                         if (asientosSeleccionados < Convert.ToInt32(txtCantidad.Text))
                         {
                             seleccionarAsientos[Convert.ToInt32(e.CommandArgument) - 1] = true;
-                            button.ForeColor = System.Drawing.Color.Green;
+                            button.Enabled = true;
+                            button.CssClass = "asiento-seleccionado";
                             if (asientosSeleccionados + 1 == Convert.ToInt32(txtCantidad.Text))
                             {
                                 btnConfirmar.Enabled = true;
@@ -138,7 +141,7 @@ namespace Vistas
                 if (existe == true)
                 {
                     button.Enabled = false;
-                    button.ForeColor = System.Drawing.Color.Red;
+                    button.CssClass = "asiento-ocupado";
                 }
             }
         }
@@ -147,7 +150,10 @@ namespace Vistas
             Session["DATOSUSUARIO"] = null;
             Response.Redirect("PantallaInicial.aspx");
         }
-
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MostrarPelicula.aspx?ID="+idPelicula);
+        }
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
 
@@ -185,7 +191,21 @@ namespace Vistas
                 btnIniciarSesion.Text = "Cerrar Sesion";
             }
         }
+        private void btnIrPaginaAdmin()
+        {
+            if (Session["DATOSUSUARIO"] != null)
+            {
+                string datosUsuario = (string)Session["DATOSUSUARIO"];
+                string[] separador = new string[] { " ", "$" };
+                string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+                bool TipoUsuario = Convert.ToBoolean(datos[7]);
+                if (TipoUsuario == true)
+                {
+                    txtPaginaAdmin.Visible = true;
+                }
+            }
 
+        }
         public void CargarDatosPagina()
         {
             DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion);
@@ -195,11 +215,12 @@ namespace Vistas
 
             idcomplejo = Convert.ToString(row["IDCOMPLEJO"]);
             CargarDDLcomplejo();
-
-            lblFechayhora.Text = "FECHA : " + Convert.ToString(row["FECHA"]) + " Horario " + Convert.ToString(row["HORARIO"]);
+            string fecha = Convert.ToString(row["FECHA"]).Substring(0,10);
+            string hora = Convert.ToString(row["HORARIO"]).Substring(0,5);
+            lblFechayhora.Text = fecha + " " +hora ;
 
             lblIdioma.Text = Convert.ToString(row["IDIOMA"]);
-            lblCosto.Text = Convert.ToString(row["PRECIO"]);
+            lblCosto.Text = "$"+Convert.ToString(row["PRECIO"]);
             if (seleccionAnterior != null && seleccionAnterior != "")
             {
                 txtCantidad.Text = seleccionAnterior;
@@ -216,9 +237,9 @@ namespace Vistas
         {
             DataTable tabla = Pel.getListaPeliculasPorID(idPelicula);
             DataRow row = tabla.Rows[0];
-            lblNombrePelicula.Text = Convert.ToString(row["Titulo"]).ToUpper();
-
-            ImageButton1.ImageUrl = Convert.ToString(row["Portada"]);
+            lblNombrePelicula.Text = Convert.ToString(row["Titulo"]);
+            LBLtitulo.Text = Convert.ToString(row["Titulo"]).ToUpper();
+            ImagenPortada.ImageUrl = Convert.ToString(row["Portada"]);
         }
 
         private void CargarDDLcomplejo()
@@ -226,8 +247,8 @@ namespace Vistas
             DataTable tabla = Com.getListaComplejosPorID(idcomplejo);
             DataRow row = tabla.Rows[0];
 
-            lblComplejo.Text = "Complejo  :" + Convert.ToString(row["NOMBRE"]);
-            lblDireccion.Text = "Direccion :" + Convert.ToString(row["DIRECCION"]);
+            lblComplejo.Text =  Convert.ToString(row["NOMBRE"]);
+            lblDireccion.Text = Convert.ToString(row["DIRECCION"]);
         }
 
         protected void txtCantidad_TextChanged(object sender, EventArgs e)
@@ -292,14 +313,7 @@ namespace Vistas
             }
         }
 
-        protected void BTN_FEO_Click(object sender, EventArgs e)
-        {
-            LBL_FEO.Text = "";
-            for (int i = 0; i < seleccionarAsientos.Length; i++)
-            {
-                LBL_FEO.Text += seleccionarAsientos[i]+" ";
-            }
-        }
+
     }
 
 }

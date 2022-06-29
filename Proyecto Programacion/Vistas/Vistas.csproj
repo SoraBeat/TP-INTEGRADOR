@@ -97,6 +97,9 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\hover.css" />
     <Content Include="Content\owl.carousel.css" />
+    <Content Include="Imagenes\Pagina\asiento-libre.png" />
+    <Content Include="Imagenes\Pagina\asiento-ocupado.png" />
+    <Content Include="Imagenes\Pagina\asiento-seleccionado.png" />
     <Content Include="Imagenes\Pagina\fondo-login.jpg" />
     <Content Include="Imagenes\Pagina\fondo-login.png" />
     <Content Include="Imagenes\Pagina\fondo-mostrarpelicula.png" />
@@ -109,6 +112,7 @@
     <Content Include="Imagenes\Pagina\logo-edad.png" />
     <Content Include="Imagenes\Pagina\logo-facebook.png" />
     <Content Include="Imagenes\Pagina\logo-instagram.png" />
+    <Content Include="Imagenes\Pagina\logo-pantalla.png" />
     <Content Include="Imagenes\Pagina\logo-piola.png" />
     <Content Include="Imagenes\Pagina\logo-twitter.png" />
     <Content Include="Imagenes\Pagina\logo-usuario.png" />

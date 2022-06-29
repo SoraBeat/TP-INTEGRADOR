@@ -29,6 +29,39 @@
             color: white;
         }
 
+        .asiento-ocupado {
+            background: url("/Imagenes/Pagina/asiento-ocupado.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 79px;
+            text-align: end;
+            width: 57px;
+            color: white;
+            font-weight: 900;
+        }
+
+        .asiento-libre {
+            background: url("/Imagenes/Pagina/asiento-libre.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 79px;
+            text-align: end;
+            width: 57px;
+            color: black;
+            font-weight: 900;
+        }
+
+        .asiento-seleccionado {
+            background: url("/Imagenes/Pagina/asiento-seleccionado.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 79px;
+            text-align: end;
+            width: 57px;
+            color: black;
+            font-weight: 900;
+        }
+
         .auto-style1 {
             width: 498px;
         }
@@ -43,6 +76,10 @@
 
         .auto-style4 {
             height: 20px;
+        }
+
+        .auto-style5 {
+            height: 83px;
         }
     </style>
 </head>
@@ -75,175 +112,141 @@
                 <asp:Label Style="color: white; font-size: 40px" ID="LBLtitulo" runat="server" Font-Bold="True" Font-Italic="False"></asp:Label>
             </div>
             <br />
-            <asp:Label ID="LBL_FEO" runat="server"></asp:Label>
             <br />
-            <asp:Button ID="BTN_FEO" runat="server" OnClick="BTN_FEO_Click" Text="Button" />
             <br />
+            <div style="display: flex; flex-direction: row;">
+                <div style="display: flex; justify-content: center; align-items: start; width: 30%">
+                    <asp:Image ID="ImagenPortada" runat="server" Height="350px" ImageUrl="~/Imagenes/Portadas/Doctor Strange.jpg" Width="250px" />
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: start; align-items: start; gap: 10px">
+                    <asp:Label Style="font-size: 30px; font-weight: 900;" Text="DATOS DE FUNCION" runat="server" />
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px">
+                        <asp:Label Style="font-size: 25px; font-weight: 900" Text="Pelicula: " runat="server" />
+                        <asp:Label Style="font-size: 18px" ID="lblNombrePelicula" runat="server"></asp:Label>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px">
+                        <asp:Label Style="font-size: 25px; font-weight: 900" Text="Idioma: " runat="server" />
+                        <asp:Label Style="font-size: 18px" ID="lblIdioma" runat="server"></asp:Label>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px">
+                        <asp:Label Style="font-size: 25px; font-weight: 900" Text="Complejo: " runat="server" />
+                        <asp:Label Style="font-size: 18px" ID="lblComplejo" runat="server"></asp:Label>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px">
+                        <asp:Label Style="font-size: 25px; font-weight: 900" Text="Direccion: " runat="server" />
+                        <asp:Label Style="font-size: 18px" ID="lblDireccion" runat="server"></asp:Label>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px">
+                        <asp:Label Style="font-size: 25px; font-weight: 900" Text="Fecha y hora: " runat="server" />
+                        <asp:Label Style="font-size: 18px" ID="lblFechayhora" runat="server"></asp:Label>
+                    </div>
 
-
-            <br />
-            <br />
-            <br />
-            <br />
-            <table class="auto-style4">
-                <tr>
-                    <td class="auto-style19">
-
-                        <img src="/Imagenes/Pagina/ticket.png" style="width: 120px; height: 70px;" /></td>
-                    <td class="auto-style3">
+                </div>
+                <div style="margin-left: 6%; text-align: left; display: flex; flex-direction: column; gap: 20px">
+                    <asp:Label Style="font-size: 30px; font-weight: 900" Text="INFORMACIOND DE COMPRA" runat="server" />
+                    <div>
+                        <asp:Label Style="font-size: 20px" Text="Metodo de pago" runat="server" />
+                        <asp:DropDownList runat="server" style="height: 30px;width: 100px;background-color: #212529;border-color: #212529;color: white;">
+                            <asp:ListItem Text="Credito" Value="Credito" />
+                            <asp:ListItem Text="Debito" Value="Debito" />
+                        </asp:DropDownList>
+                    </div>
+                    <div>
+                        <asp:Label Style="font-size: 20px" Text="Costo por asiento: " runat="server" />
                         <asp:Label ID="lblCosto" runat="server"></asp:Label>
-                    </td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style1"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style26">
-                        <asp:TextBox ID="txtCantidad" runat="server" AutoPostBack="True" OnTextChanged="txtCantidad_TextChanged" TextMode="Number" ValidationGroup="Grupo1" CausesValidation="True" ValidateRequestMode="Enabled"></asp:TextBox>
-                        <asp:RangeValidator ID="RV_CANTIDAD" runat="server" OnLoad="validarAlIniciar" ControlToValidate="txtCantidad" MaximumValue="7" MinimumValue="1" Type="Integer" ValidationGroup="Grupo1" Enabled="False">*</asp:RangeValidator>
-                        <asp:CustomValidator ID="CVCantidad" runat="server" ControlToValidate="txtCantidad" ErrorMessage="CustomValidator" OnServerValidate="CVCantidad_ServerValidate"></asp:CustomValidator>
-                    </td>
-                    <td class="auto-style3">
-                        <asp:Label ID="lblTotal" runat="server"></asp:Label>
-                    </td>
-                    <td class="auto-style2">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style23">
-
-                        <asp:ListView ID="lvAsientos" runat="server" GroupItemCount="3">
-                            <%--<AlternatingItemTemplate>
+                    </div>
+                    <div>
+                        <div>
+                            <asp:Label Style="font-size: 20px" Text="Cantidad de asientos" runat="server" />
+                            <asp:TextBox style="width:50px;background-color: #212529;border-color: #212529;color: white;" ID="txtCantidad" runat="server" AutoPostBack="True" OnTextChanged="txtCantidad_TextChanged" TextMode="Number" ValidationGroup="Grupo1" CausesValidation="True" ValidateRequestMode="Enabled"></asp:TextBox>
+                            <asp:CustomValidator ID="CVCantidad" runat="server" ControlToValidate="txtCantidad" ErrorMessage="CustomValidator" OnServerValidate="CVCantidad_ServerValidate"></asp:CustomValidator>
+                        </div>
+                        <br />
+                        <div style="display: flex; justify-content: center">
+                            <asp:Label Style="font-size: 30px" Text="ELEGIR ASIENTOS" runat="server" />
+                        </div>
+                        <div style="display: flex; justify-content: center;flex-direction:column;align-items:center;">
+                            <asp:ListView ID="lvAsientos" runat="server" GroupItemCount="3">
+                                <%--<AlternatingItemTemplate>
                                 <td runat="server" style="">ID_Asiento_A:
                                     <asp:Label ID="ID_Asiento_ALabel" runat="server" Text='<%# Eval("ID_Asiento_A") %>' />
                                     <br /></td>
                             </AlternatingItemTemplate>--%>
-                            <EditItemTemplate>
-                                <td runat="server" style="">ID_Asiento_A:
+                                <EditItemTemplate>
+                                    <td runat="server" style="">ID_Asiento_A:
                                     <asp:TextBox ID="ID_Asiento_ATextBox" runat="server" Text='<%# Bind("ID_Asiento_A") %>' />
-                                    <br />
-                                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
-                                    <br />
-                                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancelar" />
-                                    <br />
-                                </td>
-                            </EditItemTemplate>
-                            <EmptyDataTemplate>
-                                <table runat="server" style="">
-                                    <tr>
-                                        <td>No se han devuelto datos.</td>
+                                        <br />
+                                        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
+                                        <br />
+                                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancelar" />
+                                        <br />
+                                    </td>
+                                </EditItemTemplate>
+                                <EmptyDataTemplate>
+                                    <table runat="server" style="">
+                                        <tr>
+                                            <td>No se han devuelto datos.</td>
+                                        </tr>
+                                    </table>
+                                </EmptyDataTemplate>
+                                <EmptyItemTemplate>
+                                    <td runat="server" />
+                                </EmptyItemTemplate>
+                                <GroupTemplate>
+                                    <tr id="itemPlaceholderContainer" runat="server">
+                                        <td id="itemPlaceholder" runat="server"></td>
                                     </tr>
-                                </table>
-                            </EmptyDataTemplate>
-                            <EmptyItemTemplate>
-                                <td runat="server" />
-                            </EmptyItemTemplate>
-                            <GroupTemplate>
-                                <tr id="itemPlaceholderContainer" runat="server">
-                                    <td id="itemPlaceholder" runat="server"></td>
-                                </tr>
-                            </GroupTemplate>
-                            <InsertItemTemplate>
-                                <td runat="server" style="">ID_Asiento_A:
+                                </GroupTemplate>
+                                <InsertItemTemplate>
+                                    <td runat="server">ID_Asiento_A:
                                     <asp:TextBox ID="ID_Asiento_ATextBox" runat="server" Text='<%# Bind("ID_Asiento_A") %>' />
-                                    <br />
-                                    <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
-                                    <br />
-                                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
-                                    <br />
-                                </td>
-                            </InsertItemTemplate>
-                            <ItemTemplate>
-                                <td runat="server" style="">ID_Asiento_A:
+                                        <br />
+                                        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
+                                        <br />
+                                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
+                                        <br />
+                                    </td>
+                                </InsertItemTemplate>
+                                <ItemTemplate>
+                                    <td runat="server">
+                                        <asp:Button Style="margin: 10px" OnLoad="secargaLosBotones" runat="server" ID="ButtonAsiento" OnCommand="chequearBoton" CommandName="chequear" CommandArgument='<%# Eval("ID_Asiento_A") %>' Text='<%# Eval("ID_Asiento_A") %>' CssClass="asiento-libre"></asp:Button>
+                                    </td>
+                                </ItemTemplate>
+                                <LayoutTemplate>
+                                    <table runat="server">
+                                        <tr runat="server">
+                                            <td runat="server">
+                                                <table id="groupPlaceholderContainer" runat="server" border="0" style="">
+                                                    <tr id="groupPlaceholder" runat="server">
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr runat="server">
+                                            <td runat="server" style=""></td>
+                                        </tr>
+                                    </table>
+                                </LayoutTemplate>
+                                <SelectedItemTemplate>
+                                    <td runat="server" style="">ID_Asiento_A:
                                     <asp:Label ID="ID_Asiento_ALabel" runat="server" Text='<%# Eval("ID_Asiento_A") %>' />
-                                    <asp:Button OnLoad="secargaLosBotones" runat="server" id="ButtonAsiento" OnCommand="chequearBoton" CommandName="chequear" CommandArgument='<%# Eval("ID_Asiento_A") %>' text='<%# Eval("ID_Asiento_A") %>'></asp:Button>
-                                    <br />
-                                </td>
-                            </ItemTemplate>
-                            <LayoutTemplate>
-                                <table runat="server">
-                                    <tr runat="server">
-                                        <td runat="server">
-                                            <table id="groupPlaceholderContainer" runat="server" border="0" style="">
-                                                <tr id="groupPlaceholder" runat="server">
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr runat="server">
-                                        <td runat="server" style=""></td>
-                                    </tr>
-                                </table>
-                            </LayoutTemplate>
-                            <SelectedItemTemplate>
-                                <td runat="server" style="">ID_Asiento_A:
-                                    <asp:Label ID="ID_Asiento_ALabel" runat="server" Text='<%# Eval("ID_Asiento_A") %>' />
-                                    <br />
-                                </td>
-                            </SelectedItemTemplate>
-                        </asp:ListView>
-                    </td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style2">
-
-                        <asp:ImageButton ID="ImageButton1" runat="server" Height="240px" ImageUrl="~/Imagenes/Portadas/Doctor Strange.jpg" Width="240px" />
-
-                    </td>
-                    <td class="auto-style1">
-                        <table class="destacado">
-                            <td>
-                                <p>
-                                    <asp:Label ID="lblNombrePelicula" runat="server"></asp:Label>
-                                    <asp:Label ID="lblIdioma" runat="server"></asp:Label>
-                                    </br>
-                                    <asp:Label ID="lblComplejo" runat="server"></asp:Label>
-                                    <br>
-                                        <asp:Label ID="lblDireccion" runat="server"></asp:Label>
-                                    </br>
-                                    <asp:Label ID="lblFechayhora" runat="server"></asp:Label>
-                                    &nbsp;
-                                </p>
-                                <p>
-                                    <br>
-                                    <br>
-                                    &nbsp;
-                                </p>
-                            </td>
-
-                        </table>
-
-                    </td>
-
-                </tr>
-                <tr>
-                    <td class="auto-style31">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style2">
-                        <asp:Button ID="btnVolver" runat="server" Text="Volver" OnClick="btnConfirmar_Click" Height="26px" />
-                    </td>
-                    <td class="auto-style1">
-                        <asp:Button ID="btnConfirmar" runat="server" Text="Siguiente" OnClick="btnConfirmar_Click" Height="26px" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style18">
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DBCineConnectionString %>" SelectCommand="SELECT [ID_Asiento_A] FROM [Asientos]"></asp:SqlDataSource>
-                    </td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style1">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style35"></td>
-                    <td class="auto-style3"></td>
-                    <td class="auto-style2"></td>
-                    <td class="auto-style1"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style19">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style1">&nbsp;</td>
-                </tr>
-            </table>
+                                        <br />
+                                    </td>
+                                </SelectedItemTemplate>
+                            </asp:ListView>
+                            <asp:Image style="width:220px" ImageUrl="/Imagenes/Pagina/logo-pantalla.png" runat="server" />
+                        </div>
+                    </div>
+                    <div>
+                        <asp:Label Style="font-size: 35px" Text="SUBTOTAL: $" runat="server" />
+                        <asp:Label Style="font-size: 35px" ID="lblTotal" runat="server"></asp:Label>
+                    </div>
+                </div>
+            </div>
+            <div style="display:flex;gap:30px;justify-content:center;align-items:center;margin-bottom:30px">
+                <asp:Button style="font-weight: 900;width: 161px;height: 53px;" CssClass="btn btn-danger" ID="btnVolver" runat="server" Text="CANCELAR" OnClick="btnCancelar_Click" />
+                <asp:Button style="font-weight: 900;width: 161px;height: 53px;" CssClass="btn btn-success" ID="btnConfirmar" runat="server" Text="CONFIRMAR" OnClick="btnConfirmar_Click" />
+            </div>
         </div>
     </form>
 </body>
