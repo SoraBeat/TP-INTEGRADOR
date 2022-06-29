@@ -105,17 +105,10 @@ namespace Vistas
         {
 			String ID_Usuario = ((Label)gvUsuarios.Rows[e.RowIndex].FindControl("LBL_IT_ID")).Text;
 			bool res = negUsu.EliminarUsuario(Convert.ToInt32(ID_Usuario));
-			if (res)
-			{
-				lblResultado.ForeColor = System.Drawing.Color.Green;
-				lblResultado.Text = "Se ha borrado correctamente";
-			}
-			else
-			{
-				lblResultado.ForeColor = System.Drawing.Color.Red;
-				lblResultado.Text = "ERROR al borrar";
-			}
+
 			CargarTablaConFiltro();
+			lblResultado.ForeColor = System.Drawing.Color.Green;
+			lblResultado.Text = "Se ha borrado correctamente";
 		}
 
         protected void gvUsuarios_RowEditing(object sender, GridViewEditEventArgs e)
@@ -153,6 +146,16 @@ namespace Vistas
 
 
 				bool res = negUsu.AgregarUsuario(usu);
+
+				gvUsuarios.EditIndex = -1;
+				txtNombre.Text = "";
+				txtApellido.Text = "";
+				txtDni.Text = "";
+				txtTelefono.Text = "";
+				txtEmail.Text = "";
+				txtContraseña.Text = "";
+				chkSuperUsu.Text = "";
+				CargarTablaSinFiltro();
 				if (res)
 				{
 					lblResultadoGuardar.ForeColor = System.Drawing.Color.Green;
@@ -163,15 +166,6 @@ namespace Vistas
 					lblResultadoGuardar.ForeColor = System.Drawing.Color.Red;
 					lblResultadoGuardar.Text = "ERROR al guardar";
 				}
-				gvUsuarios.EditIndex = -1;
-				txtNombre.Text = "";
-				txtApellido.Text = "";
-				txtDni.Text = "";
-				txtTelefono.Text = "";
-				txtEmail.Text = "";
-				txtContraseña.Text = "";
-				chkSuperUsu.Text = "";
-				CargarTablaSinFiltro();
 			}
 		}
 
@@ -218,9 +212,19 @@ namespace Vistas
 			usu.TipoUsuario = TipoUsuario;
 			usu.Estado= Estado;
 
-			negUsu.ModificarUsuario(usu);
 			gvUsuarios.EditIndex = -1;
 			CargarTablaConFiltro();
+
+			if (negUsu.ModificarUsuario(usu))
+			{
+				lblResultado.Text = "Se modifico correctamente";
+				lblResultado.ForeColor = System.Drawing.Color.Green;
+			}
+			else
+			{
+				lblResultado.Text = "Error al modificar";
+				lblResultado.ForeColor = System.Drawing.Color.Red;
+			}
 		}
 
         protected void gvUsuarios_RowCancelingEdit1(object sender, GridViewCancelEditEventArgs e)

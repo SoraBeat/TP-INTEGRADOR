@@ -41,7 +41,8 @@ namespace Vistas
             DataTable tablaPeliculas = negPel.getListaPeliculasCompleto();
             gvPeliculas.DataSource = tablaPeliculas;
             gvPeliculas.DataBind();
-          
+            lblResultado.Text = "";
+            lblResultadoGuardar.Text = "";
         }
 
         private void CargarTablaConFiltro()
@@ -140,11 +141,20 @@ namespace Vistas
             Pel.Portada = Portada;
             Pel.Estado = Estado;
 
-            
-            negPel.ModificarPelicula(Pel);
+            bool res = negPel.ModificarPelicula(Pel);
             gvPeliculas.EditIndex = -1;
             CargarTablaConFiltro();
-
+            
+            if (res)
+            {
+                lblResultado.ForeColor = System.Drawing.Color.Green;
+                lblResultado.Text = "Se ha editado correctamente";
+            }
+            else
+            {
+                lblResultado.ForeColor = System.Drawing.Color.Red;
+                lblResultado.Text = "ERROR al editar";
+            }
         }
 
         protected void gvPeliculas_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
@@ -217,12 +227,16 @@ namespace Vistas
             {
                 CargarTablaConFiltro();
             }
+            lblResultado.Text = "";
+            lblResultadoGuardar.Text = "";
         }
 
         protected void btnFiltrarTodo_Click(object sender, EventArgs e)
         {
             CargarTablaSinFiltro();
             tbFiltro.Text = "";
+            lblResultado.Text = "";
+            lblResultadoGuardar.Text = "";
         }
     }
 }

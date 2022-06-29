@@ -21,6 +21,7 @@ namespace Vistas
 				CargarTablaSinFiltro();
 				CargarGrid();
 			}
+			
 			string datosUsuario = (string)Session["DATOSUSUARIO"];
 			string[] separador = new string[] { " ", "$" };
 			string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
@@ -32,6 +33,8 @@ namespace Vistas
 			DataTable tablaSala = negfu.getTabla();
 			gvFunciones.DataSource = tablaSala;
 			gvFunciones.DataBind();
+			lblResultado.Text = "";
+			lblResultadoEnviar.Text = "";
 		}
 		public void desloguear(object sender, EventArgs e)
 		{
@@ -76,6 +79,8 @@ namespace Vistas
 			}
 			gvFunciones.DataSource = tablaSala;
 			gvFunciones.DataBind();
+			lblResultado.Text = "";
+			lblResultadoEnviar.Text = "";
 		}
 		private void CargarGrid()
 		{
@@ -130,8 +135,8 @@ namespace Vistas
 		{
 			string ID = ((Label)gvFunciones.Rows[e.RowIndex].FindControl("LBL_EDT_ID")).Text;
 			string ID_Pelicula = ((TextBox)gvFunciones.Rows[e.RowIndex].FindControl("TXT_EDT_IDPELICULA")).Text;
-			string ID_Sala = ((TextBox)gvFunciones.Rows[e.RowIndex].FindControl("TXT_EDT_IDPELICULA")).Text;
-			string ID_Complejo = ((TextBox)gvFunciones.Rows[e.RowIndex].FindControl("TXT_EDT_IDPELICULA")).Text;
+			string ID_Sala = ((TextBox)gvFunciones.Rows[e.RowIndex].FindControl("TXT_EDT_IDSALA")).Text;
+			string ID_Complejo = ((TextBox)gvFunciones.Rows[e.RowIndex].FindControl("TXT_EDT_IDCOMPLEJO")).Text;
 			string Fecha = ((TextBox)gvFunciones.Rows[e.RowIndex].FindControl("TXT_EDT_FECHA")).Text;
 			string Horario = ((TextBox)gvFunciones.Rows[e.RowIndex].FindControl("TXT_EDT_HORARIO")).Text;
 			string Idioma = ((TextBox)gvFunciones.Rows[e.RowIndex].FindControl("TXT_EDT_IDIOMA")).Text;
@@ -152,9 +157,10 @@ namespace Vistas
 			funcion.PrecioFuncion = Precio;
 			funcion.EstadoFuncion = Estado;
 
+			bool res = negfu.ModificarFuncion(funcion);
 			gvFunciones.EditIndex = -1;
 			CargarTablaConFiltro();
-			bool res = negfu.ModificarFuncion(funcion);
+
 			if (res)
 			{
 				lblResultado.ForeColor = System.Drawing.Color.Green;

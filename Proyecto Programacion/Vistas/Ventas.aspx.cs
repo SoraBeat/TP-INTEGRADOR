@@ -61,9 +61,12 @@ namespace Vistas
 					tablaVentas = negVen.getListaPorMontoFinalMenorA(txtFiltro.Text);
 					break;
 			}
+			txtFiltro.Text = "";
 			gvVentas.DataSource = tablaVentas;
 			gvVentas.DataBind();
 		}
+
+
 		private void CargarDDL()
 		{
 			ListItem item;
