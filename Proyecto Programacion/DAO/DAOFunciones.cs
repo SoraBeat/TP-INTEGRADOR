@@ -149,7 +149,7 @@ namespace DAO
         public int ModificarFuncion(Funciones funcion)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametrosFuncionAgregar(ref comando, funcion);
+            ArmarParametrosFuncionEditar(ref comando, funcion);
             return ds.EjecutarProcedimientoAlmacenado(comando, "sp_ModificarFuncion");
         }
         private void ArmarParametrosFuncionEliminar(ref SqlCommand comando, Funciones funcion)
@@ -159,6 +159,28 @@ namespace DAO
             SqlParametros.Value = funcion.IdFuncion;
         }
         private void ArmarParametrosFuncionAgregar(ref SqlCommand comando, Funciones funcion)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = comando.Parameters.Add("@IDFUNCION", SqlDbType.Char);
+            SqlParametros.Value = funcion.IdFuncion;
+            SqlParametros = comando.Parameters.Add("@IDPELICULA", SqlDbType.Char);
+            SqlParametros.Value = funcion.IdPelicula;
+            SqlParametros = comando.Parameters.Add("@IDSALA", SqlDbType.Char);
+            SqlParametros.Value = funcion.IdSala;
+            SqlParametros = comando.Parameters.Add("@IDCOMPLEJO", SqlDbType.Char);
+            SqlParametros.Value = funcion.IdComplejo;
+            SqlParametros = comando.Parameters.Add("@FECHA", SqlDbType.Date);
+            SqlParametros.Value = funcion.FechaFuncion;
+            SqlParametros = comando.Parameters.Add("@HORARIO", SqlDbType.Time);
+            SqlParametros.Value = funcion.HorarioFuncion;
+            SqlParametros = comando.Parameters.Add("@IDIOMA", SqlDbType.VarChar);
+            SqlParametros.Value = funcion.IdiomaFuncion;
+            SqlParametros = comando.Parameters.Add("@PRECIO", SqlDbType.Decimal);
+            SqlParametros.Value = funcion.PrecioFuncion;
+            SqlParametros = comando.Parameters.Add("@FORMATO", SqlDbType.Char);
+            SqlParametros.Value = funcion.FormatoFuncion;
+        }
+        private void ArmarParametrosFuncionEditar(ref SqlCommand comando, Funciones funcion)
         {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = comando.Parameters.Add("@IDFUNCION", SqlDbType.Char);
