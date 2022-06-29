@@ -137,16 +137,22 @@
                 <div style="width: 60%;display:flex;flex-direction:column;gap:15px;">
                     <h4>AGREGAR SALAS</h4>
                     <div>
-                    <asp:TextBox ID="txtID" runat="server" placeholder="ID"></asp:TextBox>
+                    <asp:TextBox ID="txtID" runat="server" placeholder="ID" Height="29px" TextMode="Number" ValidationGroup="Grupo 1" Width="188px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtID" ErrorMessage="*" ValidationGroup="Grupo 1"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtID" Display="Dynamic" ErrorMessage="ID Incorrecto" ValidationExpression="^\d+$" ValidationGroup="Grupo 1">*</asp:RegularExpressionValidator>
                     </div>
                     <div> 
-                    <asp:TextBox ID="txtIDComplejo" runat="server" placeholder="ID COMPLEJO"></asp:TextBox>
+                    <asp:TextBox ID="txtIDComplejo" runat="server" placeholder="ID COMPLEJO" TextMode="Number" ValidationGroup="Grupo 1"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtIDComplejo" ErrorMessage="*" ValidationGroup="Grupo 1"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtIDComplejo" Display="Dynamic" ErrorMessage="ID complejo incorrecto" ValidationExpression="^\d+$" ValidationGroup="Grupo 1">*</asp:RegularExpressionValidator>
                     </div>
                     <div>
-                    <asp:TextBox ID="txtCantidadAsientos" TextMode="Number" runat="server" placeholder="CANTIDAD DE ASIENTOS"></asp:TextBox>
+                    <asp:TextBox ID="txtCantidadAsientos" TextMode="Number" runat="server" placeholder="CANTIDAD DE ASIENTOS" ValidationGroup="Grupo 1"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtCantidadAsientos" ErrorMessage="*" ValidationGroup="Grupo 1"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtCantidadAsientos" Display="Dynamic" ErrorMessage="Cantidad Incorrecta" ValidationExpression="^\d+$" ValidationGroup="Grupo 1">*</asp:RegularExpressionValidator>
                     </div>
                     <div>
-                    <asp:Button class="btn btn-primary" ID="btnEnviar" runat="server" OnClick="btnEnviar_Click" Text="Guardar" ValidationGroup="Grupo1" />
+                    <asp:Button class="btn btn-primary" ID="btnEnviar" runat="server" OnClick="btnEnviar_Click" Text="Guardar" ValidationGroup="Grupo 1" />
                     </div>
                     <div>
                         <asp:Label ID="lblResultadoGuardar" runat="server"></asp:Label>
@@ -154,6 +160,7 @@
                 </div>
             </div>
         </div>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo 1" />
     </form>
 </body>
 </html>

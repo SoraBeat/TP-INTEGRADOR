@@ -19,7 +19,7 @@ namespace Vistas
 			if (!IsPostBack)
 			{
 				CargarTablaSinFiltro();
-				CargarGrid();
+				CargarDDL();
 			}
 			string datosUsuario = (string)Session["DATOSUSUARIO"];
 			string[] separador = new string[] { " ", "$" };
@@ -63,7 +63,9 @@ namespace Vistas
 			lblResultado.Text = "";
 			lblResultadoGuardar.Text = "";
 		}
-		private void CargarGrid()
+
+
+		private void CargarDDL()
 		{
 			ListItem item;
 			item = new ListItem("ID");
@@ -157,7 +159,7 @@ namespace Vistas
 				else
 				{
 					lblResultadoGuardar.ForeColor = System.Drawing.Color.Red;
-					lblResultadoGuardar.Text = "ERROR al guardar";
+					lblResultadoGuardar.Text = "La Sala Ya Existe";
 				}
 			}
 		}
@@ -165,7 +167,15 @@ namespace Vistas
 		protected void gvSalas_PageIndexChanging(object sender, GridViewPageEventArgs e)
 		{
 			gvSalas.PageIndex = e.NewPageIndex;
-			CargarTablaConFiltro();
+			if (tbFiltro.Text == "") 
+			{
+				CargarTablaSinFiltro();
+			}
+            else
+            {
+				CargarTablaConFiltro();
+            }
+			
 		}
 
         protected void Button1_Click(object sender, EventArgs e)

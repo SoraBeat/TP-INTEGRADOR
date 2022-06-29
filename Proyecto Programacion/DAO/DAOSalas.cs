@@ -31,24 +31,25 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas ORDER BY ABS(ID_Sala_S)");
             return tabla;
         }
+  
         public DataTable getTablaSalaPorID(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas WHERE ID_Sala_S LIKE '%" + campo + "%' ORDER BY ABS(ID_Sala_S)");
+            DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas WHERE ID_Sala_S = '" + campo + "' ORDER BY ABS(ID_Sala_S)");
             return tabla;
         }
         public DataTable getTablaSalaPorComplejo(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas WHERE ID_Complejo_S LIKE '%" + campo + "%' ORDER BY ABS(ID_Complejo_S)");
+            DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas WHERE ID_Complejo_S = '" + campo + "' ORDER BY ABS(ID_Complejo_S)");
             return tabla;
         }
         public DataTable getTablaSalaPorAsientos(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas WHERE Total_Asientos_S LIKE '%" + campo + "%' ORDER BY ABS(Total_Asientos_S)");
+            DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas WHERE Total_Asientos_S = '" + campo + "' ORDER BY ABS(Total_Asientos_S)");
             return tabla;
         }
         public DataTable getTablaSalaPorEstado(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas WHERE Estado_S LIKE '%" + campo + "%' ORDER BY ABS(Estado_S)");
+            DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas WHERE Estado_S = '" + campo + "' ORDER BY ABS(Estado_S)");
             return tabla;
         }
 
@@ -67,7 +68,7 @@ namespace DAO
         public int ModificarSala(Salas sala)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametrosSalaAgregar(ref comando, sala);
+            ArmarParametrosSalaEditar(ref comando, sala);
             return ds.EjecutarProcedimientoAlmacenado(comando, "sp_ModificarSala");
         }
         private void ArmarParametrosSalaEliminar(ref SqlCommand comando, Salas sala)
@@ -79,6 +80,17 @@ namespace DAO
             SqlParametros.Value = sala.IDComplejo;
         }
         private void ArmarParametrosSalaAgregar(ref SqlCommand comando, Salas sala)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = comando.Parameters.Add("@ID", SqlDbType.VarChar);
+            SqlParametros.Value = sala.IDSala;
+            SqlParametros = comando.Parameters.Add("@IDCOMPLEJO", SqlDbType.VarChar);
+            SqlParametros.Value = sala.IDComplejo;
+            SqlParametros = comando.Parameters.Add("@TOTALASIENTOS", SqlDbType.Int);
+            SqlParametros.Value = sala.TotalAsientos;
+
+        }
+        private void ArmarParametrosSalaEditar(ref SqlCommand comando, Salas sala)
         {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = comando.Parameters.Add("@ID", SqlDbType.VarChar);

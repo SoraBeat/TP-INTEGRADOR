@@ -21,11 +21,13 @@ namespace Negocios
             DAOSalas dao = new DAOSalas();
             return dao.getTablaSalaPorID(id);
         }
+
         public DataTable getTablaPorComplejo(string id)
         {
             DAOSalas dao = new DAOSalas();
             return dao.getTablaSalaPorComplejo(id);
         }
+
         public DataTable getTablaPorAsientos(string id)
         {
             DAOSalas dao = new DAOSalas();
