@@ -16,6 +16,12 @@ namespace Negocios
             DAOComplejos dao = new DAOComplejos();
             return dao.getTablaComplejo();
         }
+
+        public DataTable ExisteComplejo2(Complejos com)
+        {
+            DAOComplejos dao = new DAOComplejos();
+            return dao.ExisteComplejo2(com);
+        }
         public DataTable getListaComplejosPorID(string campo)
         {
             DAOComplejos dao = new DAOComplejos();

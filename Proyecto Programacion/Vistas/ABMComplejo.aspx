@@ -25,10 +25,6 @@
             text-align: center;
         }
 
-        .auto-style20 {
-            width: 275px;
-        }
-
         .auto-style22 {
             width: 100%;
             left: 0px;
@@ -184,12 +180,14 @@
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtID" ValidationGroup="Grupo1" Display="Dynamic">*</asp:RequiredFieldValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:TextBox ID="txtNombre" runat="server" ValidationGroup="Grupo1" placeholder="NOMBRE"></asp:TextBox>
+                        <asp:TextBox ID="txtNombre" runat="server" ValidationGroup="Grupo1" placeholder="NOMBRE" Width="188px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtNombre" ValidationGroup="Grupo1" Display="Dynamic">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtNombre" Display="Dynamic" ErrorMessage="*" ValidationExpression="[A-Za-z ]*" ValidationGroup="Grupo1">Nombre Invalido</asp:RegularExpressionValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtDireccion" runat="server" ValidationGroup="Grupo1" placeholder="DIRECCION"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtDireccion" ValidationGroup="Grupo1" Display="Dynamic">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="Direccion Invalida" ValidationExpression="[0-9a-zA-Z #,-]+" ValidationGroup="Grupo1"></asp:RegularExpressionValidator>
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:TextBox ID="txtTelefono" runat="server" ValidationGroup="Grupo1" placeholder="TELEFONO"></asp:TextBox>

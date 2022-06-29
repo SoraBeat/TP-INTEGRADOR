@@ -12,10 +12,17 @@ namespace DAO
     public class DAOComplejos
     {
         AccesoDatos ds = new AccesoDatos();
-        public Boolean ExisteComplejo(Complejos com)
+        public Boolean ExisteComplejo(Complejos com) 
         {
             string consulta = "SELECT * FROM Complejos WHERE ID_Complejo_Co = '" + com.ID_Complejo + "'";
             return ds.Existe(consulta);
+
+        }
+
+        public DataTable ExisteComplejo2(Complejos com)
+        {
+            DataTable tabla = ds.ObtenerTabla("Complejos","SELECT * FROM Complejos WHERE ID_Complejo_Co = '" + com.ID_Complejo + "' OR Nombre_Co = '" + com.Nombre + "' OR Direccion_Co = '"+com.Direccion+"'");
+            return tabla;
         }
         public Complejos getComplejo(Complejos com)
         {

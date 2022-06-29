@@ -151,6 +151,16 @@ namespace Vistas
 				com.Telefono = Telefono;
 				com.Email = Email;
 
+				DataTable res2 = negcom.ExisteComplejo2(com);
+				foreach (DataRow columna in res2.Rows)
+				{
+					if (columna["ID_Complejo_Co"] != null || columna["Nombre_Co"] != null || columna["Direccion_Co"] !=null)
+					{
+						lblResultadoGuardar.ForeColor = System.Drawing.Color.Red;
+						lblResultadoGuardar.Text = "Ese Complejo ya existe";
+						return;
+					}
+				}
 
 				bool res = negcom.AgregarComplejo(com);
 				gvComplejos.EditIndex = -1;
@@ -168,7 +178,7 @@ namespace Vistas
 				else
 				{
 					lblResultadoGuardar.ForeColor = System.Drawing.Color.Red;
-					lblResultadoGuardar.Text = "ERROR al guardar";
+					lblResultadoGuardar.Text = "Error El Complejo Ya Existe";
 				}
 			}
 		}
