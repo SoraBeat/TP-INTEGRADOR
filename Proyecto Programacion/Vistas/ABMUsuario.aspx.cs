@@ -218,7 +218,16 @@ namespace Vistas
 			usu.TipoUsuario = TipoUsuario;
 			usu.Estado= Estado;
 
-			negUsu.ModificarUsuario(usu);
+			if (negUsu.ModificarUsuario(usu))
+			{
+				lblResultado.Text = "Se modifico correctamente";
+				lblResultado.ForeColor = System.Drawing.Color.Green;
+			}
+            else
+            {
+				lblResultado.Text = "Error al modificar";
+				lblResultado.ForeColor = System.Drawing.Color.Red;
+			}
 			gvUsuarios.EditIndex = -1;
 			CargarTablaConFiltro();
 		}
