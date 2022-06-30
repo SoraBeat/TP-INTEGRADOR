@@ -75,5 +75,30 @@ namespace DAO
 
           return  ds.ObtenerMaximo("select max(id_venta_v)  from ventas");
         }
+
+
+        public int AgregarVentas(Ventas ven)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosVentasAgregar(ref comando, ven);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_AgregarVenta");
+
+        }
+
+        private void ArmarParametrosVentasAgregar(ref SqlCommand comando, Ventas ven)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = comando.Parameters.Add("@idUsuario", SqlDbType.VarChar);
+            SqlParametros.Value = ven.IDUsuario;
+            SqlParametros = comando.Parameters.Add("@fecha", SqlDbType.VarChar);
+            SqlParametros.Value = ven.FechaVenta;
+            SqlParametros = comando.Parameters.Add("@metodoPago", SqlDbType.VarChar);
+            SqlParametros.Value = ven.MetodoPagoVenta;
+            SqlParametros = comando.Parameters.Add("@Total", SqlDbType.Char);
+            SqlParametros.Value = ven.MontoFinalVenta;
+
+
+        }
     }
+}
 }
