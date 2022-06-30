@@ -21,7 +21,7 @@ namespace Negocios
             DAOPeliculas dao = new DAOPeliculas();
             return dao.getNombrePelicula(id);
         }
-        
+
         public DataTable getListaPeliculas2()
         {
             DAOPeliculas dao = new DAOPeliculas();
@@ -37,7 +37,7 @@ namespace Negocios
             DAOPeliculas dao = new DAOPeliculas();
             return dao.getListaPeliculasCompleto();
         }
-        
+
         public DataTable getListaPeliculasComplejos(string consulta)
         {
             DAOPeliculas dao = new DAOPeliculas();
@@ -146,7 +146,7 @@ namespace Negocios
         public bool EliminarPelicula(string id)
         {
             DAOPeliculas dao = new DAOPeliculas();
-            Peliculas pel= new Peliculas();
+            Peliculas pel = new Peliculas();
             pel.ID_Pelicula = id;
             int op = dao.EliminarPeliculas(pel);
             if (op == 1)
@@ -164,7 +164,11 @@ namespace Negocios
             int cantFilas = 0;
             DAOPeliculas daoPel = new DAOPeliculas();
 
-            cantFilas = daoPel.AgregarPeliculas(Pel);
+            if (daoPel.ExistePelicula(Pel)==false)
+            {
+                cantFilas = daoPel.AgregarPeliculas(Pel);
+            }
+            
 
             if (cantFilas == 1)
             {

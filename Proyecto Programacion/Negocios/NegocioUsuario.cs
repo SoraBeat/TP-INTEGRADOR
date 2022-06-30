@@ -94,9 +94,10 @@ namespace Negocios
         {
             int cantFilas = 0;
             DAOUsuarios daoUsu = new DAOUsuarios();
-
-            cantFilas = daoUsu.AgregarUsuario(usu);
-
+            if (daoUsu.BuscarUsuarioPorEmail2(usu)==false)
+            {
+                cantFilas = daoUsu.AgregarUsuario(usu);
+            }
             if (cantFilas == 1)
             {
                 return true;

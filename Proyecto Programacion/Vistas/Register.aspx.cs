@@ -45,7 +45,7 @@ namespace Vistas
                     if (columna["Email_U"] != null || columna ["DNI_U"] != null)
                     {
 						lblMensaje.ForeColor = System.Drawing.Color.Red;
-						lblMensaje.Text = "Ese Complejo ya existe";
+						lblMensaje.Text = "Ese Usuario ya existe";
 						return;
                     }
 				}

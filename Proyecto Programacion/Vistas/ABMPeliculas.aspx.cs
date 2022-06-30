@@ -237,6 +237,16 @@ namespace Vistas
 
 
                 bool res = negPel.AgregarPelicula(Pel);
+                
+                gvPeliculas.EditIndex = -1;
+                txtID.Text = "";
+                txtTitulo.Text = "";
+                txtDescripcion.Text = "";
+                txtDuracion.Text = "";
+                txtClasificacion.Text = "";
+                txtGenero.Text = "";
+                txtPortada.Text = "";
+                CargarTablaSinFiltro();
                 if (res)
                 {
                     lblResultadoGuardar.ForeColor = System.Drawing.Color.Green;
@@ -247,15 +257,6 @@ namespace Vistas
                     lblResultadoGuardar.ForeColor = System.Drawing.Color.Red;
                     lblResultadoGuardar.Text = "ERROR al guardar";
                 }
-                gvPeliculas.EditIndex = -1;
-                txtID.Text = "";
-                txtTitulo.Text = "";
-                txtDescripcion.Text = "";
-                txtDuracion.Text = "";
-                txtClasificacion.Text = "";
-                txtGenero.Text = "";
-                txtPortada.Text = "";
-                CargarTablaSinFiltro();
             }
         }
 
