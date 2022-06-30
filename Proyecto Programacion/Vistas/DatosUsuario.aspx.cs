@@ -90,5 +90,10 @@ namespace Vistas
         {
             Response.Redirect("PaginaAdmin.aspx");
         }
+        public void CargarTarget(object sender,EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.Attributes.Add("data-bs-target","#venta"+btn.Text);
+        }
     }
 }
