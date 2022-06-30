@@ -32,22 +32,22 @@ namespace DAO
         }
         public DataTable getTablaAsientosPorID(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [IDASIENTO], ID_Sala_A AS [IDSALA], ID_Complejo_A AS [IDCOMPLEJO], Estado_A AS [ESTADO] FROM Asientos WHERE ID_Asiento_A LIKE '%" + campo + "%' ORDER BY ABS(ID_Asiento_A)");
+            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [IDASIENTO], ID_Sala_A AS [IDSALA], ID_Complejo_A AS [IDCOMPLEJO], Estado_A AS [ESTADO] FROM Asientos WHERE ID_Asiento_A LIKE '" + campo + "' ORDER BY ABS(ID_Asiento_A)");
             return tabla;
         }
         public DataTable getTablaAsientosPorIDSala(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [IDASIENTO], ID_Sala_A AS [IDSALA], ID_Complejo_A AS [IDCOMPLEJO], Estado_A AS [ESTADO] FROM Asientos WHERE ID_Sala_A LIKE '%" + campo + "%' ORDER BY ABS(ID_Asiento_A)");
+            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [IDASIENTO], ID_Sala_A AS [IDSALA], ID_Complejo_A AS [IDCOMPLEJO], Estado_A AS [ESTADO] FROM Asientos WHERE ID_Sala_A LIKE '" + campo + "' ORDER BY ABS(ID_Asiento_A)");
             return tabla;
         }
         public DataTable getTablaAsientosPorIDComplejo(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [IDASIENTO], ID_Sala_A AS [IDSALA], ID_Complejo_A AS [IDCOMPLEJO], Estado_A AS [ESTADO] FROM Asientos WHERE ID_Complejo_A LIKE '%" + campo + "%' ORDER BY ABS(ID_Asiento_A)");
+            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [IDASIENTO], ID_Sala_A AS [IDSALA], ID_Complejo_A AS [IDCOMPLEJO], Estado_A AS [ESTADO] FROM Asientos WHERE ID_Complejo_A LIKE '" + campo + "' ORDER BY ABS(ID_Asiento_A)");
             return tabla;
         }
         public DataTable getTablaAsientosPorEstado(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [IDASIENTO], ID_Sala_A AS [IDSALA], ID_Complejo_A AS [IDCOMPLEJO], Estado_A AS [ESTADO] FROM Asientos WHERE Estado_A LIKE '%" + campo + "%' ORDER BY ABS(ID_Asiento_A)");
+            DataTable tabla = ds.ObtenerTabla("Asientos", "SELECT ID_Asiento_A AS [IDASIENTO], ID_Sala_A AS [IDSALA], ID_Complejo_A AS [IDCOMPLEJO], Estado_A AS [ESTADO] FROM Asientos WHERE Estado_A LIKE '" + campo + "' ORDER BY ABS(ID_Asiento_A)");
             return tabla;
         }
         public DataTable getTablaAsientosPorFuncion(string campo)

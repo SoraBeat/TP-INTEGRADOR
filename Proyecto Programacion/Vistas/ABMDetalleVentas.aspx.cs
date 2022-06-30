@@ -102,5 +102,18 @@ namespace Vistas
 			CargarTablaSinFiltro();
 			txtFiltro.Text = "";
 		}
+
+        protected void gvDetalleVentas_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+			gvDetalleVentas.PageIndex = e.NewPageIndex;
+			if (txtFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
+		}
     }
 }

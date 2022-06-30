@@ -90,7 +90,14 @@ namespace Vistas
 		protected void gvSalas_PageIndexChanging(object sender, GridViewPageEventArgs e)
 		{
 			GV_ASIENTOSCOMPRADOS.PageIndex = e.NewPageIndex;
-			CargarTablaConFiltro();
+			if (TXT_FILTRO.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 		}
 
         protected void BTN_FILTRAR_Click(object sender, EventArgs e)

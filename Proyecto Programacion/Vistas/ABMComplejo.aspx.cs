@@ -41,20 +41,20 @@ namespace Vistas
 		}
 		private void CargarTablaConFiltro()
 		{
-			DataTable tablaComplejo=new DataTable();
-            switch (ddlFiltro.Text)
-            {
-				case "ID":tablaComplejo = negcom.getListaComplejosPorID(tbFiltro.Text);
+			DataTable tablaComplejo = new DataTable();
+			switch (ddlFiltro.Text)
+			{
+				case "ID": tablaComplejo = negcom.getListaComplejosPorID(tbFiltro.Text);
 					break;
-				case "NOMBRE":tablaComplejo = negcom.getListaComplejosPorNombre(tbFiltro.Text);
+				case "NOMBRE": tablaComplejo = negcom.getListaComplejosPorNombre(tbFiltro.Text);
 					break;
-				case "DIRECCION":tablaComplejo = negcom.getListaComplejosPorDireccion(tbFiltro.Text);
+				case "DIRECCION": tablaComplejo = negcom.getListaComplejosPorDireccion(tbFiltro.Text);
 					break;
-				case "TELEFONO":tablaComplejo = negcom.getListaComplejosPorTelefono(tbFiltro.Text);
+				case "TELEFONO": tablaComplejo = negcom.getListaComplejosPorTelefono(tbFiltro.Text);
 					break;
-				case "EMAIL":tablaComplejo = negcom.getListaComplejosPorEmail(tbFiltro.Text);
+				case "EMAIL": tablaComplejo = negcom.getListaComplejosPorEmail(tbFiltro.Text);
 					break;
-				case "ESTADO":tablaComplejo = negcom.getListaComplejosPorEstado(tbFiltro.Text);
+				case "ESTADO": tablaComplejo = negcom.getListaComplejosPorEstado(tbFiltro.Text);
 					break;
 			}
 			gvComplejos.DataSource = tablaComplejo;
@@ -63,7 +63,7 @@ namespace Vistas
 			lblResultadoGuardar.Text = "";
 		}
 		private void CargarGrid()
-        {
+		{
 			ListItem item;
 			item = new ListItem("ID");
 			ddlFiltro.Items.Add(item);
@@ -81,29 +81,50 @@ namespace Vistas
 		}
 
 		protected void gvComplejos_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
+		{
 			//Busco ID del Complejo
 			String ID_Complejo = ((Label)gvComplejos.Rows[e.RowIndex].FindControl("LBL_IT_ID")).Text;
 			bool res = negcom.EliminarComplejo(ID_Complejo);
-			CargarTablaConFiltro();
+			if (tbFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 			lblResultado.ForeColor = System.Drawing.Color.Green;
 			lblResultado.Text = "Se ha borrado correctamente";
 		}
 
-        protected void gvComplejos_RowEditing(object sender, GridViewEditEventArgs e)
-        {
+		protected void gvComplejos_RowEditing(object sender, GridViewEditEventArgs e)
+		{
 			gvComplejos.EditIndex = e.NewEditIndex;
-			CargarTablaConFiltro();
-        }
+			if (tbFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
+		}
 
-        protected void gvComplejos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
+		protected void gvComplejos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+		{
 			gvComplejos.EditIndex = -1;
-			CargarTablaConFiltro();
-        }
+			if (tbFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
+		}
 
-        protected void gvComplejos_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
+		protected void gvComplejos_RowUpdating(object sender, GridViewUpdateEventArgs e)
+		{
 			String ID = ((Label)gvComplejos.Rows[e.RowIndex].FindControl("LBL_EDT_ID")).Text;
 			String Nombre = ((TextBox)gvComplejos.Rows[e.RowIndex].FindControl("TXT_EDT_NOMBRE")).Text;
 			String Direccion = ((TextBox)gvComplejos.Rows[e.RowIndex].FindControl("TXT_EDT_DIRECCION")).Text;
@@ -119,10 +140,17 @@ namespace Vistas
 			com.Email = Email;
 			com.Estado_Co1 = Estado;
 
-			bool res=negcom.ModificarComplejo(com);
+			bool res = negcom.ModificarComplejo(com);
 			gvComplejos.EditIndex = -1;
-			CargarTablaConFiltro();
-            if (res)
+			if (tbFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
+			if (res)
             {
 				lblResultado.ForeColor = System.Drawing.Color.Green;
 				lblResultado.Text = "Se ha editado correctamente";
@@ -186,7 +214,14 @@ namespace Vistas
         protected void gvComplejos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
 			gvComplejos.PageIndex = e.NewPageIndex;
-			CargarTablaConFiltro();
+			if (tbFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 		}
 
         protected void btnFiltrar_Click(object sender, EventArgs e)

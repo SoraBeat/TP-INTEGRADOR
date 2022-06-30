@@ -84,7 +84,14 @@ namespace Vistas
             String IDComplejo = ((Label)gvAsientos.Rows[e.RowIndex].FindControl("LBL_IT_IDCOMPLEJO")).Text;
             bool res = negasi.EliminarAsiento(IDAsiento,IDSala,IDComplejo);
 
-            CargarTablaConFiltro();
+            if (txtFiltro.Text != "")
+            {
+                CargarTablaConFiltro();
+            }
+            else
+            {
+                CargarTablaSinFiltro();
+            }
 
             lblResultado.ForeColor = System.Drawing.Color.Green;
             lblResultado.Text = "Se ha borrado correctamente";
@@ -111,7 +118,14 @@ namespace Vistas
                 txtIDAsiento.Text = "";
                 txtIDSala.Text = "";
                 txtIDComplejo.Text = "";
-                CargarTablaSinFiltro();
+                if (txtFiltro.Text != "")
+                {
+                    CargarTablaConFiltro();
+                }
+                else
+                {
+                    CargarTablaSinFiltro();
+                }
                 if (res)
                 {
                     lblResultadoGuardar.ForeColor = System.Drawing.Color.Green;
@@ -128,7 +142,15 @@ namespace Vistas
         protected void gvAsientos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvAsientos.PageIndex = e.NewPageIndex;
-            CargarTablaConFiltro();
+            if(txtFiltro.Text!="")
+            {
+                CargarTablaConFiltro();
+            }
+            else
+            {
+                CargarTablaSinFiltro();
+            }
+            
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
@@ -160,7 +182,14 @@ namespace Vistas
 
             negasi.ModificarAsiento(asi);
             gvAsientos.EditIndex = -1;
-            CargarTablaConFiltro();
+            if (txtFiltro.Text != "")
+            {
+                CargarTablaConFiltro();
+            }
+            else
+            {
+                CargarTablaSinFiltro();
+            }
 
             lblResultado.ForeColor = System.Drawing.Color.Green;
             lblResultado.Text = "Se ha editado con exito";
@@ -169,13 +198,27 @@ namespace Vistas
         protected void gvAsientos_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gvAsientos.EditIndex = e.NewEditIndex;
-            CargarTablaConFiltro();
+            if (txtFiltro.Text != "")
+            {
+                CargarTablaConFiltro();
+            }
+            else
+            {
+                CargarTablaSinFiltro();
+            }
         }
 
         protected void gvAsientos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gvAsientos.EditIndex = -1;
-            CargarTablaSinFiltro();
+            if (txtFiltro.Text != "")
+            {
+                CargarTablaConFiltro();
+            }
+            else
+            {
+                CargarTablaSinFiltro();
+            }
         }
     }
 }

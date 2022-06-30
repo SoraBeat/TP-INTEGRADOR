@@ -85,7 +85,14 @@ namespace Vistas
 			string ID_Sala = ((Label)gvSalas.Rows[e.RowIndex].FindControl("LBL_IT_ID")).Text;
 			string ID_Complejo = ((Label)gvSalas.Rows[e.RowIndex].FindControl("LBL_IT_COMPLEJO")).Text;
 			bool res = negsa.EliminarSala(ID_Sala,ID_Complejo);
-			CargarTablaConFiltro();
+			if (tbFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 			lblResultado.ForeColor = System.Drawing.Color.Green;
 			lblResultado.Text = "Se ha borrado correctamente";
 		}
@@ -93,13 +100,27 @@ namespace Vistas
 		protected void gvSalas_RowEditing(object sender, GridViewEditEventArgs e)
 		{
 			gvSalas.EditIndex = e.NewEditIndex;
-			CargarTablaConFiltro();
+			if (tbFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 		}
 
 		protected void gvSalas_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
 		{
 			gvSalas.EditIndex = -1;
-			CargarTablaSinFiltro();
+			if (tbFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 		}
 
 		protected void gvSalas_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -119,7 +140,14 @@ namespace Vistas
 
 			bool res =negsa.ModificarSala(sala);
 			gvSalas.EditIndex = -1;
-			CargarTablaConFiltro();
+			if (tbFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 			if (res)
 			{
 				lblResultado.ForeColor = System.Drawing.Color.Green;

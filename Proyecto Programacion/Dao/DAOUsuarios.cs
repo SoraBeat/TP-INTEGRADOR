@@ -20,7 +20,7 @@ namespace DAO
         //}
         public DataTable getTablaUsuariosPorIDUsuario(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO], Estado_U AS [ESTADO] FROM Usuarios WHERE ID_Usuario_U LIKE '%" + campo + "%' ORDER BY ABS(ID_Usuario_U)");
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO], Estado_U AS [ESTADO] FROM Usuarios WHERE ID_Usuario_U LIKE '" + campo + "' ORDER BY ABS(ID_Usuario_U)");
             return tabla;
         }
         public DataTable cantidadUsuarios()
@@ -61,12 +61,12 @@ namespace DAO
         }
         public DataTable getTablaUsuariosPorTipoDeUsuario(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO], Estado_U AS [ESTADO] FROM USUARIOS WHERE Tipo_Usuario_U LIKE '%" + campo + "%' ORDER BY ABS(Tipo_Usuario_U)");
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO], Estado_U AS [ESTADO] FROM USUARIOS WHERE Tipo_Usuario_U LIKE '%" + campo + "%'");
             return tabla;
         }
         public DataTable getTablaUsuariosPorEstadoDeUsuario(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO], Estado_U AS [ESTADO] FROM USUARIOS WHERE Estado_U LIKE '%" + campo + "%' ORDER BY ABS(Estado_U)");
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "SELECT ID_Usuario_U AS [ID], Nombre_U AS [NOMBRE], Apellido_U AS [APELLIDO], DNI_U AS [DNI], TELEFONO_U AS [TELEFONO], EMAIL_U AS [EMAIL], CONTRASEÑA_U AS [CONTRASEÑA], TIPO_USUARIO_U AS [SUPERUSUARIO], Estado_U AS [ESTADO] FROM USUARIOS WHERE Estado_U LIKE '%" + campo + "%'");
             return tabla;
         }
         public Usuarios getUsuario(Usuarios usu)

@@ -38,7 +38,7 @@ namespace DAO
         }
         public DataTable getTablaFuncionPorID(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE ID_Funcion_F LIKE '%" + campo + "%' ORDER BY ABS(ID_Funcion_F)");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE ID_Funcion_F LIKE '" + campo + "' ORDER BY ABS(ID_Funcion_F)");
             return tabla;
         }
         public DataTable getTablaFuncionPorID2(string idPelicula,string idComplejo, string Formato, string Idioma, string Fecha,string Horario)
@@ -73,22 +73,22 @@ namespace DAO
 
         public DataTable getTablaFuncionPorPelicula(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE ID_Pelicula_F LIKE '%" + campo + "%' ORDER BY ABS(ID_Pelicula_F)");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE ID_Pelicula_F LIKE '" + campo + "' ORDER BY ABS(ID_Pelicula_F)");
             return tabla;
         }
         public DataTable getTablaFuncionPorSala(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE ID_Sala_F LIKE '%" + campo + "%' ORDER BY ABS(ID_Sala_F)");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE ID_Sala_F LIKE '" + campo + "' ORDER BY ABS(ID_Sala_F)");
             return tabla;
         }
         public DataTable getTablaFuncionPorComplejo(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE ID_Complejo_F LIKE '%" + campo + "%' ORDER BY ABS(ID_Complejo_F)");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE ID_Complejo_F LIKE '" + campo + "' ORDER BY ABS(ID_Complejo_F)");
             return tabla;
         }
         public DataTable getTablaFuncionPorFecha(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SET LANGUAGE Spanish SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Fecha_F LIKE '%" + campo + "%' ORDER BY ABS(Fecha_F)");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SET LANGUAGE Spanish SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Fecha_F LIKE '%" + campo + "%'");
             return tabla;
         }
         public DataTable getTablaFuncionPorFecha2(string idPelicula, string idcomplejo, string formato, string idioma)
@@ -98,7 +98,7 @@ namespace DAO
         }
         public DataTable getTablaFuncionPorHorario(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SET LANGUAGE Spanish SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Horario_F LIKE '%" + campo + "%' ORDER BY ABS(Horario_F)");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SET LANGUAGE Spanish SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Horario_F LIKE '%" + campo + "%'");
             return tabla;
         }
         public DataTable getTablaFuncionPorHorario2(string idPelicula, string idcomplejo, string formato, string idioma, string fecha)
@@ -109,22 +109,22 @@ namespace DAO
         }
         public DataTable getTablaFuncionPorIdioma(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Idioma_F LIKE '%" + campo + "%' ORDER BY ABS(Idioma_F)");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Idioma_F LIKE '%" + campo + "%'");
             return tabla;
         }
         public DataTable getTablaFuncionPorPrecio(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Precio_F LIKE '%" + campo + "%' ORDER BY ABS(Precio_F)");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Precio_F LIKE '%" + campo + "%'");
             return tabla;
         }
         public DataTable getTablaFuncionPorFormato(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Formato_F LIKE '%" + campo + "%' ORDER BY ABS(Formato_F)");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Formato_F LIKE '%" + campo + "%'");
             return tabla;
         }
         public DataTable getTablaFuncionPorEstado(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Estado_F LIKE '%" + campo + "%' ORDER BY ABS(Estado_F)");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Funcion_F AS [ID], ID_Pelicula_F AS [IDPELICULA], ID_Sala_F AS [IDSALA], ID_Complejo_F AS [IDCOMPLEJO], Fecha_F AS [FECHA], Horario_F AS [HORARIO], Idioma_F AS [IDIOMA], Precio_F AS [PRECIO], Estado_F AS [ESTADO], Formato_F AS [FORMATO] FROM Funciones WHERE Estado_F LIKE '%" + campo + "%'");
             return tabla;
         }
         

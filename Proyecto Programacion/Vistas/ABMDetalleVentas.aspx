@@ -64,7 +64,7 @@
                 </div>
                 </a>
                 <div style="width: 80%">
-                    <asp:GridView Style="width: 80%" ID="gvDetalleVentas" runat="server" Width="734px" AllowPaging="True" AutoGenerateColumns="False">
+                    <asp:GridView Style="width: 80%" ID="gvDetalleVentas" runat="server" Width="734px" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="gvDetalleVentas_PageIndexChanging">
                         <Columns>
                             <asp:TemplateField HeaderText=" ID Detalle Venta">
                                 <ItemTemplate>

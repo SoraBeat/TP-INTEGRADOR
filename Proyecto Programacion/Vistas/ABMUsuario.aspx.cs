@@ -114,13 +114,27 @@ namespace Vistas
         protected void gvUsuarios_RowEditing(object sender, GridViewEditEventArgs e)
         {
 			gvUsuarios.EditIndex = e.NewEditIndex;
-			CargarTablaConFiltro();
+			if (txtFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 		}
 
         protected void gvUsuarios_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
 			gvUsuarios.EditIndex = -1;
-			CargarTablaSinFiltro();
+			if (txtFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 		}
 
         protected void btnEnviar_Click(object sender, EventArgs e)
@@ -172,7 +186,14 @@ namespace Vistas
         protected void gvUsuarios_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
 			gvUsuarios.PageIndex = e.NewPageIndex;
-			CargarTablaConFiltro();
+			if (txtFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 		}
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
@@ -213,7 +234,14 @@ namespace Vistas
 			usu.Estado= Estado;
 
 			gvUsuarios.EditIndex = -1;
-			CargarTablaConFiltro();
+			if (txtFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 
 			if (negUsu.ModificarUsuario(usu))
 			{
@@ -230,7 +258,14 @@ namespace Vistas
         protected void gvUsuarios_RowCancelingEdit1(object sender, GridViewCancelEditEventArgs e)
         {
 			gvUsuarios.EditIndex = -1;
-			CargarTablaConFiltro();
+			if (txtFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 		}
     }
 }

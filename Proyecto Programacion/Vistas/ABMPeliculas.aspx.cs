@@ -92,7 +92,7 @@ namespace Vistas
             ddlFiltro.Items.Add(item);
             item = new ListItem("DURACION");
             ddlFiltro.Items.Add(item);
-            item = new ListItem("CLACIFICACION");
+            item = new ListItem("CLASIFICACION");
             ddlFiltro.Items.Add(item);
             item = new ListItem("GENERO");
             ddlFiltro.Items.Add(item);
@@ -107,7 +107,14 @@ namespace Vistas
         {
             String ID_Pelicula = ((Label)gvPeliculas.Rows[e.RowIndex].FindControl("lblIDPelicula")).Text;
             bool res = negPel.EliminarPelicula(ID_Pelicula);
-            CargarTablaConFiltro();
+            if (tbFiltro.Text != "")
+            {
+                CargarTablaConFiltro();
+            }
+            else
+            {
+                CargarTablaSinFiltro();
+            }
             lblResultado.ForeColor = System.Drawing.Color.Green;
             lblResultado.Text = "Se ha borrado correctamente";
         }
@@ -115,7 +122,14 @@ namespace Vistas
         protected void gvPeliculas_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gvPeliculas.EditIndex = e.NewEditIndex;
-            CargarTablaConFiltro();
+            if (tbFiltro.Text != "")
+            {
+                CargarTablaConFiltro();
+            }
+            else
+            {
+                CargarTablaSinFiltro();
+            }
         }
 
         protected void gvPeliculas_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -143,8 +157,15 @@ namespace Vistas
 
             bool res = negPel.ModificarPelicula(Pel);
             gvPeliculas.EditIndex = -1;
-            CargarTablaConFiltro();
-            
+            if (tbFiltro.Text != "")
+            {
+                CargarTablaConFiltro();
+            }
+            else
+            {
+                CargarTablaSinFiltro();
+            }
+
             if (res)
             {
                 lblResultado.ForeColor = System.Drawing.Color.Green;
@@ -160,13 +181,20 @@ namespace Vistas
         protected void gvPeliculas_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gvPeliculas.EditIndex = -1;
-            CargarTablaSinFiltro();
+            if (tbFiltro.Text != "")
+            {
+                CargarTablaConFiltro();
+            }
+            else
+            {
+                CargarTablaSinFiltro();
+            }
 
         }
 
         protected void gvPeliculas_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnEnviar_Click_Click(object sender, EventArgs e)
@@ -218,7 +246,14 @@ namespace Vistas
         protected void gvComplejos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvPeliculas.PageIndex = e.NewPageIndex;
-            CargarTablaConFiltro();
+            if (tbFiltro.Text != "")
+            {
+                CargarTablaConFiltro();
+            }
+            else
+            {
+                CargarTablaSinFiltro();
+            }
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)

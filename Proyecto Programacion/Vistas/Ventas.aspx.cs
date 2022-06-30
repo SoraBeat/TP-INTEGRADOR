@@ -99,5 +99,18 @@ namespace Vistas
 			txtFiltro.Text = "";
 
 		}
+
+        protected void gvVentas_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+			gvVentas.PageIndex=e.NewPageIndex;
+			if (txtFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
+		}
     }
 }

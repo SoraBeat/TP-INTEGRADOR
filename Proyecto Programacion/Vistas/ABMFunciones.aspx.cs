@@ -116,19 +116,40 @@ namespace Vistas
 			lblResultado.ForeColor = System.Drawing.Color.Green;
 			lblResultado.Text = "Se ha borrado correctamente";
 
-			CargarTablaConFiltro();
+			if (txtFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 		}
 
 		protected void gvFunciones_RowEditing(object sender, GridViewEditEventArgs e)
 		{
 			gvFunciones.EditIndex = e.NewEditIndex;
-			CargarTablaConFiltro();
+			if (txtFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 		}
 
 		protected void gvFunciones_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
 		{
 			gvFunciones.EditIndex = -1;
-			CargarTablaSinFiltro();
+			if (txtFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 		}
 
 		protected void gvFunciones_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -159,7 +180,14 @@ namespace Vistas
 
 			bool res = negfu.ModificarFuncion(funcion);
 			gvFunciones.EditIndex = -1;
-			CargarTablaConFiltro();
+			if (txtFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 
 			if (res)
 			{
@@ -177,7 +205,14 @@ namespace Vistas
 		protected void gvFunciones_PageIndexChanging(object sender, GridViewPageEventArgs e)
 		{
 			gvFunciones.PageIndex = e.NewPageIndex;
-			CargarTablaConFiltro();
+			if (txtFiltro.Text != "")
+			{
+				CargarTablaConFiltro();
+			}
+			else
+			{
+				CargarTablaSinFiltro();
+			}
 		}
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
@@ -235,7 +270,14 @@ namespace Vistas
 				txtIDIOMA.Text = "";
 				txtFORMATO.Text = "";
 				txtPRECIO.Text = "";
-				CargarTablaSinFiltro();
+				if (txtFiltro.Text != "")
+				{
+					CargarTablaConFiltro();
+				}
+				else
+				{
+					CargarTablaSinFiltro();
+				}
 				if (res)
 				{
 					lblResultadoEnviar.ForeColor = System.Drawing.Color.Green;

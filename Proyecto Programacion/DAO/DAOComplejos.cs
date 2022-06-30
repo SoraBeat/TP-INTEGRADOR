@@ -41,7 +41,7 @@ namespace DAO
         }
         public DataTable getTablaComplejoPorID(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Complejos", "SELECT ID_Complejo_Co AS [ID], Nombre_Co AS [NOMBRE], Direccion_Co AS [DIRECCION], Telefono_Co AS [TELEFONO], Email_Co AS [EMAIL], Estado_Co AS [ESTADO] FROM Complejos WHERE ID_Complejo_Co LIKE '%" + campo+ "%' ORDER BY ABS(ID_Complejo_Co)");
+            DataTable tabla = ds.ObtenerTabla("Complejos", "SELECT ID_Complejo_Co AS [ID], Nombre_Co AS [NOMBRE], Direccion_Co AS [DIRECCION], Telefono_Co AS [TELEFONO], Email_Co AS [EMAIL], Estado_Co AS [ESTADO] FROM Complejos WHERE ID_Complejo_Co LIKE '" + campo+ "' ORDER BY ABS(ID_Complejo_Co)");
             return tabla;
         }
         public DataTable getTablaComplejoPorNombre(string campo)
@@ -66,7 +66,7 @@ namespace DAO
         }
         public DataTable getTablaComplejoPorEstado(string campo)
         {
-            DataTable tabla = ds.ObtenerTabla("Complejos", "SELECT ID_Complejo_Co AS [ID], Nombre_Co AS [NOMBRE], Direccion_Co AS [DIRECCION], Telefono_Co AS [TELEFONO], Email_Co AS [EMAIL], Estado_Co AS [ESTADO] FROM Complejos WHERE Estado_Co LIKE '%" + campo + "%' ORDER BY ABS(Estado_Co)");
+            DataTable tabla = ds.ObtenerTabla("Complejos", "SELECT ID_Complejo_Co AS [ID], Nombre_Co AS [NOMBRE], Direccion_Co AS [DIRECCION], Telefono_Co AS [TELEFONO], Email_Co AS [EMAIL], Estado_Co AS [ESTADO] FROM Complejos WHERE Estado_Co LIKE '" + campo + "' ORDER BY ABS(Estado_Co)");
             return tabla;
         }
         public int EliminarComplejo(Complejos com)
