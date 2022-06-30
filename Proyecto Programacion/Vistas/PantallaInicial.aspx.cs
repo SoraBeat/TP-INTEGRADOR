@@ -17,6 +17,7 @@ namespace Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
             nombrebtn();
+            CabezeraUsuario();
             if (IsPostBack == false)
             {
                 btnIrPaginaAdmin();
@@ -24,7 +25,21 @@ namespace Vistas
                 CargarDDL();
             }
         }
-
+        public void CabezeraUsuario()
+        {
+            if (Session["DATOSUSUARIO"]!=null)
+            {
+                ContenedorUsuario.Visible = true;
+                string datosUsuario = (string)Session["DATOSUSUARIO"];
+                string[] separador = new string[] { " ", "$" };
+                string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+                ContenedorNombre.Text = datos[1];
+            }
+            else
+            {
+                ContenedorUsuario.Visible = false;
+            }
+        }
 
         protected void btnSeleccionarPelicula_Command(object sender, CommandEventArgs e)
         {

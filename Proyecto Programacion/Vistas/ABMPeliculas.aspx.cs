@@ -15,6 +15,7 @@ namespace Vistas
         NegocioPeliculas negPel = new NegocioPeliculas();
         protected void Page_Load(object sender, EventArgs e)
         {
+            CabezeraUsuario();
             if (!IsPostBack)
             {
                 CargarTablaSinFiltro();
@@ -30,6 +31,21 @@ namespace Vistas
             }
 
 
+        }
+        public void CabezeraUsuario()
+        {
+            if (Session["DATOSUSUARIO"] != null)
+            {
+                ContenedorUsuario.Visible = true;
+                string datosUsuario = (string)Session["DATOSUSUARIO"];
+                string[] separador = new string[] { " ", "$" };
+                string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+                ContenedorNombre.Text = datos[1];
+            }
+            else
+            {
+                ContenedorUsuario.Visible = false;
+            }
         }
         public void desloguear(object sender, EventArgs e)
         {

@@ -36,11 +36,16 @@
                 </Scripts>
             </asp:ScriptManager>
             <nav class="auto-style22" style="background-color: #10179B; padding: 10px 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-                <a class="" href="PantallaInicial.aspx" style="margin-left: 30px;">
-                    <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
+                <a class="" style="margin-left: 30px;" href="PantallaInicial.aspx">
+                    <img style="width: 120px; height: 70px;" src="./Imagenes/Pagina/logo-piola.png" />
                 </a>
-                <asp:Button runat="server" onclick="desloguear" class="btn" style="height: 50px; color: white; font-weight: 700; font-size: 20px; margin-right: 30px;" Text="Cerrar sesion">
-                </asp:Button>
+                <div style="display: flex; flex-direction: row; align-items: center; margin-right: 20px">
+                    <asp:Button runat="server" OnClick="desloguear" class="btn" Style="height: 50px; color: white; font-weight: 700; font-size: 20px;" Text="Cerrar sesion"></asp:Button>
+                    <asp:HyperLink runat="server" ID="ContenedorUsuario" href="DatosUsuario.aspx" Style="margin-left: 20px; color: white; text-decoration: none; display: flex; flex-direction: row; align-items: center;">
+                        <asp:Label Style="font-size: 20px" ID="ContenedorNombre" Text="Pepe Pepito" runat="server" />
+                        <asp:Image Style="height: 40px; width: 40px" ImageUrl="/Imagenes/Pagina/persona2.png" runat="server" />
+                    </asp:HyperLink>
+                </div>
             </nav>
             <div>
                 <h1 style="text-align: center; background-color: #343434; padding: 10px 0; color: white;">SALAS</h1>

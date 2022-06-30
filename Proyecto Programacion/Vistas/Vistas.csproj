@@ -97,6 +97,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\hover.css" />
     <Content Include="Content\owl.carousel.css" />
+    <Content Include="DatosUsuario.aspx" />
     <Content Include="Imagenes\Pagina\asiento-libre.png" />
     <Content Include="Imagenes\Pagina\asiento-ocupado.png" />
     <Content Include="Imagenes\Pagina\asiento-seleccionado.png" />
@@ -216,6 +217,13 @@
     </Compile>
     <Compile Include="ConfirmarCompra.aspx.designer.cs">
       <DependentUpon>ConfirmarCompra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosUsuario.aspx.cs">
+      <DependentUpon>DatosUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosUsuario.aspx.designer.cs">
+      <DependentUpon>DatosUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="MostrarPelicula.aspx.cs">
       <DependentUpon>MostrarPelicula.aspx</DependentUpon>

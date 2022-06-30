@@ -47,9 +47,13 @@
             <a class="" href="PantallaInicial.aspx" style="margin-left: 30px;">
                 <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
             </a>
-            <div style="margin-right: 20px">
+            <div style="margin-right: 20px;display:flex;flex-direction:row;align-items:center">
                 <asp:Button class="btn btn-primary" ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click" />
-                <asp:Button class="btn btn-warning" ID="txtPaginaAdmin" runat="server" OnClick="txtPaginaAdmin_Click" Text="Funciones admin" Visible="False" />
+                <asp:Button style="margin-left:20px" class="btn btn-warning" ID="txtPaginaAdmin" runat="server" OnClick="txtPaginaAdmin_Click" Text="Funciones admin" Visible="False" />
+                <asp:HyperLink runat="server" ID="ContenedorUsuario" href="DatosUsuario.aspx" style="margin-left:20px;color:white;text-decoration:none;display:flex;flex-direction:row;align-items:end;">
+                    <asp:Label style="font-size:20px" ID="ContenedorNombre" Text="Pepe Pepito" runat="server" />
+                    <asp:Image style="height:40px;width:40px" ImageUrl="/Imagenes/Pagina/persona.png" runat="server" />
+                </asp:HyperLink>
             </div>
         </nav>
         <!-- CARRUSEL-->

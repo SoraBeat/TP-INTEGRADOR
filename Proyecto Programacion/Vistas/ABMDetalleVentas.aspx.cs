@@ -15,6 +15,7 @@ namespace Vistas
 		NegocioDetalleVentas negDV = new NegocioDetalleVentas();
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			CabezeraUsuario();
 			if (!IsPostBack)
 			{
 				CargarTablaSinFiltro();
@@ -26,7 +27,22 @@ namespace Vistas
 			LBL_NOMBREUSUARIO.Text = datos[1];
 			LBL_APELLIDOUSUARIO.Text = datos[2];
 		}
-        private void CargarTablaSinFiltro()
+		public void CabezeraUsuario()
+		{
+			if (Session["DATOSUSUARIO"] != null)
+			{
+				ContenedorUsuario.Visible = true;
+				string datosUsuario = (string)Session["DATOSUSUARIO"];
+				string[] separador = new string[] { " ", "$" };
+				string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+				ContenedorNombre.Text = datos[1];
+			}
+			else
+			{
+				ContenedorUsuario.Visible = false;
+			}
+		}
+		private void CargarTablaSinFiltro()
         {
             DataTable tablaDetalleVentas = negDV.getListaDetalleVentas();
             gvDetalleVentas.DataSource = tablaDetalleVentas;

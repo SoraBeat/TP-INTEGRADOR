@@ -33,7 +33,7 @@ namespace Vistas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            CabezeraUsuario();
             nombrebtn();
             if (IsPostBack == false)
             {
@@ -49,7 +49,22 @@ namespace Vistas
                 CargarDDLcomplejo();
               
             }
-           
+
+        }
+        public void CabezeraUsuario()
+        {
+            if (Session["DATOSUSUARIO"] != null)
+            {
+                ContenedorUsuario.Visible = true;
+                string datosUsuario = (string)Session["DATOSUSUARIO"];
+                string[] separador = new string[] { " ", "$" };
+                string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+                ContenedorNombre.Text = datos[1];
+            }
+            else
+            {
+                ContenedorUsuario.Visible = false;
+            }
         }
         private void CargarDDLcomplejo()
         {

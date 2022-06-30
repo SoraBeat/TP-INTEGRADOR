@@ -22,6 +22,7 @@
             font-size: 30px;
             color: #FFFFFF;
         }
+
         .auto-style2 {
             width: 80%;
         }
@@ -40,7 +41,13 @@
                 <a class="" style="margin-left: 30px;" href="PantallaInicial.aspx">
                     <img style="width: 120px; height: 70px;" src="./Imagenes/Pagina/logo-piola.png" />
                 </a>
-                <asp:Button runat="server" OnClick="desloguear" class="btn" Style="height: 50px; color: white; font-weight: 700; font-size: 20px; margin-right: 30px;" Text="Cerrar sesion"></asp:Button>
+                <div style="display: flex; flex-direction: row; align-items: center; margin-right: 20px">
+                    <asp:Button runat="server" OnClick="desloguear" class="btn" Style="height: 50px; color: white; font-weight: 700; font-size: 20px;" Text="Cerrar sesion"></asp:Button>
+                    <asp:HyperLink runat="server" ID="ContenedorUsuario" href="DatosUsuario.aspx" Style="margin-left: 20px; color: white; text-decoration: none; display: flex; flex-direction: row; align-items: center;">
+                        <asp:Label Style="font-size: 20px" ID="ContenedorNombre" Text="Pepe Pepito" runat="server" />
+                        <asp:Image Style="height: 40px; width: 40px" ImageUrl="/Imagenes/Pagina/persona2.png" runat="server" />
+                    </asp:HyperLink>
+                </div>
             </nav>
             <div>
                 <h1 id="LABELPIOLA" style="text-align: center; background-color: #343434; padding: 10px 0; color: white; font-weight: 700;">Bienvenido a la administracion</h1>
@@ -130,7 +137,7 @@
                     <h4>Tóp 5 peliculas mas vistas</h4>
                     <br />
                     <div>
-                        <canvas style="width:300px !important;height:300px !important;" id="myChart"></canvas>
+                        <canvas style="width: 300px !important; height: 300px !important;" id="myChart"></canvas>
                     </div>
                 </div>
 
@@ -138,38 +145,38 @@
         </div>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    var nombreDePeliculas = '<%=this.NOMBREDEPELICULAS%>'.split("$");
-    var vecesVista = '<%=this.VECESVISTA%>'.split("$");
-    nombreDePeliculas.shift();
-    vecesVista.shift();
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const myChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: nombreDePeliculas,
-            datasets: [{
-                label: 'Peliculas mas vistas',
-                data: vecesVista,
-                backgroundColor: [
-                    'rgba(255, 0, 0, 0.5)',
-                    'rgba(0, 255, 0, 0.5)',
-                    'rgba(0, 0, 255, 0.5)',
-                    'rgba(255, 255, 0, 0.5)',
-                    'rgba(255, 0, 255, 0.5)'
-                ]
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true
+    <script>
+        var nombreDePeliculas = '<%=this.NOMBREDEPELICULAS%>'.split("$");
+        var vecesVista = '<%=this.VECESVISTA%>'.split("$");
+        nombreDePeliculas.shift();
+        vecesVista.shift();
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: nombreDePeliculas,
+                datasets: [{
+                    label: 'Peliculas mas vistas',
+                    data: vecesVista,
+                    backgroundColor: [
+                        'rgba(255, 0, 0, 0.5)',
+                        'rgba(0, 255, 0, 0.5)',
+                        'rgba(0, 0, 255, 0.5)',
+                        'rgba(255, 255, 0, 0.5)',
+                        'rgba(255, 0, 255, 0.5)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
-</script>
+        });
+    </script>
 </body>
 </html>

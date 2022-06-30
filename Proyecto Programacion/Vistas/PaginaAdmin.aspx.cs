@@ -28,6 +28,7 @@ namespace Vistas
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            CabezeraUsuario();
             LBL_VENTAS.ForeColor = System.Drawing.Color.White;
             LBL_DINERO.ForeColor = System.Drawing.Color.White;
             string datosUsuario = (string)Session["DATOSUSUARIO"];
@@ -58,6 +59,21 @@ namespace Vistas
             {
                 NombreDePeliculas += "$" + columna["PELICULAS"];
                 VecesVista += "$" + columna["VENTAS"];
+            }
+        }
+        public void CabezeraUsuario()
+        {
+            if (Session["DATOSUSUARIO"] != null)
+            {
+                ContenedorUsuario.Visible = true;
+                string datosUsuario = (string)Session["DATOSUSUARIO"];
+                string[] separador = new string[] { " ", "$" };
+                string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+                ContenedorNombre.Text = datos[1];
+            }
+            else
+            {
+                ContenedorUsuario.Visible = false;
             }
         }
         public void desloguear(object sender, EventArgs e)
