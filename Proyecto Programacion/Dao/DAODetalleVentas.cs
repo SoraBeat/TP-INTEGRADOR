@@ -52,5 +52,32 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Detalle_Ventas", "SELECT ID_DetalleVenta_DV AS [IDDetalleVenta], ID_Venta_DV AS [IDVenta], ID_Funcion_DV AS [IDFuncion], ID_SALA_DV AS [IDSala], ID_Complejo_DV AS [IDComplejo], Cantidad_DV AS [Cantidad], Precio_DV AS [Precio] FROM Detalle_Ventas");
             return tabla;
         }
+
+        public int AgregarDetalleVentas(DetalleVentas ven)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosDetalleventaAgregar(ref comando, ven);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_AgrergarDetalleventa");
+
+        }
+
+        private void ArmarParametrosDetalleventaAgregar(ref SqlCommand comando, DetalleVentas ven)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = comando.Parameters.Add("@idVENTA", SqlDbType.VarChar);
+            SqlParametros.Value = ven.IDVenta;
+            SqlParametros = comando.Parameters.Add("@idFuncion", SqlDbType.VarChar);
+            SqlParametros.Value = ven.IDFuncion;
+            SqlParametros = comando.Parameters.Add("@id_Sala", SqlDbType.VarChar);
+            SqlParametros.Value = ven.IDSala;
+            SqlParametros = comando.Parameters.Add("@idcomplejo", SqlDbType.VarChar);
+            SqlParametros.Value = ven.IDComplejo;
+            SqlParametros = comando.Parameters.Add("@cantidad", SqlDbType.Char);
+            SqlParametros.Value = ven.Cantidad;
+            SqlParametros = comando.Parameters.Add("@precio", SqlDbType.Char);
+            SqlParametros.Value = ven.Precio;
+
+
+        }
     }
 }

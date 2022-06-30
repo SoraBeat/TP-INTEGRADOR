@@ -76,5 +76,32 @@ namespace Negocios
             return dao.buscarProximaVenta();
 
         }
+
+
+        public bool AgregarVenta(int IDUsuario, string Fecha, string Metodo_Pago, float Montofinal)
+        {
+            int cantFilas = 0;
+            DAOVentas DaoVentas = new DAOVentas();
+            Ventas ven = new Ventas();
+            ven.IDUsuario = IDUsuario;
+            ven.FechaVenta = Fecha;
+            ven.MetodoPagoVenta = Metodo_Pago;
+            ven.MontoFinalVenta = Montofinal;
+
+
+            cantFilas = DaoVentas.AgregarVentas(ven);
+
+            if (cantFilas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+}
+
     }
 }

@@ -57,5 +57,33 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("AsientosComprados", "IF EXISTS (SELECT Estado_AC FROM AsientosComprados WHERE ID_Asiento_AC='"+ idAsiento + "' AND ID_Funcion_AC='" + idFuncion + "') BEGIN SELECT 1 AS EXISTE; END ELSE BEGIN SELECT 0 AS EXISTE; END");
             return tabla;
         }
+
+        public int AgregarAsientosComprado(AsientosComprados ac)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosAsientoscompradosAgregar(ref comando, ac);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_AgregarAsientoComprados");
+
+        }
+
+        private void ArmarParametrosAsientoscompradosAgregar(ref SqlCommand comando,  AsientosComprados ac)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = comando.Parameters.Add("@idAsiento", SqlDbType.VarChar);
+            SqlParametros.Value = ac.IdAsiento;
+            SqlParametros = comando.Parameters.Add("@idDetalleventa", SqlDbType.VarChar);
+            SqlParametros.Value = ac.IdDetalleVenta;
+            SqlParametros = comando.Parameters.Add("@idventa", SqlDbType.VarChar);
+            SqlParametros.Value = ac.IdVenta;
+            SqlParametros = comando.Parameters.Add("@id_funcion", SqlDbType.Char);
+            SqlParametros.Value = ac.IdFuncion;
+            SqlParametros = comando.Parameters.Add("@idsala", SqlDbType.Char);
+            SqlParametros.Value = ac.IdSala;
+            SqlParametros = comando.Parameters.Add("@idComplejo", SqlDbType.Char);
+            SqlParametros.Value = ac.IdComplejo;
+
+
+
+        }
     }
 }

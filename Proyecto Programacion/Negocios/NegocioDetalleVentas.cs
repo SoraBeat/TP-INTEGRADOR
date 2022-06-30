@@ -51,11 +51,34 @@ namespace Negocios
             DAODetalleVentas dao = new DAODetalleVentas();
             return dao.getTablaDetalleVentasPorPrecio(campo);
         }
-        public int  buscarProximaVenta()
+        public int buscarProximaVenta()
         {
             DAODetalleVentas dao = new DAODetalleVentas();
             return 0;
         }
 
+        public bool AgregarDetalleVenta(int IdVenta, string idfuncion, string idsala, string idcomplejo, float Precio)
+        {
+            int cantFilas = 0;
+            DAODetalleVentas DaoDVentas = new DAODetalleVentas();
+            DetalleVentas ven = new DetalleVentas();
+            ven.IDVenta = IdVenta;
+            ven.IDFuncion = idfuncion;
+            ven.IDSala = idsala;
+            ven.IDComplejo = idcomplejo;
+            ven.Precio = Precio;
+
+
+            cantFilas = DaoDVentas.AgregarDetalleVentas(ven);
+
+            if (cantFilas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
