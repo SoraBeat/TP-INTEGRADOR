@@ -59,10 +59,7 @@
             </table>
             <div style="display: flex; flex-direction: row; margin-top: 20px;">
                 <a style="width: 20%;text-decoration:none;color:black;" href="PaginaAdmin.aspx">
-                <div style=" display: flex; flex-direction: column; justify-content: start; align-items: center;">
-                    
-                    <img style="width: 100px; height: 100px;" src="Imagenes/Pagina/Persona.png" alt="Alternate Text" />
-                        <asp:Label Style="font-size: 20px; font-weight: 700;" ID="LBL_NOMBREUSUARIO" Text="Nombre" runat="server" />
+                <div style=" display: flex; flex-direction: column; justify-conten <asp:Label Style="font-size: 20px; font-weight: 700;" ID="LBL_NOMBREUSUARIO" Text="Nombre" runat="server" />
                         <asp:Label Style="font-size: 20px; font-weight: 700;" ID="LBL_APELLIDOUSUARIO" Text="Apellido" runat="server" />
                     
                 </div>
@@ -72,98 +69,37 @@
                         <Columns>
                             <asp:TemplateField HeaderText="ID">
                                 <EditItemTemplate>
-                                    <asp:Label ID="LBL_EDT_ID" runat="server" Text='<%# Bind("ID") %>'></asp:Label>
-                                </EditItemTemplate>
-                                <ItemTemplate>
-                                    <asp:Label ID="LBL_IT_ID" runat="server" Text='<%# Bind("ID") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="ID Pelicula">
+                                    <asp:Label ID="LBL_EDT_ID" runat="server" Text='<%# Bind("ID") %>'></asp:Label></EditItemTemplate><ItemTemplate>
+                                    <asp:Label ID="LBL_IT_ID" runat="server" Text='<%# Bind("ID") %>'></asp:Label></ItemTemplate></asp:TemplateField><asp:TemplateField HeaderText="ID Pelicula">
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="TXT_EDT_IDPELICULA" runat="server" Text='<%# Bind("IDPELICULA") %>'></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="TXT_EDT_IDPELICULA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                </EditItemTemplate>
-                                <ItemTemplate>
-                                    <asp:Label ID="LBL_IT_IDPELICULA" runat="server" Text='<%# Bind("IDPELICULA") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="ID Sala">
+                                    <asp:TextBox ID="TXT_EDT_IDPELICULA" runat="server" Text='<%# Bind("IDPELICULA") %>'></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="TXT_EDT_IDPELICULA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator></EditItemTemplate><ItemTemplate>
+                                    <asp:Label ID="LBL_IT_IDPELICULA" runat="server" Text='<%# Bind("IDPELICULA") %>'></asp:Label></ItemTemplate></asp:TemplateField><asp:TemplateField HeaderText="ID Sala">
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="TXT_EDT_IDSALA" runat="server" Text='<%# Bind("IDSALA") %>'></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="TXT_EDT_IDSALA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                </EditItemTemplate>
-                                <ItemTemplate>
-                                    <asp:Label ID="LBL_IT_IDSALA" runat="server" Text='<%# Bind("IDSALA") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="ID Complejo">
+                                    <asp:TextBox ID="TXT_EDT_IDSALA" runat="server" Text='<%# Bind("IDSALA") %>'></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="TXT_EDT_IDSALA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator></EditItemTemplate><ItemTemplate>
+                                    <asp:Label ID="LBL_IT_IDSALA" runat="server" Text='<%# Bind("IDSALA") %>'></asp:Label></ItemTemplate></asp:TemplateField><asp:TemplateField HeaderText="ID Complejo">
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="TXT_EDT_IDCOMPLEJO" runat="server" Text='<%# Bind("IDCOMPLEJO") %>'></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="TXT_EDT_IDCOMPLEJO" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                </EditItemTemplate>
-                                <ItemTemplate>
-                                    <asp:Label ID="LBL_IT_IDCOMPLEJO" runat="server" Text='<%# Bind("IDCOMPLEJO") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Fecha">
+                                    <asp:TextBox ID="TXT_EDT_IDCOMPLEJO" runat="server" Text='<%# Bind("IDCOMPLEJO") %>'></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="TXT_EDT_IDCOMPLEJO" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator></EditItemTemplate><ItemTemplate>
+                                    <asp:Label ID="LBL_IT_IDCOMPLEJO" runat="server" Text='<%# Bind("IDCOMPLEJO") %>'></asp:Label></ItemTemplate></asp:TemplateField><asp:TemplateField HeaderText="Fecha">
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="TXT_EDT_FECHA" runat="server" Text='<%# Bind("FECHA") %>'></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="TXT_EDT_FECHA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator14" runat="server" ControlToValidate="TXT_EDT_FECHA" Display="Dynamic" ValidationExpression="^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$">Feha invalida</asp:RegularExpressionValidator>
-                                </EditItemTemplate>
-                                <ItemTemplate>
-                                    <asp:Label ID="LBL_IT_FECHA" runat="server" Text='<%# Bind("FECHA") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Horario">
+                                    <asp:TextBox ID="TXT_EDT_FECHA" runat="server" Text='<%# Bind("FECHA") %>'></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="TXT_EDT_FECHA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator><asp:RegularExpressionValidator ID="RegularExpressionValidator14" runat="server" ControlToValidate="TXT_EDT_FECHA" Display="Dynamic" ValidationExpression="^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$">Feha invalida</asp:RegularExpressionValidator></EditItemTemplate><ItemTemplate>
+                                    <asp:Label ID="LBL_IT_FECHA" runat="server" Text='<%# Bind("FECHA") %>'></asp:Label></ItemTemplate></asp:TemplateField><asp:TemplateField HeaderText="Horario">
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="TXT_EDT_HORARIO" runat="server" Text='<%# Bind("HORARIO") %>'></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="TXT_EDT_HORARIO" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator15" runat="server" ControlToValidate="TXT_EDT_HORARIO" Display="Dynamic" ValidationExpression="^(?:0?[1-9]|1[0-2]):[0-5][0-9]\s?(?:[aApP](\.?)[mM]\1)?$">Horario invalido</asp:RegularExpressionValidator>
-                                </EditItemTemplate>
-                                <ItemTemplate>
-                                    <asp:Label ID="LBL_IT_HORARIO" runat="server" Text='<%# Bind("HORARIO") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Idioma">
+                                    <asp:TextBox ID="TXT_EDT_HORARIO" runat="server" Text='<%# Bind("HORARIO") %>'></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="TXT_EDT_HORARIO" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator><asp:RegularExpressionValidator ID="RegularExpressionValidator15" runat="server" ControlToValidate="TXT_EDT_HORARIO" Display="Dynamic" ValidationExpression="([01]?[0-9]|2[0-3]):[0-5][0-9]">Horario invalido</asp:RegularExpressionValidator></EditItemTemplate><ItemTemplate>
+                                    <asp:Label ID="LBL_IT_HORARIO" runat="server" Text='<%# Bind("HORARIO") %>'></asp:Label></ItemTemplate></asp:TemplateField><asp:TemplateField HeaderText="Idioma">
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="TXT_EDT_IDIOMA" runat="server" Text='<%# Bind("IDIOMA") %>'></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ControlToValidate="TXT_EDT_IDIOMA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                </EditItemTemplate>
-                                <ItemTemplate>
-                                    <asp:Label ID="LBL_IT_IDIOMA" runat="server" Text='<%# Bind("IDIOMA") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Formato">
+                                    <asp:TextBox ID="TXT_EDT_IDIOMA" runat="server" Text='<%# Bind("IDIOMA") %>'></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ControlToValidate="TXT_EDT_IDIOMA" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator></EditItemTemplate><ItemTemplate>
+                                    <asp:Label ID="LBL_IT_IDIOMA" runat="server" Text='<%# Bind("IDIOMA") %>'></asp:Label></ItemTemplate></asp:TemplateField><asp:TemplateField HeaderText="Formato">
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="TXT_EDT_FORMATO" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="TXT_EDT_FORMATO" ErrorMessage="CAMPO VACIO"></asp:RequiredFieldValidator>
-                                </EditItemTemplate>
-                                <ItemTemplate>
-                                    <asp:Label ID="LBL_IT_FORMATO" runat="server" Text='<%# Bind("FORMATO") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Precio">
+                                    <asp:TextBox ID="TXT_EDT_FORMATO" runat="server"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="TXT_EDT_FORMATO" ErrorMessage="CAMPO VACIO"></asp:RequiredFieldValidator></EditItemTemplate><ItemTemplate>
+                                    <asp:Label ID="LBL_IT_FORMATO" runat="server" Text='<%# Bind("FORMATO") %>'></asp:Label></ItemTemplate></asp:TemplateField><asp:TemplateField HeaderText="Precio">
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="TXT_EDT_PRECIO" runat="server" Text='<%# Bind("PRECIO") %>'></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ControlToValidate="TXT_EDT_PRECIO" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator17" runat="server" ControlToValidate="TXT_EDT_PRECIO" Display="Dynamic" ValidationExpression="[0-9]+.[0-9]{2}">Precio invalido</asp:RegularExpressionValidator>
-                                </EditItemTemplate>
-                                <ItemTemplate>
-                                    <asp:Label ID="LBL_IT_PRECIO" runat="server" Text='<%# Bind("PRECIO") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Estado">
+                                    <asp:TextBox ID="TXT_EDT_PRECIO" runat="server" Text='<%# Bind("PRECIO") %>'></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ControlToValidate="TXT_EDT_PRECIO" Display="Dynamic">CAMPO VACIO</asp:RequiredFieldValidator><asp:RegularExpressionValidator ID="RegularExpressionValidator17" runat="server" ControlToValidate="TXT_EDT_PRECIO" Display="Dynamic" ValidationExpression="[0-9]+.[0-9]{2}">Precio invalido</asp:RegularExpressionValidator></EditItemTemplate><ItemTemplate>
+                                    <asp:Label ID="LBL_IT_PRECIO" runat="server" Text='<%# Bind("PRECIO") %>'></asp:Label></ItemTemplate></asp:TemplateField><asp:TemplateField HeaderText="Estado">
                                 <EditItemTemplate>
                                     <asp:CheckBox ID="CB_EDT_ESTADO" runat="server" Checked='<%# Bind("ESTADO") %>' />
                                 </EditItemTemplate>
                                 <ItemTemplate>
-                                    <asp:Label ID="LBL_IT_ESTADO" runat="server" Text='<%# Bind("ESTADO") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                        </Columns>
-
-                        <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                                    <asp:Label ID="LBL_IT_ESTADO" runat="server" Text='<%# Bind("ESTADO") %>'></asp:Label></ItemTemplate></asp:TemplateField></Columns><FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                         <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
                         <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
                         <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
@@ -173,74 +109,21 @@
                         <SortedDescendingHeaderStyle BackColor="#242121" />
 
                     </asp:GridView>
-                    <asp:Label ID="lblResultado" runat="server"></asp:Label>
-                </div>
-            </div>
-            <br />
+                    <asp:Label ID="lblResultado" runat="server"></asp:Label></div></div><br />
             <div style="width: 100%; display: flex; flex-direction: row;">
                 <div class="list-group" style="width: 20%;">
-                    <asp:Label CssClass="auto-style23 font-weight-bolder" ID="Label5" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Medium" Text="MODIFICACION"></asp:Label>
-
-                    <asp:HyperLink CssClass="list-group-item" ID="hlComplejos" runat="server" NavigateUrl="~/ABMComplejo.aspx">Complejos</asp:HyperLink>
-                    <asp:HyperLink CssClass="list-group-item" ID="hlSalas" runat="server" NavigateUrl="~/ABMSalas.aspx">Salas</asp:HyperLink>
-                    <asp:HyperLink CssClass="list-group-item" ID="hlPeliculas" runat="server" NavigateUrl="~/ABMPeliculas.aspx">Peliculas</asp:HyperLink>
-                    <asp:HyperLink CssClass="list-group-item" ID="hlFunciones" runat="server" NavigateUrl="~/ABMFunciones.aspx">Funciones</asp:HyperLink>
-                    <asp:HyperLink CssClass="list-group-item" ID="hlAsientos" runat="server" NavigateUrl="~/ABMAsientos.aspx">Asientos</asp:HyperLink>
-                    <asp:HyperLink CssClass="list-group-item" ID="hlAsientosComprados" runat="server" NavigateUrl="~/ABMAsientosComprados.aspx">Asientos Comprados</asp:HyperLink>
-                    <asp:HyperLink CssClass="list-group-item" ID="hlVentas" runat="server" NavigateUrl="~/Ventas.aspx">Ventas</asp:HyperLink>
-                    <asp:HyperLink CssClass="list-group-item" ID="hlDV" runat="server" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink>
-                    <asp:HyperLink CssClass="list-group-item" ID="hlUsuarios" runat="server" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink>
-                </div>
-                <div style="width: 60%; display: flex; flex-direction: column; gap: 15px;">
-                    <h4>AGREGAR FUNCION</h4>
-                    <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:TextBox ID="txtID" runat="server" ValidationGroup="Grupo1" placeholder="ID"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtID" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                    </div>
-                    <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:TextBox ID="txtIDPELICULA" runat="server" ValidationGroup="Grupo1" placeholder="ID PELICULA"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtIDPELICULA" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                    </div>
-                    <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:TextBox ID="txtIDSALA" runat="server" ValidationGroup="Grupo1" placeholder="ID SALA"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtIDSALA" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                    </div>
-                    <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:TextBox ID="txtIDCOMPLEJO" runat="server" ValidationGroup="Grupo1" placeholder="ID COMPLEJO"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtIDCOMPLEJO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                    </div>
-                    <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:TextBox ID="txtFECHA" runat="server" ValidationGroup="Grupo1" placeholder="FECHA"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtFECHA" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtFECHA" Display="Dynamic" ValidationExpression="^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$" ValidationGroup="Grupo1">Fecha invalida</asp:RegularExpressionValidator>
-                    </div>
-                    <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:TextBox ID="txtHORARIO" runat="server" ValidationGroup="Grupo1" placeholder="HORARIO"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtHORARIO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtHORARIO" Display="Dynamic" ValidationExpression="^(?:0?[1-9]|1[0-2]):[0-5][0-9]\s?(?:[aApP](\.?)[mM]\1)?$" ValidationGroup="Grupo1">Horario invalido</asp:RegularExpressionValidator>
-                    </div>
-                    <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:TextBox ID="txtIDIOMA" runat="server" ValidationGroup="Grupo1" placeholder="IDIOMA"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtIDIOMA" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                    </div>
-                    <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:TextBox ID="txtPRECIO" runat="server" ValidationGroup="Grupo1" placeholder="PRECIO"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtPRECIO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtPRECIO" Display="Dynamic" ValidationExpression="[0-9]+.[0-9]{2}" ValidationGroup="Grupo1">Precio invalido</asp:RegularExpressionValidator>
-                    </div>
-                    <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:TextBox ID="txtFORMATO" runat="server" ValidationGroup="Grupo1" placeholder="FORMATO"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFORMATO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                    </div>
-                    <div style="display:flex;justify-content:center;flex-direction:row;">
+                    <asp:Label CssClass="auto-style23 font-weight-bolder" ID="Label5" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Medium" Text="MODIFICACION"></asp:Label><asp:HyperLink CssClass="list-group-item" ID="hlComplejos" runat="server" NavigateUrl="~/ABMComplejo.aspx">Complejos</asp:HyperLink><asp:HyperLink CssClass="list-group-item" ID="hlSalas" runat="server" NavigateUrl="~/ABMSalas.aspx">Salas</asp:HyperLink><asp:HyperLink CssClass="list-group-item" ID="hlPeliculas" runat="server" NavigateUrl="~/ABMPeliculas.aspx">Peliculas</asp:HyperLink><asp:HyperLink CssClass="list-group-item" ID="hlFunciones" runat="server" NavigateUrl="~/ABMFunciones.aspx">Funciones</asp:HyperLink><asp:HyperLink CssClass="list-group-item" ID="hlAsientos" runat="server" NavigateUrl="~/ABMAsientos.aspx">Asientos</asp:HyperLink><asp:HyperLink CssClass="list-group-item" ID="hlAsientosComprados" runat="server" NavigateUrl="~/ABMAsientosComprados.aspx">Asientos Comprados</asp:HyperLink><asp:HyperLink CssClass="list-group-item" ID="hlVentas" runat="server" NavigateUrl="~/Ventas.aspx">Ventas</asp:HyperLink><asp:HyperLink CssClass="list-group-item" ID="hlDV" runat="server" NavigateUrl="~/ABMDetalleVentas.aspx">Detalle de Ventas</asp:HyperLink><asp:HyperLink CssClass="list-group-item" ID="hlUsuarios" runat="server" NavigateUrl="~/ABMUsuario.aspx">Usuarios</asp:HyperLink></div><div style="width: 60%; display: flex; flex-direction: column; gap: 15px;">
+                    <h4>AGREGAR FUNCION</h4><div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtID" runat="server" ValidationGroup="Grupo1" placeholder="ID"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtID" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator></div><div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtIDPELICULA" runat="server" ValidationGroup="Grupo1" placeholder="ID PELICULA"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtIDPELICULA" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator></div><div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtIDSALA" runat="server" ValidationGroup="Grupo1" placeholder="ID SALA"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtIDSALA" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator></div><div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtIDCOMPLEJO" runat="server" ValidationGroup="Grupo1" placeholder="ID COMPLEJO"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtIDCOMPLEJO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator></div><div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtFECHA" runat="server" ValidationGroup="Grupo1" placeholder="FECHA"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtFECHA" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator><asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtFECHA" Display="Dynamic" ValidationExpression="^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$" ValidationGroup="Grupo1">Fecha invalida</asp:RegularExpressionValidator></div><div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtHORARIO" runat="server" ValidationGroup="Grupo1" placeholder="HORARIO"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtHORARIO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator><asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtHORARIO" Display="Dynamic" ValidationExpression="([01]?[0-9]|2[0-3]):[0-5][0-9]" ValidationGroup="Grupo1">Horario invalido</asp:RegularExpressionValidator></div><div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtIDIOMA" runat="server" ValidationGroup="Grupo1" placeholder="IDIOMA"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtIDIOMA" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator></div><div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtPRECIO" runat="server" ValidationGroup="Grupo1" placeholder="PRECIO"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtPRECIO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator><asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtPRECIO" Display="Dynamic" ValidationExpression="[0-9]+.[0-9]{2}" ValidationGroup="Grupo1">Precio invalido</asp:RegularExpressionValidator></div><div style="display:flex;justify-content:center;flex-direction:row;">
+                        <asp:TextBox ID="txtFORMATO" runat="server" ValidationGroup="Grupo1" placeholder="FORMATO"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFORMATO" Display="Dynamic" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator></div><div style="display:flex;justify-content:center;flex-direction:row;">
                         <asp:Button CssClass="btn btn-primary" ID="btnENVIAR" runat="server" Text="Guardar" ValidationGroup="Grupo1" OnClick="btnENVIAR_Click1" />
                     </div>
                     <div style="display:flex;justify-content:center;flex-direction:row;">
-                        <asp:Label ID="lblResultadoEnviar" runat="server"></asp:Label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-</body>
-</html>
+                        <asp:Label ID="lblResultadoEnviar" runat="server"></asp:Label></div></div></div></div></form></body></html>
