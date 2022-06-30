@@ -66,7 +66,7 @@ namespace DAO
         }
         public DataTable getTablaFecha(string Inicio, string Final)
         {
-            DataTable tabla = ds.ObtenerTabla("Ventas", "DECLARE @INICIO Date = CAST('"+Inicio+"' as date) DECLARE @FINAL Date = CAST('"+Final+ "' as date) SELECT SUM (Monto_Final_V) AS [TOTAL], COUNT (ID_Venta_V) AS [CANTIDAD_VENTA] FROM Ventas WHERE CAST(Fecha_V as date) >= @INICIO AND CAST(Fecha_V as date) <= @FINAL");
+            DataTable tabla = ds.ObtenerTabla("Ventas", "SET LANGUAGE SPANISH DECLARE @INICIO Date = CAST('" + Inicio+"' as date) DECLARE @FINAL Date = CAST('"+Final+ "' as date) SELECT SUM (Monto_Final_V) AS [TOTAL], COUNT (ID_Venta_V) AS [CANTIDAD_VENTA] FROM Ventas WHERE CAST(Fecha_V as date) >= @INICIO AND CAST(Fecha_V as date) <= @FINAL");
             return tabla;
         }
 
