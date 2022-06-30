@@ -28,15 +28,19 @@ namespace Vistas
             DataTable fecha = Fun.getTablaPorFecha2(datos[1], datos[2], formato.Rows[0]["FORMATO"].ToString(), idioma.Rows[0]["IDIOMA"].ToString());
             DataTable horario = Fun.getTablaPorHorario2(datos[1], datos[2], formato.Rows[0]["FORMATO"].ToString(), idioma.Rows[0]["IDIOMA"].ToString(), fecha.Rows[0]["FECHA"].ToString()+"/2022");
             DataTable portada = Pel.getPortadaPorID(datos[1]);
+            string sala = Request.QueryString["idSala"];
             string costo = Request.QueryString["subtotal"];
+            string asientos = Request.QueryString["asientos"];
 
             lblNombrePelicula.Text = peliculas.Rows[0]["Titulo"].ToString();
+            lblSala.Text = sala;
             lblComplejo.Text = complejos.Rows[0]["NOMBRE"].ToString();
             lblIdioma.Text = idioma.Rows[0]["IDIOMA"].ToString();
             lblFormato.Text = formato.Rows[0]["FORMATO"].ToString();
             lblFecha.Text = fecha.Rows[0]["FECHA"].ToString();
             lblHorario.Text = horario.Rows[0]["HORARIO"].ToString();
             lblCosto.Text = "$" + costo;
+            lblAsientos.Text = asientos;
             ImageButton.ImageUrl = portada.Rows[0]["Portada"].ToString();
         }
 

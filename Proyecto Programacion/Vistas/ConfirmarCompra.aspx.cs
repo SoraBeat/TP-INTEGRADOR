@@ -30,6 +30,7 @@ namespace Vistas
         private static int cantidadDeAsientosSeleccionados;
         private static bool recargarPagina = false;
         private static string seleccionAnterior;
+        private static string numeroAsientos;
 
 
         public static string idPelicula { get => IDpelicula; set => IDpelicula = value; }
@@ -45,6 +46,7 @@ namespace Vistas
         public static int CantidadDeAsientosSeleccionados { get => cantidadDeAsientosSeleccionados; set => cantidadDeAsientosSeleccionados = value; }
         public static bool RecargarPagina { get => recargarPagina; set => recargarPagina = value; }
         public static string SeleccionAnterior { get => seleccionAnterior; set => seleccionAnterior = value; }
+        public static string NumeroAsientos { get => numeroAsientos; set => numeroAsientos = value; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -176,9 +178,34 @@ namespace Vistas
             {
                 DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion);
                 DataRow row = tabla.Rows[0];
+                DataTable sala = Fun.getTablaSalaPorID(IDfuncion);
+                DataRow sala2 = sala.Rows[0];
+                string idSala = Convert.ToInt32(sala2["IDSALA"]).ToString();
                 string subtotal = (Convert.ToInt32(txtCantidad.Text) * Convert.ToInt32(row["PRECIO"])).ToString();
-                Session["DATOSTICKET"] = IDfuncion1 + "$" + idPelicula + "$" + idcomplejo + "$"+ idioma + "$" + formato + "$" + fecha + "$" + horario + "$" + subtotal;
-                Response.Redirect("Precompra.aspx?subtotal="+subtotal);
+                string precio = Convert.ToInt32(row["PRECIO"]).ToString();
+                asientosSeleccionados();
+                string asientos = txtCantidad.Text + " x TICKETS ($"+ precio +" Asientos:" + numeroAsientos + ")";
+                Session["DATOSTICKET"] = IDfuncion1 + "$" + idPelicula + "$" + idcomplejo + "$"+ idioma + "$" + formato + "$" + fecha + "$" + horario + "$" + subtotal + "$" + idSala;
+                Response.Redirect("Precompra.aspx?subtotal="+subtotal+"&idSala="+idSala+"&asientos="+asientos);
+            }
+        }
+
+        public void asientosSeleccionados()
+        {
+            bool bandera=false;
+            numeroAsientos = "";
+            for (int i = 0; i < seleccionarAsientos.Length; i++)
+            {
+                if (seleccionarAsientos[i] == true)
+                {
+                    if (bandera == true)
+                    {
+                        numeroAsientos += "-";
+                        bandera = false;
+                    }
+                    numeroAsientos += Convert.ToString(i+1);
+                    bandera = true;
+                }
             }
         }
 

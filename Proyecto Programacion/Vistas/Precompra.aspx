@@ -4,48 +4,21 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Galag Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/owl.carousel.css" />
+    <link href="Content/hover.css" rel="stylesheet" />
+    <link href="Content/animate.min.css" rel="stylesheet" />
+    <link href="Content/animate2.css" rel="stylesheet" />
     <style type="text/css">
-        form{
-      background-color:aliceblue;
-        }
-       
-
-     
-
-
-               body {
-            font-family: 'Roboto', sans-serif;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .h1,h1{font-size:2.5rem}.h1,h1{font-size:calc(1.375rem + 1.5vw)}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}*,::after,::before{box-sizing:border-box}
-        .auto-style29 {
-            background-color: white;
-            width: 648px;
-            height: 377px;
-        }
-        .auto-style31 {
-            width: 392px;
-            height: 26px;
-        }
-        .auto-style32 {
-            width: 648px;
-            height: 26px;
-        }
-        .auto-style33 {
-            width: 1271px;
-            height: 26px;
-        }
-        .auto-style34 {
-            width: 120px;
-            height: 70px;
-            margin-left: 0px;
-        }
-        .auto-style35 {
-            height: 22px;
+        body {
+            width: 100%;
+            background-image: url("Imagenes/Pagina/fondo-login.png");
+            background-size: cover;
+            background-repeat: no-repeat;
         }
     </style>
 </head>
@@ -59,105 +32,55 @@
                 <asp:Button runat="server" OnClick="desloguear" class="btn" Style="color: white; font-weight: 700; font-size: 20px; margin-right: 30px;" Text="Cerrar sesion" Height="44px" Width="187px"></asp:Button>
                 <img style="width: 100px; height: 100px;" src="Imagenes/Pagina/Persona.png" alt="Alternate Text" /></nav> 
           
-    
-                <h1 id="LABELPIOLA" style="text-align: center; background-color: #343434; padding: 10px 0; color: white; font-weight: 700;">Bienvenido juan Aaron</h1>
-          
-    
-            <br />
-            <br />
-            <br />
-            <br />
-            <table class="auto-style4">
-                <tr>
-                    <td class="auto-style19">
-
-                         &nbsp;</td>
-                    <td class="auto-style19">
-                        &nbsp;</td>
-                    <td class="auto-style20"></td>
-                    <td class="auto-style17"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style26">
-                        &nbsp;</td>
-                    <td class="auto-style27">
-                        &nbsp;</td>
-                    <td class="auto-style28"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style23">&nbsp;</td>
-                    <td class="auto-style23">
-                        &nbsp;</td>
-                    <td class="auto-style29">
-
-                         <asp:ImageButton ID="ImageButton" runat="server" Height="240px" Width="240px" OnClick="ImageButton1_Click" />
-                         
-                        </td>
-                    <td class="destacado">
-                        <table class="destacado">
-                            <td >
-                                <p>
-                        <asp:Label ID="lblFuncion" runat="server"></asp:Label>
-                                    </p>
-                                <p>
-                                    <asp:Label ID="lblNombrePelicula" runat="server"></asp:Label>
-                                <br>
-                                    <asp:Label ID="lblComplejo" runat="server"></asp:Label>
-                                    </br>
-                                    <asp:Label ID="lblIdioma" runat="server"></asp:Label>
-&nbsp;<br>
-                        <asp:Label ID="lblFormato" runat="server"></asp:Label>
-                                    </p>
-                                <p>
-                                    <asp:Label ID="lblFecha" runat="server"></asp:Label>
-                                    </p>
-                                <p>
-                                    <asp:Label ID="lblHorario" runat="server"></asp:Label>
-                                    </p>
-                                <p>
-                                    <asp:Label ID="lblCosto" runat="server"></asp:Label>
-                                    </p>
-                                <p>
-                                    &nbsp;</p>
-                                <p>
-                                   <br>
-                        <asp:Button ID="btnConfirmar0" runat="server" Text="Volver" OnClick="btnConfirmar_Click" Height="26px" />
-                    &nbsp;</p>
-                            </td>
-
-                        </table>
-
-                    </td>
-                 
-                </tr>
-                <tr>
-                    <td class="auto-style31">&nbsp;</td>
-                    <td class="auto-style31">
-                        &nbsp;</td>
-                    <td class="auto-style32"></td>
-                    <td class="auto-style33"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">
-                        &nbsp;</td>
-                    <td class="auto-style22">&nbsp;</td>
-                    <td class="auto-style16">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style35"></td>
-                    <td class="auto-style35"></td>
-                    <td class="auto-style35"></td>
-                    <td class="auto-style35"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style19">&nbsp;</td>
-                    <td class="auto-style19">
-                        &nbsp;</td>
-                    <td class="auto-style20">&nbsp;</td>
-                    <td class="auto-style17">&nbsp;</td>
-                </tr>
-            </table>
+        <div>
+            <h1 id="LABELPIOLA" style="text-align: center; background-color: #343434; padding: 10px 0; " class="auto-style36">GRACIAS POR ELEGIRNOS!</h1>
+            <p style="text-align: center; background-color: #343434; padding: 10px 0; " class="auto-style36">Tu compra se realizó con éxito</p>
+        </div>
+                
+          <div>
+              <div>
+                  <asp:ImageButton ID="ImageButton" runat="server" Height="240px" Width="240px" OnClick="ImageButton1_Click" />
+              </div>
+              <div>
+                  <p style="text-align: center; background-color: #343434; padding: 10px 0; ">Información de tu compra:</p>
+              </div>
+              <div style="float:left">
+                  <p>Complejo:</p>
+              </div>
+                  <div style="float:right">
+              <div>
+                  <asp:Label ID="lblComplejo" runat="server"></asp:Label>
+              </div>
+              <div>
+                  <asp:Label ID="lblNombrePelicula" runat="server"></asp:Label>
+              </div>
+              <div>
+                  <asp:Label ID="lblSala" runat="server"></asp:Label>
+              </div>
+              <div>
+                  <asp:Label ID="lblIdioma" runat="server"></asp:Label>
+              </div>
+              <div>
+                  <asp:Label ID="lblFormato" runat="server"></asp:Label>
+              </div>
+              <div>
+                  <asp:Label ID="lblFecha" runat="server"></asp:Label>
+              </div>
+              <div>
+                  <asp:Label ID="lblHorario" runat="server"></asp:Label>
+              </div>
+              <div>
+                  <asp:Label ID="lblCosto" runat="server"></asp:Label>
+              </div>
+              <div>
+                  <asp:Label ID="lblAsientos" runat="server"></asp:Label>
+              </div>
+                      </div>
+              <div>
+                  <asp:Button ID="btnConfirmar0" runat="server" Text="Volver" OnClick="btnConfirmar_Click" Height="26px" />
+              </div>
+            
+          </div>
         </div>
     </form>
 </body>

@@ -33,13 +33,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.ImageButton ImageButton;
 
         /// <summary>
-        /// lblFuncion control.
+        /// lblComplejo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFuncion;
+        protected global::System.Web.UI.WebControls.Label lblComplejo;
 
         /// <summary>
         /// lblNombrePelicula control.
@@ -51,13 +51,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label lblNombrePelicula;
 
         /// <summary>
-        /// lblComplejo control.
+        /// lblSala control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblComplejo;
+        protected global::System.Web.UI.WebControls.Label lblSala;
 
         /// <summary>
         /// lblIdioma control.
@@ -103,6 +103,15 @@ namespace Vistas
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCosto;
+
+        /// <summary>
+        /// lblAsientos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAsientos;
 
         /// <summary>
         /// btnConfirmar0 control.

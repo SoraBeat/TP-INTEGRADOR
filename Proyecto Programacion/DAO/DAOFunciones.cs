@@ -133,6 +133,11 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT Precio_F AS [PRECIO] FROM Funciones WHERE ID_Funcion_F="+campo);
             return tabla;
         }
+        public DataTable getTablaSalaPorID(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SELECT ID_Sala_F AS [IDSALA] FROM Funciones WHERE ID_Funcion_F=" + campo);
+            return tabla;
+        }
 
         public int EliminarFuncion(Funciones funcion)
         {
