@@ -132,11 +132,11 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.ListView lvPeliculas;
 
         /// <summary>
-        /// Control Estado_PCheckBox.
+        /// Estado_PCheckBox control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox Estado_PCheckBox;
     }
