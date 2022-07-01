@@ -309,22 +309,6 @@
             </tr>
         </table>
         <div>
-            <br />
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
-            </div>
-            <br />
-            <br />
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px">
-                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-facebook.png" />
-                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-twitter.png" />
-                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-instagram.png" />
-                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-youtube.png" />
-            </div>
-            <br />
-            Email:           
-            <asp:CheckBox ID="Estado_PCheckBox" runat="server" Checked='<%# Eval("Estado") %>' Enabled="false" Text="Estado_P" />
-            <br />
             </td>
                         </SelectedItemTemplate>
                     </asp:ListView>
