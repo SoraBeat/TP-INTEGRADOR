@@ -7,6 +7,11 @@ using System.Web.UI.WebControls;
 using System.Data;
 using Entidades;
 using Negocios;
+using ZXing;
+using System.Drawing;
+using System.IO;
+using System.Text;
+using System.Drawing.Imaging;
 
 namespace Vistas
 {
@@ -41,7 +46,43 @@ namespace Vistas
             lblHorario.Text = horario.Rows[0]["HORARIO"].ToString();
             lblCosto.Text = "$" + costo;
             lblAsientos.Text = asientos;
-            ImageButton.ImageUrl = portada.Rows[0]["Portada"].ToString();
+            lblCodigoRetiro.Text = codigoRetiro();
+            generarQR(peliculas.Rows[0]["Titulo"].ToString());
+
+        }
+        protected void generarQR(string nombre)
+        {
+            var writer = new BarcodeWriter();
+            writer.Format = BarcodeFormat.QR_CODE;
+            var result = writer.Write(nombre);
+            string path = Server.MapPath("~/Imagenes/QRImage.jpg");
+            var barcodeBitmap = new Bitmap(result);
+
+            using (MemoryStream memory = new MemoryStream())
+            {
+                using (FileStream fs = new FileStream(path, FileMode.Create, FileAccess.ReadWrite))
+                {
+                    barcodeBitmap.Save(memory, ImageFormat.Jpeg);
+                    byte[] bytes = memory.ToArray();
+                    fs.Write(bytes, 0, bytes.Length);
+                }
+            }
+            imagenQR.Visible = true;
+            imagenQR.ImageUrl = "~/Imagenes/QRImage.jpg";
+        }
+        static string codigoRetiro()
+        {
+            var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var Charsarr = new char[8];
+            var random = new Random();
+
+            for (int i = 0; i < Charsarr.Length; i++)
+            {
+                Charsarr[i] = characters[random.Next(characters.Length)];
+            }
+
+            var resultString = new String(Charsarr);
+            return resultString;
         }
 
         public void desloguear(object sender, EventArgs e)
