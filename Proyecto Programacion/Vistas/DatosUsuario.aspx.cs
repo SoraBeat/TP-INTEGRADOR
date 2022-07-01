@@ -29,7 +29,7 @@ namespace Vistas
             string[] separador = new string[] { " ", "$" };
             string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
             NegocioVentas negve = new NegocioVentas();
-            DataTable tablaAsientos = negve.getListaPorIDUsuario(datos[0]);
+            DataTable tablaAsientos = negve.getSuperHiperMegaConsulta(datos[0]);
             ListView1.DataSource = tablaAsientos;
             ListView1.DataBind();
         }

@@ -157,8 +157,23 @@
                                         </div>
                                     </div>
                                     <div class="collapse hide" id="venta<%# Eval("IDVenta") %>">
-                                        <div class="card card-body">
-                                            Esta es la informacion de la factura xd
+                                        <div class="card card-body" style="display:flex;flex-direction:column;justify-content:start;text-align:left">
+                                            <div>
+                                                <label>Pelicula: </label>
+                                                <asp:Label Text='<%# Eval("Titulo") %>' runat="server" />
+                                            </div>
+                                            <div>
+                                                <label>Sala: </label>
+                                                <asp:Label Text='<%# Eval("Sala") %>' runat="server" />
+                                            </div>
+                                            <div>
+                                                <label>Cantidad: </label>
+                                                <asp:Label Text='<%# Eval("Cantidad") %>' runat="server" />
+                                            </div>
+                                            <div>
+                                                <label>Locacion asientos: </label>
+                                                <asp:Label Text='<%# Eval("AsientosSeleccionados") %>' runat="server" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

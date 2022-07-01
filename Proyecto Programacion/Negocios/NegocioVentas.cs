@@ -11,6 +11,13 @@ namespace Negocios
 {
     public class NegocioVentas
     {
+
+        public DataTable getSuperHiperMegaConsulta(string campo)
+        {
+            DAOVentas dao = new DAOVentas();
+            return dao.getSuperHiperMegaConsulta(campo);
+        }
+
         public DataTable getListaVentas()
         {
             DAOVentas dao = new DAOVentas();
@@ -25,7 +32,7 @@ namespace Negocios
         public DataTable getListaFechas(string Inicio, string Final)
         {
             DAOVentas dao = new DAOVentas();
-            return dao.getTablaFecha(Inicio,Final);
+            return dao.getTablaFecha(Inicio, Final);
         }
 
         public DataTable cantidadVentas()

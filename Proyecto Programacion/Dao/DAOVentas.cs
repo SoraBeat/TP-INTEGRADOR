@@ -12,6 +12,7 @@ namespace DAO
     public class DAOVentas
     {
         AccesoDatos ds = new AccesoDatos();
+
         public DataTable getTablaVentasPorIDVenta(string campo)
         {
             DataTable tabla = ds.ObtenerTabla("Ventas", "SELECT ID_Venta_V AS [IDVenta], ID_Usuario_V AS [IDUsuario], Fecha_V AS [Fecha], Metodo_Pago_V AS [MetodoPago], Monto_Final_V AS [MontoFinal] FROM Ventas WHERE ID_Venta_V LIKE '" + campo + "' ORDER BY ABS(ID_Venta_V)");
@@ -27,7 +28,7 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Ventas", "SELECT SUM (Monto_Final_V) AS [TOTAL] FROM Ventas");
             return tabla;
         }
-        
+
 
         public DataTable getTablaVentasPorIDUsuario(string campo)
         {
@@ -66,13 +67,13 @@ namespace DAO
         }
         public DataTable getTablaFecha(string Inicio, string Final)
         {
-            DataTable tabla = ds.ObtenerTabla("Ventas", "SET LANGUAGE SPANISH DECLARE @INICIO Date = CAST('" + Inicio+"' as date) DECLARE @FINAL Date = CAST('"+Final+ "' as date) SELECT SUM (Monto_Final_V) AS [TOTAL], COUNT (ID_Venta_V) AS [CANTIDAD_VENTA] FROM Ventas WHERE CAST(Fecha_V as date) >= @INICIO AND CAST(Fecha_V as date) <= @FINAL");
+            DataTable tabla = ds.ObtenerTabla("Ventas", "SET LANGUAGE SPANISH DECLARE @INICIO Date = CAST('" + Inicio + "' as date) DECLARE @FINAL Date = CAST('" + Final + "' as date) SELECT SUM (Monto_Final_V) AS [TOTAL], COUNT (ID_Venta_V) AS [CANTIDAD_VENTA] FROM Ventas WHERE CAST(Fecha_V as date) >= @INICIO AND CAST(Fecha_V as date) <= @FINAL");
             return tabla;
         }
 
         public int buscarUltimaVenta()
         {
-          return  ds.ObtenerMaximo("select max(id_venta_v)  from ventas");
+            return ds.ObtenerMaximo("select max(id_venta_v)  from ventas");
         }
 
 
@@ -94,6 +95,11 @@ namespace DAO
             SqlParametros.Value = ven.MetodoPagoVenta;
             SqlParametros = comando.Parameters.Add("@MONTOFINAL", SqlDbType.Decimal);
             SqlParametros.Value = ven.MontoFinalVenta;
+        }
+        public DataTable getSuperHiperMegaConsulta(string campo)
+        {
+            DataTable tabla = ds.ObtenerTabla("Ventas", "DECLARE @ASIENTOSSELECCIONADOS VARCHAR(100) = (SELECT STUFF((SELECT ','+ID_Asiento_AC FROM AsientosComprados INNER JOIN Detalle_Ventas ON ID_Venta_AC=ID_Venta_DV and ID_DetalleVenta_DV=ID_DetalleVenta_AC INNER JOIN Ventas ON ID_Venta_V=ID_Venta_DV WHERE ID_Usuario_V='" + campo + "' FOR XML PATH('')),1,1,'')) SELECT DISTINCT ID_Venta_V AS [IDVenta], Fecha_V AS[Fecha], Metodo_Pago_V AS[MetodoPago], Monto_Final_V AS[MontoFinal], Titulo_P AS[Titulo], ID_Sala_DV AS[Sala], Cantidad_DV AS[Cantidad], @ASIENTOSSELECCIONADOS AS[AsientosSeleccionados] FROM Ventas INNER JOIN Detalle_Ventas ON ID_Venta_V = ID_Venta_DV INNER JOIN Funciones ON ID_Funcion_F = ID_Funcion_DV INNER JOIN Peliculas ON ID_Pelicula_F = ID_Pelicula_P INNER JOIN AsientosComprados ON ID_Venta_AC = ID_Venta_DV AND ID_DetalleVenta_DV = ID_DetalleVenta_AC AND ID_Funcion_DV = ID_Funcion_AC AND ID_Sala_DV = ID_Sala_AC WHERE ID_Usuario_V = '"+campo+"'");
+            return tabla;
         }
     }
 }
