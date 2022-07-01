@@ -51,7 +51,7 @@
             <br />
             <br />
             <div style="display: flex; flex-direction: row">
-                <div style="width: 50%;display:flex;justify-content:center;flex-direction:column;align-items:center">
+                <div style="width: 50%; display: flex; justify-content: start; flex-direction: column; align-items: center">
                     <div>
                         <h1 style="font-weight: 900; text-align: left;">DATOS DE USUARIO</h1>
                     </div>
@@ -61,7 +61,7 @@
                         <div style="display: flex; justify-content: center; align-items: start; width: 40%;">
                             <img style="width: 180px" src="/Imagenes/Pagina/persona.png" alt="Alternate Text" />
                         </div>
-                        <div style="display: flex; flex-direction: column; justify-content: start; align-items: start; width: 80%; font-size: 25px;margin-left:20px">
+                        <div style="display: flex; flex-direction: column; justify-content: start; align-items: start; width: 80%; font-size: 25px; margin-left: 20px">
                             <div>
                                 <label style="font-size: ">Nombre: </label>
                                 <asp:Label ID="TXT_NOMBRE" Text="" runat="server" />
@@ -136,11 +136,11 @@
                                 </span>
                             </InsertItemTemplate>--%>
                             <ItemTemplate>
-                                <div style="-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);border-radius: 10px 10px 10px 10px;-moz-border-radius: 10px 10px 10px 10px;-webkit-border-radius: 10px 10px 10px 10px;border: 0px solid #000000;width: 70%;padding:20px">
+                                <div style="margin-top:20px;-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; border: 0px solid #000000; width: 70%; padding: 20px">
                                     <div style="display: flex; flex-direction: row; width: 100%">
                                         <div style="display: flex; flex-direction: column; justify-content: start; align-items: start; width: 70%">
                                             <div>
-                                                <label>Fecha: </label>
+                                                <label>Fecha de compra: </label>
                                                 <asp:Label ID="Fecha_VLabel" runat="server" Text='<%# Eval("Fecha") %>' />
                                             </div>
                                             <div>
@@ -157,10 +157,22 @@
                                         </div>
                                     </div>
                                     <div class="collapse hide" id="venta<%# Eval("IDVenta") %>">
-                                        <div class="card card-body" style="display:flex;flex-direction:column;justify-content:start;text-align:left">
+                                        <div class="card card-body" style="display: flex; flex-direction: column; justify-content: start; text-align: left">
                                             <div>
                                                 <label>Pelicula: </label>
                                                 <asp:Label Text='<%# Eval("Titulo") %>' runat="server" />
+                                            </div>
+                                            <div>
+                                                <label>Fecha de funcion</label>
+                                                <asp:Label Text='<%# Eval("FechaFuncion") %>' runat="server" />
+                                            </div>
+                                            <div>
+                                                <label>Hora de funcion</label>
+                                                <asp:Label Text='<%# Eval("HoraFuncion") %>' runat="server" />
+                                            </div>
+                                            <div>
+                                                <label>Formato</label>
+                                                <asp:Label Text='<%# Eval("Formato") %>' runat="server" />
                                             </div>
                                             <div>
                                                 <label>Sala: </label>
