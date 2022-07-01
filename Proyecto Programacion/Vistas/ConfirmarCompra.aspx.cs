@@ -411,6 +411,21 @@ namespace Vistas
             string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
             return Convert.ToInt32(datos[0]);  
         }
+
+        private bool AgregarAsientosComprados(String idAsiento, int idDetalleVenta, int idVenta, String idFuncion ,String idSala, String idComplejo)
+        {
+
+            AsientosComprados asiCom = new AsientosComprados();
+            NegocioAsientosComprados negAsiCom = new NegocioAsientosComprados();
+            asiCom.IdAsiento = idAsiento;
+            asiCom.IdDetalleVenta = idDetalleVenta;
+            asiCom.IdVenta = idVenta;
+            asiCom.IdFuncion = idFuncion;
+            asiCom.IdSala = idSala;
+            asiCom.IdComplejo = idComplejo;
+            bool res = negAsiCom.AgregarAsientosComprados(asiCom);
+            return res;
+        }
     }
 
 }

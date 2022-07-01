@@ -58,31 +58,29 @@ namespace DAO
             return tabla;
         }
 
-        public int AgregarAsientosComprado(AsientosComprados ac)
+        public int AgregarAsientosComprados(AsientosComprados ac)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametrosAsientoscompradosAgregar(ref comando, ac);
+            ArmarParametrosAsientosCompradosAgregar(ref comando, ac);
             return ds.EjecutarProcedimientoAlmacenado(comando, "sp_AgregarAsientoComprados");
 
         }
 
-        private void ArmarParametrosAsientoscompradosAgregar(ref SqlCommand comando,  AsientosComprados ac)
+        private void ArmarParametrosAsientosCompradosAgregar(ref SqlCommand comando,  AsientosComprados ac)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = comando.Parameters.Add("@idAsiento", SqlDbType.VarChar);
+            SqlParametros = comando.Parameters.Add("@IDASIENTO", SqlDbType.Char);
             SqlParametros.Value = ac.IdAsiento;
-            SqlParametros = comando.Parameters.Add("@idDetalleventa", SqlDbType.VarChar);
+            SqlParametros = comando.Parameters.Add("@IDDETALLEVENTA", SqlDbType.Int);
             SqlParametros.Value = ac.IdDetalleVenta;
-            SqlParametros = comando.Parameters.Add("@idventa", SqlDbType.VarChar);
+            SqlParametros = comando.Parameters.Add("@IDVENTA", SqlDbType.Int);
             SqlParametros.Value = ac.IdVenta;
-            SqlParametros = comando.Parameters.Add("@id_funcion", SqlDbType.Char);
+            SqlParametros = comando.Parameters.Add("@IDFUNCION", SqlDbType.Char);
             SqlParametros.Value = ac.IdFuncion;
-            SqlParametros = comando.Parameters.Add("@idsala", SqlDbType.Char);
+            SqlParametros = comando.Parameters.Add("@IDSALA", SqlDbType.Char);
             SqlParametros.Value = ac.IdSala;
-            SqlParametros = comando.Parameters.Add("@idComplejo", SqlDbType.Char);
+            SqlParametros = comando.Parameters.Add("@IDCOMPLEJO", SqlDbType.Char);
             SqlParametros.Value = ac.IdComplejo;
-
-
 
         }
     }

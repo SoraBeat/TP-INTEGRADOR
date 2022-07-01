@@ -56,5 +56,21 @@ namespace Negocios
             DAOAsientosComprados dao = new DAOAsientosComprados();
             return dao.getTablaExisteAsiento(idAsiento, idFuncion);
         }
+        public bool AgregarAsientosComprados(AsientosComprados asiCom)
+        {
+            int cantFilas = 0;
+            DAOAsientosComprados DaoAsiCom = new DAOAsientosComprados();
+
+            cantFilas = DaoAsiCom.AgregarAsientosComprados(asiCom);
+
+            if (cantFilas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
