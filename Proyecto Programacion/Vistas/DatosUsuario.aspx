@@ -136,7 +136,7 @@
                                 </span>
                             </InsertItemTemplate>--%>
                             <ItemTemplate>
-                                <div style="-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);border-radius: 10px 10px 10px 10px;-moz-border-radius: 10px 10px 10px 10px;-webkit-border-radius: 10px 10px 10px 10px;border: 0px solid #000000;width: 60%;padding:20px">
+                                <div style="-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);border-radius: 10px 10px 10px 10px;-moz-border-radius: 10px 10px 10px 10px;-webkit-border-radius: 10px 10px 10px 10px;border: 0px solid #000000;width: 70%;padding:20px">
                                     <div style="display: flex; flex-direction: row; width: 100%">
                                         <div style="display: flex; flex-direction: column; justify-content: start; align-items: start; width: 70%">
                                             <div>
