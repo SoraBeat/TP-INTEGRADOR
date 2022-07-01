@@ -48,7 +48,6 @@ namespace Vistas
             lblAsientos.Text = asientos;
             lblCodigoRetiro.Text = codigoRetiro();
             generarQR(peliculas.Rows[0]["Titulo"].ToString());
-
         }
         protected void generarQR(string nombre)
         {
