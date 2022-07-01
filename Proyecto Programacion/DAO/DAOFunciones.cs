@@ -94,7 +94,7 @@ namespace DAO
         }
         public DataTable getTablaFuncionPorFecha2(string idPelicula, string idcomplejo, string formato, string idioma)
         {
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SET LANGUAGE Spanish SELECT distinct format (Fecha_F,'dd/MM') AS [FECHA] FROM Funciones WHERE Estado_F = 1 AND  ID_Pelicula_F = '" + idPelicula + "' AND ID_Complejo_F = '" + idcomplejo + "' AND Formato_F = '" + formato + "' AND Idioma_F = '" + idioma + "'");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SET LANGUAGE Spanish SELECT distinct format (Fecha_F,'dd/MM') AS [FECHA] FROM Funciones WHERE Estado_F = 1 AND  ID_Pelicula_F = '" + idPelicula + "' AND ID_Complejo_F = '" + idcomplejo + "' AND Formato_F = '" + formato + "' AND Idioma_F = '" + idioma + "' AND Fecha_F>GETDATE()");
             return tabla;
         }
         public DataTable getTablaFuncionPorHorario(string campo)
@@ -105,7 +105,7 @@ namespace DAO
         public DataTable getTablaFuncionPorHorario2(string idPelicula, string idcomplejo, string formato, string idioma, string fecha)
         {
             
-            DataTable tabla = ds.ObtenerTabla("Funciones", "SET LANGUAGE Spanish SELECT convert (varchar(5),Horario_F,108) AS [HORARIO] FROM Funciones WHERE Estado_F = 1 AND  ID_Pelicula_F = '" + idPelicula + "' AND ID_Complejo_F = '" + idcomplejo + "' AND Formato_F = '" + formato + "' AND Idioma_F = '" + idioma + "' AND Fecha_F = '"+fecha+"'");
+            DataTable tabla = ds.ObtenerTabla("Funciones", "SET LANGUAGE Spanish SELECT convert (varchar(5),Horario_F,108) AS [HORARIO] FROM Funciones WHERE Estado_F = 1 AND  ID_Pelicula_F = '" + idPelicula + "' AND ID_Complejo_F = '" + idcomplejo + "' AND Formato_F = '" + formato + "' AND Idioma_F = '" + idioma + "' AND Fecha_F = '"+fecha+ "' AND Fecha_F>GETDATE() AND Horario_F > CONVERT(VARCHAR(12),GETDATE(),114)");
             return tabla;
         }
         public DataTable getTablaFuncionPorIdioma(string campo)
