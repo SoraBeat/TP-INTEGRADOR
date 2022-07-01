@@ -70,9 +70,8 @@ namespace DAO
             return tabla;
         }
 
-        public int buscarProximaVenta()
+        public int buscarUltimaVenta()
         {
-
           return  ds.ObtenerMaximo("select max(id_venta_v)  from ventas");
         }
 
@@ -82,22 +81,19 @@ namespace DAO
             SqlCommand comando = new SqlCommand();
             ArmarParametrosVentasAgregar(ref comando, ven);
             return ds.EjecutarProcedimientoAlmacenado(comando, "sp_AgregarVenta");
-
         }
 
         private void ArmarParametrosVentasAgregar(ref SqlCommand comando, Ventas ven)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = comando.Parameters.Add("@idUsuario", SqlDbType.VarChar);
+            SqlParametros = comando.Parameters.Add("@IDUSUARIO", SqlDbType.Int);
             SqlParametros.Value = ven.IDUsuario;
-            SqlParametros = comando.Parameters.Add("@fecha", SqlDbType.VarChar);
+            SqlParametros = comando.Parameters.Add("@FECHA", SqlDbType.SmallDateTime);
             SqlParametros.Value = ven.FechaVenta;
-            SqlParametros = comando.Parameters.Add("@metodoPago", SqlDbType.VarChar);
+            SqlParametros = comando.Parameters.Add("@METODOPAGO", SqlDbType.VarChar);
             SqlParametros.Value = ven.MetodoPagoVenta;
-            SqlParametros = comando.Parameters.Add("@Total", SqlDbType.Char);
+            SqlParametros = comando.Parameters.Add("@MONTOFINAL", SqlDbType.Decimal);
             SqlParametros.Value = ven.MontoFinalVenta;
-
-
         }
     }
 }

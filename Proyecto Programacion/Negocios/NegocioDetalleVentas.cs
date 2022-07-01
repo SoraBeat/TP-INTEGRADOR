@@ -57,19 +57,12 @@ namespace Negocios
             return 0;
         }
 
-        public bool AgregarDetalleVenta(int IdVenta, string idfuncion, string idsala, string idcomplejo, float Precio)
+        public bool AgregarDetalleDeVentas(DetalleVentas dv)
         {
             int cantFilas = 0;
             DAODetalleVentas DaoDVentas = new DAODetalleVentas();
-            DetalleVentas ven = new DetalleVentas();
-            ven.IDVenta = IdVenta;
-            ven.IDFuncion = idfuncion;
-            ven.IDSala = idsala;
-            ven.IDComplejo = idcomplejo;
-            ven.Precio = Precio;
 
-
-            cantFilas = DaoDVentas.AgregarDetalleVentas(ven);
+            cantFilas = DaoDVentas.AgregarDetalleVentas(dv);
 
             if (cantFilas == 1)
             {

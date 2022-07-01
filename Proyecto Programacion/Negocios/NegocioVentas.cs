@@ -70,24 +70,18 @@ namespace Negocios
             return dao.getTablaVentasPorMontoFinalMenorA(campo);
         }
 
-        public int buscarProximaVenta()
+        public int buscarUltimaVenta()
         {
             DAOVentas dao = new DAOVentas();
-            return dao.buscarProximaVenta();
+            return dao.buscarUltimaVenta();
 
         }
 
 
-        public bool AgregarVenta(int IDUsuario, string Fecha, string Metodo_Pago, float Montofinal)
+        public bool AgregarVenta(Ventas ven)
         {
             int cantFilas = 0;
             DAOVentas DaoVentas = new DAOVentas();
-            Ventas ven = new Ventas();
-            ven.IDUsuario = IDUsuario;
-            ven.FechaVenta = Fecha;
-            ven.MetodoPagoVenta = Metodo_Pago;
-            ven.MontoFinalVenta = Montofinal;
-
 
             cantFilas = DaoVentas.AgregarVentas(ven);
 

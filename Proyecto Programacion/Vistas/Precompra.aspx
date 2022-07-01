@@ -43,10 +43,27 @@
               <div>
                   <p style="text-align: center; background-color: #343434; padding: 10px 0;">Información de tu compra:</p>
               </div>
-              <div style="float:left">
-                  <p>Complejo:</p>
-              </div>
-                  <div style="float:right">
+              <div>
+                  <div style="display:flex:table-column; width:49%; float:left">
+                    <asp:Label ID="Label1" runat="server" Text="Cine:"></asp:Label>
+                    <br />
+                    <asp:Label ID="Label2" runat="server" Text="Película:"></asp:Label>
+                    <br />
+                    <asp:Label ID="Label3" runat="server" Text="Sala:"></asp:Label>
+                    <br />
+                    <asp:Label ID="Label4" runat="server" Text="Idioma:"></asp:Label>
+                    <br />
+                    <asp:Label ID="Label5" runat="server" Text="Formato:"></asp:Label>
+                    <br />
+                    <asp:Label ID="Label6" runat="server" Text="Fecha:"></asp:Label>
+                    <br />
+                    <asp:Label ID="Label7" runat="server" Text="Horario:"></asp:Label>
+                    <br />
+                    <asp:Label ID="Label9" runat="server" Text="Entradas:"></asp:Label>
+                    <br />
+                    <asp:Label ID="Label8" runat="server" Text="Costo:"></asp:Label>
+                </div>
+                  <div style="display:flex:table-column; width:49%; float:right;">
               <div>
                   <asp:Label ID="lblComplejo" runat="server"></asp:Label>
               </div>
@@ -69,14 +86,15 @@
                   <asp:Label ID="lblHorario" runat="server"></asp:Label>
               </div>
               <div>
-                  <asp:Label ID="lblCosto" runat="server"></asp:Label>
-              </div>
-              <div>
                   <asp:Label ID="lblAsientos" runat="server"></asp:Label>
               </div>
-                      </div>
               <div>
-                  <asp:Button ID="btnConfirmar0" runat="server" Text="Volver" OnClick="btnConfirmar_Click" Height="26px" />
+                  <asp:Label ID="lblCosto" runat="server"></asp:Label>
+              </div>
+                      </div>
+                  </div>
+              <div>
+                  <asp:Button ID="btnVolver" runat="server" Text="Volver" OnClick="btnVolver_Click" Height="26px" />
               </div>
             
           </div>

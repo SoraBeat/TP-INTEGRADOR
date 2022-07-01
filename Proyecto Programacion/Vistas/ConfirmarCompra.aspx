@@ -104,18 +104,13 @@
                 <asp:HyperLink runat="server" ID="ContenedorUsuario" href="DatosUsuario.aspx" style="margin-left:20px;color:white;text-decoration:none;display:flex;flex-direction:row;align-items:end;">
                     <asp:Label style="font-size:20px" ID="ContenedorNombre" Text="Pepe Pepito" runat="server" />
                     <asp:Image style="height:40px;width:40px" ImageUrl="/Imagenes/Pagina/persona.png" runat="server" />
-                </asp:HyperLink>
-            </div>
-        </nav>
-            <br />
+                </asp:HyperLink></div></nav><br />
             <br />
             <br />
             <br />
             <br />
             <div style="width: 100%; background-color: rgba(0, 0, 0, 0.79);">
-                <asp:Label Style="color: white; font-size: 40px" ID="LBLtitulo" runat="server" Font-Bold="True" Font-Italic="False"></asp:Label>
-            </div>
-            <br />
+                <asp:Label Style="color: white; font-size: 40px" ID="LBLtitulo" runat="server" Font-Bold="True" Font-Italic="False"></asp:Label></div><br />
             <br />
             <br />
             <div style="display: flex; flex-direction: row;">
@@ -126,46 +121,27 @@
                     <asp:Label Style="font-size: 30px; font-weight: 900;" Text="DATOS DE FUNCION" runat="server" />
                     <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px">
                         <asp:Label Style="font-size: 25px; font-weight: 900" Text="Pelicula: " runat="server" />
-                        <asp:Label Style="font-size: 18px" ID="lblNombrePelicula" runat="server"></asp:Label>
-                    </div>
-                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px">
+                        <asp:Label Style="font-size: 18px" ID="lblNombrePelicula" runat="server"></asp:Label></div><div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px">
                         <asp:Label Style="font-size: 25px; font-weight: 900" Text="Idioma: " runat="server" />
-                        <asp:Label Style="font-size: 18px" ID="lblIdioma" runat="server"></asp:Label>
-                    </div>
-                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px">
+                        <asp:Label Style="font-size: 18px" ID="lblIdioma" runat="server"></asp:Label></div><div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px">
                         <asp:Label Style="font-size: 25px; font-weight: 900" Text="Complejo: " runat="server" />
-                        <asp:Label Style="font-size: 18px" ID="lblComplejo" runat="server"></asp:Label>
-                    </div>
-                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px">
+                        <asp:Label Style="font-size: 18px" ID="lblComplejo" runat="server"></asp:Label></div><div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px">
                         <asp:Label Style="font-size: 25px; font-weight: 900" Text="Direccion: " runat="server" />
-                        <asp:Label Style="font-size: 18px" ID="lblDireccion" runat="server"></asp:Label>
-                    </div>
-                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px">
+                        <asp:Label Style="font-size: 18px" ID="lblDireccion" runat="server"></asp:Label></div><div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px">
                         <asp:Label Style="font-size: 25px; font-weight: 900" Text="Fecha y hora: " runat="server" />
-                        <asp:Label Style="font-size: 18px" ID="lblFechayhora" runat="server"></asp:Label>
-                    </div>
-
-                </div>
-                <div style="margin-left: 6%; text-align: left; display: flex; flex-direction: column; gap: 20px">
+                        <asp:Label Style="font-size: 18px" ID="lblFechayhora" runat="server"></asp:Label></div></div><div style="margin-left: 6%; text-align: left; display: flex; flex-direction: column; gap: 20px">
                     <asp:Label Style="font-size: 30px; font-weight: 900" Text="INFORMACIOND DE COMPRA" runat="server" />
                     <div>
                         <asp:Label Style="font-size: 20px" Text="Metodo de pago" runat="server" />
-                        <asp:DropDownList runat="server" Style="height: 30px; width: 100px; background-color: #212529; border-color: #212529; color: white;">
-                            <asp:ListItem Text="Credito" Value="Credito" />
+                        <asp:DropDownList runat="server" Style="height: 30px; width: 100px; background-color: #212529; border-color: #212529; color: white;" ID="ddlMetodoPago"><asp:ListItem Text="Credito" Value="Credito" />
                             <asp:ListItem Text="Debito" Value="Debito" />
                         </asp:DropDownList>
-                    </div>
-                    <div>
+                    <asp:Label ID="Label1" runat="server"></asp:Label></div><div>
                         <asp:Label Style="font-size: 20px" Text="Costo por asiento: " runat="server" />
-                        <asp:Label ID="lblCosto" runat="server"></asp:Label>
-                    </div>
-                    <div>
+                        <asp:Label ID="lblCosto" runat="server"></asp:Label></div><div>
                         <div>
                             <asp:Label Style="font-size: 20px" Text="Cantidad de asientos" runat="server" />
-                            <asp:TextBox Style="width: 50px; background-color: #212529; border-color: #212529; color: white;" ID="txtCantidad" runat="server" AutoPostBack="True" OnTextChanged="txtCantidad_TextChanged" TextMode="Number" ValidationGroup="Grupo1" CausesValidation="True" ValidateRequestMode="Enabled"></asp:TextBox>
-                            <asp:CustomValidator ID="CVCantidad" runat="server" ControlToValidate="txtCantidad" OnServerValidate="CVCantidad_ServerValidate" Display="Dynamic" ValidationGroup="Grupo1">Cantidad invalida</asp:CustomValidator>
-                        </div>
-                        <br />
+                            <asp:TextBox Style="width: 50px; background-color: #212529; border-color: #212529; color: white;" ID="txtCantidad" runat="server" AutoPostBack="True" OnTextChanged="txtCantidad_TextChanged" TextMode="Number" ValidationGroup="Grupo1" CausesValidation="True" ValidateRequestMode="Enabled"></asp:TextBox><asp:CustomValidator ID="CVCantidad" runat="server" ControlToValidate="txtCantidad" OnServerValidate="CVCantidad_ServerValidate" Display="Dynamic" ValidationGroup="Grupo1">Cantidad invalida</asp:CustomValidator></div><br />
                         <div style="display: flex; justify-content: center">
                             <asp:Label Style="font-size: 30px" Text="ELEGIR ASIENTOS" runat="server" />
                         </div>
@@ -177,8 +153,7 @@
                                     <br /></td>
                             </AlternatingItemTemplate>--%>
                                 <EditItemTemplate>
-                                    <td runat="server" style="">ID_Asiento_A:
-                                    <asp:TextBox ID="ID_Asiento_ATextBox" runat="server" Text='<%# Bind("ID_Asiento_A") %>' />
+                                    <td runat="server" style="">ID_Asiento_A: <asp:TextBox ID="ID_Asiento_ATextBox" runat="server" Text='<%# Bind("ID_Asiento_A") %>' />
                                         <br />
                                         <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
                                         <br />
@@ -189,11 +164,7 @@
                                 <EmptyDataTemplate>
                                     <table runat="server" style="">
                                         <tr>
-                                            <td>No se han devuelto datos.</td>
-                                        </tr>
-                                    </table>
-                                </EmptyDataTemplate>
-                                <EmptyItemTemplate>
+                                            <td>No se han devuelto datos.</td></tr></table></EmptyDataTemplate><EmptyItemTemplate>
                                     <td runat="server" />
                                 </EmptyItemTemplate>
                                 <GroupTemplate>
@@ -202,8 +173,7 @@
                                     </tr>
                                 </GroupTemplate>
                                 <InsertItemTemplate>
-                                    <td runat="server">ID_Asiento_A:
-                                    <asp:TextBox ID="ID_Asiento_ATextBox" runat="server" Text='<%# Bind("ID_Asiento_A") %>' />
+                                    <td runat="server">ID_Asiento_A: <asp:TextBox ID="ID_Asiento_ATextBox" runat="server" Text='<%# Bind("ID_Asiento_A") %>' />
                                         <br />
                                         <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
                                         <br />
@@ -232,8 +202,7 @@
                                     </table>
                                 </LayoutTemplate>
                                 <SelectedItemTemplate>
-                                    <td runat="server" style="">ID_Asiento_A:
-                                    <asp:Label ID="ID_Asiento_ALabel" runat="server" Text='<%# Eval("ID_Asiento_A") %>' />
+                                    <td runat="server" style="">ID_Asiento_A: <asp:Label ID="ID_Asiento_ALabel" runat="server" Text='<%# Eval("ID_Asiento_A") %>' />
                                         <br />
                                     </td>
                                 </SelectedItemTemplate>
@@ -243,11 +212,7 @@
                     </div>
                     <div>
                         <asp:Label Style="font-size: 35px" Text="SUBTOTAL: $" runat="server" />
-                        <asp:Label Style="font-size: 35px" ID="lblTotal" runat="server"></asp:Label>
-                    </div>
-                </div>
-            </div>
-            <div style="display: flex; gap: 30px; justify-content: center; align-items: center; margin-bottom: 30px">
+                        <asp:Label Style="font-size: 35px" ID="lblTotal" runat="server"></asp:Label></div></div></div><div style="display: flex; gap: 30px; justify-content: center; align-items: center; margin-bottom: 30px">
                 <asp:Button Style="font-weight: 900; width: 161px; height: 53px;" CssClass="btn btn-danger" ID="btnVolver" runat="server" Text="CANCELAR" OnClick="btnCancelar_Click" />
                 <asp:Button Style="font-weight: 900; width: 161px; height: 53px;" CssClass="btn btn-success" ID="btnConfirmar" runat="server" Text="CONFIRMAR" OnClick="btnConfirmar_Click" type="button" class="btn" data-bs-trigger="hover focus" data-bs-toggle="popover" data-bs-content="Por favor, seleccione metodo de pago, cantidad de asientos y locacion de los mismos para confirmar la compra." />
             </div>

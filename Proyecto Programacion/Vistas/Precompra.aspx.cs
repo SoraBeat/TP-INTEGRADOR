@@ -36,6 +36,7 @@ namespace Vistas
             string sala = Request.QueryString["idSala"];
             string costo = Request.QueryString["subtotal"];
             string asientos = Request.QueryString["asientos"];
+            string cantidadAsientos = Request.QueryString["cantidadAsientos"];
 
             lblNombrePelicula.Text = peliculas.Rows[0]["Titulo"].ToString();
             lblSala.Text = sala;
@@ -48,7 +49,6 @@ namespace Vistas
             lblAsientos.Text = asientos;
             lblCodigoRetiro.Text = codigoRetiro();
             generarQR(peliculas.Rows[0]["Titulo"].ToString());
-
         }
         protected void generarQR(string nombre)
         {
@@ -91,14 +91,11 @@ namespace Vistas
             Response.Redirect("PantallaInicial.aspx");
         }
 
-        protected void btnConfirmar_Click(object sender, EventArgs e)
+        protected void btnVolver_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("PantallaInicial.aspx");
         }
 
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
-        {
 
-        }
     }
 }
