@@ -28,7 +28,7 @@ namespace Vistas
 
             DataTable peliculas = Pel.getListaPeliculasPorID(datos[1]);
             DataTable complejos = Com.getListaComplejosPorID(datos[2]);
-            DataTable formato = Fun.getTablaPorFormatoid(datos[1],datos[2]);
+            DataTable formato = Fun.getTablaPorFuncionid(datos[0]);
             DataTable idioma = Fun.getTablaPoridioma(datos[1],datos[2],formato.Rows[0]["FORMATO"].ToString());
             DataTable fecha = Fun.getTablaPorFecha2(datos[1], datos[2], formato.Rows[0]["FORMATO"].ToString(), idioma.Rows[0]["IDIOMA"].ToString());
             DataTable horario = Fun.getTablaPorHorario2(datos[1], datos[2], formato.Rows[0]["FORMATO"].ToString(), idioma.Rows[0]["IDIOMA"].ToString(), fecha.Rows[0]["FECHA"].ToString()+"/2022");
@@ -42,7 +42,8 @@ namespace Vistas
             lblSala.Text = sala;
             lblComplejo.Text = complejos.Rows[0]["NOMBRE"].ToString();
             lblIdioma.Text = idioma.Rows[0]["IDIOMA"].ToString();
-            lblFormato.Text = formato.Rows[0]["FORMATO"].ToString();
+           lblFormato.Text = formato.Rows[0]["FORMATO"].ToString();
+           
             lblFecha.Text = fecha.Rows[0]["FECHA"].ToString();
             lblHorario.Text = horario.Rows[0]["HORARIO"].ToString();
             lblCosto.Text = "$" + costo;

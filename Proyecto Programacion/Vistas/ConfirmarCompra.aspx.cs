@@ -191,6 +191,7 @@ namespace Vistas
                 string hora = Convert.ToString(row["HORARIO"]).Substring(0, 5);
                 string IDfun = Convert.ToInt32(row["ID"]).ToString();
                 string IDComplejo = Convert.ToInt32(row["IDCOMPLEJO"]).ToString();
+                string formato = Convert.ToString(row["FORMATO"]);
                 asientosSeleccionados();
                 string asientos = txtCantidad.Text + " x TICKETS ($"+ precio +" Asientos:" + numeroAsientos + ")";
 
