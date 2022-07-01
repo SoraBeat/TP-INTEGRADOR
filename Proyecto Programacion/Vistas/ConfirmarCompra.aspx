@@ -101,8 +101,7 @@
             <div style="margin-right: 20px;display:flex;flex-direction:row;align-items:center">
                 <asp:Button class="btn btn-primary" ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click" />
                 <asp:Button style="margin-left:20px" class="btn btn-warning" ID="txtPaginaAdmin" runat="server" OnClick="txtPaginaAdmin_Click" Text="Funciones admin" Visible="False" />
-                <asp:HyperLink runat="server" ID="ContenedorUsuario" href="DatosUsuario.aspx" style="margin-left:20px;color:white;text-decoration:none;display:flex;flex-direction:row;align-items:end;">
-                    <asp:Label style="font-size:20px" ID="ContenedorNombre" Text="Pepe Pepito" runat="server" />
+                <asp:HyperLink runat="server" ID="ContenedorUsuario" href="DatosUsuario.aspx" style="margin-left:20px;color:white;text-decoration:none;display:flex;flex-direction:row;align-items:end;"> <asp:Label style="font-size:20px" ID="ContenedorNombre" Text="Pepe Pepito" runat="server" />
                     <asp:Image style="height:40px;width:40px" ImageUrl="/Imagenes/Pagina/persona.png" runat="server" />
                 </asp:HyperLink></div></nav><br />
             <br />
@@ -136,7 +135,9 @@
                         <asp:DropDownList runat="server" Style="height: 30px; width: 100px; background-color: #212529; border-color: #212529; color: white;" ID="ddlMetodoPago"><asp:ListItem Text="Credito" Value="Credito" />
                             <asp:ListItem Text="Debito" Value="Debito" />
                         </asp:DropDownList>
-                    <asp:Label ID="Label1" runat="server"></asp:Label></div><div>
+                    <asp:Label ID="Label1" runat="server"></asp:Label>
+                        <asp:Label ID="Label2" runat="server"></asp:Label>
+                    </div><div>
                         <asp:Label Style="font-size: 20px" Text="Costo por asiento: " runat="server" />
                         <asp:Label ID="lblCosto" runat="server"></asp:Label></div><div>
                         <div>

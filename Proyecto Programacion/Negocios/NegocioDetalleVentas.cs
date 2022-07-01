@@ -51,10 +51,10 @@ namespace Negocios
             DAODetalleVentas dao = new DAODetalleVentas();
             return dao.getTablaDetalleVentasPorPrecio(campo);
         }
-        public int buscarProximaVenta()
+        public int buscarUltimoIDDetalleVenta()
         {
             DAODetalleVentas dao = new DAODetalleVentas();
-            return 0;
+            return dao.buscarUltimoIDDetalleVentas();
         }
 
         public bool AgregarDetalleDeVentas(DetalleVentas dv)

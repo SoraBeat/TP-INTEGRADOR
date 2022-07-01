@@ -17,6 +17,7 @@ namespace Vistas
         NegocioFunciones Fun = new NegocioFunciones();
         NegocioAsientos Asi = new NegocioAsientos();
         NegocioAsientosComprados AsiC = new NegocioAsientosComprados();
+        NegocioDetalleVentas negDV = new NegocioDetalleVentas();
         private static string IDfuncion;
         private static string IDpelicula;
         private static string IDcomplejo;
@@ -198,6 +199,17 @@ namespace Vistas
                 {
                     int IDVenta = negVen.buscarUltimaVenta();
                     bool res2 = AgregarDetalleDeVentas(IDVenta, IDfun, idSala, IDComplejo, Convert.ToInt32(txtCantidad.Text), float.Parse(precio));
+                    if (res2 == true)
+                    {
+                        int IDDetalleVenta = negDV.buscarUltimoIDDetalleVenta();
+                        for (int i = 0; i < seleccionarAsientos.Length; i++)
+                        {
+                            if (seleccionarAsientos[i] == true)
+                            {
+                                bool res3 = AgregarAsientosComprados(Convert.ToString(i + 1), IDDetalleVenta, IDVenta, IDfun, idSala, IDComplejo);
+                            }
+                        }
+                    }
                 }
                 Session["DATOSTICKET"] = IDfuncion1 + "$" + idPelicula + "$" + idcomplejo + "$" + idioma + "$" + formato + "$" + fecha + "$" + horario + "$" + subtotal + "$" + idSala;
                 Response.Redirect("Precompra.aspx?subtotal=" + subtotal + "&idSala=" + idSala + "&asientos=" + asientos + "&cantidadAsientos=" + numeroAsientos);
@@ -206,7 +218,7 @@ namespace Vistas
 
         public void asientosSeleccionados()
         {
-            bool bandera=false;
+            bool bandera = false;
             numeroAsientos = "";
             for (int i = 0; i < seleccionarAsientos.Length; i++)
             {
@@ -217,7 +229,7 @@ namespace Vistas
                         numeroAsientos += "-";
                         bandera = false;
                     }
-                    numeroAsientos += Convert.ToString(i+1);
+                    numeroAsientos += Convert.ToString(i + 1);
                     bandera = true;
                 }
             }

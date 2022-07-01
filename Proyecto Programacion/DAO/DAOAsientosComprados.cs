@@ -71,7 +71,7 @@ namespace DAO
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = comando.Parameters.Add("@IDASIENTO", SqlDbType.Char);
             SqlParametros.Value = ac.IdAsiento;
-            SqlParametros = comando.Parameters.Add("@IDDETALLEVENTA", SqlDbType.Int);
+            SqlParametros = comando.Parameters.Add("@IDDETALLEDEVENTA", SqlDbType.Int);
             SqlParametros.Value = ac.IdDetalleVenta;
             SqlParametros = comando.Parameters.Add("@IDVENTA", SqlDbType.Int);
             SqlParametros.Value = ac.IdVenta;

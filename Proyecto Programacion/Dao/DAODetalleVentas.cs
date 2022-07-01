@@ -52,7 +52,10 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Detalle_Ventas", "SELECT ID_DetalleVenta_DV AS [IDDetalleVenta], ID_Venta_DV AS [IDVenta], ID_Funcion_DV AS [IDFuncion], ID_SALA_DV AS [IDSala], ID_Complejo_DV AS [IDComplejo], Cantidad_DV AS [Cantidad], Precio_DV AS [Precio] FROM Detalle_Ventas");
             return tabla;
         }
-
+        public int buscarUltimoIDDetalleVentas()
+        {
+            return ds.ObtenerMaximo("SELECT MAX(ID_DetalleVenta_DV) FROM Detalle_Ventas");
+        }
         public int AgregarDetalleVentas(DetalleVentas ven)
         {
             SqlCommand comando = new SqlCommand();
