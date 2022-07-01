@@ -53,6 +53,7 @@ namespace Vistas
             CabezeraUsuario();
             if (IsPostBack == false)
             {
+                Label1.Text = fecha;
                 nombrebtn();
                 btnIrPaginaAdmin();
                 btnConfirmar.CssClass = "btn btn-warning";
@@ -64,7 +65,6 @@ namespace Vistas
                     seleccionAnterior = Request.QueryString["cant"];
                 }
 
-                DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion1);
                 CargarDatosPagina();
                 cargarListView();
                 CargarAsientosDisponibles();
@@ -176,6 +176,9 @@ namespace Vistas
         {
             if (btnConfirmar.CssClass == "btn btn-success")
             {
+                
+                NegocioVentas negVen = new NegocioVentas();
+                NegocioDetalleVentas negDV = new NegocioDetalleVentas();
                 DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion);
                 DataRow row = tabla.Rows[0];
                 DataTable sala = Fun.getTablaSalaPorID(IDfuncion);
@@ -183,10 +186,21 @@ namespace Vistas
                 string idSala = Convert.ToInt32(sala2["IDSALA"]).ToString();
                 string subtotal = (Convert.ToInt32(txtCantidad.Text) * Convert.ToInt32(row["PRECIO"])).ToString();
                 string precio = Convert.ToInt32(row["PRECIO"]).ToString();
+                string fecha = Convert.ToString(row["FECHA"]).Substring(0, 10);
+                string hora = Convert.ToString(row["HORARIO"]).Substring(0, 5);
+                string IDfun = Convert.ToInt32(row["ID"]).ToString();
+                string IDComplejo = Convert.ToInt32(row["IDCOMPLEJO"]).ToString();
                 asientosSeleccionados();
                 string asientos = txtCantidad.Text + " x TICKETS ($"+ precio +" Asientos:" + numeroAsientos + ")";
-                Session["DATOSTICKET"] = IDfuncion1 + "$" + idPelicula + "$" + idcomplejo + "$"+ idioma + "$" + formato + "$" + fecha + "$" + horario + "$" + subtotal + "$" + idSala;
-                Response.Redirect("Precompra.aspx?subtotal="+subtotal+"&idSala="+idSala+"&asientos="+asientos);
+
+                bool res = AgregarVenta(traerIDUsuario(), fecha + " " + hora, ddlMetodoPago.SelectedValue, Convert.ToInt32(subtotal));
+                if (res == true)
+                {
+                    int IDVenta = negVen.buscarUltimaVenta();
+                    bool res2 = AgregarDetalleDeVentas(IDVenta, IDfun, idSala, IDComplejo, Convert.ToInt32(txtCantidad.Text), float.Parse(precio));
+                }
+                Session["DATOSTICKET"] = IDfuncion1 + "$" + idPelicula + "$" + idcomplejo + "$" + idioma + "$" + formato + "$" + fecha + "$" + horario + "$" + subtotal + "$" + idSala;
+                Response.Redirect("Precompra.aspx?subtotal=" + subtotal + "&idSala=" + idSala + "&asientos=" + asientos + "&cantidadAsientos=" + numeroAsientos);
             }
         }
 
@@ -360,6 +374,42 @@ namespace Vistas
                 lblTotal.Text = "";
                 args.IsValid = false;
             }
+        }
+
+        private bool AgregarVenta( int idUsuario, String Fecha, String MetodoPago, int MontoFinal)
+        {
+
+            Entidades.Ventas ven = new Entidades.Ventas();
+            NegocioVentas negVen = new NegocioVentas();
+            ven.IDUsuario = idUsuario;
+            ven.FechaVenta = Fecha;
+            ven.MetodoPagoVenta = MetodoPago;
+            ven.MontoFinalVenta = MontoFinal;
+            bool res = negVen.AgregarVenta(ven);
+            return res;   
+        }
+
+        private bool AgregarDetalleDeVentas(int idVenta, String idFuncion, String idSala, String idComplejo, int cantidad, float precio)
+        {
+
+            DetalleVentas dv = new DetalleVentas();
+            NegocioDetalleVentas negDV = new NegocioDetalleVentas();
+            dv.IDVenta = idVenta;
+            dv.IDFuncion = idFuncion;
+            dv.IDSala = idSala;
+            dv.IDComplejo = idComplejo;
+            dv.Cantidad = cantidad;
+            dv.Precio = precio;
+            bool res = negDV.AgregarDetalleDeVentas(dv);
+            return res;
+        }
+
+        private int traerIDUsuario()
+        {
+            string datosUsuario = (string)Session["DATOSUSUARIO"];
+            string[] separador = new string[] { " ", "$" };
+            string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+            return Convert.ToInt32(datos[0]);  
         }
     }
 

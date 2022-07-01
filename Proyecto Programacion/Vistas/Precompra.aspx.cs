@@ -36,6 +36,7 @@ namespace Vistas
             string sala = Request.QueryString["idSala"];
             string costo = Request.QueryString["subtotal"];
             string asientos = Request.QueryString["asientos"];
+            string cantidadAsientos = Request.QueryString["cantidadAsientos"];
 
             lblNombrePelicula.Text = peliculas.Rows[0]["Titulo"].ToString();
             lblSala.Text = sala;
@@ -94,5 +95,7 @@ namespace Vistas
         {
             Response.Redirect("PantallaInicial.aspx");
         }
+
+
     }
 }
