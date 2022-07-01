@@ -51,17 +51,17 @@
             <br />
             <br />
             <div style="display: flex; flex-direction: row">
-                <div style="width: 50%">
+                <div style="width: 50%;display:flex;justify-content:center;flex-direction:column;align-items:center">
                     <div>
-                        <h1 style="font-weight: 900; text-align: left; margin-left: 70px">DATOS DE USUARIO</h1>
+                        <h1 style="font-weight: 900; text-align: left;">DATOS DE USUARIO</h1>
                     </div>
                     <br />
                     <br />
                     <div style="display: flex; flex-direction: row;">
                         <div style="display: flex; justify-content: center; align-items: start; width: 40%;">
-                            <img style="width: 200px" src="/Imagenes/Pagina/persona.png" alt="Alternate Text" />
+                            <img style="width: 180px" src="/Imagenes/Pagina/persona.png" alt="Alternate Text" />
                         </div>
-                        <div style="display: flex; flex-direction: column; justify-content: start; align-items: start; width: 80%; font-size: 25px">
+                        <div style="display: flex; flex-direction: column; justify-content: start; align-items: start; width: 80%; font-size: 25px;margin-left:20px">
                             <div>
                                 <label style="font-size: ">Nombre: </label>
                                 <asp:Label ID="TXT_NOMBRE" Text="" runat="server" />
@@ -91,8 +91,8 @@
                     </div>
                     <div>
 
-                        <asp:ListView ID="ListView1" runat="server" DataKeyNames="ID_Venta_V" DataSourceID="SqlDataSource1">
-<%--                            <AlternatingItemTemplate>
+                        <asp:ListView ID="ListView1" runat="server" DataKeyNames="IDVenta">
+                            <%--                            <AlternatingItemTemplate>
                                 <span style="">ID_Venta_V:
                                     <asp:Label ID="ID_Venta_VLabel" runat="server" Text='<%# Eval("ID_Venta_V") %>' /><br />
                                     ID_Usuario_V:
@@ -106,7 +106,7 @@
                                     <br />
                                 </span>
                             </AlternatingItemTemplate>--%>
-<%--                            <EditItemTemplate>
+                            <%--                            <EditItemTemplate>
                                 <span style="">ID_Venta_V:
                                     <asp:Label ID="ID_Venta_VLabel1" runat="server" Text='<%# Eval("ID_Venta_V") %>' /><br />
                                     ID_Usuario_V:
@@ -122,7 +122,7 @@
                                 </span>
                             </EditItemTemplate>--%>
                             <EmptyDataTemplate><span>No se han devuelto datos.</span></EmptyDataTemplate>
-<%--                            <InsertItemTemplate>
+                            <%--                            <InsertItemTemplate>
                                 <span style="">ID_Usuario_V:
                                 <asp:TextBox ID="ID_Usuario_VTextBox" runat="server" Text='<%# Bind("ID_Usuario_V") %>' /><br />
                                     Fecha_V:
@@ -136,21 +136,36 @@
                                 </span>
                             </InsertItemTemplate>--%>
                             <ItemTemplate>
-                                <asp:Label ID="ID_Venta_VLabel" runat="server" Text='<%# Eval("ID_Venta_V") %>' /><br />
-                                <asp:Label ID="ID_Usuario_VLabel" runat="server" Text='<%# Eval("ID_Usuario_V") %>' /><br />
-                                <asp:Label ID="Fecha_VLabel" runat="server" Text='<%# Eval("Fecha_V") %>' /><br />
-                                <asp:Label ID="Metodo_Pago_VLabel" runat="server" Text='<%# Eval("Metodo_Pago_V") %>' /><br />
-                                <asp:Label ID="Monto_Final_VLabel" runat="server" Text='<%# Eval("Monto_Final_V") %>' /><br />
-                                <asp:Button ID="BTN_MOSTRARDETALLE" OnLoad="CargarTarget" runat="server" class="btn btn-primary" type="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseExample" CommandName="algo" CommandArgument='<%# Eval("ID_Venta_V") %>' Text='<%# Eval("ID_Venta_V") %>' OnClientClick="return false;"></asp:Button>
-                                <div class="collapse" id="venta<%# Eval("ID_Venta_V") %>" >
-                                    <div class="card card-body">
-                                        Esta es la informacion de la factura xd
+                                <div style="-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);border-radius: 10px 10px 10px 10px;-moz-border-radius: 10px 10px 10px 10px;-webkit-border-radius: 10px 10px 10px 10px;border: 0px solid #000000;width: 60%;padding:20px">
+                                    <div style="display: flex; flex-direction: row; width: 100%">
+                                        <div style="display: flex; flex-direction: column; justify-content: start; align-items: start; width: 70%">
+                                            <div>
+                                                <label>Fecha: </label>
+                                                <asp:Label ID="Fecha_VLabel" runat="server" Text='<%# Eval("Fecha") %>' />
+                                            </div>
+                                            <div>
+                                                <label>Metodo de pago: </label>
+                                                <asp:Label ID="Metodo_Pago_VLabel" runat="server" Text='<%# Eval("MetodoPago") %>' />
+                                            </div>
+                                            <div>
+                                                <label>Monto pagado: $</label>
+                                                <asp:Label ID="Monto_Final_VLabel" runat="server" Text='<%# Eval("MontoFinal") %>' />
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; justify-content: end; align-items: end;">
+                                            <asp:Button ID="BTN_MOSTRARDETALLE" runat="server" class="btn btn-primary boton-collapse" Text='Mostrar detalle' OnClientClick="return false;" CommandArgument='<%# Eval("IDVenta") %>' OnPreRender="CargarTarget"></asp:Button>
+                                        </div>
+                                    </div>
+                                    <div class="collapse hide" id="venta<%# Eval("IDVenta") %>">
+                                        <div class="card card-body">
+                                            Esta es la informacion de la factura xd
+                                        </div>
                                     </div>
                                 </div>
                             </ItemTemplate>
                             <LayoutTemplate>
-                                <div id="itemPlaceholderContainer" runat="server" style=""><span runat="server" id="itemPlaceholder" /></div>
-                                <div style="">
+                                <div id="itemPlaceholderContainer" runat="server"><span runat="server" id="itemPlaceholder" /></div>
+                                <div style="margin-top: 30px">
                                     <asp:DataPager ID="DataPager1" runat="server">
                                         <Fields>
                                             <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
@@ -162,15 +177,15 @@
                             </LayoutTemplate>
                             <SelectedItemTemplate>
                                 <span style="">ID_Venta_V:
-                                    <asp:Label ID="ID_Venta_VLabel" runat="server" Text='<%# Eval("ID_Venta_V") %>' /><br />
+                                    <asp:Label ID="ID_Venta_VLabel" runat="server" Text='<%# Eval("IDVenta") %>' /><br />
                                     ID_Usuario_V:
-                                    <asp:Label ID="ID_Usuario_VLabel" runat="server" Text='<%# Eval("ID_Usuario_V") %>' /><br />
+                                    <asp:Label ID="ID_Usuario_VLabel" runat="server" Text='<%# Eval("IDUsuario") %>' /><br />
                                     Fecha_V:
-                                    <asp:Label ID="Fecha_VLabel" runat="server" Text='<%# Eval("Fecha_V") %>' /><br />
+                                    <asp:Label ID="Fecha_VLabel" runat="server" Text='<%# Eval("Fecha") %>' /><br />
                                     Metodo_Pago_V:
-                                    <asp:Label ID="Metodo_Pago_VLabel" runat="server" Text='<%# Eval("Metodo_Pago_V") %>' /><br />
+                                    <asp:Label ID="Metodo_Pago_VLabel" runat="server" Text='<%# Eval("MetodoPago") %>' /><br />
                                     Monto_Final_V:
-                                    <asp:Label ID="Monto_Final_VLabel" runat="server" Text='<%# Eval("Monto_Final_V") %>' /><br />
+                                    <asp:Label ID="Monto_Final_VLabel" runat="server" Text='<%# Eval("MontoFinal") %>' /><br />
                                     <br />
                                 </span>
                             </SelectedItemTemplate>
@@ -180,6 +195,24 @@
             </div>
         </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DBCineConnectionString %>" SelectCommand="SELECT * FROM [Ventas]"></asp:SqlDataSource>
+        <script>    
+            var botones = document.getElementsByClassName("boton-collapse");
+            Array.from(botones).forEach((boton) => {
+                boton.addEventListener("click", () => {
+                    var div = document.getElementById(boton.getAttribute("data-bs-target"));
+                    console.log(div.classList);
+                    if (div.classList[1] == "hide") {
+                        div.classList.add("show");
+                        div.classList.remove("hide");
+                    }
+                    else {
+                        div.classList.add("hide");
+                        div.classList.remove("show"); v
+                    }
+
+                });
+            });
+        </script>
     </form>
 </body>
 </html>

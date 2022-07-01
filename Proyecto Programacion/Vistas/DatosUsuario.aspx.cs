@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using Entidades;
+using Negocios;
 
 namespace Vistas
 {
@@ -17,7 +20,18 @@ namespace Vistas
                 btnIrPaginaAdmin();
                 nombrebtn();
                 CargarDatosUsuario();
+                cargarGrid();
             }
+        }
+        public void cargarGrid()
+        {
+            string datosUsuario = (string)Session["DATOSUSUARIO"];
+            string[] separador = new string[] { " ", "$" };
+            string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+            NegocioVentas negve = new NegocioVentas();
+            DataTable tablaAsientos = negve.getListaPorIDUsuario(datos[0]);
+            ListView1.DataSource = tablaAsientos;
+            ListView1.DataBind();
         }
         public void CargarDatosUsuario()
         {
@@ -93,7 +107,12 @@ namespace Vistas
         public void CargarTarget(object sender,EventArgs e)
         {
             Button btn = (Button)sender;
-            btn.Attributes.Add("data-bs-target","#venta"+btn.Text);
+            btn.Attributes.Add("data-bs-target","venta"+btn.CommandArgument);
+        }
+        public void CerrarDetalle(object sender,EventArgs e)
+        {
+            Button btn = (Button)sender;
+            
         }
     }
 }
