@@ -43,7 +43,7 @@
                     <asp:Button class="btn btn-primary" ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click" />
                     <asp:Button Style="margin-left: 20px" class="btn btn-warning" ID="txtPaginaAdmin" runat="server" OnClick="txtPaginaAdmin_Click" Text="Funciones admin" Visible="False" />
                     <asp:HyperLink runat="server" ID="ContenedorUsuario" href="DatosUsuario.aspx" Style="margin-left: 20px; color: white; text-decoration: none; display: flex; flex-direction: row; align-items: end;">
-                        <asp:Label Style="font-size: 20px" ID="ContenedorNombre" Text="Pepe Pepito" runat="server" />
+                        <asp:Label Style="font-size: 20px; align-self: center;padding-right: 10px;" ID="ContenedorNombre" Text="Pepe Pepito" runat="server" />
                         <asp:Image Style="height: 40px; width: 40px" ImageUrl="/Imagenes/Pagina/persona.png" runat="server" />
                     </asp:HyperLink>
                 </div>
@@ -53,13 +53,13 @@
             <div style="display: flex; flex-direction: row">
                 <div style="width: 50%; display: flex; justify-content: start; flex-direction: column; align-items: center">
                     <div>
-                        <h1 style="font-weight: 900; text-align: left;">DATOS DE USUARIO</h1>
+                        <h1 style="font-weight: 900; text-align:center;">DATOS DE USUARIO</h1>
                     </div>
                     <br />
                     <br />
                     <div style="display: flex; flex-direction: row;">
                         <div style="display: flex; justify-content: center; align-items: start; width: 40%;">
-                            <img style="width: 180px" src="/Imagenes/Pagina/persona.png" alt="Alternate Text" />
+                            <img style="width: 180px; margin-right: 100px;" src="/Imagenes/Pagina/persona.png" alt="Alternate Text" />
                         </div>
                         <div style="display: flex; flex-direction: column; justify-content: start; align-items: start; width: 80%; font-size: 25px; margin-left: 20px">
                             <div>
@@ -87,9 +87,9 @@
                 </div>
                 <div style="width: 50%">
                     <div>
-                        <h1 style="font-weight: 900; text-align: left;">COMPRAS REALIZADAS</h1>
+                        <h1 style="font-weight: 900; text-align: center;">COMPRAS REALIZADAS</h1>
                     </div>
-                    <div>
+                    <div style="padding-left:220px">
 
                         <asp:ListView ID="ListView1" runat="server" DataKeyNames="IDVenta" OnSelectedIndexChanging="ListView1_SelectedIndexChanging">
                             <%--                            <AlternatingItemTemplate>
@@ -121,7 +121,7 @@
                                     <br />
                                 </span>
                             </EditItemTemplate>--%>
-                            <EmptyDataTemplate><span>No se han devuelto datos.</span></EmptyDataTemplate>
+                            <EmptyDataTemplate><span style="color:#e10000">No has hecho una compra aún.</span></EmptyDataTemplate>
                             <%--                            <InsertItemTemplate>
                                 <span style="">ID_Usuario_V:
                                 <asp:TextBox ID="ID_Usuario_VTextBox" runat="server" Text='<%# Bind("ID_Usuario_V") %>' /><br />
@@ -152,7 +152,7 @@
                                                 <asp:Label ID="Monto_Final_VLabel" runat="server" Text='<%# Eval("MontoFinal") %>' />
                                             </div>
                                         </div>
-                                        <div style="display: flex; justify-content: end; align-items: end;">
+                                        <div style="display: flex; justify-content: end; align-items: center;">
                                             <asp:Button ID="BTN_MOSTRARDETALLE" runat="server" class="btn btn-primary boton-collapse" Text='Mostrar detalle' OnClientClick="return false;" CommandArgument='<%# Eval("IDVenta") %>' OnPreRender="CargarTarget"></asp:Button>
                                         </div>
                                     </div>
@@ -192,7 +192,7 @@
                             </ItemTemplate>
                             <LayoutTemplate>
                                 <div id="itemPlaceholderContainer" runat="server"><span runat="server" id="itemPlaceholder" /></div>
-                                <div style="margin-top: 30px">
+                                <div style="margin-top: 30px; padding-right:210px">
                                     <asp:DataPager ID="DataPager1" runat="server" PageSize="3">
                                         <Fields>
                                             <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="False" ShowNextPageButton="False" ShowPreviousPageButton="False" />
