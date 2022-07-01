@@ -38,23 +38,28 @@
         .auto-style4 {
             width: 455px;
         }
-        .slideritems{
-            width:100%;
-            min-height:700px;
-            background-repeat:no-repeat;
-            background-size:cover;
+
+        .slideritems {
+            width: 100%;
+            min-height: 700px;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
-        .slideritem1{
-            background-image:url("/Imagenes/Portadas/lightyear horizontal.jpg");
+
+        .slideritem1 {
+            background-image: url("/Imagenes/Portadas/lightyear horizontal.jpg");
         }
-        .slideritem2{
-            background-image:url("/Imagenes/Portadas/dr strange2 horizontal piola.png");
+
+        .slideritem2 {
+            background-image: url("/Imagenes/Portadas/dr strange2 horizontal piola.png");
         }
-        .slideritem3{
-            background-image:url("/Imagenes/Portadas/pulp fiction horizontal.jpg");
+
+        .slideritem3 {
+            background-image: url("/Imagenes/Portadas/pulp fiction horizontal.jpg");
         }
-        .slideritem4{
-            background-image:url("/Imagenes/Portadas/Rápidos y Furiosos 9 horizontal.jpg");
+
+        .slideritem4 {
+            background-image: url("/Imagenes/Portadas/Rápidos y Furiosos 9 horizontal.jpg");
         }
     </style>
 </head>
@@ -82,6 +87,7 @@
                 <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
                 <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
                 <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="4"></li>
             </ol>
 
             <!-- Wrapper for carousel items -->
@@ -96,7 +102,10 @@
                     <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/pulp fiction horizontal.jpg" class="d-block w-100" alt="Slide 3">
                 </div>
                 <div class="carousel-item" style="height: 500px; width: 100%">
-                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/Rápidos y Furiosos 9 horizontal.jpg" class="d-block w-100" alt="Slide 4">
+                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/Rápidos y Furiosos 9 horizontal2.jpg" class="d-block w-100" alt="Slide 4">
+                </div>
+                <div class="carousel-item" style="height: 500px; width: 100%">
+                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/black phone horizontal.jpg" class="d-block w-100" alt="Slide 4">
                 </div>
             </div>
             <!-- Carousel controls -->

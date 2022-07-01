@@ -138,6 +138,7 @@
     <Content Include="Imagenes\Pagina\persona2.png" />
     <None Include="Imagenes\Pagina\ticket.png" />
     <Content Include="Imagenes\Pagina\venta-logo.png" />
+    <Content Include="Imagenes\Portadas\black phone horizontal.jpg" />
     <Content Include="Imagenes\Portadas\Doctor Strange.jpg" />
     <Content Include="Imagenes\Portadas\dr strange2 horizontal piola.png" />
     <Content Include="Imagenes\Portadas\Jurassic World.jpg" />
