@@ -91,7 +91,7 @@
                     </div>
                     <div>
 
-                        <asp:ListView ID="ListView1" runat="server" DataKeyNames="IDVenta">
+                        <asp:ListView ID="ListView1" runat="server" DataKeyNames="IDVenta" OnSelectedIndexChanging="ListView1_SelectedIndexChanging">
                             <%--                            <AlternatingItemTemplate>
                                 <span style="">ID_Venta_V:
                                     <asp:Label ID="ID_Venta_VLabel" runat="server" Text='<%# Eval("ID_Venta_V") %>' /><br />
@@ -193,11 +193,11 @@
                             <LayoutTemplate>
                                 <div id="itemPlaceholderContainer" runat="server"><span runat="server" id="itemPlaceholder" /></div>
                                 <div style="margin-top: 30px">
-                                    <asp:DataPager ID="DataPager1" runat="server">
+                                    <asp:DataPager ID="DataPager1" runat="server" PageSize="3">
                                         <Fields>
-                                            <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                            <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="False" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                             <asp:NumericPagerField />
-                                            <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                            <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="False" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                         </Fields>
                                     </asp:DataPager>
                                 </div>

@@ -43,7 +43,6 @@
             min-height:700px;
             background-repeat:no-repeat;
             background-size:cover;
-            
         }
         .slideritem1{
             background-image:url("/Imagenes/Portadas/lightyear horizontal.jpg");
@@ -66,12 +65,12 @@
             <a class="" href="PantallaInicial.aspx" style="margin-left: 30px;">
                 <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
             </a>
-            <div style="margin-right: 20px;display:flex;flex-direction:row;align-items:center">
+            <div style="margin-right: 20px; display: flex; flex-direction: row; align-items: center">
                 <asp:Button class="btn btn-primary" ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click" />
-                <asp:Button style="margin-left:20px" class="btn btn-warning" ID="txtPaginaAdmin" runat="server" OnClick="txtPaginaAdmin_Click" Text="Funciones admin" Visible="False" />
-                <asp:HyperLink runat="server" ID="ContenedorUsuario" href="DatosUsuario.aspx" style="margin-left:20px;color:white;text-decoration:none;display:flex;flex-direction:row;align-items:end;">
-                    <asp:Label style="font-size:20px" ID="ContenedorNombre" Text="Pepe Pepito" runat="server" />
-                    <asp:Image style="height:40px;width:40px" ImageUrl="/Imagenes/Pagina/persona.png" runat="server" />
+                <asp:Button Style="margin-left: 20px" class="btn btn-warning" ID="txtPaginaAdmin" runat="server" OnClick="txtPaginaAdmin_Click" Text="Funciones admin" Visible="False" />
+                <asp:HyperLink runat="server" ID="ContenedorUsuario" href="DatosUsuario.aspx" Style="margin-left: 20px; color: white; text-decoration: none; display: flex; flex-direction: row; align-items: end;">
+                    <asp:Label Style="font-size: 20px" ID="ContenedorNombre" Text="Pepe Pepito" runat="server" />
+                    <asp:Image Style="height: 40px; width: 40px" ImageUrl="/Imagenes/Pagina/persona.png" runat="server" />
                 </asp:HyperLink>
             </div>
         </nav>
@@ -87,11 +86,11 @@
 
             <!-- Wrapper for carousel items -->
             <div class="carousel-inner" style="height: 500px; width: 100%">
-                <div class="carousel-item active slideritems slideritem1" style="height: 500px; width: 100%">
-                    <%--<img style="height: 500px; width: 100%" src="/Imagenes/Portadas/lightyear horizontal.jpg" class="d-block w-100" alt="Slide 1">--%>
+                <div class="carousel-item active <%--slideritems slideritem1--%>" style="height: 500px; width: 100%">
+                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/lightyear horizontal.jpg" class="d-block w-100" alt="Slide 1">
                 </div>
-                <div class="carousel-item slideritems slideritem2" style="height: 500px; width: 100%">
-                    <%--<img style="height: 500px; width: 100%" src="/Imagenes/Portadas/dr strange2 horizontal piola.png" class="d-block w-100" alt="Slide 2">--%>
+                <div class="carousel-item <%--slideritems slideritem2--%>" style="height: 500px; width: 100%">
+                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/dr strange2 horizontal piola.png" class="d-block w-100" alt="Slide 2">
                 </div>
                 <div class="carousel-item" style="height: 500px; width: 100%">
                     <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/pulp fiction horizontal.jpg" class="d-block w-100" alt="Slide 3">
@@ -100,14 +99,8 @@
                     <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/Rápidos y Furiosos 9 horizontal.jpg" class="d-block w-100" alt="Slide 4">
                 </div>
             </div>
-
             <!-- Carousel controls -->
-            <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
+            <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></a><a class="carousel-control-next" href="#myCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></a>
         </div>
         <!-- CARRUSEL-->
         <br />
@@ -142,7 +135,7 @@
             <tr>
                 <td class="auto-style3 animate__animated animate__fadeIn">
                     <br />
-                    <asp:ListView Style="width: 100%" ID="lvPeliculas" runat="server" GroupItemCount="4">
+                    <asp:ListView Style="width: 100%" ID="lvPeliculas" runat="server" GroupItemCount="4" OnSelectedIndexChanging="LV_SelectedIndexChanging">
                         <%--                        <AlternatingItemTemplate>
                             <td runat="server" style="background-color: #FFFFFF;color: #284775;">Titulo_P:
                                 <asp:Label ID="Titulo_PLabel" runat="server" Text='<%# Eval("Titulo_P") %>' />
@@ -247,7 +240,7 @@
                         </InsertItemTemplate>
                         <ItemTemplate>
                             <td runat="server" style="background-color: black; color: #333333;" class="auto-style2">
-                                <asp:ImageButton CssClass="hvr-grow" Style="width: 240px; height: 380px; border-radius: 10px;margin-bottom:30px" runat="server" OnClick="guardarPeliculaEvento" CommandName='<%# Eval("ID") %>' ImageUrl='<%# Eval("Portada") %>'></asp:ImageButton>
+                                <asp:ImageButton CssClass="hvr-grow" Style="width: 240px; height: 380px; border-radius: 10px; margin-bottom: 30px" runat="server" OnClick="guardarPeliculaEvento" CommandName='<%# Eval("ID") %>' ImageUrl='<%# Eval("Portada") %>'></asp:ImageButton>
                             </td>
                         </ItemTemplate>
                         <LayoutTemplate>
@@ -320,6 +313,29 @@
                 <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-youtube.png" />
             </div>
             <br />
+            Email:           
+            <asp:CheckBox ID="Estado_PCheckBox" runat="server" Checked='<%# Eval("Estado") %>' Enabled="false" Text="Estado_P" />
+            <br />
+            </td>
+                        </SelectedItemTemplate>
+                    </asp:ListView>
+                </td>
+            </tr>
+        </table>
+        <div>
+            <br />
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
+            </div>
+            <br />
+            <br />
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px">
+                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-facebook.png" />
+                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-twitter.png" />
+                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-instagram.png" />
+                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-youtube.png" />
+            </div>
+            <br />
             Email:<a style="color: white" href="mailto:GmailEmpresa@gmail.com"> Empresa@gmail.com</a>
             <br />
             Tel: 11-1232-1234
@@ -327,15 +343,15 @@
             Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 GALAG<br />
             </span>
         </div>
-        <br />
-        <asp:ScriptManager runat="server">
-            <Scripts>
-                <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
-                <asp:ScriptReference Path="Scripts/bootstrap.bundle.min.js" />
-                <asp:ScriptReference Path="Scripts/jquery-3.6.0.min.js" />
-                <asp:ScriptReference Path="Scripts/owl.carousel.js" />
-            </Scripts>
-        </asp:ScriptManager>
+            <br />
+            <asp:ScriptManager runat="server">
+                <Scripts>
+                    <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                    <asp:ScriptReference Path="Scripts/bootstrap.bundle.min.js" />
+                    <asp:ScriptReference Path="Scripts/jquery-3.6.0.min.js" />
+                    <asp:ScriptReference Path="Scripts/owl.carousel.js" />
+                </Scripts>
+            </asp:ScriptManager>
     </form>
 </body>
 </html>

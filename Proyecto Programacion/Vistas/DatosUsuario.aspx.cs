@@ -114,5 +114,17 @@ namespace Vistas
             Button btn = (Button)sender;
             
         }
+
+        protected void ListView1_SelectedIndexChanging(object sender, ListViewSelectEventArgs e)
+        {
+            ListView1.SelectedIndex = e.NewSelectedIndex;
+            string datosUsuario = (string)Session["DATOSUSUARIO"];
+            string[] separador = new string[] { " ", "$" };
+            string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+            NegocioVentas negve = new NegocioVentas();
+            DataTable tablaAsientos = negve.getSuperHiperMegaConsulta(datos[0]);
+            ListView1.DataSource = tablaAsientos;
+            ListView1.DataBind();
+        }
     }
 }

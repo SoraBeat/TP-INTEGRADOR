@@ -27,7 +27,7 @@ namespace Vistas
         }
         public void CabezeraUsuario()
         {
-            if (Session["DATOSUSUARIO"]!=null)
+            if (Session["DATOSUSUARIO"] != null)
             {
                 ContenedorUsuario.Visible = true;
                 string datosUsuario = (string)Session["DATOSUSUARIO"];
@@ -45,16 +45,16 @@ namespace Vistas
         {
             if (IsPostBack == false)
             {
-                
-                
+
+
             }
         }
 
-        private void CargarLv ()
+        private void CargarLv()
         {
-                DataTable tablaSucursales = Pel.getListaPeliculas2();
-                lvPeliculas.DataSource = tablaSucursales;
-                lvPeliculas.DataBind();
+            DataTable tablaSucursales = Pel.getListaPeliculas2();
+            lvPeliculas.DataSource = tablaSucursales;
+            lvPeliculas.DataBind();
 
         }
 
@@ -107,7 +107,7 @@ namespace Vistas
             DDLsucursales.DataTextField = "Nombre";
             DDLsucursales.DataValueField = "ID";
             DDLsucursales.DataBind();
-            DDLsucursales.Items.Insert(0, new ListItem ("Seleccione Una Sucursal","%"));
+            DDLsucursales.Items.Insert(0, new ListItem("Seleccione Una Sucursal", "%"));
         }
 
 
@@ -120,7 +120,7 @@ namespace Vistas
             lvPeliculas.DataSource = tablaSucursales;
             lvPeliculas.DataBind();
         }
-        public void guardarPeliculaEvento(object sender,EventArgs e)
+        public void guardarPeliculaEvento(object sender, EventArgs e)
         {
             ImageButton btn = (ImageButton)sender;
             Response.Redirect("MostrarPelicula.aspx?id=" + btn.CommandName);
@@ -132,7 +132,7 @@ namespace Vistas
         }
         private void btnIrPaginaAdmin()
         {
-            if (Session["DATOSUSUARIO"]!= null)
+            if (Session["DATOSUSUARIO"] != null)
             {
                 string datosUsuario = (string)Session["DATOSUSUARIO"];
                 string[] separador = new string[] { " ", "$" };
@@ -148,9 +148,9 @@ namespace Vistas
 
         private void nombrebtn()
         {
-            if(Session["DATOSUSUARIO"] == null)
+            if (Session["DATOSUSUARIO"] == null)
             {
-                btnIniciarSesion.Text =  "Iniciar Sesion";
+                btnIniciarSesion.Text = "Iniciar Sesion";
                 btnIniciarSesion.CssClass = "btn btn-primary";
             }
             else
@@ -171,6 +171,12 @@ namespace Vistas
                 Response.Redirect("PantallaInicial.aspx");
 
             }
+        }
+
+        protected void LV_SelectedIndexChanging(object sender, ListViewSelectEventArgs e)
+        {
+            lvPeliculas.SelectedIndex = e.NewSelectedIndex;
+            CargarLv();
         }
     }
 }
