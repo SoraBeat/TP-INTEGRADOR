@@ -90,14 +90,9 @@ namespace Vistas
             Response.Redirect("PantallaInicial.aspx");
         }
 
-        protected void btnConfirmar_Click(object sender, EventArgs e)
+        protected void btnVolver_Click(object sender, EventArgs e)
         {
-
-        }
-
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
-        {
-
+            Response.Redirect("PantallaInicial.aspx");
         }
     }
 }

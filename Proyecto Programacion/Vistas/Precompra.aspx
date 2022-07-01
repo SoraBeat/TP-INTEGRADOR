@@ -94,7 +94,7 @@
                       </div>
                   </div>
               <div>
-                  <asp:Button ID="btnConfirmar0" runat="server" Text="Volver" OnClick="btnConfirmar_Click" Height="26px" />
+                  <asp:Button ID="btnVolver" runat="server" Text="Volver" OnClick="btnVolver_Click" Height="26px" />
               </div>
             
           </div>
