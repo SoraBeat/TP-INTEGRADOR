@@ -42,7 +42,7 @@
             <div>
                 <h1 style="text-align: center; background-color: #343434; padding: 10px 0; color: white; font-weight: 700;">USUARIOS</h1>
             </div>
-            <br />
+            <br/>
             <table style="width: 100%;">
                 <tr>
                     <td class="auto-style16">
