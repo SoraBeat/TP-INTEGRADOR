@@ -228,7 +228,7 @@
                         </InsertItemTemplate>
                         <ItemTemplate>
                             <td runat="server" style="background-color: black; color: #333333;" class="auto-style2">
-                                <asp:ImageButton CssClass="hvr-grow" Style="width: 240px; height: 380px; border-radius: 10px" runat="server" OnClick="guardarPeliculaEvento" CommandName='<%# Eval("ID") %>' ImageUrl='<%# Eval("Portada") %>'></asp:ImageButton>
+                                <asp:ImageButton CssClass="hvr-grow" Style="width: 240px; height: 380px; border-radius: 10px;margin-bottom:30px" runat="server" OnClick="guardarPeliculaEvento" CommandName='<%# Eval("ID") %>' ImageUrl='<%# Eval("Portada") %>'></asp:ImageButton>
                             </td>
                         </ItemTemplate>
                         <LayoutTemplate>
