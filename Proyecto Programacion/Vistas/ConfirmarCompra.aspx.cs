@@ -124,7 +124,7 @@ namespace Vistas
                     else
                     {
                         int asientosSeleccionados = 0;
-                        for (int i = 0; i < seleccionarAsientos.Length ; i++)
+                        for (int i = 0; i < seleccionarAsientos.Length; i++)
                         {
                             if (seleccionarAsientos[i] == true)
                             {
@@ -171,13 +171,13 @@ namespace Vistas
         }
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MostrarPelicula.aspx?ID="+idPelicula);
+            Response.Redirect("MostrarPelicula.aspx?ID=" + idPelicula);
         }
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (btnConfirmar.CssClass == "btn btn-success")
             {
-                
+
                 NegocioVentas negVen = new NegocioVentas();
                 NegocioDetalleVentas negDV = new NegocioDetalleVentas();
                 DataTable tabla = Fun.getTablaPorFuncionid(IDfuncion);
@@ -193,7 +193,7 @@ namespace Vistas
                 string IDComplejo = Convert.ToInt32(row["IDCOMPLEJO"]).ToString();
                 string formato = Convert.ToString(row["FORMATO"]);
                 asientosSeleccionados();
-                string asientos = txtCantidad.Text + " x TICKETS ($"+ precio +" Asientos:" + numeroAsientos + ")";
+                string asientos = txtCantidad.Text + " x TICKETS ($" + precio + " Asientos:" + numeroAsientos + ")";
 
                 bool res = AgregarVenta(traerIDUsuario(), fecha + " " + hora, ddlMetodoPago.SelectedValue, Convert.ToInt32(subtotal));
                 if (res == true)
@@ -274,7 +274,7 @@ namespace Vistas
                 string datosUsuario = (string)Session["DATOSUSUARIO"];
                 string[] separador = new string[] { " ", "$" };
                 string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
-                bool TipoUsuario = Convert.ToBoolean(datos[7]);
+                bool TipoUsuario = bool.TryParse(datos[7], out TipoUsuario);
                 if (TipoUsuario == true)
                 {
                     txtPaginaAdmin.Visible = true;
@@ -291,12 +291,12 @@ namespace Vistas
 
             idcomplejo = Convert.ToString(row["IDCOMPLEJO"]);
             CargarDDLcomplejo();
-            string fecha = Convert.ToString(row["FECHA"]).Substring(0,10);
-            string hora = Convert.ToString(row["HORARIO"]).Substring(0,5);
-            lblFechayhora.Text = fecha + " " +hora ;
+            string fecha = Convert.ToString(row["FECHA"]).Substring(0, 10);
+            string hora = Convert.ToString(row["HORARIO"]).Substring(0, 5);
+            lblFechayhora.Text = fecha + " " + hora;
 
             lblIdioma.Text = Convert.ToString(row["IDIOMA"]);
-            lblCosto.Text = "$"+Convert.ToString(row["PRECIO"]);
+            lblCosto.Text = "$" + Convert.ToString(row["PRECIO"]);
             if (seleccionAnterior != null && seleccionAnterior != "")
             {
                 txtCantidad.Text = seleccionAnterior;
@@ -323,7 +323,7 @@ namespace Vistas
             DataTable tabla = Com.getListaComplejosPorID(idcomplejo);
             DataRow row = tabla.Rows[0];
 
-            lblComplejo.Text =  Convert.ToString(row["NOMBRE"]);
+            lblComplejo.Text = Convert.ToString(row["NOMBRE"]);
             lblDireccion.Text = Convert.ToString(row["DIRECCION"]);
         }
 
@@ -369,7 +369,7 @@ namespace Vistas
         {
             try
             {
-                if (Convert.ToInt32(txtCantidad.Text)>0 && Convert.ToInt32(txtCantidad.Text) <= AsientosDisponibles1)
+                if (Convert.ToInt32(txtCantidad.Text) > 0 && Convert.ToInt32(txtCantidad.Text) <= AsientosDisponibles1)
                 {
                     lvAsientos.Visible = true;
                     args.IsValid = true;
@@ -381,7 +381,7 @@ namespace Vistas
                     args.IsValid = false;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 lvAsientos.Visible = false;
                 lblTotal.Text = "";
@@ -389,7 +389,7 @@ namespace Vistas
             }
         }
 
-        private bool AgregarVenta( int idUsuario, String Fecha, String MetodoPago, int MontoFinal)
+        private bool AgregarVenta(int idUsuario, String Fecha, String MetodoPago, int MontoFinal)
         {
 
             Entidades.Ventas ven = new Entidades.Ventas();
@@ -399,7 +399,7 @@ namespace Vistas
             ven.MetodoPagoVenta = MetodoPago;
             ven.MontoFinalVenta = MontoFinal;
             bool res = negVen.AgregarVenta(ven);
-            return res;   
+            return res;
         }
 
         private bool AgregarDetalleDeVentas(int idVenta, String idFuncion, String idSala, String idComplejo, int cantidad, float precio)
@@ -422,10 +422,10 @@ namespace Vistas
             string datosUsuario = (string)Session["DATOSUSUARIO"];
             string[] separador = new string[] { " ", "$" };
             string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
-            return Convert.ToInt32(datos[0]);  
+            return Convert.ToInt32(datos[0]);
         }
 
-        private bool AgregarAsientosComprados(String idAsiento, int idDetalleVenta, int idVenta, String idFuncion ,String idSala, String idComplejo)
+        private bool AgregarAsientosComprados(String idAsiento, int idDetalleVenta, int idVenta, String idFuncion, String idSala, String idComplejo)
         {
 
             AsientosComprados asiCom = new AsientosComprados();

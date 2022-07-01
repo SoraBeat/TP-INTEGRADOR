@@ -20,39 +20,40 @@ namespace Vistas
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-			if (IsValid)
-			{
-				String Nombre = txtNombre.Text;
-				String Apellido = txtApellido.Text;
-				String Dni = txtDNI.Text;
-				String Telefono = txtTelefono.Text;
-				String Email = txtEmail.Text;
-				String Contraseña = txtPassword.Text;
-				String Contraseña2 = txtPassword2.Text;
+            if (IsValid)
+            {
+                String Nombre = txtNombre.Text;
+                String Apellido = txtApellido.Text;
+                String Dni = txtDNI.Text;
+                String Telefono = txtTelefono.Text;
+                String Email = txtEmail.Text;
+                String Contraseña = txtPassword.Text;
+                String Contraseña2 = txtPassword2.Text;
 
-				Usuarios usu = new Usuarios();
-				usu.NombreUsuario = Nombre;
-				usu.ApellidoUsuario = Apellido;
-				usu.DNIUsuario = Dni;
-				usu.TelefonoUsuario = Telefono;
-				usu.EmailUsuario = Email;
-				usu.ContraseñaUsuario = Contraseña;
+                Usuarios usu = new Usuarios();
+                usu.NombreUsuario = Nombre;
+                usu.ApellidoUsuario = Apellido;
+                usu.DNIUsuario = Dni;
+                usu.TelefonoUsuario = Telefono;
+                usu.EmailUsuario = Email;
+                usu.ContraseñaUsuario = Contraseña;
+                usu.TipoUsuario = false;
+                
 
-				
-				DataTable res = negUsu.ExisteUsuarioEmail(usu); 
-				foreach(DataRow columna in res.Rows)
+                DataTable res = negUsu.ExisteUsuarioEmail(usu);
+                foreach (DataRow columna in res.Rows)
                 {
-                    if (columna["Email_U"] != null || columna ["DNI_U"] != null)
+                    if (columna["Email_U"] != null || columna["DNI_U"] != null)
                     {
-						lblMensaje.ForeColor = System.Drawing.Color.Red;
-						lblMensaje.Text = "Ese Usuario ya existe";
-						return;
+                        lblMensaje.ForeColor = System.Drawing.Color.Red;
+                        lblMensaje.Text = "Ese Usuario ya existe";
+                        return;
                     }
-				}
-				negUsu.AgregarUsuario(usu);
-				Session["DATOSUSUARIO"] = usu.IDUsuario + "$" + usu.NombreUsuario + "$" + usu.ApellidoUsuario + "$" + usu.DNIUsuario + "$" + usu.TelefonoUsuario + "$" + usu.EmailUsuario + "$" + usu.ContraseñaUsuario + "$" + usu.TipoUsuario + "$" + usu.Estado;
-				Response.Redirect("PantallaInicial.aspx");
-			}
-		}
+                }
+                negUsu.AgregarUsuario(usu);
+                Session["DATOSUSUARIO"] = usu.IDUsuario + "$" + usu.NombreUsuario + "$" + usu.ApellidoUsuario + "$" + usu.DNIUsuario + "$" + usu.TelefonoUsuario + "$" + usu.EmailUsuario + "$" + usu.ContraseñaUsuario + "$" + usu.TipoUsuario + "$" + usu.Estado;
+                Response.Redirect("PantallaInicial.aspx");
+            }
+        }
     }
 }

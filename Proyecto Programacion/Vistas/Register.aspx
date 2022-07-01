@@ -76,7 +76,28 @@
                         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                         <br />
                         <div style="display: flex; justify-content: center; flex-direction: row;">
-                            <asp:Button CssClass="btn btn-danger" ID="Button1" runat="server" Text="REGISTRARSE" OnClick="Button1_Click" ValidationGroup="Grupo1" />
+                            <asp:Button CssClass="btn btn-danger" ID="Button1" runat="server" Text="REGISTRARSE" ValidationGroup="Grupo1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" OnClientClick="return false;"/>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header" style="color:black">
+                                        <h5 class="modal-title" id="staticBackdropLabel">CREACION DE CUENTA</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body" style="color:black">
+                                        Al crear una cuenta usted acepta los terminos y condiciones del servicio.
+                                        Esto incluye entregarnos un riñon para la compra de tarjetas graficas para que el personal para que pueda viciar.
+                                        Si piensa que esto es exagerado culpe a los mineros.<br />
+                                        ¿Esta seguro de querer crear una cuenta?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button"  class="btn btn-danger" data-bs-dismiss="modal">No gracias</button>
+                                        <asp:Button runat="server" OnClick="Button1_Click" type="button" class="btn btn-success" Text="Si acepto"></asp:Button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

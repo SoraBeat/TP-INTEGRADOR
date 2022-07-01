@@ -47,8 +47,9 @@
                         <!-- validacion chk contraseña-->
                         <input type="checkbox" onchange="document.getElementById('txtPassword').type = this.checked ? 'text' : 'password'" />
                         <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" Display="Dynamic" data-bs-trigger="hover focus" data-bs-toggle="popover" data-bs-content="Campo vacio">*</asp:RequiredFieldValidator>
-                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                        
                     </div>
+                    <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                     <div style="display: flex; justify-content: center; flex-direction: row;">
                         <asp:Button CssClass="btn btn-danger" ID="btnAceptar" runat="server" Text="ACEPTAR" OnClick="btnAceptar_Click" />
                     </div>
