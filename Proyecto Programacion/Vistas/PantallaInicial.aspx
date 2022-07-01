@@ -38,6 +38,25 @@
         .auto-style4 {
             width: 455px;
         }
+        .slideritems{
+            width:100%;
+            min-height:700px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            
+        }
+        .slideritem1{
+            background-image:url("/Imagenes/Portadas/lightyear horizontal.jpg");
+        }
+        .slideritem2{
+            background-image:url("/Imagenes/Portadas/dr strange2 horizontal piola.png");
+        }
+        .slideritem3{
+            background-image:url("/Imagenes/Portadas/pulp fiction horizontal.jpg");
+        }
+        .slideritem4{
+            background-image:url("/Imagenes/Portadas/Rápidos y Furiosos 9 horizontal.jpg");
+        }
     </style>
 </head>
 <body>
@@ -68,11 +87,11 @@
 
             <!-- Wrapper for carousel items -->
             <div class="carousel-inner" style="height: 500px; width: 100%">
-                <div class="carousel-item active" style="height: 500px; width: 100%">
-                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/lightyear horizontal.jpg" class="d-block w-100" alt="Slide 1">
+                <div class="carousel-item active slideritems slideritem1" style="height: 500px; width: 100%">
+                    <%--<img style="height: 500px; width: 100%" src="/Imagenes/Portadas/lightyear horizontal.jpg" class="d-block w-100" alt="Slide 1">--%>
                 </div>
-                <div class="carousel-item" style="height: 500px; width: 100%">
-                    <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/dr strange2 horizontal piola.png" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-item slideritems slideritem2" style="height: 500px; width: 100%">
+                    <%--<img style="height: 500px; width: 100%" src="/Imagenes/Portadas/dr strange2 horizontal piola.png" class="d-block w-100" alt="Slide 2">--%>
                 </div>
                 <div class="carousel-item" style="height: 500px; width: 100%">
                     <img style="height: 500px; width: 100%" src="/Imagenes/Portadas/pulp fiction horizontal.jpg" class="d-block w-100" alt="Slide 3">
