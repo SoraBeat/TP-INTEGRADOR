@@ -89,8 +89,6 @@ namespace DAO
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = comando.Parameters.Add("@IDUSUARIO", SqlDbType.Int);
             SqlParametros.Value = ven.IDUsuario;
-            SqlParametros = comando.Parameters.Add("@FECHA", SqlDbType.SmallDateTime);
-            SqlParametros.Value = ven.FechaVenta;
             SqlParametros = comando.Parameters.Add("@METODOPAGO", SqlDbType.VarChar);
             SqlParametros.Value = ven.MetodoPagoVenta;
             SqlParametros = comando.Parameters.Add("@MONTOFINAL", SqlDbType.Decimal);
