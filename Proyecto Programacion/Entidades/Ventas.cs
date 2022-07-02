@@ -13,6 +13,7 @@ namespace Entidades
         private string fechaVenta;
         private string metodoPagoVenta;
         private float montoFinalVenta;
+        private string codigoAlfanumerico;
         public Ventas() { }
 
         public int IDVenta { get => idVenta; set => idVenta = value; }
@@ -20,5 +21,6 @@ namespace Entidades
         public string FechaVenta { get => fechaVenta; set => fechaVenta = value; }
         public string MetodoPagoVenta { get => metodoPagoVenta; set => metodoPagoVenta = value; }
         public float MontoFinalVenta { get => montoFinalVenta; set => montoFinalVenta = value; }
+        public string CodigoAlfanumerico { get => codigoAlfanumerico; set => codigoAlfanumerico = value; }
     }
 }

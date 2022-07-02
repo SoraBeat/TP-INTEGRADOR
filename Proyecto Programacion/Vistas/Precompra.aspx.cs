@@ -20,6 +20,7 @@ namespace Vistas
         NegocioPeliculas Pel = new NegocioPeliculas();
         NegocioFunciones Fun = new NegocioFunciones();
         NegocioComplejos Com = new NegocioComplejos();
+        NegocioVentas Ven = new NegocioVentas();
         private static string codigoRetiro;
 
         public static string CodigoRetiro { get => codigoRetiro; set => codigoRetiro = value; }
@@ -61,7 +62,7 @@ namespace Vistas
             var writer = new BarcodeWriter();
             writer.Format = BarcodeFormat.QR_CODE;
             var result = writer.Write(nombre);
-            string path = Server.MapPath("~/Imagenes/" + codigoRetiro + ".jpg");
+            string path = Server.MapPath("~/Imagenes/QR/" + codigoRetiro + ".jpg");
             var barcodeBitmap = new Bitmap(result);
 
             using (MemoryStream memory = new MemoryStream())
@@ -74,7 +75,10 @@ namespace Vistas
                 }
             }
             imagenQR.Visible = true;
-            imagenQR.ImageUrl = "~/Imagenes/"+codigoRetiro+".jpg";
+            imagenQR.ImageUrl = "~/Imagenes/QR/"+codigoRetiro+".jpg";
+            int IDVenta = Ven.buscarUltimaVenta();
+            int resultado = Ven.setQR(IDVenta, codigoRetiro);
+
         }
         static string generadorCodigoRetiro()
         {

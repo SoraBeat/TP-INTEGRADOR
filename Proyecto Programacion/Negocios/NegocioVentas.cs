@@ -81,9 +81,13 @@ namespace Negocios
         {
             DAOVentas dao = new DAOVentas();
             return dao.buscarUltimaVenta();
-
         }
 
+        public int setQR(int id, string codigo)
+        {
+            DAOVentas dao = new DAOVentas();
+            return dao.AgregarQR(id, codigo);
+        }
 
         public bool AgregarVenta(Ventas ven)
         {

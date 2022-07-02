@@ -76,7 +76,12 @@ namespace DAO
             return ds.ObtenerMaximo("select max(id_venta_v)  from ventas");
         }
 
-
+        public int AgregarQR(int ID, string codigoQR)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosQRVenta(ref comando, ID, codigoQR);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_CodigoQR");
+        }
         public int AgregarVentas(Ventas ven)
         {
             SqlCommand comando = new SqlCommand();
@@ -98,6 +103,15 @@ namespace DAO
         {
             DataTable tabla = ds.ObtenerTabla("Ventas", "SELECT DISTINCT SUBSTRING(CAST(Horario_F AS VARCHAR(5)),1,5) AS [HoraFuncion], SUBSTRING(CAST(Fecha_F AS VARCHAR(10)),1,10) AS [FechaFuncion], Formato_F AS [Formato] , ID_Venta_V AS [IDVenta],Fecha_V AS [Fecha], Metodo_Pago_V AS [MetodoPago], Monto_Final_V AS [MontoFinal], Titulo_P AS[Titulo], ID_Sala_DV AS[Sala], Cantidad_DV AS[Cantidad], dbo.GetLocacionAsientos(ID_Venta_V, ID_Usuario_V) AS[AsientosSeleccionados] FROM Ventas INNER JOIN Detalle_Ventas ON ID_Venta_V = ID_Venta_DV INNER JOIN Funciones ON ID_Funcion_F = ID_Funcion_DV INNER JOIN Peliculas ON ID_Pelicula_F = ID_Pelicula_P INNER JOIN AsientosComprados ON ID_Venta_AC = ID_Venta_DV AND ID_DetalleVenta_DV = ID_DetalleVenta_AC AND ID_Funcion_DV = ID_Funcion_AC AND ID_Sala_DV = ID_Sala_AC WHERE ID_Usuario_V = "+campo+"");
             return tabla;
+        }
+        private void ArmarParametrosQRVenta(ref SqlCommand comando, int id, string codigo)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = comando.Parameters.Add("@IDVENTA", SqlDbType.Int);
+            SqlParametros.Value = id;
+            SqlParametros = comando.Parameters.Add("@CODIGOALFANUMERICO", SqlDbType.VarChar);
+            SqlParametros.Value = codigo;
+
         }
     }
 }
