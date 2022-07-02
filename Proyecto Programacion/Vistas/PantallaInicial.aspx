@@ -264,11 +264,11 @@
                                 </tr>
                                 <tr runat="server">
                                     <td runat="server" style="text-align: center; background-color: black; color: #FFFFFF; padding: 30px;">
-                                        <asp:DataPager ID="DataPager1" runat="server" PageSize="8">
+                                        <asp:DataPager ID="DataPager1" runat="server">
                                             <Fields>
-                                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="False" ShowNextPageButton="False" ShowPreviousPageButton="True" />
-                                                <asp:NumericPagerField />
-                                                <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="False" ShowNextPageButton="True" ShowPreviousPageButton="False" />
+                                                
+                                                
+                                                
                                             </Fields>
                                         </asp:DataPager>
                                     </td>
