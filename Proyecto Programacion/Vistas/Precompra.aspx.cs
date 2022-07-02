@@ -20,6 +20,10 @@ namespace Vistas
         NegocioPeliculas Pel = new NegocioPeliculas();
         NegocioFunciones Fun = new NegocioFunciones();
         NegocioComplejos Com = new NegocioComplejos();
+        private static string codigoRetiro;
+
+        public static string CodigoRetiro { get => codigoRetiro; set => codigoRetiro = value; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string datosTicket = (string)Session["DATOSTICKET"];
@@ -48,7 +52,8 @@ namespace Vistas
             lblHorario.Text = horario.Rows[0]["HORARIO"].ToString();
             lblCosto.Text = "$" + costo;
             lblAsientos.Text = asientos;
-            lblCodigoRetiro.Text = codigoRetiro();
+            codigoRetiro = generadorCodigoRetiro();
+            lblCodigoRetiro.Text = codigoRetiro;
             generarQR(peliculas.Rows[0]["Titulo"].ToString());
         }
         protected void generarQR(string nombre)
@@ -56,7 +61,7 @@ namespace Vistas
             var writer = new BarcodeWriter();
             writer.Format = BarcodeFormat.QR_CODE;
             var result = writer.Write(nombre);
-            string path = Server.MapPath("~/Imagenes/QRImage.jpg");
+            string path = Server.MapPath("~/Imagenes/" + codigoRetiro + ".jpg");
             var barcodeBitmap = new Bitmap(result);
 
             using (MemoryStream memory = new MemoryStream())
@@ -69,9 +74,9 @@ namespace Vistas
                 }
             }
             imagenQR.Visible = true;
-            imagenQR.ImageUrl = "~/Imagenes/QRImage.jpg";
+            imagenQR.ImageUrl = "~/Imagenes/"+codigoRetiro+".jpg";
         }
-        static string codigoRetiro()
+        static string generadorCodigoRetiro()
         {
             var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var Charsarr = new char[8];
@@ -82,8 +87,8 @@ namespace Vistas
                 Charsarr[i] = characters[random.Next(characters.Length)];
             }
 
-            var resultString = new String(Charsarr);
-            return resultString;
+            var codigo = new String(Charsarr);
+            return codigo;
         }
 
         public void desloguear(object sender, EventArgs e)
