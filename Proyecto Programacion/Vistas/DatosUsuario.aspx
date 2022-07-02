@@ -35,7 +35,7 @@
             </Scripts>
         </asp:ScriptManager>
         <div>
-            <nav class="auto-style22 navbar animate__animated animate__slideInDown" style="background-color: rgba(0, 0, 0, 0.79); padding: 10px 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+            <nav class="auto-style22 navbar animate__animated animate__slideInDown" style="background-color: black; padding: 10px 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
                 <a class="" href="PantallaInicial.aspx" style="margin-left: 30px;">
                     <img src="Imagenes/Pagina/logo-piola.png" style="width: 120px; height: 70px;" />
                 </a>
@@ -220,11 +220,10 @@
                     </div>
                 </div>
             </div>
-            <div style="background-color:rgba(0, 0, 0, 0.79); padding:25px; color: black;font-weight: bold;">
+            <div style="background-color:black; padding:25px; color: white;font-weight: bold;">
             <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                 <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
             </div>
-            <br />
             <br />
             <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px">
                 <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-facebook.png" />
