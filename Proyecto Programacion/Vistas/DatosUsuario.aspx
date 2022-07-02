@@ -43,7 +43,7 @@
                     <asp:Button class="btn btn-primary" ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click" />
                     <asp:Button Style="margin-left: 20px" class="btn btn-warning" ID="txtPaginaAdmin" runat="server" OnClick="txtPaginaAdmin_Click" Text="Funciones admin" Visible="False" />
                     <asp:HyperLink runat="server" ID="ContenedorUsuario" href="DatosUsuario.aspx" Style="margin-left: 20px; color: white; text-decoration: none; display: flex; flex-direction: row; align-items: end;">
-                        <asp:Label Style="font-size: 20px; align-self: center;padding-right: 10px;" ID="ContenedorNombre" Text="Pepe Pepito" runat="server" />
+                        <asp:Label Style="font-size: 20px; align-self: center; padding-right: 10px;" ID="ContenedorNombre" Text="Pepe Pepito" runat="server" />
                         <asp:Image Style="height: 40px; width: 40px" ImageUrl="/Imagenes/Pagina/persona.png" runat="server" />
                     </asp:HyperLink>
                 </div>
@@ -53,7 +53,7 @@
             <div style="display: flex; flex-direction: row">
                 <div style="width: 50%; display: flex; justify-content: start; flex-direction: column; align-items: center">
                     <div>
-                        <h1 style="font-weight: 900; text-align:center;">DATOS DE USUARIO</h1>
+                        <h1 style="font-weight: 900; text-align: center;">DATOS DE USUARIO</h1>
                     </div>
                     <br />
                     <br />
@@ -89,7 +89,7 @@
                     <div>
                         <h1 style="font-weight: 900; text-align: center;">COMPRAS REALIZADAS</h1>
                     </div>
-                    <div style="padding-left:220px; padding-bottom:20px">
+                    <div style="padding-left: 220px; padding-bottom: 20px">
 
                         <asp:ListView ID="ListView1" runat="server" DataKeyNames="IDVenta" OnSelectedIndexChanging="ListView1_SelectedIndexChanging">
                             <%--                            <AlternatingItemTemplate>
@@ -121,7 +121,7 @@
                                     <br />
                                 </span>
                             </EditItemTemplate>--%>
-                            <EmptyDataTemplate><span style="color:#e10000">No has hecho una compra aún.</span></EmptyDataTemplate>
+                            <EmptyDataTemplate><span style="color: #e10000">No has hecho una compra aún.</span></EmptyDataTemplate>
                             <%--                            <InsertItemTemplate>
                                 <span style="">ID_Usuario_V:
                                 <asp:TextBox ID="ID_Usuario_VTextBox" runat="server" Text='<%# Bind("ID_Usuario_V") %>' /><br />
@@ -136,7 +136,7 @@
                                 </span>
                             </InsertItemTemplate>--%>
                             <ItemTemplate>
-                                <div style="margin-top:20px;-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; border: 0px solid #000000; width: 70%; padding: 20px">
+                                <div style="margin-top: 20px; -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; border: 0px solid #000000; width: 80%; padding: 20px">
                                     <div style="display: flex; flex-direction: row; width: 100%">
                                         <div style="display: flex; flex-direction: column; justify-content: start; align-items: start; width: 70%">
                                             <div>
@@ -192,12 +192,9 @@
                             </ItemTemplate>
                             <LayoutTemplate>
                                 <div id="itemPlaceholderContainer" runat="server"><span runat="server" id="itemPlaceholder" /></div>
-                                <div style="margin-top: 30px; padding-right:210px">
-                                    <asp:DataPager ID="DataPager1" runat="server" PageSize="3">
-                                        <Fields>
-                                            <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="False" ShowNextPageButton="False" ShowPreviousPageButton="False" />
-                                            <asp:NumericPagerField />
-                                            <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="False" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                <div style="margin-top: 30px; padding-right: 210px">
+                                    <asp:DataPager ID="DataPager1" runat="server" >
+                                        <Fields>                                          
                                         </Fields>
                                     </asp:DataPager>
                                 </div>
@@ -220,25 +217,25 @@
                     </div>
                 </div>
             </div>
-            <div style="background-color:black; padding:25px; color: white;font-weight: bold;">
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
-            </div>
-            <br />
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px">
-                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-facebook.png" />
-                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-twitter.png" />
-                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-instagram.png" />
-                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-youtube.png" />
-            </div>
-                <br />
-            Email:<a style="color: white" href="mailto:GmailEmpresa@gmail.com"> Empresa@gmail.com</a>
-            <br />
-            Tel: 11-1232-1234
-            <br />
-            Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 GALAG<br />
-            </span>
+            <div style="background-color: black; padding: 25px; color: white; font-weight: bold;">
+                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                    <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
                 </div>
+                <br />
+                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px">
+                    <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-facebook.png" />
+                    <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-twitter.png" />
+                    <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-instagram.png" />
+                    <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-youtube.png" />
+                </div>
+                <br />
+                Email:<a style="color: white" href="mailto:GmailEmpresa@gmail.com"> Empresa@gmail.com</a>
+                <br />
+                Tel: 11-1232-1234
+            <br />
+                Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 GALAG<br />
+                </span>
+            </div>
         </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DBCineConnectionString %>" SelectCommand="SELECT * FROM [Ventas]"></asp:SqlDataSource>
         <script>    
