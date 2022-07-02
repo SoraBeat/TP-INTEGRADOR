@@ -59,7 +59,7 @@
                     <br />
                     <div style="display: flex; flex-direction: row;">
                         <div style="display: flex; justify-content: center; align-items: start; width: 40%;">
-                            <img style="width: 180px; margin-right: 100px;" src="/Imagenes/Pagina/persona.png" alt="Alternate Text" />
+                            <img style="width: 180px;" src="/Imagenes/Pagina/persona.png" alt="Alternate Text" />
                         </div>
                         <div style="display: flex; flex-direction: column; justify-content: start; align-items: start; width: 80%; font-size: 25px; margin-left: 20px">
                             <div>
@@ -85,13 +85,12 @@
                         </div>
                     </div>
                 </div>
-                <div style="width: 50%">
+                <div style="width: 50%;display:flex;flex-direction:column;justify-content:start;align-items:center">
                     <div>
                         <h1 style="font-weight: 900; text-align: center;">COMPRAS REALIZADAS</h1>
                     </div>
-                    <div style="padding-left: 220px; padding-bottom: 20px">
-
-                        <asp:ListView ID="ListView1" runat="server" DataKeyNames="IDVenta" OnSelectedIndexChanging="ListView1_SelectedIndexChanging">
+                    
+                        <asp:ListView ID="ListView1"  runat="server" DataKeyNames="IDVenta" OnSelectedIndexChanging="ListView1_SelectedIndexChanging">
                             <%--                            <AlternatingItemTemplate>
                                 <span style="">ID_Venta_V:
                                     <asp:Label ID="ID_Venta_VLabel" runat="server" Text='<%# Eval("ID_Venta_V") %>' /><br />
@@ -136,7 +135,7 @@
                                 </span>
                             </InsertItemTemplate>--%>
                             <ItemTemplate>
-                                <div style="margin-top: 20px; -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; border: 0px solid #000000; width: 80%; padding: 20px">
+                                <div style="margin-top: 20px; -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; border: 0px solid #000000; width: 100%; padding: 20px">
                                     <div style="display: flex; flex-direction: row; width: 100%">
                                         <div style="display: flex; flex-direction: column; justify-content: start; align-items: start; width: 70%">
                                             <div>
@@ -152,7 +151,9 @@
                                                 <asp:Label ID="Monto_Final_VLabel" runat="server" Text='<%# Eval("MontoFinal") %>' />
                                             </div>
                                         </div>
-                                        <div style="display: flex; justify-content: end; align-items: center;">
+                                        <div style="display: flex;flex-direction:column; justify-content: end; align-items: center;">
+                                            <asp:Label style="font-weight:900;font-size:20px" Text='<%# Eval("AlfaNumerico") %>' runat="server" />
+                                            <asp:Image style="width:100%" ImageUrl='<%# Eval("QR") %>' runat="server" />
                                             <asp:Button ID="BTN_MOSTRARDETALLE" runat="server" class="btn btn-primary boton-collapse" Text='Mostrar detalle' OnClientClick="return false;" CommandArgument='<%# Eval("IDVenta") %>' OnPreRender="CargarTarget"></asp:Button>
                                         </div>
                                     </div>
@@ -214,10 +215,10 @@
                                 </span>
                             </SelectedItemTemplate>
                         </asp:ListView>
-                    </div>
+                    
                 </div>
             </div>
-            <div style="background-color: #000000d1; padding: 25px; color: white; font-weight: bold;position:fixed;left:0px;bottom:0px;height:266px;width:100% ">
+            <div style="background-color: #000000d1; padding: 25px; color: white; font-weight: bold;position:fixed;left:0px;bottom:0px;height:260px;width:100% ">
                 <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                     <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
                 </div>
