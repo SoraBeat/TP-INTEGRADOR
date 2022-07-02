@@ -50,7 +50,7 @@
             </nav>
             <br />
             <br />
-            <div style="display: flex; flex-direction: row">
+            <div style="display: flex; flex-direction: row;margin-bottom:266px">
                 <div style="width: 50%; display: flex; justify-content: start; flex-direction: column; align-items: center">
                     <div>
                         <h1 style="font-weight: 900; text-align: center;">DATOS DE USUARIO</h1>
@@ -217,7 +217,7 @@
                     </div>
                 </div>
             </div>
-            <div style="background-color: black; padding: 25px; color: white; font-weight: bold;">
+            <div style="background-color: #000000d1; padding: 25px; color: white; font-weight: bold;position:fixed;left:0px;bottom:0px;height:266px;width:100% ">
                 <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                     <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
                 </div>
