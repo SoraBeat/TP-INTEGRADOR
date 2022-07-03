@@ -274,7 +274,7 @@ namespace Vistas
                 string datosUsuario = (string)Session["DATOSUSUARIO"];
                 string[] separador = new string[] { " ", "$" };
                 string[] datos = datosUsuario.Split(separador, StringSplitOptions.RemoveEmptyEntries);
-                bool TipoUsuario = bool.TryParse(datos[7], out TipoUsuario);
+                bool TipoUsuario = Convert.ToBoolean(datos[7]);
                 if (TipoUsuario == true)
                 {
                     txtPaginaAdmin.Visible = true;

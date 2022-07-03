@@ -34,7 +34,7 @@ namespace DAO
 
         public DataTable getTablaSala2(Salas sal)
         {
-            DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas WHERE ID_Sala_S = '"+sal.IDSala+ "' OR ID_Complejo_S = '"+sal.IDComplejo+"' ORDER BY ABS(ID_Sala_S)");
+            DataTable tabla = ds.ObtenerTabla("Salas", "SELECT ID_Sala_S AS [ID], ID_Complejo_S AS [COMPLEJO], Total_Asientos_S AS [ASIENTOS], Estado_S AS [ESTADO] FROM Salas WHERE ID_Sala_S = '"+sal.IDSala+ "' AND ID_Complejo_S = '"+sal.IDComplejo+"' ORDER BY ABS(ID_Sala_S)");
             return tabla;
         }
 
