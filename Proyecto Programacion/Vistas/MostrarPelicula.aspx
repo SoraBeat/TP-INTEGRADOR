@@ -85,27 +85,27 @@
                     <h3>ELEGIR FUNCION</h3>
                     <div style="display: flex; flex-direction: row; margin-top: 20px">
                         <h5 id="LBL_COMPLEJO" runat="server">Complejo</h5>
-                        <asp:DropDownList Style="margin-left: 20px; background-color: #212529; color: white;" ID="DDLcomplejo" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLcomplejo_SelectedIndexChanged">
+                        <asp:DropDownList Style="margin-left: 20px; background-color: #212529; color: white;width:196px" ID="DDLcomplejo" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLcomplejo_SelectedIndexChanged">
                         </asp:DropDownList>
                     </div>
                     <div style="display: flex; flex-direction: row">
                         <h5 id="LBL_FORMATO" runat="server">Formato</h5>
-                        <asp:DropDownList Style="margin-left: 30px; background-color: #212529; color: white;" ID="DDLformato" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLformato_SelectedIndexChanged">
+                        <asp:DropDownList Style="margin-left: 30px; background-color: #212529; color: white;width:196px" ID="DDLformato" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLformato_SelectedIndexChanged">
                         </asp:DropDownList>
                     </div>
                     <div style="display: flex; flex-direction: row">
                         <h5 id="LBL_IDIOMA" runat="server">Idioma</h5>
-                        <asp:DropDownList Style="margin-left: 44px; background-color: #212529; color: white;" ID="DDLidioma" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLidioma_SelectedIndexChanged">
+                        <asp:DropDownList Style="margin-left: 44px; background-color: #212529; color: white;width:196px" ID="DDLidioma" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLidioma_SelectedIndexChanged">
                         </asp:DropDownList>
                     </div>
                     <div style="display: flex; flex-direction: row">
                         <h5 id="LBL_FECHA" runat="server">Fecha</h5>
-                        <asp:DropDownList Style="margin-left: 52px; background-color: #212529; color: white;" ID="DDLfecha" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLfecha_SelectedIndexChanged">
+                        <asp:DropDownList Style="margin-left: 52px; background-color: #212529; color: white;width:196px" ID="DDLfecha" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLfecha_SelectedIndexChanged">
                         </asp:DropDownList>
                     </div>
                     <div style="display: flex; flex-direction: row">
                         <h5 id="LBL_HORARIO" runat="server">Hora</h5>
-                        <asp:DropDownList Style="margin-left: 62px; background-color: #212529; color: white;" ID="DDLhorario" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLhorario_SelectedIndexChanged" Width="113px">
+                        <asp:DropDownList Style="margin-left: 62px; background-color: #212529; color: white;width:196px" ID="DDLhorario" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLhorario_SelectedIndexChanged" Width="113px">
                         </asp:DropDownList>
                     </div>
                     <div style="display: flex; flex-direction: row">
