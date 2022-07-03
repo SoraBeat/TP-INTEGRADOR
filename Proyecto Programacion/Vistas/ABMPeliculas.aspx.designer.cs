@@ -123,85 +123,85 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// Control hlComplejos.
+        /// Control hlComplejoss.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlComplejos;
+        protected global::System.Web.UI.WebControls.HyperLink hlComplejoss;
 
         /// <summary>
-        /// Control hlSalas.
+        /// Control hlSalass.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlSalas;
+        protected global::System.Web.UI.WebControls.HyperLink hlSalass;
 
         /// <summary>
-        /// Control hlPeliculas.
+        /// Control hlPeliculass.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlPeliculas;
+        protected global::System.Web.UI.WebControls.HyperLink hlPeliculass;
 
         /// <summary>
-        /// Control hlFunciones.
+        /// Control hlFuncioness.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlFunciones;
+        protected global::System.Web.UI.WebControls.HyperLink hlFuncioness;
 
         /// <summary>
-        /// Control hlAsientos.
+        /// Control hlAsientoss.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlAsientos;
+        protected global::System.Web.UI.WebControls.HyperLink hlAsientoss;
 
         /// <summary>
-        /// Control hlAsientosComprados.
+        /// Control hlAsientosCompradoss.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlAsientosComprados;
+        protected global::System.Web.UI.WebControls.HyperLink hlAsientosCompradoss;
 
         /// <summary>
-        /// Control hlVentas.
+        /// Control hlVentass.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlVentas;
+        protected global::System.Web.UI.WebControls.HyperLink hlVentass;
 
         /// <summary>
-        /// Control hlDV.
+        /// Control hlDVV.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlDV;
+        protected global::System.Web.UI.WebControls.HyperLink hlDVV;
 
         /// <summary>
-        /// Control hlUsuarios.
+        /// Control hlUsuarioss.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlUsuarios;
+        protected global::System.Web.UI.WebControls.HyperLink hlUsuarioss;
 
         /// <summary>
         /// Control txtID.
