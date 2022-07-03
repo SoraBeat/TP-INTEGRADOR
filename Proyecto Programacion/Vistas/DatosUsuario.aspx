@@ -63,23 +63,23 @@
                         </div>
                         <div style="display: flex; flex-direction: column; justify-content: start; align-items: start; width: 80%; font-size: 25px; margin-left: 20px">
                             <div>
-                                <label style="font-size: ">Nombre: </label>
+                                <label style="font-weight:900; ">Nombre: </label>
                                 <asp:Label ID="TXT_NOMBRE" Text="" runat="server" />
                             </div>
                             <div>
-                                <label>Apellido: </label>
+                                <label style="font-weight:900; ">Apellido: </label>
                                 <asp:Label ID="TXT_APELLIDO" Text="" runat="server" />
                             </div>
                             <div>
-                                <label>DNI: </label>
+                                <label style="font-weight:900; ">DNI: </label>
                                 <asp:Label ID="TXT_DNI" Text="" runat="server" />
                             </div>
                             <div>
-                                <label>Telefono: </label>
+                                <label style="font-weight:900; ">Telefono: </label>
                                 <asp:Label ID="TXT_TELEFONO" Text="" runat="server" />
                             </div>
                             <div>
-                                <label>Email: </label>
+                                <label style="font-weight:900; ">Email: </label>
                                 <asp:Label ID="TXT_EMAIL" Text="" runat="server" />
                             </div>
                         </div>
@@ -218,24 +218,10 @@
                     
                 </div>
             </div>
-            <div style="background-color: #000000d1; padding: 25px; color: white; font-weight: bold;position:fixed;left:0px;bottom:0px;height:260px;width:100% ">
+            <div style="background-color: #000000d1; padding: 25px; color: white; font-weight: bold;position:fixed;left:0px;bottom:0px;height:125px;width:100% ">
                 <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                     <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
                 </div>
-                <br />
-                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px">
-                    <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-facebook.png" />
-                    <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-twitter.png" />
-                    <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-instagram.png" />
-                    <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-youtube.png" />
-                </div>
-                <br />
-                Email:<a style="color: white" href="mailto:GmailEmpresa@gmail.com"> Empresa@gmail.com</a>
-                <br />
-                Tel: 11-1232-1234
-            <br />
-                Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 GALAG<br />
-                </span>
             </div>
         </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DBCineConnectionString %>" SelectCommand="SELECT * FROM [Ventas]"></asp:SqlDataSource>
