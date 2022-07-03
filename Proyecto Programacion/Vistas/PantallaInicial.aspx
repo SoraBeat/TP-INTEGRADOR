@@ -202,7 +202,7 @@
                         <EmptyDataTemplate>
                             <table runat="server" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">
                                 <tr>
-                                    <td>No se han devuelto datos.</td>
+                                    <td></td>
                                 </tr>
                             </table>
                         </EmptyDataTemplate>
@@ -264,11 +264,8 @@
                                 </tr>
                                 <tr runat="server">
                                     <td runat="server" style="text-align: center; background-color: black; color: #FFFFFF; padding: 30px;">
-                                        <asp:DataPager ID="DataPager1" runat="server">
+                                        <asp:DataPager ID="DataPager1" runat="server" PageSize="100">
                                             <Fields>
-                                                
-                                                
-                                                
                                             </Fields>
                                         </asp:DataPager>
                                     </td>
@@ -305,46 +302,38 @@
                             </td>
                         </SelectedItemTemplate>
                     </asp:ListView>
-                </td>
-            </tr>
-        </table>
-        <div>
-            </td>
-                        </SelectedItemTemplate>
-                    </asp:ListView>
-                </td>
-            </tr>
-        </table>
-        <div>
+
+                    <div>
+                        <br />
+                        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                            <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
+                        </div>
+                        <br />
+                        <br />
+                        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px">
+                            <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-facebook.png" />
+                            <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-twitter.png" />
+                            <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-instagram.png" />
+                            <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-youtube.png" />
+                        </div>
+                        <br />
+                        Email:<a style="color: white" href="mailto:GmailEmpresa@gmail.com"> Empresa@gmail.com</a>
+                        <br />
+                        Tel: 11-1232-1234
             <br />
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                <img style="height: 80px" src="/Imagenes/Pagina/logo-piola.png" alt="Alternate Text" />
-            </div>
-            <br />
-            <br />
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px">
-                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-facebook.png" />
-                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-twitter.png" />
-                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-instagram.png" />
-                <img class="imagen-portada" style="height: 30px" alt="" class="auto-style8" src="/Imagenes/Pagina/logo-youtube.png" />
-            </div>
-            <br />
-            Email:<a style="color: white" href="mailto:GmailEmpresa@gmail.com"> Empresa@gmail.com</a>
-            <br />
-            Tel: 11-1232-1234
-            <br />
-            Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 GALAG<br />
-            </span>
-        </div>
-            <br />
-            <asp:ScriptManager runat="server">
-                <Scripts>
-                    <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
-                    <asp:ScriptReference Path="Scripts/bootstrap.bundle.min.js" />
-                    <asp:ScriptReference Path="Scripts/jquery-3.6.0.min.js" />
-                    <asp:ScriptReference Path="Scripts/owl.carousel.js" />
-                </Scripts>
-            </asp:ScriptManager>
+                        Derechos reservados <span class="auto-style7" style="font-family: arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ⓒ 2022 GALAG<br />
+                        </span>
+                    </div>
+                    <br />
+
+                    <asp:ScriptManager runat="server">
+                        <Scripts>
+                            <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+                            <asp:ScriptReference Path="Scripts/bootstrap.bundle.min.js" />
+                            <asp:ScriptReference Path="Scripts/jquery-3.6.0.min.js" />
+                            <asp:ScriptReference Path="Scripts/owl.carousel.js" />
+                        </Scripts>
+                    </asp:ScriptManager>
     </form>
 </body>
 </html>
