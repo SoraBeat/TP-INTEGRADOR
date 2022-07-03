@@ -51,7 +51,6 @@ namespace Vistas
                     }
                 }
                 negUsu.AgregarUsuario(usu);
-                Session["DATOSUSUARIO"] = usu.IDUsuario + "$" + usu.NombreUsuario + "$" + usu.ApellidoUsuario + "$" + usu.DNIUsuario + "$" + usu.TelefonoUsuario + "$" + usu.EmailUsuario + "$" + usu.ContraseñaUsuario + "$" + usu.TipoUsuario + "$" + usu.Estado;
                 Response.Redirect("PantallaInicial.aspx");
             }
         }
